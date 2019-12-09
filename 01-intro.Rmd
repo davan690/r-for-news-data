@@ -1,0 +1,16 @@
+# Introduction {intro}
+
+There is a _lot_ of newspaper data available now for historical researchers. Once you get hold of it, the rewards can be huge: looking just at English-language users in the last few years, researchers have 
+
+## Goals
+Hopefully, by the end of this book, you will have:
+
+* Know what newspaper data is available, in what format, across a variety of countries and languages.
+* Understand something of the various XML formats which make up most newspaper data sources
+* Have been introduced to a number of tools which are particulalry useful for large-scale text mining of huge corpora: n-gram counters, topic modelling, text re-use. Including some specific to news, such as the R library _Newsflow_.
+* Understand how the tools can be used to answer some basic historical questions (if not provide any answers)
+
+
+What do you need in advance?
+
+Writing a book with such a specific goal is a bit of a weird proposition
