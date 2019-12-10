@@ -10,7 +10,36 @@ Hopefully, by the end of this book, you will have:
 * Have been introduced to a number of tools which are particulalry useful for large-scale text mining of huge corpora: n-gram counters, topic modelling, text re-use. Including some specific to news, such as the R library _Newsflow_.
 * Understand how the tools can be used to answer some basic historical questions (if not provide any answers)
 
+Historians have used newspaper data to do x and y. It can be used as a proxy for public opinion, used to study the movement and genesis of knowledge and information, help to understand the mix of private and public, how power can be advanced through news, and so forth. Some people might not even be interested in the news in its own right: 
 
 What do you need in advance?
 
+## Format of the book - bookdown and github
+Will try and explain as much as possible, but will take shortcuts
+Not a programming expert, so it may not be optimised, the best of way doing things. It's just the way I've found that works for me.
+
+There are bits of Python throughout, where I've only managed to work something out using that language. I hope I'll be able to revise at some stage and do everything through one language.
+
+## Why R?
+Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists. 
+A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.
+
+### Who uses R?
+
+### The Tidyverse
+
+Historians using the language: Sharon Howard, 
+
 Writing a book with such a specific goal is a bit of a weird proposition
+
+## Sources
+### Country by country
+
+## Methods
+### Network analysis of seventeenth century
+
+### Mapping
+
+### Geocoding
+
+## Text mining
