@@ -3,3 +3,200 @@
 
 Sources
 
+Lancaster Newsbooks
+Burney Collection
+EEBO
+EEBO TCP (pamphlets)
+BNA
+HMD newspapers
+JISC through GALE
+
+### UK
+
+#### British newspaper archive
+
+The British Newspaper Archive is a partnership between FindMyPast and the British Library, digitising newspaper pages from the BL's collections. The process is ongoing, digitising from microfilm and originals. Pages are segmented and OCRd, and can be full text searched. It is a commercial site and a fee is charged to access content away from BL reading rooms. Material from HMD newspaper digitisation project will most likely be added to the site. 
+
+Added 6 million pages last year
+
+https://www.britishnewspaperarchive.co.uk/
+
+28 million pages
+
+450,000,000 (total physical collection)
+
+Access rights	
+Free within the BL reading rooms, paid subscription off-site
+
+Features	
+Download individual pages; OCR; segmentation; search; browse
+
+Example projects
+Content analysis of 150 years of British Periodicals; Victorian Meme Machine; Protest and the politics of space and place; Frederick Douglas in Britain; Scissors & Paste; Oceanic Exchanges
+
+### Outisde UK:
+
+#### Chronicling America
+Library of Congress
+U.S
+
+Chronicling America is a Library of Congress initiative providing access to historic newspapers. Grants were given to participants to digitise approximately 100,000 newspaper pages each, which should represent "history, geographic coverage and events of note". Mostly from microfilm for speed and cost. PDFs are available for download, full text search.  CA has an API which allows for the creation of third party applications and sites using the bulk data. Good search functions but difficult to browse by date/region. More information here: https://oceanicexchanges.org/2018-10-17-data-reports-ca/
+
+Between 1 - 2 million over the past 5 years, 3.3 million pages expected this year.
+
+https://chroniclingamerica.loc.gov/
+
+https://chroniclingamerica.loc.gov/about/api/
+
+14 million pages
+
+ (probably impossible to find total as it is a collection of individual State projects)
+
+JPEG2000 and PDF for download
+
+Free - no key needed for API
+
+OCR; segmentation; full text download; search; API
+
+Data Visualization: Journalism’s Journey West; An Epidemiology of Information: Data Mining the 1918 Influenza Epidemic; Bookworm; American Lynching; America's Public Bible; Historical Agricultural News; Chronicling Hoosier; US News Map
+
+#### Delpher
+Koninkklijke Bibliotheek
+Netherlands
+
+Delpher is the Netherland's national media archive database. It contains 11 million pages of newpapers. It has certain datasets available for bulk download. The front page interface is clean and allows for very quick browsing by date. There is also an associated site labs.kb.nl which hosts datasets and projects.  The bulk download has both XML and plain text files, but not images. The site contains 1.5 million newspapers or 11 million pages, representing 15% of all newspapers published. Some external news sources are searchable through Delpher, with the link going through to the external site. 
+
+130 titles to be digitised between 2018 - 2021. About 50,000 newspapers (issues) added in 2018.
+
+https://www.delpher.nl/nl/kranten
+
+Full dataset here: https://www.delpher.nl/nl/platform/pages/helpitems?nid=513&scrollitem=true; derived datasets here: http://lab.kb.nl/datasets?f%5B0%5D=field_product_type%3A1
+
+11 million pages (15% of total) 1.4 million newspapers from national library plus 2.9 million external newspapers. 
+
+73,333,333 pages
+
+Funding from Metamorfoze - Netherlands national programme for the preservation of paper heritage. https://www.metamorfoze.nl/english
+
+No images in bulk download. Individual pages can be downloaded as text, JPEG, PDF.
+
+Free access, bulk download until 1876
+
+OCR; segmentation; browse by date; search; bulk download of everything up to 1876; cut clippings and download text or image
+
+Siamese; Frame Generator; Dictionary Viewer; Narralyzer; Genre classifier
+
+#### Eluxemburgensia
+Bibliothéque Nationale de Luxembourg
+Luxembourg
+
+Luxemburg's open data sets, currently the only one released is a historical newspaper dataset. Contains a series of 'packages', made to look like different versions of a web product or software, with very clear uses for each. XML/ALTO files. Link to a tool which extracts data from the XML, available on GitHub. Segmented and OCRd. 
+
+15 - 20k pages per month at peak - carried out by external provider
+
+http://www.eluxemburgensia.lu/R/RN=422843522&local_base=SERIALS. 
+
+http://data.bnl.lu/data/historical-newspapers/
+
+650,000 pages, 12% of total
+
+5.4 million
+
+Government funded - through National Library/Ministry of Culture
+
+XML/ALTO and PDF, full text and TIFF images
+
+Free access to bulk downloads, free access to PDF downloads.
+
+OCR; search; segmentation; full text; XML download; bulk download
+
+Brodigues blog uses
+
+#### Europeana
+Europeana Consortium (funded by the European Union)
+Europe
+
+Newspapers; images; art; manuscripts; maps; music; others
+
+Europeana is an aggregator for many of Europe's national newspaper collections, containing 4,129,989 newspapers (issues, presumably, rather than pages). Some are image or full text and other records are metadata only. 876,724 have had OCR processing. Newpapers can be browsed by date, country and title. Can be filtered by rights, which is useful. Images can be downloaded but users are directed back to the original source for more features. The plan is to tag up to 10 million pages with metadata and named entities. 
+
+Difficult to tell - about 1,000 additional records tagged 'newspaper' were added in 2018.
+
+Currently available through http://www.theeuropeanlibrary.org/tel4/newspapers also https://www.europeana.eu/portal/en/collections/newspapers as part of the wider Europeana site.
+
+4129989 newspapers
+
+Funding: European Union
+
+Multiple sources with different restrictions
+
+OCR; search; segmentation; bulk data download; metadata
+
+#### Finnish Newspaper Database
+National Library of Finland
+Finland
+
+Newspapers; journals; maps; ephemera
+
+Finland's national newspaper digitisation, run by the National Library of Finland.  7 million pages, 4 million of which are free to use and out of copyright. Some extensive tools for users: can download full text, PDF or XML of all pages. Have been OCRd and everything is also available on Europeana. Can be browsed by year and title. There's also bulk data download available, multiple packages.
+
+Digitising at 1 million pages per year according to https://oceanicexchanges.org/2018-02-20-data-reports-finland/
+
+https://digi.kansalliskirjasto.fi/etusivu
+
+https://digi.kansalliskirjasto.fi/opendata/submit
+
+6.4 million newspaper pages: all material up to 1929 plus more. 
+
+6.4 million pages
+PDF download
+
+Free & open until 1929, restrictions thereafter (approx 4 million pages free access). Bulk downloads are available, N-Gram list and other data packages. 
+
+OCR; search; segmentation; full text; XML download for individual pages; bulk data download
+
+"Finnish text reuse (http://comhis.fi/clusters); Local Letters to Newspapers; Geography of the nineteenth-century “lingonberry rush”
+"
+
+#### Gallica
+Bibliothéque Nationale de France
+France
+
+Newspapers; books; manuscripts; images; music sheets; sounds; objects
+
+France's national newspaper digitisation site, part of their larger digital library of BnF. Intended to have 3.5 million pages, over 30 titles, free of charge. Contains useful search functions, containing snippets of the newspaper image where the term is found. Full text and PDF downloads are available. There's also some interprative essays on the site, and the newspapers can be browsed by theme. Searches for certain themes or topics result in a 'Gallica advises' section above the search results with (presumably curated) information. Can be browsed by region, both region published and region covered. 
+
+https://gallica.bnf.fr/html/und/presse-et-revues/les-principaux-quotidiens
+
+2.3 million images/pages
+PDF, JPEG
+Free and open for early material
+OCR; search; browse by date; browse by region; 
+
+#### Trove
+National Library of Australia
+Australia
+
+Newspapers; Govt. Gazettes; Journals & datasets; books; pictures & photos; sound, music & video; diaries & letters; websites; people
+
+Trove is an online database of resources relating to Australia, including newspapers and other material. It is a centralised repository for material from a large number of suppliers, including 221,289,583 newspaper articles. Trove has a very effective and useful API and is used by lots of external researchers as well as for commerical use. The metadata about resources is processed for searching via the website and API, but Trove actually hosts the newspaper content themselves. They also have user tools such as making corrections, tagging etc with a substantial volunteer community making changes. More information here: https://oceanicexchanges.org/2018-05-29-data-reports-trove/
+
+400,000 pages in the past financial year.
+
+https://trove.nla.gov.au/newspaper/
+
+http://help.nla.gov.au/trove/building-with-trove/api
+
+24 million pages
+
+3,800 titles pre-1955. 1,500 of these have been digitised. 
+
+Funded by National Library but also State and local libraries sometimes pay to have their material digitised/uploaded
+PDF download
+
+Free, open API. Material is mostly pre-1955 and therefore can be digitised without copyright agreement. Some post-1955 material with agreement from the publishers.
+
+OCR; segmentation; search;browse by date; API; metadata
+
+Drifter; Culture collage; Eyes on the Past; The Front Page; Trove Zone Explorer
+
