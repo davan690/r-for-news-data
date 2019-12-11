@@ -1,0 +1,8 @@
+# Data formats
+
+## XML - different flavours
+
+## Full-text transcriptions - like the Lancaster Corpus
+
+## CQPWeb newspaper corpora
+
