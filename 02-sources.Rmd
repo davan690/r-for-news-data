@@ -314,6 +314,18 @@ https://handwrittennews.com/
 The Medici archive project consists of two parts: Building Interaction Archives (BIA) allows for the querying of manuscript documents, including handwritten news (avvisi). Some have full text transcriptions or English synopses. Documents can be compared via split screen, and there is some ability to browse or search named entities. The Medici Interactive Archive (MIA) is the second part, which intends to make the whole Medici archive available to researchers, including the ability to edit transcriptions, for example.  
 http://www.medici.org/
 
+### E-newspaper archives
+Swiss National Library
+Switzerland
+
+E-newspapers is the follow-on from Presse suisse en ligne. It contains newspapers from nine Cantons in Switzerland. Other swiss material digitised by different partners is not available, but this is the closest to a big national newspaper database.  Digitised newspapers from four other Cantons are linked on the site, and the last nine don't seem to have anything online yet. The text is searchable, and has been OCRd and segmented, although the site writes that some of the segmentation is old and could be re-done - this hasn't happened yet. The oldest issue is the Zurcherische Freitabszeitung from July 1705, and the newest is from December 2016. The newer material seems pretty patchy, presumably to do with rights, but there are 5 or 10 titles per day from as late as the 1980s. There's some attempt at tagging and collections but hasn't been used much yet. This collection contains 106 titles comprising 395,052 issues, 3,817,191 pages and 31,228,732 articles.
+
+https://www.e-newspaperarchives.ch/
+
+Download individual pages; OCR; segmentation; search; browse; calendar
+
+Free and open 
+PDF (to download)
 
 
 

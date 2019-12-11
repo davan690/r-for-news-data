@@ -11,3 +11,36 @@ Lancaster Newsbook Corpus
 ## Luxembourg data
 
 
+Financial Times
+Times Newspaper archive
+Scissors and Paste
+Lancaster Newsbook corpus
+Florence Early English Newsbooks 
+Oceanic Exchanges
+The Guardian Archive
+Swiss e-newspapers archive
+Papers Past (New Zealand
+Trove (Australian newspapers)
+Viral Texts project
+Delpher.nl
+lab.kb.nl (Library of Netherlands data project)
+Hemeroteca Nacional Digital de Mexico (1735–1969)
+Library of Congress, 'Chronicling America'
+The European Library
+Belgica Press
+Gallica
+Europeana
+Welsh Newspaper Archive
+De Medici Archive (hand-written avvisi)
+University of North Texas Library (Mapping production of space, ImageGrid)
+Finnish newspaper database (text reuse project)
+Luxemburg Newspapers
+Italian newspapers
+Spanish Gazeta Archive
+Archive of early Dutch newsbooks
+Fuggerzeitungen
+Stephane Haffemeyer's project
+News Networks Network
+Proquest Historial Newspapers
+Time magazine Archive
+Bristol N-Gram and entity datasets
