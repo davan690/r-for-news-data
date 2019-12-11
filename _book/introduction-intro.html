@@ -24,7 +24,7 @@
 <meta name="author" content="Yann Ryan" />
 
 
-<meta name="date" content="2019-12-09" />
+<meta name="date" content="2019-12-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -68,17 +68,19 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Needed</a></li>
 <li class="chapter" data-level="2" data-path="introduction-intro.html"><a href="introduction-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction {intro}</a><ul>
 <li class="chapter" data-level="2.1" data-path="introduction-intro.html"><a href="introduction-intro.html#goals"><i class="fa fa-check"></i><b>2.1</b> Goals</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-intro.html"><a href="introduction-intro.html#format-of-the-book---bookdown-and-github"><i class="fa fa-check"></i><b>2.2</b> Format of the book - bookdown and github</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction-intro.html"><a href="introduction-intro.html#why-r"><i class="fa fa-check"></i><b>2.3</b> Why R?</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="introduction-intro.html"><a href="introduction-intro.html#who-uses-r"><i class="fa fa-check"></i><b>2.3.1</b> Who uses R?</a></li>
-<li class="chapter" data-level="2.3.2" data-path="introduction-intro.html"><a href="introduction-intro.html#the-tidyverse"><i class="fa fa-check"></i><b>2.3.2</b> The Tidyverse</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-intro.html"><a href="introduction-intro.html#format-of-the-book---bookdown-and-github"><i class="fa fa-check"></i><b>2.2</b> Format of the book - bookdown and github</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction-intro.html"><a href="introduction-intro.html#who-uses-r"><i class="fa fa-check"></i><b>2.2.1</b> Who uses R?</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction-intro.html"><a href="introduction-intro.html#the-tidyverse"><i class="fa fa-check"></i><b>2.2.2</b> The Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="introduction-intro.html"><a href="introduction-intro.html#sources"><i class="fa fa-check"></i><b>2.4</b> Sources</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="introduction-intro.html"><a href="introduction-intro.html#country-by-country"><i class="fa fa-check"></i><b>2.4.1</b> Country by country</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-intro.html"><a href="introduction-intro.html#sources"><i class="fa fa-check"></i><b>2.3</b> Sources</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-intro.html"><a href="introduction-intro.html#country-by-country"><i class="fa fa-check"></i><b>2.3.1</b> Country by country</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="introduction-intro.html"><a href="introduction-intro.html#methods"><i class="fa fa-check"></i><b>2.5</b> Methods</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="introduction-intro.html"><a href="introduction-intro.html#network-analysis-of-seventeenth-century"><i class="fa fa-check"></i><b>2.5.1</b> Network analysis of seventeenth century</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-intro.html"><a href="introduction-intro.html#methods"><i class="fa fa-check"></i><b>2.4</b> Methods</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="introduction-intro.html"><a href="introduction-intro.html#network-analysis-of-seventeenth-century"><i class="fa fa-check"></i><b>2.4.1</b> Network analysis of seventeenth century</a></li>
+<li class="chapter" data-level="2.4.2" data-path="introduction-intro.html"><a href="introduction-intro.html#mapping"><i class="fa fa-check"></i><b>2.4.2</b> Mapping</a></li>
+<li class="chapter" data-level="2.4.3" data-path="introduction-intro.html"><a href="introduction-intro.html#geocoding"><i class="fa fa-check"></i><b>2.4.3</b> Geocoding</a></li>
 </ul></li>
+<li class="chapter" data-level="2.5" data-path="introduction-intro.html"><a href="introduction-intro.html#text-mining"><i class="fa fa-check"></i><b>2.5</b> Text mining</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="sources-sources.html"><a href="sources-sources.html"><i class="fa fa-check"></i><b>3</b> Sources {sources}</a></li>
 </ul>
@@ -111,40 +113,55 @@
 <li>Understand how the tools can be used to answer some basic historical questions (if not provide any answers)</li>
 </ul>
 <p>Historians have used newspaper data to do x and y. It can be used as a proxy for public opinion, used to study the movement and genesis of knowledge and information, help to understand the mix of private and public, how power can be advanced through news, and so forth. Some people might not even be interested in the news in its own right:</p>
-<p>What do you need in advance?</p>
+<p>What do you need in advance?<span class="citation"><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></span></p>
 </div>
 <div id="format-of-the-book---bookdown-and-github" class="section level2">
 <h2><span class="header-section-number">2.2</span> Format of the book - bookdown and github</h2>
-<p>Will try and explain as much as possible, but will take shortcuts
+<p>Will try and explain as much as possible, but will take shortcuts<span class="citation"><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></span>
 Not a programming expert, so it may not be optimised, the best of way doing things. It’s just the way I’ve found that works for me.</p>
 <p>There are bits of Python throughout, where I’ve only managed to work something out using that language. I hope I’ll be able to revise at some stage and do everything through one language.</p>
-</div>
-<div id="why-r" class="section level2">
-<h2><span class="header-section-number">2.3</span> Why R?</h2>
-<p>Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists.
+<p>How did I write the book? In R-studio, bookdown and bibdesk
+## Why R?
+Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists.
 A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.</p>
 <div id="who-uses-r" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> Who uses R?</h3>
+<h3><span class="header-section-number">2.2.1</span> Who uses R?</h3>
 </div>
 <div id="the-tidyverse" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> The Tidyverse</h3>
+<h3><span class="header-section-number">2.2.2</span> The Tidyverse</h3>
 <p>Historians using the language: Sharon Howard,</p>
 <p>Writing a book with such a specific goal is a bit of a weird proposition</p>
 </div>
 </div>
 <div id="sources" class="section level2">
-<h2><span class="header-section-number">2.4</span> Sources</h2>
+<h2><span class="header-section-number">2.3</span> Sources</h2>
 <div id="country-by-country" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> Country by country</h3>
+<h3><span class="header-section-number">2.3.1</span> Country by country</h3>
 </div>
 </div>
 <div id="methods" class="section level2">
-<h2><span class="header-section-number">2.5</span> Methods</h2>
+<h2><span class="header-section-number">2.4</span> Methods</h2>
 <div id="network-analysis-of-seventeenth-century" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Network analysis of seventeenth century</h3>
+<h3><span class="header-section-number">2.4.1</span> Network analysis of seventeenth century</h3>
+</div>
+<div id="mapping" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Mapping</h3>
+</div>
+<div id="geocoding" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Geocoding</h3>
+</div>
+</div>
+<div id="text-mining" class="section level2">
+<h2><span class="header-section-number">2.5</span> Text mining</h2>
 
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Bob Nicholson, ‘The Victorian Meme Machine: Remixing the Nineteenth-Century Archive’, <em>19: Interdisciplinary Studies in the Long Nineteenth Century</em>, 2015.21 (2015) &lt;<a href="https://doi.org/10.16995/ntn.738">https://doi.org/10.16995/ntn.738</a>&gt;.<a href="introduction-intro.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>David A. Smith, Ryan Cordell, and Abby Mullen, ‘Computational Methods for Uncovering Reprinted Texts in Antebellum Newspapers’, <em>American Literary History</em>, 27.3 (2015), E1–E15 &lt;<a href="https://doi.org/10.1093/alh/ajv029">https://doi.org/10.1093/alh/ajv029</a>&gt;.<a href="introduction-intro.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
