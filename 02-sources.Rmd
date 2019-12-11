@@ -1,4 +1,4 @@
-# Sources {sources}
+# Sources
 
 
 Sources
@@ -11,9 +11,9 @@ BNA
 HMD newspapers
 JISC through GALE
 
-### UK
+## UK
 
-#### British newspaper archive
+### British newspaper archive
 
 The British Newspaper Archive is a partnership between FindMyPast and the British Library, digitising newspaper pages from the BL's collections. The process is ongoing, digitising from microfilm and originals. Pages are segmented and OCRd, and can be full text searched. It is a commercial site and a fee is charged to access content away from BL reading rooms. Material from HMD newspaper digitisation project will most likely be added to the site. 
 
@@ -34,9 +34,9 @@ Download individual pages; OCR; segmentation; search; browse
 Example projects
 Content analysis of 150 years of British Periodicals; Victorian Meme Machine; Protest and the politics of space and place; Frederick Douglas in Britain; Scissors & Paste; Oceanic Exchanges
 
-### Outisde UK:
+## Outside UK:
 
-#### Chronicling America
+### Chronicling America
 Library of Congress
 U.S
 
@@ -60,7 +60,7 @@ OCR; segmentation; full text download; search; API
 
 Data Visualization: Journalism’s Journey West; An Epidemiology of Information: Data Mining the 1918 Influenza Epidemic; Bookworm; American Lynching; America's Public Bible; Historical Agricultural News; Chronicling Hoosier; US News Map
 
-#### Delpher
+### Delpher
 Koninkklijke Bibliotheek
 Netherlands
 
@@ -86,7 +86,7 @@ OCR; segmentation; browse by date; search; bulk download of everything up to 187
 
 Siamese; Frame Generator; Dictionary Viewer; Narralyzer; Genre classifier
 
-#### Eluxemburgensia
+### Eluxemburgensia
 Bibliothéque Nationale de Luxembourg
 Luxembourg
 
@@ -112,7 +112,7 @@ OCR; search; segmentation; full text; XML download; bulk download
 
 Brodigues blog uses
 
-#### Europeana
+### Europeana
 Europeana Consortium (funded by the European Union)
 Europe
 
@@ -132,7 +132,7 @@ Multiple sources with different restrictions
 
 OCR; search; segmentation; bulk data download; metadata
 
-#### Finnish Newspaper Database
+### Finnish Newspaper Database
 National Library of Finland
 Finland
 
@@ -158,7 +158,7 @@ OCR; search; segmentation; full text; XML download for individual pages; bulk da
 "Finnish text reuse (http://comhis.fi/clusters); Local Letters to Newspapers; Geography of the nineteenth-century “lingonberry rush”
 "
 
-#### Gallica
+### Gallica
 Bibliothéque Nationale de France
 France
 
@@ -173,7 +173,7 @@ PDF, JPEG
 Free and open for early material
 OCR; search; browse by date; browse by region; 
 
-#### Trove
+### Trove
 National Library of Australia
 Australia
 
@@ -199,4 +199,123 @@ Free, open API. Material is mostly pre-1955 and therefore can be digitised witho
 OCR; segmentation; search;browse by date; API; metadata
 
 Drifter; Culture collage; Eyes on the Past; The Front Page; Trove Zone Explorer
+
+### Papers Past
+National Library of New Zealand
+New Zealand
+
+Newspapers; magazines & journals; Letters & Diaries; Parliamentary papers
+
+Papers Past is New Zealand's digitised document resource. It has four sections: Newspapers, Magazines & Journals, Letters & Diaries and Parliamentary Papers. The Newspaper collection is a selection of digitised NZ and Pacific newspapers, including early te reo Maori ones. Content is searchable, and it is possible to browse by date, title or region. Each title has a mini-history on the site. No indication of how much material has been digitised as a percentage of total. Particularly high-quality scans and accurate OCR/segmentation.
+
+350-400k pages per year
+
+https://paperspast.natlib.govt.nz/newspapers
+
+Supplied on case-by-case basis
+
+40% available through digitalnz.org API
+
+5.4 million pages
+
+Free open access. Images and text can be printed. Assumption that anything over 100 years is out of copyright. 
+
+OCR; segmentation; search;browse by date
+
+###  Hemeroteca Nacional Digital de Mexico 
+
+(1735–1969)	This is the national newspaper collection of Mexico. Titles from 1722 - 2010, with restrictions on newer content. Has full-text search but doesn't seem to have access to full text download. Restrictions on PDF downloads. Some basic visualisations and information on the most consulted titles. 
+
+http://www.hndm.unam.mx/index.php/es/
+
+###  Belgica Press
+
+This is Belgium's national newspaper digitisation project. 4 million pages have been digitised, from 1831 to 1950, for a select number of titles (L’Echo De La Presse, Gazet Van Brussel, Het Handelsblad, L’Indépendance Belge (printed in Britain), Le Messager De Gand, De Nieuwe Gids, De Nieuwe Standaard and Het Nieuws Van Den Dag). Up to 1919 is freely available online. Seems to have full text search but not download, and no easy way to download full images. 
+
+https://www.belgicapress.be/
+
+4.2 million pages, 1.2 million available externaly (rest within library)
+
+Restrictions on PDF download and full text versions, material after 1919. 
+
+OCR; search; browse by date
+
+###  Welsh Newspaper Archive
+To fill in - have a large collection
+
+###  National Library of Scotland
+
+###  Italian newspapers
+Doesn't seem to be any centralised repository, but various archives are available through the websites of individual newspapers. 
+
+###  Hemeroteca Digital (Spain)
+
+###  ANNO - Austrian Newspapers Online
+Anno is Austria's national digital newspaper collection. It contains 500 titles, over 10 million pages, from the 16th century to the 1940s. They are mostly OCRd and can be full-text searched. The site can be browsed by title or date, through a calendar. 
+
+###  BC Historical Newspapers
+The BC Historical Newspapers project features digitized versions of historical papers from around the province. The titles, which range from the Abbotsford Post to the Ymir Mirror, date from 1859 to 1995. Has some pretty advanced browse and search features, and can download PDFs, full text and metadata files. 
+https://open.library.ubc.ca/collections/bcnewspapers
+
+OCR; full text download; metadata download; browse by date, title
+
+###  Media Stream
+Media Stream is Denmark's web access for the Royal Library's newspaper, radio and television commercials. 35 million pages of newspapers have been digitised, access to anything after January 1919 is available only in the library itself. The archive has full-text search, but seemingly no way to access the full text of individual articles. Pre 1919 material can be downloaded as PDFs. There's also a link to a tutorial on how to search. 
+
+http://www2.statsbiblioteket.dk/mediestream/avis
+
+35000000 pages
+PDF, free to 1919
+OCR; browse by title
+
+###  Stare hrvatske novine
+Croatia's national digitised newspapers. Select papers starting from 1789. Limited functionality. 
+
+###  ZEFYS
+Access to holdings in the Staatsbibliothek Berlin and other German newspapers and German newspapers abroad. 276,015 copies of 193 newspapers. Mixed functionality, some are OCRd, others just images. Has a 'year cloud' for browsing by year, which also illustrates quickly which years have most quantity of news. Seems to run just from 1890 to 1939. 
+
+http://zefys.staatsbibliothek-berlin.de/index.php?id=start
+
+###  Timarit.is
+Newspaper archive for Iceland, Greenland and Faroe Islands. Currently contains 1179 titles, 64683 articles, 5619584 pages (presumably the articles are low because it's only counting ones that have been segmented successfully). Full text search is available, as is full text and PDF downloads. Can be browsed by titles. Some early titles possibly manuscript. 
+
+http://timarit.is/listing_init.jsp?lang=en
+
+5619584 pages
+PDF
+FREE
+OCR (limited); full text search; browse by title
+
+###  Google news archive
+
+Google news archive originally started as a standalone product but now is incorporated into Google News. Mixture of titles available for searching, but has not been updated since 2011. Significantly has a full archive of the NYT. OCRd, but the text is not browsable or downloadable. Can browse by title or search. Perhaps more functionality on various Google news apps
+
+https://news.google.com/newspapers
+
+###  Baltic Digital Library
+Collection of digital objects, including newspapers. Some interesting features including structure (essentially allowing for browsing through titles/issues. 
+
+###  NewspaperSG
+Singapore's national newspaper collection. Newspapers from 1831 onwards, plus a catelogue of the National Library's microfilm holdings. Interesting 'search terms visualiser', essentially an N-Gram timeline, with up to five words at a time. Gives actual numbers rather than relative frequency, which isn't very helpful if the material is not evenly spread out over the time. Also 'this week in history' and 'most viewed articles' sections. Search brings up OCR text first, rather than images. Cannot download full files 
+
+### Svenska dagstidningar
+Partial Swedish Newspaper archive, containing over 500 titles, from 1645 to the present day. Material up until 1903 is freely available, anything after that only in the reading rooms of various Swedish libraries. 
+
+https://tidningar.kb.se/
+
+500 titles
+
+### Handwritten Newspapers Project
+Archive of handwritten news from around the world. First issue is from 1700. Browsable by date. Some images but mostly links or catelogue records
+
+https://handwrittennews.com/
+
+### The Medici Archive Project
+The Medici archive project consists of two parts: Building Interaction Archives (BIA) allows for the querying of manuscript documents, including handwritten news (avvisi). Some have full text transcriptions or English synopses. Documents can be compared via split screen, and there is some ability to browse or search named entities. The Medici Interactive Archive (MIA) is the second part, which intends to make the whole Medici archive available to researchers, including the ability to edit transcriptions, for example.  
+http://www.medici.org/
+
+
+
+
+
 

@@ -3,7 +3,7 @@ title: "R for Newspaper Data"
 author: "Yann Ryan"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::pdf_book
+output: bookdown::gitbook
 documentclass: book
 bibliography: [r_for_news.bib]
 csl: mhra.csl
@@ -11,4 +11,4 @@ github-repo: yannryanBL/r-for-news-data
 description: "This is a book to help new and existing users find and analyse historical newspaper data, using the programming language R-Studio."
 ---
 
-# Needed
+# Index
