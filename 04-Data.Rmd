@@ -1,0 +1,13 @@
+# Data
+
+It's all very well being able to access the content, but for the purposes of the kind of things we'd like to do, access to the data is needed. 
+
+Lancaster Newsbook Corpus
+
+## GALE
+
+## HMD data- on repository
+
+## Luxembourg data
+
+

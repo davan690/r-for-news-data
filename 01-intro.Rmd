@@ -1,20 +1,36 @@
 # Introduction
 
+Get a nice image for here
+
 There is a _lot_ of newspaper data available now for historical researchers. Across the globe, Heritage Organisations are digitising their collections. Most news digitisation projects do OCR and zoning, meaning that the digitised images are processed so that the text is machine readable, and then divided into articles. It's far from perfect - we'll show some examples in a later chapter - but it does generate a large amount of data: both the digitised images, and the underlying text and information about the structure.  Once you get hold of this data, the rewards can be huge: looking just at English-language users in the last few years, researchers have used it to understand Victorian jokes, trace the movement of information and ideas, understand the effects of industrialisation, track the meetings of radical groups, and of course understand more about the newspapers themselves and the print culture that surrounds them.
 
-While there has been a lot digitised, their is much, much more still to be done. The collection, in any country, is far from representative. But we must work with what we've got.
+While there has been a lot digitised, their is much, much more still to be done. The collection, in any country, is far from representative. But we must work with what we've got. The new histories of the press will be written by looking at text at scale, drawing broad conclusions, understanding genre, authorship and so forth through data analysis. 
 
-This text is usually in one of a variety of XML formats.
+We're just at the beginning: in the last few years projects have been using neural networks methods to improve the kinds of things we can do: the Living with machines project, for example, or several projects at the Royal Library in the Netherlands. The methods I describe here are simplistic, but they can still add to our understanding. 
+
+```{r echo=FALSE, fig.show = "hold", out.width = "50%", fig.cap="The portion of British Library Digitised Newspaper Content, and the physical collection, mapped", message=FALSE, warning=FALSE, fig.align = "default"}
+knitr::include_graphics(c("images/online-circles.png", "images/title_holdings.png"))                      
+```
+
+## Short history of newspapers, newspaper digitisation?
+
+### Burney and EEBO? 
+
+[//]: # (check order)
+
+### JISC 1
+### JISC 2
+### BNA
 
 ## Goals
 Hopefully, by the end of this book, you will have:
 
 * Know what newspaper data is available, in what format, across a variety of countries and languages.
 * Understand something of the various XML formats which make up most newspaper data sources
-* Have been introduced to a number of tools which are particulalry useful for large-scale text mining of huge corpora: n-gram counters, topic modelling, text re-use. Including some specific to news, such as the R library _Newsflow_.
+* Have been introduced to a number of tools which are particularly useful for large-scale text mining of huge corpora: n-gram counters, topic modelling, text re-use. Including some specific to news, such as the R library _Newsflow_.
 * Understand how the tools can be used to answer some basic historical questions (if not provide any answers)
 
-Historians have used newspaper data to do x and y. It can be used as a proxy for public opinion, used to study the movement and genesis of knowledge and information, help to understand the mix of private and public, how power can be advanced through news, and so forth. Some people might not even be interested in the news in its own right: 
+Historians have used newspaper data to do x and y. Newspapers have long bee thought of as a proxy for public opinion, a historical source or 'first draft of history', used to study the movement and genesis of knowledge and information, help to understand the mix of private and public, how power can be advanced through news, and so forth. Some people might not even be interested in the news in its own right: how it was created, distributed, shaped, what the political pressures were, how it was read at different times, and how it came to shape those who read it.
 
 What do you need in advance?
 Probably a mix of coding skills etc. 
@@ -22,6 +38,7 @@ Probably a mix of coding skills etc.
 ## Format of the book - bookdown and github
 Will try and explain as much as possible, but will take shortcuts
 Not a programming expert, so it may not be optimised, the best of way doing things. It's just the way I've found that works for me.
+Part of the reason for doing this is because writing in bookdown and GitHub is quite geeky fun. I will unashamedly do things because I _can_, on occasion.   
 
 Bookdown allows for code and figures directly in the text. I'll make a very simple dataframe and plot it.
 
