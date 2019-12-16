@@ -1,5 +1,10 @@
 # Sources
 
+Most countries have digitised all or part of their newspaper collection. Digitised newspapers are a form of 'soft power' or an item of cultural pride. These newspapers, unfortunately, exist in national silos, using different formats, with different levels of access. There's not much to do about that except try and understand the different ways which content has been digitised. Several projects are currently doing pan-national things, including Impresso, and Europeana, but the majority, by far, is not serachable across nations. 
+
+In addition, the level and method of access varies widely. Some countries (Australia's _Trove_ and the U.S's _Chronicling America_ project) provide API access. Others allow for bulk downloads of the XML. Others have free access to all out-of-copyright material, and then allow bulk downloads on request, or through collaboration (such as the KB Library in the Netherlands). Other countries (notably the UK) partner with commercial companies to provide access, including free access on the Library's site. 
+
+The data, too, comes in many different forms. Most digitised newspapers are processed with OCR software to create machine readable text. This processing usually results in data in XML format, specifying some information about the Each software will have a dif
 
 Sources
 
