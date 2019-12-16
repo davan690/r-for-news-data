@@ -23,9 +23,11 @@ of its run of issue would be digitised (Ed King)
 
 (ref https://archive.ifla.org/IV/ifla74/papers/139-King-en.pdf)
 
-This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth. But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency. 
+This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth. But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency, in that it used microfilm (sometimes new microfilm). But overall, one might say that the collection has specific historical relevant, and was in ways representative. It does, though, only represent a tiny fraction of the newspaper collection, and by being relevant and restricted to 'important' titles, it does of course miss other voices. For example, much of the Library's collection consists of  Subsequent digitisation projects are trying to rectify this. 
 
-Currently researchers access this either through Gale, or through the British Library as an external researcher. Many researchers have requested access to the collection through Gale, which they will apparently do in exchange for a fee for the costs of the hard drives and presumably some labour time. 
+
+
+Currently researchers access this either through Gale, or through the British Library as an external researcher. Many researchers have requested access to the collection through Gale, which they will apparently do in exchange for a fee for the costs of the hard drives and presumably some labour time. The specifics of the XML used, and some code for extracting the data, are available in the following chapter.
 
 Some researchers have also got access to the collection through 
 
