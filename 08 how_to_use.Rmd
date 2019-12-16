@@ -1,0 +1,27 @@
+# How to use this book
+
+## What is this?
+This might look like a static book but in fact it's a living, breathing document. It's actually written using a programming language. The language is called R. It's an open source language that was originally used for very specifically statistics-heavy work, but it's become much more general in the last few years. Part of this is in thanks to R-Studio, which is an IDE for R. This book is written in R-studio using a language called R markdown. This is a way of writing and formatting text like a word processor, except you use code to specify what you want and the program decides how it should look and renders it, rather than moving around the elements you see on front of you. All the plots you see arenot images, but rather real bits of code, which run every time the book is rendered, and produce the relevant plots or tables. It means that all the code you type _has_ to work, otherwise the book can't render. That's a pretty sweet way of making sure everything is correct!
+
+You can just read this book as is, but you can also play around with it, change the code and make your own copy, simply by downloading R-Studio and a bunch of packages to go along with it. You'll also see that with a little bit more work, you can clone a copy and make changes, which can then be _suggested_ as changes for this version, or just kept in your copy. 
+
+
+
+## Download R and R-Studio
+The first thing you'll need is R and R-studio. They are separate things, which might seem confusing or really obvious, depending on your exposure to programming languages. R is the main software. You could actually just download this and run it with a command prompt and a text editor, if you wanted to. R-Studio is an interface to the language, which makes it much easier to use, and adds lots of extra features. 
+
+This bit is pretty simple. You download the latest version of R, install it, and then download R-studio and install that. 
+
+R-Studio has four main windows, each with a number of tabs. The top left is where you write code, and view the dataframes you've created or imported. The top right contains your environment, which is a list of all your dataframes, variables and functions and other bits (and also some extra tabs once we've installed some more packages). The bottom right is a list of files in your project's directory. 
+
+## Download a copy
+Go here: 
+
+Click download. Extract the zip. Start a project in the extracted folder. Now you can see all the individual chapter files and data. 
+
+
+## Licence terms
+
+## Clone a copy to GitHub
+
+## Make your own version

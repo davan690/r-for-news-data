@@ -9,3 +9,7 @@ Laurel Brake, Jim Mussell, other HMD advisory board people, Joad Raymond (don't 
 Bob Nicholson, Melodee Beals, Ryan Cordell
 
 Bloggers like Bruno Rodrigues
+
+The BL Labs stuff on github
+
+Other code repositories would be good. 
