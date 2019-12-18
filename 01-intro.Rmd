@@ -69,7 +69,7 @@ df %>% ggplot() + geom_point(aes(x = a, y = d, color = b), size = 5)
 There are bits of Python throughout, where I've only managed to work something out using that language. This is done using ```Reticulate```, which allows for Python within R markdown. I hope I'll be able to revise at some stage and do everything through one language.
 
 How did I write the book? In R-studio, bookdown and bibdesk
-
+There are a million things I could and woul dlike to explain detail.
 ## Why R?
 Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists. 
 A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.
