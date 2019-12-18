@@ -1,0 +1,65 @@
+# R and the Tidyverse
+The motivation behind this book was to provide a way to access and analyse newspaper data using a programming language that I am familiar with. The reason is simple: you write what you know, and I know R best. With its interface, R-Studio, I think it has the easiest transition from someone used to spreadsheet programs, and you'll realise that most of what you do is filter, sort, count and select columns in a data format called a dataframe. 
+
+A dataframe is basically a spreadsheet - it contains rows with observations, and columns with variables. Each row is generally a _thing_, for want of a better word. A thing that wants to be counted, either by summarising it as a more general thing, or turning it into something else and then counting it, or removing some of the things first and then counting the leftovers. For us, the thing might be a record of a newspaper title, or a newspaper article (and its text), or it might be a single word.
+
+You can do a lot more cool things with a thing in a dataframe. A thing might be a single polygon, in a huge dataframe of polygons or lines, all of which add up to a map, which we can then count, sort, filter and eventually draw. 
+
+While I want this book to stand alone, it's not meant to function as a tutorial, but rather I will try to explain just enough to do the analysis seen in this book. 
+
+## R
+R has been around for a while. It's a good programming language for data analysis and plotting, and it is relatively easy to create nice-looking plots.
+
+### Base R commands
+I don't use them very much, but R does have a bunch of very well-developed commands for doing the sorting, filtering and counting mentioned above. If you want to learn base R, I recommend the following:
+
+It is worth understanding the main types of data that you'll come across, in your environment window. First, you'll have dataframes. These are the spreadsheet-like objects which you'll use in most analyses. They have rows and columns. 
+
+Next are variables. A variable is assigned to a name, and then used for various purposes. 
+
+You'll often here of something called a vector. A vector is like a python list. It's sort of like a single column in a dataframe (spreadsheet), a 2D dataframe. It can have different types: for example, a character vector looks like this ```c("apples", "bananas", "oranges")```
+
+A dataframe is just a bunch of vectors side by side. 
+```{r}
+library(tibble)
+```
+
+```{r}
+
+fruit = c("apples", "bananas", "oranges")
+colour = c("green", "yellow", "orange")
+amount = c(1,5,10)
+```
+
+```{r}
+fruit_data = data.frame(fruit,colour,amount, stringsAsFactors = FALSE)
+```
+
+```{r}
+fruit_data
+```
+
+Notice above that the third column, the amount, has <dbl> under it instead of <chr>. That's because R is treating it as a number, rather than a character. This means you can add them up and do all sorts of other mathy type things to them. 
+
+Anyway, that's a dataframe. 
+###  R studio
+
+R studio is an IDE. It's unusual in that it's very self-contained and ubiqutous. One of the attractions for R when I began, was that it seemed so much less confusing than Python, which has many different ways of accessing it. While you can use R in many ways too, R-Studio seems much more of a 'catch-all' that appeals to everyone. It's available here: [link]
+
+It has four main windows: you'll type your code in the top left, your environments are on the right (it lists your dataframes, variables and so forth.)
+
+## Tidyverse
+
+### Select, pull
+
+### group_by, tally, summarise
+
+### filter
+
+### sort, arrange, top_n
+
+### Piping
+
+Who cares about fruit? Nobody. We want newspaper data. Let's load a dataset of metadata for all the titles held by the library, and do some counting and sorting. 
+
+### Plotting?
