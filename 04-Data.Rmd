@@ -49,6 +49,7 @@ library(rgeos)
 library(rgdal)
 library(tidyverse)
 library(snakecase)
+library(mapdata)
 libraryPalette = c("#DA2F65","#FFC82E","#00788B","#CEE055",   "#7E3E98",  "#1E6EB8", "#018074", "#865BE7", "#D44202")
 
 load('data/shp_df_all_uk_1891.dms')
@@ -59,6 +60,17 @@ colnames(counties) = to_snake_case(colnames(counties))
 
 title_list = read_csv('data/BritishAndIrishNewspapersTitleList_20191118.csv')
 
+```
+
+```{r include=FALSE}
+geocoded = read_csv('data/geocorrected.csv')
+colnames(geocoded) = to_snake_case(colnames(geocoded))
+```
+```{r include=FALSE}
+map = map_data('world')
+```
+```{r include=FALSE}
+library(ggrepel)
 ```
 
 ```{r jisc-map, echo=FALSE, fig.cap="JISC 1 & 2 Digitisation Programmes", message=FALSE, warning=FALSE}
@@ -73,6 +85,60 @@ title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>%
   geom_polygon(color = 'black', lwd = .1, aes(x = long, y = lat, fill = n.x, group = group)) + coord_fixed(1) + 
   scale_fill_gradient(low = "#DA2F65", high ="#FFC82E",na.value="gray90") + theme_void() + theme(legend.direction = 'horizontal', legend.position = 'left') + 
   guides(fill = guide_legend(title = 'Total Titles:'))
+
+
+```
+
+```{r include=FALSE}
+geocoded = read_csv('data/geocorrected.csv')
+colnames(geocoded) = to_snake_case(colnames(geocoded))
+```
+```{r include=FALSE}
+map = map_data('world')
+```
+```{r include=FALSE}
+library(ggrepel)
+```
+
+```{r jisc-points, fig.cap="JISC 1 & 2 titles, by city. Irish titles not plotted", echo=FALSE, message=FALSE, warning=FALSE}
+ggplot() + geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = "gray90", color = 'gray20') + coord_fixed(1.3, xlim = c(-10, 2), ylim = c(50,60)) + geom_point(data = title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>% 
+  left_join(jisc) %>% filter(!is.na(JISC)) %>% left_join(geocoded) %>% group_by(wikititle, wikilon, wikilat) %>% tally(), aes(x = as.numeric(wikilon), y = as.numeric(wikilat),size = n), pch = 21, color = 'gray20', alpha = .9, fill = "#DA2F65") + geom_text_repel(data = title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>% 
+  left_join(jisc) %>% filter(!is.na(JISC)) %>% left_join(geocoded) %>% group_by(wikititle, wikilon, wikilat) %>% tally() %>% filter(wikititle !='UNKNOWN'), aes(x = as.numeric(wikilon), y = as.numeric(wikilat), label = paste0(wikititle, " (", n, ")")), size = 2, family = 'serif') + 
+  scale_fill_gradient(low = "#DA2F65", high ="#FFC82E",na.value="gray90") + theme_void() + theme(legend.direction = 'horizontal', legend.position = 'bottom', legend.title = element_text(family = 'serif'), legend.text = element_text(family = 'serif')) + 
+  guides(size = guide_legend(title = 'Total Titles:'))
+```
+
+```{r include=FALSE}
+library(data.table)
+
+title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>% 
+  left_join(jisc) %>% filter(!is.na(JISC)) %>% left_join(geocoded)
+```
+
+```{r include=FALSE}
+title_list_na_rem = title_list %>% 
+  mutate(last_date_held = replace(last_date_held, last_date_held == 'Continuing', '2019'))
+
+
+title_list_na_rem$first_date_held = as.numeric(title_list_na_rem$first_date_held)
+title_list_na_rem$last_date_held = as.numeric(title_list_na_rem$last_date_held)
+
+title_list_na_rem = title_list_na_rem %>% filter(!is.na(first_date_held)) %>% filter(!is.na(last_date_held))
+
+long_title_list = setDT(title_list_na_rem)[,.(year=first_date_held:last_date_held),by = eval(colnames(title_list))]
+```
+```{r jisc-bar, fig.cap="Very approximate chart of JISC titles, assuming that we had complete runs for all. Counted by year rather than number of pages digitised.", echo=FALSE, message=FALSE, warning=FALSE}
+long_title_list %>% 
+  mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>% 
+  left_join(jisc) %>% 
+  filter(!is.na(JISC)) %>% 
+  left_join(geocoded) %>% 
+  filter(year %in% c(1800:1909)) %>%
+  mutate(decade = year-year %%10) %>%
+  group_by(decade, JISC) %>% 
+  tally() %>% 
+  ggplot() + geom_bar(aes(x = decade, y = n, fill = JISC), stat = 'identity') + 
+  theme_minimal()
 ```
 
 
