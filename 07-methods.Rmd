@@ -1,0 +1,41 @@
+# (PART) Part I: Basic data methods {-}
+
+# Methods
+
+## Mapping seventeenth century newsbooks
+
+### Mapping with R
+
+#### What can R do
+
+#### Limitations
+
+### Steps
+
+#### Making a background map
+
+#### Geocoding
+
+#### Drawing points
+
+#### Further customisation
+
+## Network analysis of seventeenth century newsbooks
+
+### Background
+ 
+### Network analysis
+
+### Steps
+
+## Network analysis using NLP and Lancaster newsbooks
+
+### Background
+
+### Sources used
+
+### Steps
+
+### Choropleth maps - nineteenth century
+
+

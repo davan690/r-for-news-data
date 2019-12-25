@@ -1,0 +1,107 @@
+<!-- dialogueDoc DTD -->
+
+<!ELEMENT	newsbookDoc		( newsbookHeader, newsbookText )			>
+
+<!ATTLIST	newsbookDoc
+		id			CDATA					#REQUIRED	>
+
+
+<!-- the Header -->
+
+
+<!ELEMENT	newsbookHeader		( title )						>
+
+<!ELEMENT	title			( #PCDATA )						>
+
+
+<!-- the main body -->
+
+<!ELEMENT	newsbookText		( p | head | poem | table | hr | pb | img | note )*	>
+
+
+
+<!ELEMENT	p			( #PCDATA | i | go | em | reg | unclear | pb | ptr
+					| img )*						>
+
+<!ELEMENT	head			( #PCDATA | i | go | em | reg | unclear | pb | ptr )*	>
+<!ATTLIST	head
+		level			( 1 | 2 | 3 )				#REQUIRED	>
+
+
+<!ELEMENT	note			( p | head | poem | table | hr | pb | img | note )*	>
+<!ATTLIST	note
+		place			( side | foot | end | unspec )		"unspec"
+		id			CDATA					#REQUIRED	>
+
+<!ELEMENT	i			( #PCDATA | em | reg | unclear | pb )*			>
+
+<!ELEMENT	go			( #PCDATA | em | reg | unclear | pb )*			>
+
+<!ELEMENT	em			( #PCDATA | reg | unclear )*				>
+
+<!ELEMENT	unclear			( #PCDATA | i | go | em | reg | pb )*			>
+<!ATTLIST	unclear
+		extent			CDATA					#IMPLIED	>
+
+<!ELEMENT	reg			( #PCDATA )						>
+<!ATTLIST	reg
+		orig			CDATA					#REQUIRED	>
+
+
+
+<!ELEMENT	hr			EMPTY							>
+<!ELEMENT	pb			EMPTY							>
+<!ATTLIST	pb
+		n			CDATA					#REQUIRED	>
+<!ELEMENT	img			EMPTY							>
+<!ATTLIST	img
+		src			CDATA					#IMPLIED
+		alt			CDATA					#REQUIRED	>
+<!ELEMENT	ptr			EMPTY							>
+<!ATTLIST	ptr
+		target			CDATA					#REQUIRED	>
+
+
+
+
+
+<!ELEMENT	poem			( stanza | pb | head )*					>
+<!ATTLIST	poem
+		basefont		( roman | italic | gothic )		#REQUIRED	>
+
+<!ELEMENT	stanza			( line, ( line | pb )* )				>
+
+<!ELEMENT	line			( #PCDATA | i | go | em | reg | unclear | pb | ptr )*	>
+
+<!ELEMENT	table			( tr+ )							>
+<!ELEMENT	tr			( td+ )							>
+<!ELEMENT	td			( p | h1 | h2 | h3 | poem | img	)			>
+<!ATTLIST	td
+		colspan			CDATA					"1"
+		rowspan			CDATA					"1"		>
+
+<!-- if a td is empty, tag it as <td><p></p></td> or <td><p>&nbsp;</p></td> -->
+
+
+
+<!-- Entities used in corpus are either (a) numeric Unicode entities, or (b) -->
+<!-- entities drawn from (X)HTML. So the W3C's entity declarations are used.    See http://www.w3.org/2003/entities/xhtml1doc/overview.html -->
+
+
+       <!ENTITY % xhtml1-lat1 SYSTEM
+         "xhtml1-lat1.ent"
+       >
+       %xhtml1-lat1;
+
+       <!ENTITY % xhtml1-special SYSTEM
+         "xhtml1-special.ent"
+       >
+       %xhtml1-special;
+
+       <!ENTITY % xhtml1-symbol SYSTEM
+         "xhtml1-symbol.ent"
+       >
+       %xhtml1-symbol;
+
+
+

@@ -8,7 +8,9 @@ documentclass: book
 bibliography: [r_for_news.bib]
 csl: mhra.csl
 github-repo: yannryanBL/r-for-news-data
-description: "This is a book to help new and existing users find and analyse historical newspaper data, using the programming language R-Studio."
+description: "This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio."
 ---
 
 # Preface
+
+This is a book about how to find, download and use newspaper data. It has been written, in part, by an employee who worked at the British Library, but it does not represent their views in any way. 

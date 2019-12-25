@@ -1,12 +1,19 @@
 # Introduction
 
+
+## What is newspaper data?
+
+
 Get a nice image for here
 
+## Why is it useful?
 There is a _lot_ of newspaper data available now for historical researchers. Across the globe, Heritage Organisations are digitising their collections. Most news digitisation projects do OCR and zoning, meaning that the digitised images are processed so that the text is machine readable, and then divided into articles. It's far from perfect - we'll show some examples in a later chapter - but it does generate a large amount of data: both the digitised images, and the underlying text and information about the structure.  Once you get hold of this data, the rewards can be huge: looking just at English-language users in the last few years, researchers have used it to understand Victorian jokes, trace the movement of information and ideas, understand the effects of industrialisation, track the meetings of radical groups, and of course understand more about the newspapers themselves and the print culture that surrounds them.
 
 While there has been a lot digitised, their is much, much more still to be done. The collection, in any country, is far from representative. But we must work with what we've got. The new histories of the press will be written by looking at text at scale, drawing broad conclusions, understanding genre, authorship and so forth through data analysis. 
 
 We're just at the beginning: in the last few years projects have been using neural networks methods to improve the kinds of things we can do: the Living with machines project, for example, or several projects at the Royal Library in the Netherlands. The methods I describe here are simplistic, but they can still add to our understanding. 
+
+[//]:  #Change these out for real plots, using title list and shapefile - need to make a UK-Ireland shapefile!
 
 ```{r echo=FALSE, fig.show = "hold", out.width = "50%", fig.cap="The portion of British Library Digitised Newspaper Content, and the physical collection, mapped", message=FALSE, warning=FALSE, fig.align = "default"}
 knitr::include_graphics(c("images/online-circles.png", "images/title_holdings.png"))                      
@@ -69,7 +76,8 @@ df %>% ggplot() + geom_point(aes(x = a, y = d, color = b), size = 5)
 There are bits of Python throughout, where I've only managed to work something out using that language. This is done using ```Reticulate```, which allows for Python within R markdown. I hope I'll be able to revise at some stage and do everything through one language.
 
 How did I write the book? In R-studio, bookdown and bibdesk
-There are a million things I could and woul dlike to explain detail.
+There are a million things I could and would like to explain detail.
+
 ## Why R?
 Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists. 
 A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.
@@ -78,14 +86,16 @@ A lot of this is because of developers like Hadley Wickham and R studio - the ti
 
 ### The Tidyverse
 
-Historians using the language: Sharon Howard, 
+Historians using the language: Sharon Howard, work on criminal tattoos. Bruno Rodrigues
 
 Writing a book with such a specific goal is a bit of a weird proposition
 
 ## Sources
+
 ### Country by country
 
 ## Methods
+
 ### Network analysis of seventeenth century
 
 ### Mapping
@@ -93,3 +103,11 @@ Writing a book with such a specific goal is a bit of a weird proposition
 ### Geocoding
 
 ## Text mining
+
+## Format of the book
+
+The rest of this book is divided into three sections: 
+* Data, which goes through the availability of various news datasets, for the moment with a heavy emphasis on the UK
+* Methods, which talks through some of the techniques in a broad sense
+* Examples, which uses the techniques above to actually do some stuff.
+
