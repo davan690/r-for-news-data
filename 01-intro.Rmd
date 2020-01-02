@@ -3,6 +3,7 @@
 
 ## What is newspaper data?
 
+Difference between content and data? It's arbitrary, all of the digitised content could be considered data. Perhaps it takes on that name when we do certain acts on it? For example the images become data 
 
 Get a nice image for here
 
@@ -13,7 +14,11 @@ While there has been a lot digitised, their is much, much more still to be done.
 
 We're just at the beginning: in the last few years projects have been using neural networks methods to improve the kinds of things we can do: the Living with machines project, for example, or several projects at the Royal Library in the Netherlands. The methods I describe here are simplistic, but they can still add to our understanding. 
 
-[//]:  #Change these out for real plots, using title list and shapefile - need to make a UK-Ireland shapefile!
+[//]: # Change these out for real plots, using title list and shapefile - need to make a UK-Ireland shapefile!
+
+[//] # Data - adds to statistics, gives another point of view. Another way of thinking about historical fact?
+
+[//] # 
 
 ```{r echo=FALSE, fig.show = "hold", out.width = "50%", fig.cap="The portion of British Library Digitised Newspaper Content, and the physical collection, mapped", message=FALSE, warning=FALSE, fig.align = "default"}
 knitr::include_graphics(c("images/online-circles.png", "images/title_holdings.png"))                      

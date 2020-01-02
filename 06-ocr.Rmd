@@ -21,6 +21,8 @@ What does this all mean? Well, it introduces bias, and probably in non-random wa
 
 ## What information do we have on OCR?
 
+Can you add anything on different between JISC and BNA 'confidence scores'? Do a comparison?
+
 ### Error rate
 
 The error rate reported by the software is a confidence score. The overall confidence score is an average of all these scores. It's not testing against anything but itself: it could have a high confidence score but be completely wrong - perhaps the computer has a misguided sense of its own accuracy? Or it could be crippled with self-doubt, and report very low scores whilst in fact getting everything correct. 

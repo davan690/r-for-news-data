@@ -212,6 +212,7 @@ Download from here: [British Library Research Repository](https://doi.org/10.236
 You would need to extract into your project folder first, if you're following along at home:
 
 ```read_csv``` reads the csv from file.
+
 ```{r}
 title_list = read_csv('data/BritishAndIrishNewspapersTitleList_20191118.csv')
 ```
