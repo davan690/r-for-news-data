@@ -1,5 +1,8 @@
 # Introduction
 
+## Unlocking the past with newspaper data
+
+Write an example here. Start with metadata, find a bunch of newspapers you're interested in. From this make a corpus. Map, plot, text mine, make an interactive visualisation. Understand patterns of text reuse, or use relative frequencies of keywords to see when they were emphasised.
 
 ## What is newspaper data?
 
@@ -40,9 +43,11 @@ Hopefully, by the end of this book, you will have:
 * Know what newspaper data is available, in what format, across a variety of countries and languages.
 * Understand something of the various XML formats which make up most newspaper data sources
 * Have been introduced to a number of tools which are particularly useful for large-scale text mining of huge corpora: n-gram counters, topic modelling, text re-use. Including some specific to news, such as the R library _Newsflow_.
-* Understand how the tools can be used to answer some basic historical questions (if not provide any answers)
+* Understand how the tools can be used to answer some basic historical questions (whether they provide answers, I'll leave for the reader and historian to decide)
 
-Historians have used newspaper data to do x and y. Newspapers have long bee thought of as a proxy for public opinion, a historical source or 'first draft of history', used to study the movement and genesis of knowledge and information, help to understand the mix of private and public, how power can be advanced through news, and so forth. Some people might not even be interested in the news in its own right: how it was created, distributed, shaped, what the political pressures were, how it was read at different times, and how it came to shape those who read it.
+Historians have used newspaper data to do x and y.[@Hills:2019aa] Newspapers have long been thought of as a proxy for public opinion, a historical source or 'first draft of history', used to study the movement and genesis of knowledge and information, help to understand the mix of private and public, how power can be advanced through news, and so forth. Information, and access to it, was key to understanding the movements and processes that shaped early modern and Victorian society. Understanding newspapers at scale can help with that.
+
+ome people might not even be interested in the news in its own right: how it was created, distributed, shaped, what the political pressures were, how it was read at different times, and how it came to shape those who read it.
 
 What do you need in advance?
 Probably a mix of coding skills etc. 
@@ -83,9 +88,18 @@ There are bits of Python throughout, where I've only managed to work something o
 How did I write the book? In R-studio, bookdown and bibdesk
 There are a million things I could and would like to explain detail.
 
+There are a couple of things you'll need in order to build a copy of the book yourself. This may not be important to you. One thing that needs to be done is entering a bing API key for the relevant chapter. The book won't complete without this. 
+
 ## Why R?
+This is a book made _with_ R, and _using_ R, but it is not really _about_ R. I wanted to show some techniques. It should be readable by anyone, but it's possible bits will not be so easy to follow.
 Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists. 
 A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.
+
+CRAN, packages and environments much easier to use. I'll never be a full-time coder, so not worried in learning a 'proper' language. R works. 
+
+Have a look at the list http://dh-r.lincolnmullen.com here, and also Hadley Wickham's R for data science.
+
+[Why I use R](https://blog.shotwell.ca/posts/why_i_use_r/)
 
 ### Who uses R?
 
@@ -95,24 +109,19 @@ Historians using the language: Sharon Howard, work on criminal tattoos. Bruno Ro
 
 Writing a book with such a specific goal is a bit of a weird proposition
 
-## Sources
+## Who is the book for?
+Historians looking to understand news at scale. Undergraduates and postgrads looking to dip their feet into computational methods.
 
-### Country by country
-
-## Methods
-
-### Network analysis of seventeenth century
-
-### Mapping
-
-### Geocoding
-
-## Text mining
+Imagine a PhD student, hasn't used newspaper data before. What is available? How can she access it? Does she need to visit the library, or will she be happy with what's available online? 
 
 ## Format of the book
 
 The rest of this book is divided into three sections: 
 * Data, which goes through the availability of various news datasets, for the moment with a heavy emphasis on the UK
 * Methods, which talks through some of the techniques in a broad sense
-* Examples, which uses the techniques above to actually do some stuff.
+* Examples, which uses the techniques above to actually do some stuff - these are like mini research projects, intending to show how R can help with newspapers and also show something interesting. 
+
+The book doesn't need to be read in its entirety: if you're just interested in finding newspaper data, specifically that collected by the British Library, you could stick with the first part. You might be a much better programmer than me and just interested in the scope of the Library's datasets for some analysis - for instance, it might be useful to look at the chapters on the BNA and JISC digitisation projects, to get a handle on how representative the data you have is. You might have arrived at the Library to do some research and not know where to begin with our folder structure and so forth. As much of that information as possible has been included
+
+
 

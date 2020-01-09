@@ -296,6 +296,14 @@ title_list %>%
   geom_bar(aes(x = country_of_publication, weight = n))
 ```
 
+### Other relevant stuff, particularly for historians
+#### Dealing with dates
+
+#### Maps/coordinates
+This will be mostly pointing at other resources, aim mainly to point out that R can do mapping well.
+
+#### Other relevant functions
+
 So that's a very quick introduction to R. There's loads of places to learn more. 
 
 [R-studio cheat sheets](https://www.rstudio.com/resources/cheatsheets/)

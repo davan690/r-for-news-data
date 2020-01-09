@@ -1,0 +1,529 @@
+# Network detection and bipartite
+(Make a version with a small number of files for demonstration)
+### Background
+
+I've written elsewhere about how until the end of the seventeenth century, news was written in paragraphs. In the sample page above you can see that the paragraphs start with a place dispatch, and some of them contain news from other places. If you look at the paragraph 'From _Hamburg_, April 12 stilo novo' on the second page, you'll see that the paragraph contains news 'from Denmark'. News from Denmark was being sent to Hamburg. I spent much of my PhD research looking for these connections, because I think they tell you a lot about information flow. 
+
+Here I describe a _bipartite_ network, meaning that places are connected if they share the same paragraph - but we need a) a list of places to work with and b) some way of filtering out so we only get the headers and then text preceded by 'from'.
+
+These are the steps: 
+
+* Download the Lancaster newsbook corpus
+* Turn it into plain text, and run it through the Edinburgh geoparser to get a list of places
+* Generate a list of all places found by the geoparser
+* Go back to the original files, add all the places found, organised by paragraph
+* In R, use this to make a bipartite network, where the edges are a shared paragraph.
+
+I've done all this in a markdown document which contains both Python and R, but to be completely reproducible it requires downloading a piece of software called the Edinburgh geoparser and running a shell script. I've included this as text instructions rather than code. 
+
+Make sure we load Python3 and not 2:
+
+```{r setup, echo=FALSE}
+library(knitr)
+opts_chunk$set(engine.path = '~/anaconda3/bin/python')
+```
+
+
+Download the Lancaster newsbook corpus from here: https://ota.ox.ac.uk/id/2531
+
+It's a set of newsbooks transcribed using the TEI standard.
+
+First we need to turn all the .xml files into plain text (python):
+
+We'll use the BeautifulSoup library and Python to process the .xml:
+
+This lets us run Python in R markdown:
+
+```{r}
+library(reticulate)
+library(knitr)
+
+```
+
+This makes sure that we run python3 and not 2:
+
+Use beautifulSoup to process the .xml into plain text:
+
+```{python}
+from bs4 import BeautifulSoup
+import glob
+all_files = glob.glob("/Data/1654_newsbooks/*.xml")
+for n, file in enumerate((all_files)):
+    with open("file{}.txt".format(n),"a+") as f:
+        infile = open(file, encoding = 'latin1').read()
+        soup = BeautifulSoup(infile)
+        print(soup.text, file = f)
+```
+
+Download the Edinburgh Geoparser: https://www.ltg.ed.ac.uk/software/geoparser/
+
+Put all the finished text files from the code above in the 'in' folder.
+
+
+To bulk geoparse the text files, follow the instructions here: https://programminghistorian.org/en/lessons/geoparsing-text-with-edinburgh#geo-parsing-multiple-text-files
+
+Download the shell script: http://groups.inf.ed.ac.uk/geoparser/scripts/run-multiple-files.sh
+
+Open the script and change settings to the following - this uses the geonames dataset, and it gives a bounding box around Europe, within which the geoparser will try to find the places first. 
+
+#cat $i | ./run -t plain -g geonames -o $outputdirname $prefix -lb 27.3 68.5 52.2 34.3 10
+
+Put the shell scrip in the scripts folder, open a terminal window, browse to the folder, run ./run-multiple-files.sh -i ../in -o ../out
+
+This gives us a lot of files. One ends in .gaz.xml, and just lists each of the places in very simple XML. We can go back to the files at a later point and get coordinates, but just the place names will do for now. 
+
+We want a list of places to then feed back into the lancaster .xml which has paragraph information.
+
+This code below creates the list of places, including coordinates, from the Edinburgh geoparser: 
+
+```{python}
+from bs4 import BeautifulSoup
+import glob
+
+read_gaz_files = glob.glob("/Users/coding/Documents/r-projects/lcc_workshop/geoparser-v1.1/out/file*.gaz.xml")
+
+outputfile = open('geoparsedfiles.tsv', 'w')
+for file in read_gaz_files:
+    xml = open(file).read()
+    soup = BeautifulSoup(xml)
+    for place in soup.find_all('place'):
+        if place['clusteriness_rank'] == "1":
+           print(place['name'] + '\t' + place['lat'] + '\t' + place['long'], file = outputfile)
+```
+
+This next bit is in R, because I haven't got around to learning proper data wrangling in python yet.
+
+Load some R libraries we'll use:
+
+```{r warning=FALSE}
+library(tidyverse)
+```
+
+Load the file from R, change the column names. Ok this bit might be a bit pointless.
+
+```{r}
+geoparsedfiles <- read.delim("~/Documents/GitHub/lancaster_files/edinburgh-parsed-places/geoparsedfiles.tsv", header=FALSE, encoding = 'Latin1')
+
+colnames(geoparsedfiles) = c('place', 'lat', 'lng')
+```
+
+Write it back to a .csv for python (sorry)
+
+```{r}
+geoparsedfiles %>% write.csv("places_foreign.csv")
+```
+
+Using the list of places from the Edinburgh geoparser, we go through all the original Lancaster newsbook files and add places, as well as a unique code for each paragraph:
+
+It uses the BeautifulSoup library to parse the XML.
+
+Basically this next code:
+
+* checks the first and second word of each paragraph, and if they are in our list of places found by Edinburgh, it prints them, along with a unique paragraph code, and the newspaper issue filename.
+* Checks through each word in each paragraph, and any time it finds 'from', it prints out the _following_ word, and again, the unique code and filename.
+
+```{python}
+from bs4 import BeautifulSoup
+import glob
+
+from csv import DictReader # Make a list of every place found by Edinburgh geoparser
+with open("places_foreign.csv") as f:
+    cityList = [row["place"] for row in DictReader(f)]
+
+cityList = [x.lower() for x in cityList]
+index_int = 0
+
+
+all_files = glob.glob("/Users/coding/Documents/GitHub/lancaster_files/Data/1654_newsbooks/*.xml")
+
+log = open('paragraphs_foreign.tsv', 'w')
+
+for file in all_files:
+    newsbook = open(file, encoding = 'latin1').read()
+    soup = BeautifulSoup(newsbook)
+    for link in soup.find_all('p'):
+        paragraph_list = []
+        paragraph_list.append(link.text)
+        try:
+            for paragraph in paragraph_list:
+                    index_int +=1
+                    lower_list = [x.lower() for x in paragraph.split(' ')]
+                    if lower_list[0] in cityList:
+                        print(lower_list[0]+ '\t' + str(index_int) + '\t' + file[67:-4] + '\t' + 'x' + '\t' + 'header', file = log)
+                    elif lower_list[1] in cityList:
+                        print(lower_list[1]+ '\t' + str(index_int) + '\t' + file[67:-4] + '\t' + 'x' + '\t' + 'header', file = log)
+                    for index, item in enumerate(lower_list):
+                        next = index + 1
+                        if next < len(lower_list):
+                            if item == 'from':
+                                if lower_list[index +1] in cityList:
+                                    print(lower_list[index + 1] + '\t' + str(index_int) + '\t' + file[67:-4] + '\t', next, file = log)
+                                    
+        except:
+            pass
+```
+
+Load libraries for making the bipartite network:
+
+```{r warning=FALSE}
+library(tidygraph)
+library(igraph)
+library(ggraph)
+library(ggthemes)
+```
+
+Load the file we've made with Python, get rid of the unnecessary fourth column, and have a look:
+
+```{r}
+paragraphs_foreign <- read.delim(
+  "paragraphs_foreign.tsv", 
+  header=FALSE, 
+  stringsAsFactors=FALSE) %>% distinct(V1,V2, V3, .keep_all = TRUE) %>% select(V1, V2, V3, V5)
+print(head(paragraphs_foreign))
+```
+
+Change the column names and keep only distinct rows - this is because our headers will also get picked up by the second part of the algorithm as in the code above. Also add 'inner' to the blank fields - now we know whether our location was a header (so a place of dispatch) or an inner (relay) place. Very useful. 
+
+```{r}
+colnames(paragraphs_foreign) = c('place', 'paragraph', 'title', 'type')
+
+paragraphs_foreign = paragraphs_foreign %>% distinct(place, paragraph, title, .keep_all = TRUE)
+
+paragraphs_foreign = paragraphs_foreign %>% mutate(type = replace(type, type == '', 'inner'))
+```
+
+### Mapping locations
+
+First we can map the places by volume of mentions, colour by type - whether they were a relay or first point of dispatch.
+
+
+```{r}
+geoparsedfiles$place = tolower(geoparsedfiles$place)
+```
+
+```{r}
+paragraphs_foreign %>% left_join(geoparsedfiles %>% arrange(desc(lng)) %>%distinct(place, .keep_all = TRUE))
+```
+
+Though it's good at finding locations, the coordinates from the Edinburgh software are pretty terrible. We can do better with an off the shelf geocoder.
+
+```{python echo=T, results='hide'}
+from functools import partial
+
+import pandas as pd
+df = pd.read_csv("places_foreign.csv")
+
+from geopy.point import Point
+
+df = df['place'].value_counts()
+df.to_csv('out.csv')
+df = pd.read_csv("out.csv", names=['name','amount'])
+
+from geopy.geocoders import Bing
+geolocator = Bing(api_key="ApDo61amTsQG-fkx14lyuQw6ELnaxJScMTSYTXm-icu1VdHGkmIUDNdrxDUc0uOQ")
+
+from geopy.extra.rate_limiter import RateLimiter
+geocode = RateLimiter(geolocator.geocode, min_delay_seconds=.1)
+from tqdm._tqdm_notebook import tqdm_notebook
+tqdm_notebook.pandas(desc = "Geocoding locations:")
+df['location'] = df['name'].progress_apply(partial(geocode, user_location=(Point(latitude=53.5, longitude=2.4)),culture='EN'))
+
+df['point'] = df['location'].apply(lambda loc: tuple(loc.point) if loc else None)
+
+df.to_csv('out.csv')
+```
+
+Load the geocoded points and do some processing:
+
+```{r}
+points = read_csv('out.csv') 
+
+colnames(points)[2] = 'place'
+
+points$place = tolower(points$place)
+
+points = points %>% mutate(point = str_replace(point,'\\(','')) %>% separate(col = point, into = c('lat','lng'), sep = ',')
+```
+
+```{r}
+paragraphs_foreign %>% group_by(place, type) %>% tally() %>% left_join(points) 
+```
+
+```{r}
+library(mapdata)
+```
+
+Draw a blank map:
+
+```{r}
+map = map_data('world')
+```
+
+```{r}
+ggplot() + 
+  geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = 'gray50') + 
+  coord_fixed(1.3, xlim = c(-12, 25), ylim = c(35, 60)) 
+```
+
+```{r}
+ggplot() + 
+  geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = 'gray60') + 
+  coord_fixed(1.3, xlim = c(-12, 25), ylim = c(35, 60)) + geom_point(data = paragraphs_foreign %>% group_by(place, type) %>%
+                                                                       tally() %>% 
+                                                                       left_join(points), aes(x = as.numeric(lng), y = as.numeric(lat), size = n, fill = type), alpha = .6, color = 'black', pch = 21) + theme_map() + 
+  theme(legend.position = 'bottom')
+```
+
+
+Now on to the network. 
+
+Make a unique code by concatenating the paragraph and title strings:
+
+```{r}
+paragraphs_foreign$code = paste0(paragraphs_foreign$paragraph, paragraphs_foreign$title)
+
+```
+
+Now we have a dataframe with geographic terms, each with a unique paragraph code, and information on whether they were in the header. Basically I've just invalidated the first six months of my PhD research.
+
+Make our final file, which is just the placename and the unique paragraph code. Filter out 'York' and 'Conde' because although these are places, they are used much more to refer people in this set of newsbooks and throw off the data:
+
+```{r}
+networkdf = paragraphs_foreign %>% 
+  select(place, code) %>% 
+  filter(!place %in% c('York', 'Conde'))
+head(networkdf)
+```
+
+Time to make a bipartite network as described here, using igraph: https://rpubs.com/pjmurphy/317838
+
+A bipartite network is one in which the elements are connected because they share a common property. So in this example, our elements are cities, connected because they share a paragraph. 
+
+First make a regular igraph network:
+
+```{r}
+g = graph.data.frame(networkdf, directed=FALSE)
+```
+
+Next we make the bipartite matrix
+
+```{r}
+V(g)$type <- bipartite_mapping(g)$type
+bipartite_matrix <- as_incidence_matrix(g)
+title_matrix_prod <- t(bipartite_matrix) %*% bipartite_matrix
+
+```
+
+This creates a matrix with each place in each row and each column. The numbers represent the times they were mentioned in the same paragraph. We can see, for example, that Paris and Flanders were mentioned 4 times together, but Paris and Scotland only once. When we go to draw the network, Paris will be placed closer to Flanders than to Scotland. 
+
+```{r}
+place_matrix_prod <- bipartite_matrix %*% t(bipartite_matrix)
+place_matrix_prod <- bipartite_matrix %*% t(bipartite_matrix)
+diag(place_matrix_prod) <- 0
+place_matrix_prod[order(place_matrix_prod[,1], decreasing = TRUE),][0:10,0:10]
+```
+
+This turns the matrix into a network graph object:
+
+```{r}
+places_overlap <- graph_from_adjacency_matrix(place_matrix_prod,
+mode = "undirected",
+weighted = TRUE)
+```
+
+This turns the network graph object into a tidygraph object, which I find easier to work with.
+
+```{r}
+tg = as_tbl_graph(places_overlap)
+tg
+```
+Draw the network diagram:
+
+Unsurprisingly, places associated with each other are placed close together. Stockholm, Gothenburg, and Frankfurt form a separate group, for example. Points are sized by their overall connections: Paris and London have the most, and are at the centre. 
+
+```{r}
+create_layout(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+  left_join(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+           as_tibble() %>% group_by(group_lv) %>%
+    tally()), node.posit)
+```
+
+
+```{r}
+
+
+  ggraph(graph = tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% inner_join(layout), layout = 'manual', node.positions = layout ) +
+  geom_node_point(alpha = .5, 
+                  pch = 21,
+                  color = 'black',
+                  aes(size = degree,
+                      fill = factor(group_lv))) + theme_graph()
+
+
+```
+```{r}
++ 
+    geom_edge_link(alpha = .1, size = 1) +
+  geom_node_text(alpha = .8, 
+                 aes(size = degree, 
+                     label =ifelse(degree > 0, 
+                                   as.character(name), 
+                                   NA_character_)), 
+                 repel = FALSE, 
+                 show.legend = FALSE) + 
+  theme_map() + 
+  scale_size_area()
+```
+
+I think this has actually done an amazing job - it's really similar to the network I made with manual data. Important places are in the centre, and some connecting cities (Madrid, Genoa, Venice, for example) are really obvious in the network. 
+
+Tidygraph allows for lots of easy calculations of network metrics - here I've plotted the total connections - here's the top 20:
+
+```{r}
+tg %>%
+  activate(edges) %>% 
+  filter(weight > 1) %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  filter(degree>1) %>% 
+  as.data.frame() %>%
+  arrange(desc(degree)) %>% head(20) %>% 
+  ggplot() +  
+  geom_bar(aes(x = reorder(name, degree), y = degree), stat = 'identity', fill = 'lightblue', color = 'black', alpha = .8) + coord_flip() + theme_minimal() + ggtitle("1654 newsbook locations, ranked by connections (degree):") + theme(axis.title.y = element_blank())
+```
+Here's a plot of another measure of centrality, betweenness, which measures how like a node is to be used as a path between all other pairs of nodes.
+
+```{r}
+tg %>%
+  activate(edges) %>% 
+  filter(weight > 1) %>% 
+  activate(nodes) %>% 
+  mutate(between = centrality_betweenness()) %>%
+  as.data.frame() %>%
+  arrange(desc(between)) %>% head(20) %>% 
+  ggplot() +  
+  geom_bar(aes(x = reorder(name, between), y = between), stat = 'identity', fill = 'lightblue', color = 'black', alpha = .8) + coord_flip() + theme_minimal() + ggtitle("1654 newsbook locations, ranked by betweenness:") + theme(axis.title.y = element_blank())
+```
+
+```{r}
+tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+  left_join(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+           as_tibble() %>% group_by(group_lv) %>%
+    tally() )%>% 
+  filter(n>1) %>% as_tibble() %>% left_join(points, by = c('name' = 'place'))
+```
+
+```{r}
+ggplot() + 
+  geom_polygon(data = map, aes(x = long, y = lat, group = group), fill = 'gray60') + 
+  coord_fixed(1.3, xlim = c(-12, 25), ylim = c(35, 60)) + geom_point(data = tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+  left_join(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+           as_tibble() %>% group_by(group_lv) %>%
+    tally() )%>% 
+  filter(n>1) %>% as_tibble() %>% left_join(points, by = c('name' = 'place')), aes(x = as.numeric(lng), y = as.numeric(lat), size = degree, fill = factor(group_lv)), alpha = .6, color = 'black', pch = 21) + theme_map() + 
+  theme(legend.position = 'bottom') + geom_text(data = tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+  left_join(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+           as_tibble() %>% group_by(group_lv) %>%
+    tally() )%>% 
+  filter(n>1) %>% 
+    as_tibble() %>% 
+    left_join(points, by = c('name' = 'place')),
+  aes(x = as.numeric(lng),
+      y = as.numeric(lat), 
+      size = degree, label = name), 
+  alpha = .6, 
+  color = 'black', 
+  pch = 21) + 
+  theme_map() + 
+  theme(legend.position = 'bottom')
+```
+
+
+```{r}
+tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+  left_join(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+           as_tibble() %>% group_by(group_lv) %>%
+    tally()) %>% 
+  filter(n>1)%>% left_join(points, by  = c('name' = 'place')) %>%
+  mutate(x = lng) %>%
+  mutate(y = lat) %>%
+  ggraph(layout = 'manual') +
+  geom_node_point(alpha = .5, 
+                  pch = 21,
+                  color = 'black',
+                  aes(size = degree))
+```
+
+
+```{r}
+spatial_layout <- layout.norm(as.matrix(tg %>% 
+  activate(nodes) %>% 
+  left_join(points, by  = c('name' = 'place')) %>% as_tibble() %>% mutate(x = lng) %>% 
+    mutate(y = lat)
+```
+
+```{r}
+
+```
+
+```{r}
+manual_layout <- create_layout(graph = tg,
+              layout = "manual", node.positions = tg %>% 
+  activate(nodes) %>% 
+  left_join(points, by  = c('name' = 'place')) %>% as_tibble() %>% mutate(x = lng) %>% 
+    mutate(y = lat))
+```
+
+```{r}
+plot.igraph(tg, layout = spatial_layout)
+```
+
+```{r}
+layout = tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+  left_join(tg %>% 
+  activate(nodes) %>% 
+  mutate(degree = centrality_degree()) %>%
+  mutate(group_lv = group_louvain()) %>% 
+           as_tibble() %>% group_by(group_lv) %>%
+    tally()) %>% 
+  filter(n>1)%>% left_join(points, by  = c('name' = 'place')) %>%
+  mutate(x = lng) %>%
+  mutate(y = lat) %>% as_tibble() %>% select(name, x, y)
+```
+

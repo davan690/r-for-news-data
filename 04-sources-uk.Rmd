@@ -1,12 +1,37 @@
 # UK Newspaper Data
+
+## What access do you need?
+
+### Want to find individual articles.
+Access through the BNA or Gale data, depending on access. BNA if you need the most coverage, and are interested particularly in local or regional titles. Gale has better search facilities but less content. 
+### Want to do some simple text mining, not so bothered about regional coverage
+Probably access HMD titles through the repository
+
+### Want to do text mining on a large corpus
+Request access to the Library's newspapers through BL labs or elsewhere. Get access to raw files. Do you own analysis or else follow steps here to extract the data. There's instructions for JISC and HMD titles. 
+
+### Want to do text mining on the entire digitised collection
+You'll need to speak to FMP, who run the British Newspaper Archive. They do take requests for access. There is a dataset of n-grams which has been used for text mining, sentiment analysis etc. and might be useful, though the collection has grown significantly since this point. 
+
+### Want to do something involving the images, such as computer vision techniques, 
+You'll probably need to request access to newspapers through the British Library, or through Gale. Gale will send a copy of the JISC 1 & 2 data (with OCR enhancements) on a hard drive to researchers, for a fee. Access through the Library will allow for image analysis but might be difficult to take away. The images up to 1878 are cleared for reuse.
+
 ## Intro to British Library Newspapers
 >Systematic collection of newspapers at the British Museum (the precursor of the British Library) did not really begin until 1822. At that time publishers were obliged to supply copies of their newspapers to the Stamp Office so that they could be taxed. In 1822 it was agreed that these copies would be passed to the British Museum after a period of three years. From 1869 onwards newspapers were included in the legal deposit legislation and were then deposited directly at the British Museum. This systematic application of legal deposit requirements means that many thousands of complete runs of newspapers have accumulated. The majority of newspapers collected are those published since 1800.[@ed-king-gale]
+
+A couple of lines
+
+54 Andrew Prescott, ‘Searching for Dr. Johnson: The Digitisation of the Burney Newspaper Collection’, in Travelling Chronicles: News and Newspapers from the Early Modern Period to the Eighteenth Century, ed. by Siv Gøril Brandtzæg, Paul Goring, and Christine Watson (Leiden: Brill, 2018), p. 55 [@travelling-chron]
 
 What does this all mean for the data? First of all, it means that only a fraction of what was published has been preserved or collected, and only a fraction of that which has been collected has been digitised. 
 
 It's all very well being able to access the content, but for the purposes of the kind of things we'd like to do, access to the data is needed. 
 
 Lancaster Newsbook Corpus
+
+## Burney Collection
+
+Make a chart of what's available
 
 ## JISC Newspaper digitisation projects
 Maybe a separate chapter?
@@ -186,6 +211,7 @@ There are several important implications for this. First, most data-driven histo
 
 This is not only because of volume but also because of the change in focus and digitisation policy. Newspapers are selected for various reasons, but an underlying principle of coverage seems to be important: newspapers are obviously not selected at random, which necessarily results in a changing, evolving idea of bias. 
 
+Include a line chart of all the titles, by year. Explain 1855, and earlier missing issues/titles. Don't go into too much detail as its explained elsewhere.
 
 ```{r include=FALSE}
 nlp_years = read_csv('https://tiles-api.britishnewspaperarchive.co.uk/readingroom.csv')

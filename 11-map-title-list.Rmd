@@ -178,3 +178,113 @@ ggplot() + geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), 
 
 
 ## Choropleth map
+
+### Which libraries are needed
+```{r message=FALSE, warning=FALSE}
+library(sf)
+library(rgdal)
+library(broom)
+library(rgeos)
+```
+
+
+
+### Download a shapefile
+
+[From here](https://data.gov.uk/dataset/0fb911e4-ca3a-4553-9136-c4fb069546f9/ceremonial-county-boundaries-of-england)
+
+### Have a look at the shapefile
+
+```{r}
+england_shp = readOGR(dsn = "data/english_ceremonial_counties", layer = "English Ceremonial Counties")
+```
+The next thing to do is use a library called broom and a function called ```tidy()```. This turns the shapefile into a dataframe which can be read and plotted by ggplot2. 
+
+First change the projection:
+
+```{r}
+pc <- spTransform( england_shp, CRS( "+init=EPSG:4326" ) ) 
+```
+
+Then use ```gSimplify()``` to simplify it very slightly:
+
+```{r}
+pc <- gSimplify(pc, tol = 0.00001)
+```
+
+```{r warning=FALSE}
+pc_tidy = broom::tidy(pc, region = 'NAME')
+```
+
+Add back in the data, which gSimplify doesn't keep:
+
+```{r}
+pc_df <- england_shp@data
+pc <- sp::SpatialPolygonsDataFrame(pc, pc_df)
+```
+
+Finally, do the tidy again. It should work this time. 
+
+```{r warning=FALSE}
+pc_tidy = broom::tidy(pc, region = 'NAME')
+```
+
+https://gis.stackexchange.com/questions/243569/simplify-polygons-of-sf-object
+
+```{r}
+county_totals = title_list %>% 
+  group_by(general_area_of_coverage) %>% 
+  tally()
+```
+
+```{r warning=FALSE}
+pc_tidy = broom::tidy(pc, region = 'NAME')
+```
+
+Draw the map:
+```{r}
+ggplot() + 
+  geom_polygon(data = pc_tidy, aes(x = long, y = lat, group = group))
+```
+
+Add in the counts using ```left_join()```
+
+```{r}
+ggplot() + 
+  geom_polygon(data = pc_tidy %>% 
+                 left_join(county_totals, 
+                           by = c('id' = 'general_area_of_coverage')), 
+               aes(x = long, y = lat, 
+                   fill = n, group = group)) + 
+  theme_void() + 
+  coord_fixed(1.3) + scale_fill_viridis_c()
+```
+
+```{r}
+anti_join(title_list %>% 
+            filter(country_of_publication == 'England') %>% 
+            group_by(general_area_of_coverage) %>% 
+            tally(),pc_tidy %>% 
+            group_by(id) %>% 
+            tally() %>% 
+            select(id), by = c('general_area_of_coverage' = 'id')) %>% 
+  arrange(desc(n))
+```
+```{r}
+anti_join(pc_tidy %>% group_by(id) %>% tally() %>% select(id),title_list %>% filter(country_of_publication == 'England') %>% group_by(general_area_of_coverage) %>% tally(), by = c('id' = 'general_area_of_coverage')) 
+
+```
+
+```{r}
+knitr::kable(
+  head(mtcars[, 1:8], 10), booktabs = TRUE,
+  caption = 'A table of the first 10 rows of the mtcars data.'
+)
+```
+
+
+### Count the general area of coverage field
+
+### Change some of the names to fit the shapefile
+
+### 
