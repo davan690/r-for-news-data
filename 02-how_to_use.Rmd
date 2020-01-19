@@ -7,12 +7,12 @@ You can just read this book as is, but you can also play around with it, change 
 
 ## Make changes directly to the markdown files on Github. 
 
-You don't actually need to download and use R-Studio to make changes to the book, but it does of course limit you to simply changing the text. You can simply go to the Github page, click edit, and change whatever you want. It will create a copy for, known as a 'branch', and you can keep working away on it, or you can submit a pull request. If this is approved, it will then get added to the master branch, and be added to the 'live' version of the book.
+You don't actually need to download and use R-Studio to make changes to the book, but it does of course limit you to simply changing the text. You can simply register an account on [Github](Github.com) go to the [Github page](https://github.com/yannryanBL/r-for-news-data). You'll see a list of files. The '.Rmd' files contain the markdown which builds the book. Here you can click edit, and change whatever you want. It will create a copy for, known as a 'branch', and you can keep working away on it, or you can submit a pull request. If this is approved, it will then get added to the master branch, and be added to the 'live' version of the book. It probably works best for small changes like typographical errors, but I guess you could write code as long as it all worked.
 
 ## Download a copy
 This book lives on a public repository on GitHub. That means that it can be downloaded and potentially changed by anyone. You can download a copy of all the files that make up this book, which includes code, figures, pictures, a bibliography file and some other bits. 
 
-It's pretty easy to download, you don't even need a github account. Click download. Extract the zip. 
+It's pretty easy to download, you don't even need a github account. Navigate to [Github page](https://github.com/yannryanBL/r-for-news-data). On the top right-hand corner there's a big green button which says 'clone or download' Clicking on this gives a URL, which can be used with git on your computer to properly download the repository. You can also download the whole things as a zip, unzip it and start a new project in R-studio. 
 
 ## Download R and R-Studio
 The first thing you'll need is R and R-studio. They are separate things, which might seem confusing or really obvious, depending on your exposure to programming languages. R is the main software. You could actually just download this and run it with a command prompt and a text editor, if you wanted to. R-Studio is an interface to the language, which makes it much easier to use, and adds lots of extra features. 

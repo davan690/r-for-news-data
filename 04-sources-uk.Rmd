@@ -21,17 +21,35 @@ You'll probably need to request access to newspapers through the British Library
 
 A couple of lines
 
-54 Andrew Prescott, ‘Searching for Dr. Johnson: The Digitisation of the Burney Newspaper Collection’, in Travelling Chronicles: News and Newspapers from the Early Modern Period to the Eighteenth Century, ed. by Siv Gøril Brandtzæg, Paul Goring, and Christine Watson (Leiden: Brill, 2018), p. 55 [@travelling-chron]
 
-What does this all mean for the data? First of all, it means that only a fraction of what was published has been preserved or collected, and only a fraction of that which has been collected has been digitised. 
+What does this all mean for the data? First of all, it means that only a fraction of what was published has been preserved or collected, and only a fraction of that which has been collected has been digitised. Some very rough numbers. The 'newspaper-year' is a good standard unit. This is all the issues for one title, for one year. Its not perfect, because a newspaper-year of a weekly is worth the same as a newspaper-year for a daily. But it's an easy unit to count. 
 
-It's all very well being able to access the content, but for the purposes of the kind of things we'd like to do, access to the data is needed. 
+```{r}
+library(tidyverse)
+read_csv('https://tiles-api.britishnewspaperarchive.co.uk/readingroom.csv') %>% tally()
+
+```
+
+
+There's currently about 40,000 newspaper-years on the British Newspaper Archive. The entire collection of British and Irish Newspapers is probably, at a guess, about 350,000 newspaper-years. 
+
+It's all very well being able to access the _content_, but for the purposes of the kind of things we'd like to do, access to the _data_ is needed. 
 
 Lancaster Newsbook Corpus
 
+## EEBO/TCP
+
 ## Burney Collection
+54 Andrew Prescott, ‘Searching for Dr. Johnson: The Digitisation of the Burney Newspaper Collection’, in Travelling Chronicles: News and Newspapers from the Early Modern Period to the Eighteenth Century, ed. by Siv Gøril Brandtzæg, Paul Goring, and Christine Watson (Leiden: Brill, 2018), p. 55 
+
+The Burney Collection contains about one million pages, from the very earliest newspapers in the seventeenth century to the beginning of the 19th, collected by Rev. Charles Burney in the 18th century, and purchased by the Library in 1818.[@travelling-chron] It's actually a mixture of both Burney's own collction and stuff inserted since. It was microfilmed in its entirety in the 1970s. As Andrew Prescott has written, 'our use of the digital resource is still profoundly shaped by the technology and limitations of the microfilm set'[@travelling-chron] The collection was imaged in the 90s but because of technological restrictions it wasn't until 2007 when, with Gale, the British Library released the Burney Collection as a digital resource. 
+
+The accuracy of the OCR has been measured, and one report found that the ocr for the Burney newspapers offered character accuracy of 75.6% and word accuracy of 65%.[@travelling-chron]. 
+
 
 Make a chart of what's available
+
+
 
 ## JISC Newspaper digitisation projects
 Maybe a separate chapter?
@@ -78,7 +96,11 @@ map = map_data('world')
 ```
 ```{r include=FALSE}
 library(ggrepel)
+library(snakecase)
+libraryPalette = c("#DA2F65","#FFC82E","#00788B","#CEE055",   "#7E3E98",  "#1E6EB8", "#018074", "#865BE7", "#D44202")
+
 ```
+
 
 ```{r include=FALSE}
 library(data.table)
@@ -113,6 +135,7 @@ long_title_list %>%
   ggplot() + geom_bar(aes(x = decade, y = n, fill = JISC), stat = 'identity', alpha = .8) + 
   theme_minimal() + scale_fill_manual(values = libraryPalette) + theme(legend.title = element_text(family = 'serif'), legend.text = element_text(family = 'serif'), axis.text = element_text(family = 'serif'), axis.title = element_text(family = 'serif'))
 ```
+
 
 
 The JISC newspaper digitisation program began in 2004, when The British Library received two million pounds from the Joint Information Systems Committee (JISC) to complete a newspaper digitisation project. A plan was made to digitise up to two million pages, across 49 titles.[@ed-king-gale] A second phase of the project digitised a further 22 titles.[@shaw-newspapers; @shaw-billion for a good brief overview to the selection process for JISC 1]
@@ -197,6 +220,65 @@ title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>%
   guides(fill = guide_legend(title = 'Total Titles:'))
 
 
+```
+
+```{r}
+leaflet_list = title_list %>% filter(!is.na(link_to_british_newspaper_archive)) %>% left_join(geocoded) %>% group_by(wikititle, wikilon, wikilat) %>% tally()
+```
+```{r}
+library(leaflet)
+```
+```{r}
+links = title_list %>% left_join(geocoded) %>% group_by(wikititle, wikilon, wikilat) %>%
+            filter(!is.na(link_to_british_newspaper_archive)) %>%
+            distinct(nid, .keep_all = TRUE) %>%
+            summarise(link = paste("<p><a href=",
+                                   link_to_british_newspaper_archive,">",
+                                   publication_title,"</a>", first_date_held, " - ", last_date_held, "</p>\n", collapse = "\n"))
+
+
+```
+
+```{r}
+leaflet_list = leaflet_list %>% left_join(links) %>% filter(!is.na(link))
+```
+```{r}
+lat <- 53.442788
+lng <- -2.244708
+zoom <- 5
+pal1871 <- colorBin("viridis", domain=leaflet_list$n, bins = c(0,5,10,15,20,25,30,35,Inf))
+```
+
+```{r}
+popup_sb <- paste0(leaflet_list$wikititle, "\n", "Total unique titles: ", leaflet_list$n)
+leaflet_list  = leaflet_list %>% ungroup() %>% mutate(wikilon = as.numeric(wikilon)) %>% mutate(wikilat = as.numeric(wikilat))
+
+popup_sblab <- leaflet_list$link
+
+```
+
+```{r}
+leaflet() %>%  
+            addTiles(
+            ) %>% 
+            setView(lat = lat, lng = lng, zoom = zoom)%>% 
+            clearShapes() %>% 
+            clearControls() %>%
+  addCircleMarkers(data = leaflet_list %>% mutate(n = replace(n, wikititle == 'London', 40)),lng = ~wikilon, lat = ~wikilat, weight = 1, #cheat and change London to a smaller number, so it doesn't overlap other points
+    radius = ~n*.25 %>% sqrt(), ,
+                        fillColor = ~pal1871(n),fillOpacity = 0.7,
+                        color = "gray95",popup = ~popup_sblab,
+                        popupOptions = popupOptions(maxHeight = 100), label=popup_sb,
+                        labelOptions = labelOptions(
+                            style = list("font-weight" = "normal", padding = "3px 8px"),
+                            textsize = "15px",
+                            direction = "auto")
+  ) %>%
+            addLegend(pal = pal1871, 
+                      values = n,
+                      opacity = 0.7,
+                      position = 'bottomright',
+                      title = 'Unique titles:')
 ```
 
 

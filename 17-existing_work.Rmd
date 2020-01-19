@@ -12,4 +12,4 @@ Bloggers like Bruno Rodrigues
 
 The BL Labs stuff on github
 
-Other code repositories would be good. 
+Other code repositories would be good.

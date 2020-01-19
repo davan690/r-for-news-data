@@ -17,7 +17,7 @@ The time dimension is not clear: type probably got better, but it also got small
 
 Problems with the physical page have a huge effect: rips, tears, foxing, dark patches and so forth. Many errors are not because of the microfilm, digital image or software, and may not be fixable. 
 
-What does this all mean? Well, it introduces bias, and probably in non-random ways, but in ways that have implications for our work. If things are digitised from a mix of print and microfilm, for example, we might get very different results for the print portion, which might easily be mis-attributed to a historical finding. Perhaps there were twice as many mentions of cheese in the 1850s than in the 1890s? It's probably best to rule out that this is not just because later newspapers had a difficult font, or they were digitised from microfilm instead of print. [@hill-ocr, @Cordell_2017, @Piotrowski_2012, @cordell-ocr]
+What does this all mean? Well, it introduces bias, and probably in non-random ways, but in ways that have implications for our work. If things are digitised from a mix of print and microfilm, for example, we might get very different results for the print portion, which might easily be mis-attributed to a historical finding. Perhaps there were twice as many mentions of cheese in the 1850s than in the 1890s? It's probably best to rule out that this is not just because later newspapers had a difficult font, or they were digitised from microfilm instead of print. [@hill-ocr, @Cordell_2017, @Piotrowski_2012, @cordell-ocr, @evershed-ocr]
 
 ## What information do we have on OCR?
 
