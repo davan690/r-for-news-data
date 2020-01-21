@@ -19,8 +19,15 @@ You'll probably need to request access to newspapers through the British Library
 ## Intro to British Library Newspapers
 >Systematic collection of newspapers at the British Museum (the precursor of the British Library) did not really begin until 1822. At that time publishers were obliged to supply copies of their newspapers to the Stamp Office so that they could be taxed. In 1822 it was agreed that these copies would be passed to the British Museum after a period of three years. From 1869 onwards newspapers were included in the legal deposit legislation and were then deposited directly at the British Museum. This systematic application of legal deposit requirements means that many thousands of complete runs of newspapers have accumulated. The majority of newspapers collected are those published since 1800.[@ed-king-gale]
 
-A couple of lines
+More history of newspapers links and books etc. 
 
+```{r}
+knitr::include_app("https://yannryan.shinyapps.io/BNA-map", 
+  height = "1200px")
+```
+
+
+https://melissaterras.files.wordpress.com/2020/01/selectioncriterianewspapers_hauswedell_nyhan_beals_terras_bell-3.pdf
 
 What does this all mean for the data? First of all, it means that only a fraction of what was published has been preserved or collected, and only a fraction of that which has been collected has been digitised. Some very rough numbers. The 'newspaper-year' is a good standard unit. This is all the issues for one title, for one year. Its not perfect, because a newspaper-year of a weekly is worth the same as a newspaper-year for a daily. But it's an easy unit to count. 
 
@@ -91,9 +98,11 @@ library(ggrepel)
 geocoded = read_csv('data/geocorrected.csv')
 colnames(geocoded) = to_snake_case(colnames(geocoded))
 ```
+
 ```{r include=FALSE}
 map = map_data('world')
 ```
+
 ```{r include=FALSE}
 library(ggrepel)
 library(snakecase)

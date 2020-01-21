@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 What were the most common words used in newspaper titles in the nineteenth century? | R for Newspaper Data</title>
+  <meta name="description" content="This is a book to help new and existing users find and analyse historical newspaper data, using the programming language R-Studio." />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 What were the most common words used in newspaper titles in the nineteenth century? | R for Newspaper Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a book to help new and existing users find and analyse historical newspaper data, using the programming language R-Studio." />
+  <meta name="github-repo" content="yannryanBL/r-for-news-data" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 What were the most common words used in newspaper titles in the nineteenth century? | R for Newspaper Data" />
+  
+  <meta name="twitter:description" content="This is a book to help new and existing users find and analyse historical newspaper data, using the programming language R-Studio." />
+  
+
+<meta name="author" content="Yann Ryan" />
+
+
+<meta name="date" content="2019-12-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="text-mining-1.html"/>
+<link rel="next" href="how-to-use-this-book.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Index</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#short-history-of-newspapers-newspaper-digitisation"><i class="fa fa-check"></i><b>2.1</b> Short history of newspapers, newspaper digitisation?</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#burney-and-eebo"><i class="fa fa-check"></i><b>2.1.1</b> Burney and EEBO?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#jisc-1"><i class="fa fa-check"></i><b>2.1.2</b> JISC 1</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#jisc-2"><i class="fa fa-check"></i><b>2.1.3</b> JISC 2</a></li>
+<li class="chapter" data-level="2.1.4" data-path="introduction.html"><a href="introduction.html#bna"><i class="fa fa-check"></i><b>2.1.4</b> BNA</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#goals"><i class="fa fa-check"></i><b>2.2</b> Goals</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#format-of-the-book---bookdown-and-github"><i class="fa fa-check"></i><b>2.3</b> Format of the book - bookdown and github</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction.html"><a href="introduction.html#who-uses-r"><i class="fa fa-check"></i><b>2.3.1</b> Who uses R?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction.html"><a href="introduction.html#the-tidyverse"><i class="fa fa-check"></i><b>2.3.2</b> The Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#sources"><i class="fa fa-check"></i><b>2.4</b> Sources</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="introduction.html"><a href="introduction.html#country-by-country"><i class="fa fa-check"></i><b>2.4.1</b> Country by country</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#methods"><i class="fa fa-check"></i><b>2.5</b> Methods</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="introduction.html"><a href="introduction.html#network-analysis-of-seventeenth-century"><i class="fa fa-check"></i><b>2.5.1</b> Network analysis of seventeenth century</a></li>
+<li class="chapter" data-level="2.5.2" data-path="introduction.html"><a href="introduction.html#mapping"><i class="fa fa-check"></i><b>2.5.2</b> Mapping</a></li>
+<li class="chapter" data-level="2.5.3" data-path="introduction.html"><a href="introduction.html#geocoding"><i class="fa fa-check"></i><b>2.5.3</b> Geocoding</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#text-mining"><i class="fa fa-check"></i><b>2.6</b> Text mining</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sources-1.html"><a href="sources-1.html"><i class="fa fa-check"></i><b>3</b> Sources</a><ul>
+<li class="chapter" data-level="3.1" data-path="sources-1.html"><a href="sources-1.html#uk"><i class="fa fa-check"></i><b>3.1</b> UK</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="sources-1.html"><a href="sources-1.html#british-newspaper-archive"><i class="fa fa-check"></i><b>3.1.1</b> British newspaper archive</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sources-1.html"><a href="sources-1.html#outside-uk"><i class="fa fa-check"></i><b>3.2</b> Outside UK:</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="sources-1.html"><a href="sources-1.html#chronicling-america"><i class="fa fa-check"></i><b>3.2.1</b> Chronicling America</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sources-1.html"><a href="sources-1.html#delpher"><i class="fa fa-check"></i><b>3.2.2</b> Delpher</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sources-1.html"><a href="sources-1.html#eluxemburgensia"><i class="fa fa-check"></i><b>3.2.3</b> Eluxemburgensia</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sources-1.html"><a href="sources-1.html#europeana"><i class="fa fa-check"></i><b>3.2.4</b> Europeana</a></li>
+<li class="chapter" data-level="3.2.5" data-path="sources-1.html"><a href="sources-1.html#finnish-newspaper-database"><i class="fa fa-check"></i><b>3.2.5</b> Finnish Newspaper Database</a></li>
+<li class="chapter" data-level="3.2.6" data-path="sources-1.html"><a href="sources-1.html#gallica"><i class="fa fa-check"></i><b>3.2.6</b> Gallica</a></li>
+<li class="chapter" data-level="3.2.7" data-path="sources-1.html"><a href="sources-1.html#trove"><i class="fa fa-check"></i><b>3.2.7</b> Trove</a></li>
+<li class="chapter" data-level="3.2.8" data-path="sources-1.html"><a href="sources-1.html#papers-past"><i class="fa fa-check"></i><b>3.2.8</b> Papers Past</a></li>
+<li class="chapter" data-level="3.2.9" data-path="sources-1.html"><a href="sources-1.html#hemeroteca-nacional-digital-de-mexico"><i class="fa fa-check"></i><b>3.2.9</b> Hemeroteca Nacional Digital de Mexico</a></li>
+<li class="chapter" data-level="3.2.10" data-path="sources-1.html"><a href="sources-1.html#belgica-press"><i class="fa fa-check"></i><b>3.2.10</b> Belgica Press</a></li>
+<li class="chapter" data-level="3.2.11" data-path="sources-1.html"><a href="sources-1.html#welsh-newspaper-archive"><i class="fa fa-check"></i><b>3.2.11</b> Welsh Newspaper Archive</a></li>
+<li class="chapter" data-level="3.2.12" data-path="sources-1.html"><a href="sources-1.html#national-library-of-scotland"><i class="fa fa-check"></i><b>3.2.12</b> National Library of Scotland</a></li>
+<li class="chapter" data-level="3.2.13" data-path="sources-1.html"><a href="sources-1.html#italian-newspapers"><i class="fa fa-check"></i><b>3.2.13</b> Italian newspapers</a></li>
+<li class="chapter" data-level="3.2.14" data-path="sources-1.html"><a href="sources-1.html#hemeroteca-digital-spain"><i class="fa fa-check"></i><b>3.2.14</b> Hemeroteca Digital (Spain)</a></li>
+<li class="chapter" data-level="3.2.15" data-path="sources-1.html"><a href="sources-1.html#anno---austrian-newspapers-online"><i class="fa fa-check"></i><b>3.2.15</b> ANNO - Austrian Newspapers Online</a></li>
+<li class="chapter" data-level="3.2.16" data-path="sources-1.html"><a href="sources-1.html#bc-historical-newspapers"><i class="fa fa-check"></i><b>3.2.16</b> BC Historical Newspapers</a></li>
+<li class="chapter" data-level="3.2.17" data-path="sources-1.html"><a href="sources-1.html#media-stream"><i class="fa fa-check"></i><b>3.2.17</b> Media Stream</a></li>
+<li class="chapter" data-level="3.2.18" data-path="sources-1.html"><a href="sources-1.html#stare-hrvatske-novine"><i class="fa fa-check"></i><b>3.2.18</b> Stare hrvatske novine</a></li>
+<li class="chapter" data-level="3.2.19" data-path="sources-1.html"><a href="sources-1.html#zefys"><i class="fa fa-check"></i><b>3.2.19</b> ZEFYS</a></li>
+<li class="chapter" data-level="3.2.20" data-path="sources-1.html"><a href="sources-1.html#timarit.is"><i class="fa fa-check"></i><b>3.2.20</b> Timarit.is</a></li>
+<li class="chapter" data-level="3.2.21" data-path="sources-1.html"><a href="sources-1.html#google-news-archive"><i class="fa fa-check"></i><b>3.2.21</b> Google news archive</a></li>
+<li class="chapter" data-level="3.2.22" data-path="sources-1.html"><a href="sources-1.html#baltic-digital-library"><i class="fa fa-check"></i><b>3.2.22</b> Baltic Digital Library</a></li>
+<li class="chapter" data-level="3.2.23" data-path="sources-1.html"><a href="sources-1.html#newspapersg"><i class="fa fa-check"></i><b>3.2.23</b> NewspaperSG</a></li>
+<li class="chapter" data-level="3.2.24" data-path="sources-1.html"><a href="sources-1.html#svenska-dagstidningar"><i class="fa fa-check"></i><b>3.2.24</b> Svenska dagstidningar</a></li>
+<li class="chapter" data-level="3.2.25" data-path="sources-1.html"><a href="sources-1.html#handwritten-newspapers-project"><i class="fa fa-check"></i><b>3.2.25</b> Handwritten Newspapers Project</a></li>
+<li class="chapter" data-level="3.2.26" data-path="sources-1.html"><a href="sources-1.html#the-medici-archive-project"><i class="fa fa-check"></i><b>3.2.26</b> The Medici Archive Project</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="methods-1.html"><a href="methods-1.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods-1.html"><a href="methods-1.html#mapping-seventeenth-century-newsbooks"><i class="fa fa-check"></i><b>4.1</b> Mapping seventeenth century newsbooks</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="methods-1.html"><a href="methods-1.html#mapping-with-r"><i class="fa fa-check"></i><b>4.1.1</b> Mapping with R</a></li>
+<li class="chapter" data-level="4.1.2" data-path="methods-1.html"><a href="methods-1.html#steps"><i class="fa fa-check"></i><b>4.1.2</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="methods-1.html"><a href="methods-1.html#network-analysis-of-seventeenth-century-newsbooks"><i class="fa fa-check"></i><b>4.2</b> Network analysis of seventeenth century newsbooks</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="methods-1.html"><a href="methods-1.html#background"><i class="fa fa-check"></i><b>4.2.1</b> Background</a></li>
+<li class="chapter" data-level="4.2.2" data-path="methods-1.html"><a href="methods-1.html#network-analysis"><i class="fa fa-check"></i><b>4.2.2</b> Network analysis</a></li>
+<li class="chapter" data-level="4.2.3" data-path="methods-1.html"><a href="methods-1.html#steps-1"><i class="fa fa-check"></i><b>4.2.3</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="methods-1.html"><a href="methods-1.html#network-analysis-using-nlp-and-lancaster-newsbooks"><i class="fa fa-check"></i><b>4.3</b> Network analysis using NLP and Lancaster newsbooks</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="methods-1.html"><a href="methods-1.html#background-1"><i class="fa fa-check"></i><b>4.3.1</b> Background</a></li>
+<li class="chapter" data-level="4.3.2" data-path="methods-1.html"><a href="methods-1.html#sources-used"><i class="fa fa-check"></i><b>4.3.2</b> Sources used</a></li>
+<li class="chapter" data-level="4.3.3" data-path="methods-1.html"><a href="methods-1.html#steps-2"><i class="fa fa-check"></i><b>4.3.3</b> Steps</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>5</b> Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="data.html"><a href="data.html#jisc-newspaper-digitisation-projects"><i class="fa fa-check"></i><b>5.1</b> JISC Newspaper digitisation projects</a></li>
+<li class="chapter" data-level="5.2" data-path="data.html"><a href="data.html#gale"><i class="fa fa-check"></i><b>5.2</b> GALE</a></li>
+<li class="chapter" data-level="5.3" data-path="data.html"><a href="data.html#hmd-data--on-repository"><i class="fa fa-check"></i><b>5.3</b> HMD data- on repository</a></li>
+<li class="chapter" data-level="5.4" data-path="data.html"><a href="data.html#luxembourg-data"><i class="fa fa-check"></i><b>5.4</b> Luxembourg data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-formats.html"><a href="data-formats.html"><i class="fa fa-check"></i><b>6</b> Data formats</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-formats.html"><a href="data-formats.html#xml---different-flavours"><i class="fa fa-check"></i><b>6.1</b> XML - different flavours</a></li>
+<li class="chapter" data-level="6.2" data-path="data-formats.html"><a href="data-formats.html#full-text-transcriptions---like-the-lancaster-corpus"><i class="fa fa-check"></i><b>6.2</b> Full-text transcriptions - like the Lancaster Corpus</a></li>
+<li class="chapter" data-level="6.3" data-path="data-formats.html"><a href="data-formats.html#cqpweb-newspaper-corpora"><i class="fa fa-check"></i><b>6.3</b> CQPWeb newspaper corpora</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-formats-1.html"><a href="data-formats-1.html"><i class="fa fa-check"></i><b>7</b> Data formats</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-formats-1.html"><a href="data-formats-1.html#xml---different-flavours-1"><i class="fa fa-check"></i><b>7.1</b> XML - different flavours</a></li>
+<li class="chapter" data-level="7.2" data-path="data-formats-1.html"><a href="data-formats-1.html#full-text-transcriptions"><i class="fa fa-check"></i><b>7.2</b> Full-text transcriptions</a></li>
+<li class="chapter" data-level="7.3" data-path="data-formats-1.html"><a href="data-formats-1.html#where-to-find-help"><i class="fa fa-check"></i><b>7.3</b> Where to find help:</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="existing-work.html"><a href="existing-work.html"><i class="fa fa-check"></i><b>8</b> Existing work</a></li>
+<li class="chapter" data-level="9" data-path="text-mining-1.html"><a href="text-mining-1.html"><i class="fa fa-check"></i><b>9</b> Text mining</a></li>
+<li class="chapter" data-level="10" data-path="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html"><a href="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html"><i class="fa fa-check"></i><b>10</b> <em>What were the most common words used in newspaper titles in the nineteenth century?</em></a><ul>
+<li class="chapter" data-level="10.0.1" data-path="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html"><a href="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html#titles-dont-just-help-you-identity-a-newspaper-but-they-might-tell-you-a-little-bit-about-the-time-in-which-they-were-established.-with-a-bibliographic-list-of-all-our-uk-and-irish-titles-we-can-count-the-most-frequent-words-and-track-them-over-time-and-place-using-text-mining-and-data-analysis."><i class="fa fa-check"></i><b>10.0.1</b> Titles don’t just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of <em>all</em> our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.</a></li>
+<li class="chapter" data-level="10.0.2" data-path="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html"><a href="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html#what-is-this-document"><i class="fa fa-check"></i><b>10.0.2</b> What is this document?</a></li>
+<li class="chapter" data-level="10.0.3" data-path="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html"><a href="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century.html#how-about-differences-by-country"><i class="fa fa-check"></i><b>10.0.3</b> How about differences by country?</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html"><i class="fa fa-check"></i><b>11</b> How to use this book</a><ul>
+<li class="chapter" data-level="11.1" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#what-is-this"><i class="fa fa-check"></i><b>11.1</b> What is this?</a></li>
+<li class="chapter" data-level="11.2" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>11.2</b> Download R and R-Studio</a></li>
+<li class="chapter" data-level="11.3" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#download-a-copy"><i class="fa fa-check"></i><b>11.3</b> Download a copy</a></li>
+<li class="chapter" data-level="11.4" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#licence-terms"><i class="fa fa-check"></i><b>11.4</b> Licence terms</a></li>
+<li class="chapter" data-level="11.5" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#clone-a-copy-to-github"><i class="fa fa-check"></i><b>11.5</b> Clone a copy to GitHub</a></li>
+<li class="chapter" data-level="11.6" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#make-your-own-version"><i class="fa fa-check"></i><b>11.6</b> Make your own version</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for Newspaper Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century" class="section level1">
+<h1><span class="header-section-number">10</span> <em>What were the most common words used in newspaper titles in the nineteenth century?</em></h1>
+<div class="figure">
+<img src="titles.png" alt="title" />
+<p class="caption">title</p>
+</div>
+<div id="titles-dont-just-help-you-identity-a-newspaper-but-they-might-tell-you-a-little-bit-about-the-time-in-which-they-were-established.-with-a-bibliographic-list-of-all-our-uk-and-irish-titles-we-can-count-the-most-frequent-words-and-track-them-over-time-and-place-using-text-mining-and-data-analysis." class="section level3">
+<h3><span class="header-section-number">10.0.1</span> Titles don’t just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of <em>all</em> our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.</h3>
+</div>
+<div id="what-is-this-document" class="section level3">
+<h3><span class="header-section-number">10.0.2</span> What is this document?</h3>
+<p>This is a markdown file, made from a <a href="https://jupyter.org/">Jupyter notebook</a>. A jupyter notebook is usually an interactive document which can contain code, images and text, and a markdown file is a static version of that. Each bit of code runs in a cell, and the output is displayed directly below.</p>
+<p>The code I’ve used is R, which is a language particularly good for data analysis, but another language, Python, is probably used in Jupyter more frequently. If you’re going to work in R, I would recommend downloading <a href="https://rstudio.com">R-Studio</a> to do all your work, which could then be copied-and-pasted over the Jupyter notebook if needed, like I’ve done here.</p>
+<p>There are tonnes of places to get started working with R, Python, Jupyter notebooks and so forth, and we would recommend looking here in the first instance:</p>
+<p><a href="https://programminghistorian.org/" class="uri">https://programminghistorian.org/</a></p>
+<p><a href="https://software-carpentry.org/" class="uri">https://software-carpentry.org/</a></p>
+<p>First we need to load some libraries which we’ll use. A library is just a bunch of functions* grouped together, usually with a particular overall purpose or theme.</p>
+<p>‘tidyverse’ is actually a number of libraries with hundreds of useful functions to make lots of data analysis easier. It includes a very powerful plotting library called ‘ggplot2’.</p>
+<p>It’s usually the first thing I load, before even deciding what I’m going to do with my data.</p>
+<p>‘readxl’ is a library which.. reads excel files..</p>
+<p>Lots of this code uses something called piping. This is a function in one of our tidyverse libraries which allows you to do something to your data, and then pass it along to <em>another</em> function using this symbol: %&gt;%</p>
+<p>It allows you to string lots of changes to your data together in one block of code, so you might filter it, then pass the filtered data to another function which summarises it, and pass it on to another function which plots it as a graph.</p>
+<p>* You might say a function is a pre-made block of code which does something to some data. It has a name and often one or more <em>arguments</em>. The first argument is often a space for you to specify the thing you want to do the function on, and subsequent arguments might be additional parameters.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<pre><code>## ── Attaching packages ────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✔ tibble  2.1.3     ✔ purrr   0.3.3
+## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
+## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
+<pre><code>## ── Conflicts ───────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(readxl)</a></code></pre></div>
+<p>The first thing we do is load the whole title list as a variable called ‘working_list’, specifying the sheet of the excel file we’d like to use. We’ll dive a little deeper into the structure and how we might filter in another notebook.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">working_list &lt;-<span class="st"> </span><span class="kw">read_csv</span>(</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">&quot;BritishAndIrishNewspapersTitleList_20191118.csv&quot;</span>, </a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="dt">local =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&quot;latin1&quot;</span>))</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_character(),
+##   title_id = col_double(),
+##   nid = col_double(),
+##   nlp = col_double(),
+##   first_date_held = col_double(),
+##   publication_date_one = col_double(),
+##   publication_date_two = col_double()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p>Let’s just look at the nineteenth century - we’ll use the filter() function from dplyr, which is one of the libraries in the tidyverse. We then use %&gt;% to pipe the filtered data to a function called head(), which displays a set number of rows of your data frama - useful for taking a peek at the structure.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">working_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(last_date_held<span class="op">&gt;</span><span class="dv">1799</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(first_date_held<span class="op">&lt;</span><span class="dv">1900</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">head</span>(<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 24
+##   title_id   nid   nlp publication_tit… edition preceding_titles
+##      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;   &lt;chr&gt;           
+## 1 13774146    NA    NA London gazette   &lt;NA&gt;    Continues: Oxfo…
+## 2 13943676 32666   537 The Newcastle C… &lt;NA&gt;    &lt;NA&gt;            
+## # … with 18 more variables: succeeding_titles &lt;chr&gt;,
+## #   place_of_publication &lt;chr&gt;, country_of_publication &lt;chr&gt;,
+## #   general_area_of_coverage &lt;chr&gt;, coverage_city &lt;chr&gt;,
+## #   first_geographical_subject_heading &lt;chr&gt;,
+## #   subsequent_geographical_subject_headings &lt;chr&gt;, first_date_held &lt;dbl&gt;,
+## #   last_date_held &lt;chr&gt;, publication_date_one &lt;dbl&gt;,
+## #   publication_date_two &lt;dbl&gt;, current_publication_frequency &lt;chr&gt;,
+## #   publisher &lt;chr&gt;, holdings_more_information &lt;chr&gt;,
+## #   free_text_information_about_dates_of_publication &lt;chr&gt;,
+## #   online_status &lt;chr&gt;, link_to_british_newspaper_archive &lt;chr&gt;,
+## #   explore_link &lt;chr&gt;</code></pre>
+<p>We have some duplicated newspaper titles in this dataframe. We can get rid of these for this analysis, though there are reasons we left them in which I won’t go into now. We can delete any duplicated titles using a function called distinct() on NID id field.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">working_list <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(last_date_held<span class="op">&gt;</span><span class="dv">1799</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(first_date_held<span class="op">&lt;</span><span class="dv">1900</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw">distinct</span>(NID, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="kw">head</span>(<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## Warning: Trying to compute distinct() for variables not found in the data:
+## - `NID`
+## This is an error, but only a warning is raised for compatibility reasons.
+## The operation will return the input unchanged.</code></pre>
+<pre><code>## # A tibble: 2 x 24
+##   title_id   nid   nlp publication_tit… edition preceding_titles
+##      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;   &lt;chr&gt;           
+## 1 13774146    NA    NA London gazette   &lt;NA&gt;    Continues: Oxfo…
+## 2 13943676 32666   537 The Newcastle C… &lt;NA&gt;    &lt;NA&gt;            
+## # … with 18 more variables: succeeding_titles &lt;chr&gt;,
+## #   place_of_publication &lt;chr&gt;, country_of_publication &lt;chr&gt;,
+## #   general_area_of_coverage &lt;chr&gt;, coverage_city &lt;chr&gt;,
+## #   first_geographical_subject_heading &lt;chr&gt;,
+## #   subsequent_geographical_subject_headings &lt;chr&gt;, first_date_held &lt;dbl&gt;,
+## #   last_date_held &lt;chr&gt;, publication_date_one &lt;dbl&gt;,
+## #   publication_date_two &lt;dbl&gt;, current_publication_frequency &lt;chr&gt;,
+## #   publisher &lt;chr&gt;, holdings_more_information &lt;chr&gt;,
+## #   free_text_information_about_dates_of_publication &lt;chr&gt;,
+## #   online_status &lt;chr&gt;, link_to_british_newspaper_archive &lt;chr&gt;,
+## #   explore_link &lt;chr&gt;</code></pre>
+<p>Select only the information we need. Let’s create a new dataframe, run the filter and distinct functions, and select some date information along with the titles, Afterwards we might want to choose geographic information instead, so we’ll keep our original data frame:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">titles_dates =<span class="st"> </span>working_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="st"> </span><span class="kw">filter</span>(last_date_held<span class="op">&gt;</span><span class="dv">1799</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(first_date_held<span class="op">&lt;</span><span class="dv">1900</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw">distinct</span>(NID, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(publication_title, first_date_held)</a></code></pre></div>
+<pre><code>## Warning: Trying to compute distinct() for variables not found in the data:
+## - `NID`
+## This is an error, but only a warning is raised for compatibility reasons.
+## The operation will return the input unchanged.</code></pre>
+<p>To count the title keywords, we can tokenise our data. This splits everything into individual words. For this we need to load a library called ‘tidytext’, which contains lots of functions for text mining.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">library</span>(tidytext)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">tokenised_titles_dates =<span class="st"> </span>titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, publication_title)</a></code></pre></div>
+<p>Now we’ll get rid of stopwords - the very frequently-used words like ‘the’ or ‘an’ and so forth. It’s not always appropriate to remove stopwords, and in fact sometimes they are the most interesting, but I think here it will make things easier to manage.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">data</span>(stop_words) <span class="co"># this loads a dataset of stopwords</span></a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">tokenised_titles_dates =<span class="st"> </span>tokenised_titles_dates <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="st">  </span><span class="kw">anti_join</span>(stop_words) <span class="co"># this does an &#39;anti-join&#39; which removes any word in one list which also appears in another.</span></a></code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<p>Let’s do some simple analysis first. We can count the most common words overall:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">20</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 20 x 2
+##    word           n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 advertiser  2343
+##  2 news        1161
+##  3 weekly       918
+##  4 gazette      910
+##  5 times        890
+##  6 chronicle    834
+##  7 journal      748
+##  8 herald       658
+##  9 express      430
+## 10 press        387
+## 11 north        375
+## 12 west         372
+## 13 south        367
+## 14 london       361
+## 15 observer     354
+## 16 daily        319
+## 17 evening      298
+## 18 county       296
+## 19 guardian     289
+## 20 free         258</code></pre>
+<p>We can turn it into a bar chart.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="st"> </span><span class="kw">head</span>(<span class="dv">20</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-7" data-line-number="7"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-8" data-line-number="8"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb26-9" data-line-number="9"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Advertiser is the most popular word in a title! Lots of other words are at the top which might be expected, like ‘news’, ‘daily’, ‘evening’ and so forth.</p>
+<p>It might be more interesting to look at the changes in the top words over time.</p>
+<p>This adds a new column with the date ‘floored’ to the previous 20. When we group and count again, everything between 1800 and 1819 will become 1800, everything between 1820 and 1839 will become 1820 and so forth.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">tokenised_titles_dates =<span class="st"> </span>tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">timespan =</span> first_date_held <span class="op">-</span><span class="st"> </span>first_date_held <span class="op">%%</span><span class="st"> </span><span class="dv">20</span>)</a></code></pre></div>
+<p>Now look at the top ten title words for each of these twenty-year periods:</p>
+<p>1800 - 1819:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(timespan <span class="op">==</span><span class="st"> &#39;1800&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb28-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb28-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>1820 - 1839:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(timespan <span class="op">==</span><span class="st"> &#39;1820&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>1840 - 1859 (it’s interesting how ‘British’ has fallen out of the top ten, and ‘north’ and ‘south’ have been bumped up. Even something this simple can confirming interesting things about the growth of the regional press!</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(timespan <span class="op">==</span><span class="st"> &#39;1840&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb30-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb30-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>1860 - 1879:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(timespan <span class="op">==</span><span class="st"> &#39;1860&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-6" data-line-number="6"><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb31-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>1880 - 1899</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(timespan <span class="op">==</span><span class="st"> &#39;1880&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb32-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="figure">
+<img src="output_37_0.png" alt="png" />
+<p class="caption">png</p>
+</div>
+<p>There might be better ways of counting. How about a line chart which tracks a certain number of keywords over time?</p>
+<p>We know that the number of titles per year increases a lot over the century, so we’ll need to make a relative rather than absolute values. This next bit adds a count of <em>all</em> the words per decade, and puts it beside each word. Then we can divide one by the other and get a fraction. I’ll show the first few lines of each dataframe to show what I mean.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">title_words =<span class="st"> </span>tokenised_titles_dates <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">decade =</span> first_date_held <span class="op">-</span><span class="st"> </span>first_date_held <span class="op">%%</span><span class="st"> </span><span class="dv">10</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(decade, word, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">head</span>(title_words, <span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 3
+##   decade word           n
+##    &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt;
+## 1   1850 advertiser   506
+## 2   1860 advertiser   425
+## 3   1870 advertiser   322
+## 4   1880 advertiser   285
+## 5   1890 news         276</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">total_words &lt;-<span class="st"> </span>title_words <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(decade) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">sum</span>(n))</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="kw">head</span>(total_words, <span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 2
+##   decade total
+##    &lt;dbl&gt; &lt;int&gt;
+## 1   1660     2
+## 2   1710     2
+## 3   1720    26
+## 4   1730    17
+## 5   1740    21</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">title_words &lt;-<span class="st"> </span><span class="kw">left_join</span>(title_words, total_words)</a></code></pre></div>
+<pre><code>## Joining, by = &quot;decade&quot;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">head</span>(title_words, <span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 4
+##   decade word           n total
+##    &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt; &lt;int&gt;
+## 1   1850 advertiser   506  5416
+## 2   1860 advertiser   425  5835
+## 3   1870 advertiser   322  6581
+## 4   1880 advertiser   285  6396
+## 5   1890 news         276  6304</code></pre>
+<p>We’ll pick a list of terms to plot, because otherwise it’ll be unreadable.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">top_terms =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;advertiser&#39;</span>,</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">              <span class="st">&#39;news&#39;</span>,</a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">              <span class="st">&#39;weekly&#39;</span>,</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">              <span class="st">&#39;times&#39;</span>,</a>
+<a class="sourceLine" id="cb41-5" data-line-number="5">              <span class="st">&#39;gazette&#39;</span>,</a>
+<a class="sourceLine" id="cb41-6" data-line-number="6">              <span class="st">&#39;chronicle&#39;</span>,</a>
+<a class="sourceLine" id="cb41-7" data-line-number="7">              <span class="st">&#39;herald&#39;</span>,</a>
+<a class="sourceLine" id="cb41-8" data-line-number="8">              <span class="st">&#39;journal&#39;</span>, </a>
+<a class="sourceLine" id="cb41-9" data-line-number="9">              <span class="st">&#39;express&#39;</span>,</a>
+<a class="sourceLine" id="cb41-10" data-line-number="10">              <span class="st">&#39;bulletin&#39;</span>,</a>
+<a class="sourceLine" id="cb41-11" data-line-number="11">              <span class="st">&#39;record&#39;</span>,</a>
+<a class="sourceLine" id="cb41-12" data-line-number="12">              <span class="st">&#39;guardian&#39;</span>,</a>
+<a class="sourceLine" id="cb41-13" data-line-number="13">              <span class="st">&#39;express&#39;</span>)</a></code></pre></div>
+<p>Now we draw a plot, using n/total as the y-axis variable to plot the fraction of the total:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">title_words <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(word <span class="op">%in%</span><span class="st"> </span>top_terms) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(decade <span class="op">&gt;</span><span class="dv">1800</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> decade, <span class="dt">y =</span> n<span class="op">/</span>total, <span class="dt">color =</span> word)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>,<span class="dt">stat =</span> <span class="st">&#39;identity&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-6" data-line-number="6"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb42-7" data-line-number="7"><span class="st">  </span><span class="kw">ylab</span>(<span class="dt">label =</span> <span class="st">&quot;Percentage of total words&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&#39;bottom&#39;</span>)</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Well, that’s quite interesting. Advertiser declines in the second half of the century, and is overtaken by ‘news’ right at the end.</p>
+</div>
+<div id="how-about-differences-by-country" class="section level3">
+<h3><span class="header-section-number">10.0.3</span> How about differences by country?</h3>
+<p>Go back to the working list and make a version with country information:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">titles_countries =<span class="st"> </span>working_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, country_of_publication)</a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb43-4" data-line-number="4">tokenised_titles_countries =<span class="st"> </span>titles_countries <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb43-5" data-line-number="5"><span class="st">  </span><span class="kw">unnest_tokens</span>(word, publication_title)</a>
+<a class="sourceLine" id="cb43-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb43-7" data-line-number="7">tokenised_titles_countries =<span class="st"> </span>tokenised_titles_countries <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb43-8" data-line-number="8"><span class="st">  </span><span class="kw">anti_join</span>(stop_words)</a></code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<p>Let’s make an overall chart for each country:</p>
+<p>England:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">tokenised_titles_countries <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country_of_publication <span class="op">==</span><span class="st"> &#39;England&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb45-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-6" data-line-number="6"><span class="st">  </span><span class="kw">head</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb45-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb45-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb45-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb45-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>Scotland:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">tokenised_titles_countries <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country_of_publication <span class="op">==</span><span class="st"> &#39;Scotland&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">40</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-7" data-line-number="7"><span class="st">  </span><span class="kw">head</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb46-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb46-10" data-line-number="10"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb46-11" data-line-number="11"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb46-12" data-line-number="12"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Ireland:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">tokenised_titles_countries <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country_of_publication <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Ireland&#39;</span>, <span class="st">&#39;Northern Ireland&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb47-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb47-6" data-line-number="6"><span class="st">  </span><span class="kw">head</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb47-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb47-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb47-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb47-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb47-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Wales:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">tokenised_titles_countries <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country_of_publication <span class="op">==</span><span class="st"> &#39;Wales&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb48-6" data-line-number="6"><span class="st"> </span><span class="kw">head</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb48-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">fill =</span> <span class="st">&#39;lightblue&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-9" data-line-number="9"><span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-10" data-line-number="10"><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb48-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>How about looking for the most unique terms for each country? That might tell us something interesting.</p>
+<p>First we’ll select just the key countries:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">countryList =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;England&#39;</span>, <span class="st">&#39;Ireland&#39;</span>, <span class="st">&#39;Wales&#39;</span>, <span class="st">&#39;Scotland&#39;</span>, <span class="st">&#39;Northern Ireland&#39;</span>)</a></code></pre></div>
+<p>Next we’ll use a function which gives the ‘tf-idf’ score for each word. This measures the frequency of the word in comparison to its frequency in all other countries, giving us words that are more unique to titles from that country.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">total_by_country =<span class="st"> </span>tokenised_titles_countries <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country_of_publication <span class="op">%in%</span><span class="st"> </span>countryList) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="st">  </span><span class="kw">count</span>(country_of_publication, word, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb50-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb50-6" data-line-number="6">total_by_country &lt;-<span class="st"> </span>total_by_country <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb50-7" data-line-number="7"><span class="st">  </span><span class="kw">bind_tf_idf</span>(word, country_of_publication, n)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">total_by_country <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(tf_idf)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">factor</span>(word, <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">unique</span>(word)))) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="st">  </span><span class="kw">top_n</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb51-6" data-line-number="6"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb51-7" data-line-number="7"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, tf_idf, <span class="dt">fill =</span> country_of_publication)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-8" data-line-number="8"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-9" data-line-number="9"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;tf-idf&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-10" data-line-number="10"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>country_of_publication, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb51-11" data-line-number="11"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<pre><code>## Selecting by tf_idf</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p>Unsurprisingly, this mostly gives us placenames, as used in the titles, which are obviously only going to be used in one country. There’s a couple of interesting things: ‘Wales’ and ‘Scotland’ have a high score, but not ‘Ireland’. Why would Ireland not be used in a newspaper title in the same way as Welsh or Scottish newspapers?</p>
+<p>We need a way to try and filter out geographic places as they’re drowning out other potentially interesting terms. We can make a list of places from our original title list which would be a good start.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">all_places =<span class="st"> </span><span class="kw">read_csv</span>(</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="st">&quot;BritishAndIrishNewspapersTitleList_20191118.csv&quot;</span>, </a>
+<a class="sourceLine" id="cb53-3" data-line-number="3"><span class="dt">local =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&quot;latin1&quot;</span>))</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_character(),
+##   title_id = col_double(),
+##   nid = col_double(),
+##   nlp = col_double(),
+##   first_date_held = col_double(),
+##   publication_date_one = col_double(),
+##   publication_date_two = col_double()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">list_of_places =<span class="st"> </span><span class="kw">c</span>(all_places<span class="op">$</span>first_geographical_subject_heading, </a>
+<a class="sourceLine" id="cb56-2" data-line-number="2">                             all_places<span class="op">$</span>subsequent_geographical_subject_headings,</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">                             all_places<span class="op">$</span>general_area_of_coverage,</a>
+<a class="sourceLine" id="cb56-4" data-line-number="4">                             all_places<span class="op">$</span>coverage_city,</a>
+<a class="sourceLine" id="cb56-5" data-line-number="5">                             all_places<span class="op">$</span>place_of_publication,</a>
+<a class="sourceLine" id="cb56-6" data-line-number="6">                             all_places<span class="op">$</span>country_of_publication)</a>
+<a class="sourceLine" id="cb56-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb56-8" data-line-number="8">list_of_places =<span class="st"> </span><span class="kw">as.data.frame</span>(list_of_places) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb56-9" data-line-number="9"><span class="st">  </span><span class="kw">group_by</span>(list_of_places) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(list_of_places)</a></code></pre></div>
+<pre><code>## Warning: Factor `list_of_places` contains implicit NA, consider using
+## `forcats::fct_explicit_na`
+
+## Warning: Factor `list_of_places` contains implicit NA, consider using
+## `forcats::fct_explicit_na`</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">list_of_places =<span class="st"> </span><span class="kw">tolower</span>(list_of_places<span class="op">$</span>list_of_places)</a></code></pre></div>
+<p>It’s a bit crude but it’s given us a list of 5,000 or so places which we can use to filter our word list.</p>
+<p>Plotting the filtered list:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">total_by_country <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>word <span class="op">%in%</span><span class="st"> </span>list_of_places) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-3" data-line-number="3"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(tf_idf)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">factor</span>(word, <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">unique</span>(word)))) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-5" data-line-number="5"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb59-6" data-line-number="6"><span class="st">  </span><span class="kw">top_n</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb59-7" data-line-number="7"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb59-8" data-line-number="8"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, tf_idf, <span class="dt">fill =</span> country_of_publication)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-10" data-line-number="10"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;tf-idf&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-11" data-line-number="11"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>country_of_publication, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb59-12" data-line-number="12"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
+<pre><code>## Selecting by tf_idf</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p>There are still lots of geographic terms, but there are some other words ‘unique’ to each country. Ireland and Northern Ireland high-scoring words are particularly interesting (of course we’re looking at 19th century titles so the division is meaningless, but it still represents some kind of regionality). Only Irish titles tend to have ideological terms like ‘nationalist’, ‘democrat’, ‘loyalty’, ‘impartial’ and so forth. Newspapers with ‘illustrated’ or ‘Sunday’ in the title are unique to England, and, intriguingly, ‘visitors’.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="text-mining-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-use-this-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
