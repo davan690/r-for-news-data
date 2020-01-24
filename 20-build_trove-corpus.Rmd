@@ -1,0 +1,198 @@
+# Constructing a corpus from Trove's API
+
+http://timsherratt.org/digital-heritage-handbook/docs/trove-newspaper-harvester/
+
+```{r}
+library(httr)
+library(jsonlite)
+library(tidyverse)
+```
+```{r}
+key = 'rtolalkm39qmnj8l'
+zone = 'newspaper'
+query = "limerick+city"
+encoding = 'json'
+results = '100'
+decade = '185'
+startKey = '*'
+```
+
+```{r}
+a = GET(paste0('https://api.trove.nla.gov.au/v2/result?key=',
+               key,
+               '&zone=',
+               zone,
+               '&q=',
+               query,
+               '&encoding='
+               ,encoding, '&n=',
+               results,
+               '&l-decade=',
+               decade,
+               '&include=articletext&s=', startKey))
+
+
+```
+
+```{r}
+b = rawToChar(a$content) %>% fromJSON()
+
+c = b$response$zone$records$article
+
+key = b$response$zone$records$nextStart
+
+d = c[[1]] %>% as_tibble() %>% select(heading, title, date, page, snippet, articleText)
+```
+
+
+```{r}
+b = rawToChar(a$content) %>% fromJSON()
+
+c = b$response$zone$records$article
+
+d = c[[1]] %>% as_tibble() %>% select(heading, title, date, page, snippet, articleText)
+```
+
+```{r}
+get_trove_articles = function(key = 'rtolalkm39qmnj8l', zone = 'newspaper',query = 'war',encoding = 'json',results = '1000', decade = '185'){
+  
+  startKey = '*'
+  listofdfs <- list()
+  n = as.character(as.numeric(results)/100)
+  for(x in 1:as.numeric(results)/100) {
+  
+  a = GET(paste0('https://api.trove.nla.gov.au/v2/result?key=',
+               key,
+               '&zone=',
+               zone,
+               '&q=',
+               query,
+               '&encoding='
+               ,encoding, '&n=',
+               n,
+               '&l-decade=',
+               decade,
+               '&include=articletext&s=',startKey,'&bulkHarvest=TRUE'))
+
+b = rawToChar(a$content) %>% fromJSON()
+
+c = b$response$zone$records$article
+c[[1]]$title = c[[1]]$title$value
+startKey = b$response$zone$records$nextStart
+
+df = c[[1]] %>% as_tibble() %>% select(heading, title, date, page, snippet, articleText) %>% mutate(articleText = str_replace_all(articleText, "<[^>]+>", ""))
+
+listofdfs[[x]] <- df
+}
+return(do.call(rbind, listofdfs))
+}
+```
+
+```{r}
+df = get_trove_articles(results = '1000', query = 'limerick')
+```
+
+
+```{r}
+startKey = '*'
+for (i in 1:10){
+a = GET(paste0('https://api.trove.nla.gov.au/v2/result?key=',
+               key,
+               '&zone=',
+               zone,
+               '&q=',
+               query,
+               '&encoding='
+               ,encoding, '&n=',
+               results,
+               '&l-decade=',
+               decade,
+               '&include=articletext&s=',startKey,'&bulkHarvest=TRUE'))
+
+b = rawToChar(a$content) %>% fromJSON()
+
+c = b$response$zone$records$article
+
+startKey = b$response$zone$records$nextStart
+
+df = c[[1]] %>% 
+  as_tibble() %>% 
+  select(heading, title, date, page, snippet, articleText) %>% 
+  mutate(articleText = str_replace_all(articleText, "<[^>]+>", "")) %>% rbind()
+
+} 
+```
+
+```{r}
+startKey = '*'
+```
+
+
+```{r}
+
+
+a = GET(paste0('https://api.trove.nla.gov.au/v2/result?key=',
+               key,
+               '&zone=',
+               zone,
+               '&q=',
+               query,
+               '&encoding='
+               ,encoding, '&n=',
+               results,
+               '&l-decade=',
+               decade,
+               '&include=articletext&s=',startKey,'&bulkHarvest=TRUE'))
+
+b = rawToChar(a$content) %>% fromJSON()
+
+c = b$response$zone$records$article
+
+startKey = b$response$zone$records$nextStart
+
+
+```
+
+```{r}
+get_trove_articles = function(key = 'rtolalkm39qmnj8l', zone = 'newspaper',query = 'war',encoding = 'json', totalresults = 100, decade = '184'){
+  
+  startKey = '*'
+  listofdfs <- list()
+  
+  resultsamount = totalresults/100
+  
+  resultsforcall = as.character(resultsamount)
+  for(x in 1:resultsamount) {
+  
+  a = GET(paste0('https://api.trove.nla.gov.au/v2/result?key=',
+               key,
+               '&zone=',
+               zone,
+               '&q=',
+               query,
+               '&encoding='
+               ,encoding, '&n=100',
+               '&l-decade=',
+               decade,
+               '&include=articletext&s=',
+               startKey,'&bulkHarvest=TRUE'))
+
+b = rawToChar(a$content) %>% fromJSON()
+
+c = b$response$zone$records$article
+
+c[[1]]$title = c[[1]]$title$value
+
+startKey = b$response$zone$records$nextStart
+
+df = c[[1]] %>% as_tibble() %>% select(heading, title, date, page, snippet, articleText) %>% mutate(articleText = str_replace_all(articleText, "<[^>]+>", ""))
+
+listofdfs[[x]] <- df
+}
+return(do.call(rbind, listofdfs))
+}
+```
+
+```{r}
+df = get_trove_articles(query = 'famine+ireland', totalresults = 10000, decade = '184')
+```
