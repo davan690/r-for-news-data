@@ -8,6 +8,8 @@ In addition, the level and method of access varies widely. Some countries (Austr
 
 The data, too, comes in many different forms. Most digitised newspapers are processed with OCR software to create machine readable text. This processing usually results in data in XML format, specifying some information about the content. This will definitely include metadata about the newspaper, information on the software used and the owner of the data, and might include information on the the way the page is laid out, and information on how each article has been segmented. Each software will have a different way of processing the data, and a different output. This will also change as software gets updated. For example, the XML output of the JISC titles includes a different XML file for each article. On the other hand, the newer digitised content from FMP contains an XML file for each page, and a METS file which specifies how the articles can be recreated. This will be outlined in some more detail in a further chapter, but it's best to think of it as an ongoing, flexible format. We'll explain how to work with some of them but each will be different.
 
+Worth noting - most countries do most of their digitisation from microfilm, for reasons of speed and cost. It's worth bearing in mind - digitised collections are very heavily influenced by the microfilm policies that went before them. 
+
 Sources
 
 Lancaster Newsbooks

@@ -1,5 +1,5 @@
 # Data formats
-
+Folder structure
 ## XML - different flavours
 Try and get some help with this?
 ## Full-text transcriptions - like the Lancaster Corpus

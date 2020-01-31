@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 R and the Tidyverse | R for Newspaper Data</title>
+  <meta name="description" content="This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio." />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 R and the Tidyverse | R for Newspaper Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio." />
+  <meta name="github-repo" content="yannryanBL/r-for-news-data" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 R and the Tidyverse | R for Newspaper Data" />
+  
+  <meta name="twitter:description" content="This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio." />
+  
+
+<meta name="author" content="Yann Ryan" />
+
+
+<meta name="date" content="2020-01-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methods.html"/>
+<link rel="next" href="regular-expressions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface &amp; Acknowledgements</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#unlocking-the-past-with-newspaper-data"><i class="fa fa-check"></i><b>2.1</b> Unlocking the past with newspaper data</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#what-is-newspaper-data"><i class="fa fa-check"></i><b>2.2</b> What is newspaper data?</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#why-is-it-useful"><i class="fa fa-check"></i><b>2.3</b> Why is it useful?</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#short-history-of-newspapers-newspaper-digitisation"><i class="fa fa-check"></i><b>2.4</b> Short history of newspapers, newspaper digitisation?</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="introduction.html"><a href="introduction.html#burney-and-eebo"><i class="fa fa-check"></i><b>2.4.1</b> Burney and EEBO?</a></li>
+<li class="chapter" data-level="2.4.2" data-path="introduction.html"><a href="introduction.html#jisc-1"><i class="fa fa-check"></i><b>2.4.2</b> JISC 1</a></li>
+<li class="chapter" data-level="2.4.3" data-path="introduction.html"><a href="introduction.html#jisc-2"><i class="fa fa-check"></i><b>2.4.3</b> JISC 2</a></li>
+<li class="chapter" data-level="2.4.4" data-path="introduction.html"><a href="introduction.html#bna"><i class="fa fa-check"></i><b>2.4.4</b> BNA</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#goals"><i class="fa fa-check"></i><b>2.5</b> Goals</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#format-of-the-book---bookdown-and-github"><i class="fa fa-check"></i><b>2.6</b> Format of the book - bookdown and github</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction.html"><a href="introduction.html#why-r"><i class="fa fa-check"></i><b>2.7</b> Why R?</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="introduction.html"><a href="introduction.html#who-uses-r"><i class="fa fa-check"></i><b>2.7.1</b> Who uses R?</a></li>
+<li class="chapter" data-level="2.7.2" data-path="introduction.html"><a href="introduction.html#the-tidyverse"><i class="fa fa-check"></i><b>2.7.2</b> The Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introduction.html"><a href="introduction.html#who-is-the-book-for"><i class="fa fa-check"></i><b>2.8</b> Who is the book for?</a></li>
+<li class="chapter" data-level="2.9" data-path="introduction.html"><a href="introduction.html#format-of-the-book"><i class="fa fa-check"></i><b>2.9</b> Format of the book</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html"><i class="fa fa-check"></i><b>3</b> How to use this book</a><ul>
+<li class="chapter" data-level="3.1" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#what-is-this"><i class="fa fa-check"></i><b>3.1</b> What is this?</a></li>
+<li class="chapter" data-level="3.2" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#make-changes-directly-to-the-markdown-files-on-github."><i class="fa fa-check"></i><b>3.2</b> Make changes directly to the markdown files on Github.</a></li>
+<li class="chapter" data-level="3.3" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#download-a-copy"><i class="fa fa-check"></i><b>3.3</b> Download a copy</a></li>
+<li class="chapter" data-level="3.4" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>3.4</b> Download R and R-Studio</a></li>
+<li class="chapter" data-level="3.5" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#licence-terms"><i class="fa fa-check"></i><b>3.5</b> Licence terms</a></li>
+<li class="chapter" data-level="3.6" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#clone-a-copy-to-github"><i class="fa fa-check"></i><b>3.6</b> Clone a copy to GitHub</a></li>
+<li class="chapter" data-level="3.7" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#make-your-own-version"><i class="fa fa-check"></i><b>3.7</b> Make your own version</a></li>
+</ul></li>
+<li class="part"><span><b>I Part I: Sources and data</b></span></li>
+<li class="chapter" data-level="4" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html"><i class="fa fa-check"></i><b>4</b> Newspaper data - international</a><ul>
+<li class="chapter" data-level="4.1" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#uk"><i class="fa fa-check"></i><b>4.1</b> UK</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#british-newspaper-archive"><i class="fa fa-check"></i><b>4.1.1</b> British newspaper archive</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#outside-uk"><i class="fa fa-check"></i><b>4.2</b> Outside UK:</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#chronicling-america"><i class="fa fa-check"></i><b>4.2.1</b> Chronicling America</a></li>
+<li class="chapter" data-level="4.2.2" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#delpher"><i class="fa fa-check"></i><b>4.2.2</b> Delpher</a></li>
+<li class="chapter" data-level="4.2.3" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#eluxemburgensia"><i class="fa fa-check"></i><b>4.2.3</b> Eluxemburgensia</a></li>
+<li class="chapter" data-level="4.2.4" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#europeana"><i class="fa fa-check"></i><b>4.2.4</b> Europeana</a></li>
+<li class="chapter" data-level="4.2.5" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#finnish-newspaper-database"><i class="fa fa-check"></i><b>4.2.5</b> Finnish Newspaper Database</a></li>
+<li class="chapter" data-level="4.2.6" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#gallica"><i class="fa fa-check"></i><b>4.2.6</b> Gallica</a></li>
+<li class="chapter" data-level="4.2.7" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#trove"><i class="fa fa-check"></i><b>4.2.7</b> Trove</a></li>
+<li class="chapter" data-level="4.2.8" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#papers-past"><i class="fa fa-check"></i><b>4.2.8</b> Papers Past</a></li>
+<li class="chapter" data-level="4.2.9" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#hemeroteca-nacional-digital-de-mexico"><i class="fa fa-check"></i><b>4.2.9</b> Hemeroteca Nacional Digital de Mexico</a></li>
+<li class="chapter" data-level="4.2.10" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#belgica-press"><i class="fa fa-check"></i><b>4.2.10</b> Belgica Press</a></li>
+<li class="chapter" data-level="4.2.11" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#welsh-newspaper-archive"><i class="fa fa-check"></i><b>4.2.11</b> Welsh Newspaper Archive</a></li>
+<li class="chapter" data-level="4.2.12" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#national-library-of-scotland"><i class="fa fa-check"></i><b>4.2.12</b> National Library of Scotland</a></li>
+<li class="chapter" data-level="4.2.13" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#italian-newspapers"><i class="fa fa-check"></i><b>4.2.13</b> Italian newspapers</a></li>
+<li class="chapter" data-level="4.2.14" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#hemeroteca-digital-spain"><i class="fa fa-check"></i><b>4.2.14</b> Hemeroteca Digital (Spain)</a></li>
+<li class="chapter" data-level="4.2.15" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#anno---austrian-newspapers-online"><i class="fa fa-check"></i><b>4.2.15</b> ANNO - Austrian Newspapers Online</a></li>
+<li class="chapter" data-level="4.2.16" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#bc-historical-newspapers"><i class="fa fa-check"></i><b>4.2.16</b> BC Historical Newspapers</a></li>
+<li class="chapter" data-level="4.2.17" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#media-stream"><i class="fa fa-check"></i><b>4.2.17</b> Media Stream</a></li>
+<li class="chapter" data-level="4.2.18" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#stare-hrvatske-novine"><i class="fa fa-check"></i><b>4.2.18</b> Stare hrvatske novine</a></li>
+<li class="chapter" data-level="4.2.19" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#zefys"><i class="fa fa-check"></i><b>4.2.19</b> ZEFYS</a></li>
+<li class="chapter" data-level="4.2.20" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#timarit.is"><i class="fa fa-check"></i><b>4.2.20</b> Timarit.is</a></li>
+<li class="chapter" data-level="4.2.21" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#google-news-archive"><i class="fa fa-check"></i><b>4.2.21</b> Google news archive</a></li>
+<li class="chapter" data-level="4.2.22" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#baltic-digital-library"><i class="fa fa-check"></i><b>4.2.22</b> Baltic Digital Library</a></li>
+<li class="chapter" data-level="4.2.23" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#newspapersg"><i class="fa fa-check"></i><b>4.2.23</b> NewspaperSG</a></li>
+<li class="chapter" data-level="4.2.24" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#svenska-dagstidningar"><i class="fa fa-check"></i><b>4.2.24</b> Svenska dagstidningar</a></li>
+<li class="chapter" data-level="4.2.25" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#handwritten-newspapers-project"><i class="fa fa-check"></i><b>4.2.25</b> Handwritten Newspapers Project</a></li>
+<li class="chapter" data-level="4.2.26" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#the-medici-archive-project"><i class="fa fa-check"></i><b>4.2.26</b> The Medici Archive Project</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html"><i class="fa fa-check"></i><b>5</b> UK Newspaper Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#what-access-do-you-need"><i class="fa fa-check"></i><b>5.1</b> What access do you need?</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-find-individual-articles."><i class="fa fa-check"></i><b>5.1.1</b> Want to find individual articles.</a></li>
+<li class="chapter" data-level="5.1.2" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-text-mining-on-a-large-corpus"><i class="fa fa-check"></i><b>5.1.2</b> Want to do text mining on a large corpus</a></li>
+<li class="chapter" data-level="5.1.3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-text-mining-on-the-entire-digitised-collection"><i class="fa fa-check"></i><b>5.1.3</b> Want to do text mining on the entire digitised collection</a></li>
+<li class="chapter" data-level="5.1.4" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-something-involving-the-images-such-as-computer-vision-techniques"><i class="fa fa-check"></i><b>5.1.4</b> Want to do something involving the images, such as computer vision techniques,</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#intro-to-british-library-newspapers"><i class="fa fa-check"></i><b>5.2</b> Intro to British Library Newspapers</a></li>
+<li class="chapter" data-level="5.3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#eebotcp"><i class="fa fa-check"></i><b>5.3</b> EEBO/TCP</a></li>
+<li class="chapter" data-level="5.4" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#burney-collection"><i class="fa fa-check"></i><b>5.4</b> Burney Collection</a></li>
+<li class="chapter" data-level="5.5" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#jisc-newspaper-digitisation-projects"><i class="fa fa-check"></i><b>5.5</b> JISC Newspaper digitisation projects</a></li>
+<li class="chapter" data-level="5.6" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#british-newspaper-archive-1"><i class="fa fa-check"></i><b>5.6</b> BRITISH NEWSPAPER ARCHIVE</a></li>
+<li class="chapter" data-level="5.7" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#gale"><i class="fa fa-check"></i><b>5.7</b> GALE</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#getting-access-to-gale-data---experience-of-others"><i class="fa fa-check"></i><b>5.7.1</b> Getting access to GALE data - experience of others</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#hmd-data--on-repository"><i class="fa fa-check"></i><b>5.8</b> HMD data- on repository</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#project-goals"><i class="fa fa-check"></i><b>5.8.1</b> Project goals</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#luxembourg-data"><i class="fa fa-check"></i><b>5.9</b> Luxembourg data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-formats.html"><a href="data-formats.html"><i class="fa fa-check"></i><b>6</b> Data formats</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-formats.html"><a href="data-formats.html#xml---different-flavours"><i class="fa fa-check"></i><b>6.1</b> XML - different flavours</a></li>
+<li class="chapter" data-level="6.2" data-path="data-formats.html"><a href="data-formats.html#cqpweb-newspaper-corpora"><i class="fa fa-check"></i><b>6.2</b> CQPWeb newspaper corpora</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html"><i class="fa fa-check"></i><b>7</b> OCR and its problems</a><ul>
+<li class="chapter" data-level="7.1" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-is-ocr"><i class="fa fa-check"></i><b>7.1</b> What is OCR?</a></li>
+<li class="chapter" data-level="7.2" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-is-it-like-in-bl-newspapers"><i class="fa fa-check"></i><b>7.2</b> What is it like in BL newspapers?</a></li>
+<li class="chapter" data-level="7.3" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-information-do-we-have-on-ocr"><i class="fa fa-check"></i><b>7.3</b> What information do we have on OCR?</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#error-rate"><i class="fa fa-check"></i><b>7.3.1</b> Error rate</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#ground-truth---testing-against-transcription"><i class="fa fa-check"></i><b>7.3.2</b> Ground truth - testing against transcription</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#impact-on-analysis"><i class="fa fa-check"></i><b>7.4</b> Impact on analysis</a></li>
+</ul></li>
+<li class="part"><span><b>II Part I: Basic data methods</b></span></li>
+<li class="chapter" data-level="8" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>8</b> Methods</a><ul>
+<li class="chapter" data-level="8.1" data-path="methods.html"><a href="methods.html#mapping-seventeenth-century-newsbooks"><i class="fa fa-check"></i><b>8.1</b> Mapping seventeenth century newsbooks</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="methods.html"><a href="methods.html#mapping-with-r"><i class="fa fa-check"></i><b>8.1.1</b> Mapping with R</a></li>
+<li class="chapter" data-level="8.1.2" data-path="methods.html"><a href="methods.html#steps"><i class="fa fa-check"></i><b>8.1.2</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="methods.html"><a href="methods.html#network-analysis-of-seventeenth-century-newsbooks"><i class="fa fa-check"></i><b>8.2</b> Network analysis of seventeenth century newsbooks</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="methods.html"><a href="methods.html#background"><i class="fa fa-check"></i><b>8.2.1</b> Background</a></li>
+<li class="chapter" data-level="8.2.2" data-path="methods.html"><a href="methods.html#network-analysis"><i class="fa fa-check"></i><b>8.2.2</b> Network analysis</a></li>
+<li class="chapter" data-level="8.2.3" data-path="methods.html"><a href="methods.html#steps-1"><i class="fa fa-check"></i><b>8.2.3</b> Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="methods.html"><a href="methods.html#network-analysis-using-nlp-and-lancaster-newsbooks"><i class="fa fa-check"></i><b>8.3</b> Network analysis using NLP and Lancaster newsbooks</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="methods.html"><a href="methods.html#background-1"><i class="fa fa-check"></i><b>8.3.1</b> Background</a></li>
+<li class="chapter" data-level="8.3.2" data-path="methods.html"><a href="methods.html#sources-used"><i class="fa fa-check"></i><b>8.3.2</b> Sources used</a></li>
+<li class="chapter" data-level="8.3.3" data-path="methods.html"><a href="methods.html#steps-2"><i class="fa fa-check"></i><b>8.3.3</b> Steps</a></li>
+<li class="chapter" data-level="8.3.4" data-path="methods.html"><a href="methods.html#choropleth-maps---nineteenth-century"><i class="fa fa-check"></i><b>8.3.4</b> Choropleth maps - nineteenth century</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>9</b> R and the Tidyverse</a><ul>
+<li class="chapter" data-level="9.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#r"><i class="fa fa-check"></i><b>9.1</b> R</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#base-r-commands"><i class="fa fa-check"></i><b>9.1.1</b> Base R commands</a></li>
+<li class="chapter" data-level="9.1.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#r-studio"><i class="fa fa-check"></i><b>9.1.2</b> R studio</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i><b>9.2</b> Tidyverse</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i><b>9.2.1</b> Select, pull</a></li>
+<li class="chapter" data-level="9.2.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i><b>9.2.2</b> group_by, tally, summarise</a></li>
+<li class="chapter" data-level="9.2.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>9.2.3</b> filter</a></li>
+<li class="chapter" data-level="9.2.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#sort-arrange-top_n"><i class="fa fa-check"></i><b>9.2.4</b> sort, arrange, top_n</a></li>
+<li class="chapter" data-level="9.2.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i><b>9.2.5</b> Piping</a></li>
+<li class="chapter" data-level="9.2.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#plotting"><i class="fa fa-check"></i><b>9.2.6</b> Plotting</a></li>
+<li class="chapter" data-level="9.2.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#doing-this-with-newspaper-data"><i class="fa fa-check"></i><b>9.2.7</b> Doing this with newspaper data</a></li>
+<li class="chapter" data-level="9.2.8" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#other-relevant-stuff-particularly-for-historians"><i class="fa fa-check"></i><b>9.2.8</b> Other relevant stuff, particularly for historians</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>10</b> Regular expressions</a></li>
+<li class="chapter" data-level="11" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html"><i class="fa fa-check"></i><b>11</b> Charting over time with a curated dataset</a><ul>
+<li class="chapter" data-level="11.1" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html#where-to-download"><i class="fa fa-check"></i><b>11.1</b> Where to download</a></li>
+<li class="chapter" data-level="11.2" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html#time"><i class="fa fa-check"></i><b>11.2</b> Time</a></li>
+<li class="chapter" data-level="11.3" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html#barplots"><i class="fa fa-check"></i><b>11.3</b> Barplots</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="network-analysis-with-curated-seventeenth-century-dataset.html"><a href="network-analysis-with-curated-seventeenth-century-dataset.html"><i class="fa fa-check"></i><b>12</b> Network analysis with curated seventeenth-century dataset</a></li>
+<li class="chapter" data-level="13" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html"><i class="fa fa-check"></i><b>13</b> Geocode and map newspaper titles</a><ul>
+<li class="chapter" data-level="13.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#points"><i class="fa fa-check"></i><b>13.1</b> Points</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#drawing-a-background-map."><i class="fa fa-check"></i><b>13.1.1</b> Drawing a background map. `</a></li>
+<li class="chapter" data-level="13.1.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#get-a-count-of-the-total-titles-for-each-city"><i class="fa fa-check"></i><b>13.1.2</b> Get a count of the total titles for each city</a></li>
+<li class="chapter" data-level="13.1.3" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#get-a-list-of-points."><i class="fa fa-check"></i><b>13.1.3</b> Get a list of points.</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#choropleth-map"><i class="fa fa-check"></i><b>13.2</b> Choropleth map</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#which-libraries-are-needed"><i class="fa fa-check"></i><b>13.2.1</b> Which libraries are needed</a></li>
+<li class="chapter" data-level="13.2.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#download-a-shapefile"><i class="fa fa-check"></i><b>13.2.2</b> Download a shapefile</a></li>
+<li class="chapter" data-level="13.2.3" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#have-a-look-at-the-shapefile"><i class="fa fa-check"></i><b>13.2.3</b> Have a look at the shapefile</a></li>
+<li class="chapter" data-level="13.2.4" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#count-the-general-area-of-coverage-field"><i class="fa fa-check"></i><b>13.2.4</b> Count the general area of coverage field</a></li>
+<li class="chapter" data-level="13.2.5" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#change-some-of-the-names-to-fit-the-shapefile"><i class="fa fa-check"></i><b>13.2.5</b> Change some of the names to fit the shapefile</a></li>
+<li class="chapter" data-level="13.2.6" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#section"><i class="fa fa-check"></i><b>13.2.6</b> </a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Part III: Examples</b></span></li>
+<li class="chapter" data-level="14" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>14</b> Text mining</a><ul>
+<li class="chapter" data-level="14.1" data-path="text-mining.html"><a href="text-mining.html#what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century_"><i class="fa fa-check"></i><b>14.1</b> What were the most common words used in newspaper titles in the nineteenth century?_</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="text-mining.html"><a href="text-mining.html#titles-dont-just-help-you-identity-a-newspaper-but-they-might-tell-you-a-little-bit-about-the-time-in-which-they-were-established.-with-a-bibliographic-list-of-all-our-uk-and-irish-titles-we-can-count-the-most-frequent-words-and-track-them-over-time-and-place-using-text-mining-and-data-analysis."><i class="fa fa-check"></i><b>14.1.1</b> Titles don’t just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of <em>all</em> our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.</a></li>
+<li class="chapter" data-level="14.1.2" data-path="text-mining.html"><a href="text-mining.html#what-is-this-document"><i class="fa fa-check"></i><b>14.1.2</b> What is this document?</a></li>
+<li class="chapter" data-level="14.1.3" data-path="text-mining.html"><a href="text-mining.html#how-about-differences-by-country"><i class="fa fa-check"></i><b>14.1.3</b> How about differences by country?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="term-frequencies.html"><a href="term-frequencies.html"><i class="fa fa-check"></i><b>15</b> Term Frequencies</a></li>
+<li class="chapter" data-level="16" data-path="text-reuse.html"><a href="text-reuse.html"><i class="fa fa-check"></i><b>16</b> Text reuse</a></li>
+<li class="chapter" data-level="17" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html"><i class="fa fa-check"></i><b>17</b> Sentiment analysis</a></li>
+<li class="chapter" data-level="18" data-path="existing-work.html"><a href="existing-work.html"><i class="fa fa-check"></i><b>18</b> Existing work</a></li>
+<li class="chapter" data-level="19" data-path="further-reading.html"><a href="further-reading.html"><i class="fa fa-check"></i><b>19</b> Further reading</a></li>
+<li class="chapter" data-level="20" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html"><i class="fa fa-check"></i><b>20</b> Accessing newspaper data through the British Library</a><ul>
+<li class="chapter" data-level="20.1" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#what-is-available"><i class="fa fa-check"></i><b>20.1</b> What is available?</a></li>
+<li class="chapter" data-level="20.2" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#applying-for-support-from-bl-labs"><i class="fa fa-check"></i><b>20.2</b> Applying for support from BL Labs</a></li>
+<li class="chapter" data-level="20.3" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#using-jupyterhub-in-the-reading-rooms"><i class="fa fa-check"></i><b>20.3</b> Using JupyterHub in the reading rooms</a></li>
+<li class="chapter" data-level="20.4" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#taking-the-data-away-with-you"><i class="fa fa-check"></i><b>20.4</b> Taking the data away with you</a></li>
+<li class="chapter" data-level="20.5" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#next-chapter-leads-on-to-ocr-formats."><i class="fa fa-check"></i><b>20.5</b> Next chapter leads on to OCR formats.</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for Newspaper Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-and-the-tidyverse" class="section level1">
+<h1><span class="header-section-number">9</span> R and the Tidyverse</h1>
+<p>The motivation behind this book was to provide a way to access and analyse newspaper data using a programming language that I am familiar with. The reason is simple: you write what you know, and I know R best. With its interface, R-Studio, I think it has the easiest transition from someone used to spreadsheet programs, and you’ll realise that most of what you do is filter, sort, count and select columns in a data format called a dataframe.</p>
+<p>A dataframe is basically a spreadsheet - it contains rows with observations, and columns with variables. Each row is generally a <em>thing</em>, for want of a better word. A thing that wants to be counted, either by summarising it as a more general thing, or turning it into something else and then counting it, or removing some of the things first and then counting the leftovers. For us, the thing might be a record of a newspaper title, or a newspaper article (and its text), or it might be a single word.</p>
+<p>You can do a lot more cool things with a thing in a dataframe. A thing might be a single polygon, in a huge dataframe of polygons or lines, all of which add up to a map, which we can then count, sort, filter and eventually draw.</p>
+<p>While I want this book to stand alone, it’s not meant to function as a tutorial, but rather I will try to explain just enough to do the analysis seen in this book.</p>
+<div id="r" class="section level2">
+<h2><span class="header-section-number">9.1</span> R</h2>
+<p>R has been around for a while. It’s a good programming language for data analysis and plotting, and it is relatively easy to create nice-looking plots.</p>
+<div id="base-r-commands" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> Base R commands</h3>
+<p>I don’t use them very much, but R does have a bunch of very well-developed commands for doing the sorting, filtering and counting mentioned above. If you want to learn base R, I recommend the following:</p>
+<p>It is worth understanding the main types of data that you’ll come across, in your environment window. First, you’ll have dataframes. These are the spreadsheet-like objects which you’ll use in most analyses. They have rows and columns.</p>
+<p>Next are variables. A variable is assigned to a name, and then used for various purposes.</p>
+<p>You’ll often here of something called a vector. A vector is like a python list. It’s sort of like a single column in a dataframe (spreadsheet), a 2D dataframe. It can have different types: for example, a character vector looks like this <code>c(&quot;apples&quot;, &quot;bananas&quot;, &quot;oranges&quot;)</code></p>
+<p>A dataframe is just a bunch of vectors side by side.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">library</span>(tibble)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">fruit =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apples&quot;</span>, <span class="st">&quot;bananas&quot;</span>, <span class="st">&quot;oranges&quot;</span>, <span class="st">&quot;apples&quot;</span>)</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">colour =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">amount =<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">8</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">fruit_data =<span class="st"> </span><span class="kw">data.frame</span>(fruit,colour,amount, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">fruit_data</a></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples  green      2
+## 2 bananas yellow      5
+## 3 oranges orange     10
+## 4  apples    red      8</code></pre>
+<p>Notice above that the third column, the amount, has <dbl> under it instead of <chr>. That’s because R is treating it as a number, rather than a character. This means you can add them up and do all sorts of other mathy type things to them.</p>
+<p>Anyway, that’s a dataframe.</p>
+</div>
+<div id="r-studio" class="section level3">
+<h3><span class="header-section-number">9.1.2</span> R studio</h3>
+<p>R studio is an IDE. It’s unusual in that it’s very self-contained and ubiqutous. One of the attractions for R when I began, was that it seemed so much less confusing than Python, which has many different ways of accessing it. While you can use R in many ways too, R-Studio seems much more of a ‘catch-all’ that appeals to everyone. It’s available here: [link]</p>
+<p>It has four main windows: you’ll type your code in the top left, your environments are on the right (it lists your dataframes, variables and so forth. The bottom right contains the files in your project folder, as well as some other tabs showing plots and help.The bottom left shows the console - that’s where everything you do is sent and where it is acted on by R.</p>
+<p>The help screen is particularly useful. Typing <code>?</code> followed by a function brings up a screen explaining the function on the bottom right panel. So typing: <code>?data.frame()</code> into the R console will display a screen containing information on a function and its various options.</p>
+<p>into</p>
+</div>
+</div>
+<div id="tidyverse" class="section level2">
+<h2><span class="header-section-number">9.2</span> Tidyverse</h2>
+<p>Most of the work in this book is done using a set of packages developed for R called the ‘tidyverse’. These enhance and improve a large range of R functions, with much nice syntax - and they’re faster too. It’s really a bunch of individual packages for sorting, filtering and plotting data frames.
+They can be divided into a number of diferent categories.</p>
+<p>They all work in the same way. The first argument is the thing you want to operate on. This is nearly always a data frame. After come other arguments, which are often specific columns, or certain variables you want to do something with.</p>
+<div id="select-pull" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Select, pull</h3>
+<p><code>select()</code> allows you to select columns. You can use names or numbers to pick the columns, and you can use a <code>-</code> sign to select everything <em>but</em> a given column.</p>
+<p>Using the fruit data frame we created above:
+We can select just the fruit and colour columns:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">select</span>(fruit_data, fruit, colour)</a></code></pre></div>
+<pre><code>##     fruit colour
+## 1  apples  green
+## 2 bananas yellow
+## 3 oranges orange
+## 4  apples    red</code></pre>
+<p>Select everything but the colour column:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">select</span>(fruit_data, <span class="op">-</span>colour)</a></code></pre></div>
+<pre><code>##     fruit amount
+## 1  apples      2
+## 2 bananas      5
+## 3 oranges     10
+## 4  apples      8</code></pre>
+<p>Select the first two columns:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">select</span>(fruit_data, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>##     fruit colour
+## 1  apples  green
+## 2 bananas yellow
+## 3 oranges orange
+## 4  apples    red</code></pre>
+</div>
+<div id="group_by-tally-summarise" class="section level3">
+<h3><span class="header-section-number">9.2.2</span> group_by, tally, summarise</h3>
+<p>The next group of functions group things together and count them. Sounds boring but you would be amazed by how much of data science just seems to be doing those two things in various combinations.</p>
+<p><code>group_by()</code> puts rows with the same variable in a column of your dataframe into a group. Once they’re in a group, you can count them or summarise them by another variable.</p>
+<p>First you need to create a new dataframe with the grouped fruit.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">grouped_fruit =<span class="st"> </span><span class="kw">group_by</span>(fruit_data, fruit)</a></code></pre></div>
+<p>Next we use <code>tally()</code>. This counts all the instances of each fruit group.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">tally</span>(grouped_fruit)</a></code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   fruit       n
+##   &lt;chr&gt;   &lt;int&gt;
+## 1 apples      2
+## 2 bananas     1
+## 3 oranges     1</code></pre>
+<p>See? Now the apples are grouped together rather than being two separate rows, and there’s a new column called n, which contains the result of the count.</p>
+<p>If we specify that we want to count by something else, we can add that in as a ‘weight’, by adding <code>wt =</code> as an argument in the function.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">tally</span>(grouped_fruit, <span class="dt">wt =</span> amount)</a></code></pre></div>
+<pre><code>## # A tibble: 3 x 2
+##   fruit       n
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 apples     10
+## 2 bananas     5
+## 3 oranges    10</code></pre>
+<p>That counts the amounts of each fruit, ignoring the colour.</p>
+</div>
+<div id="filter" class="section level3">
+<h3><span class="header-section-number">9.2.3</span> filter</h3>
+<p>Another quite obviously useful function. This filters the dataframe based on a condition which you set within the function.</p>
+<p>Just red fruit:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">filter</span>(fruit_data, colour <span class="op">==</span><span class="st"> &#39;red&#39;</span>)</a></code></pre></div>
+<pre><code>##    fruit colour amount
+## 1 apples    red      8</code></pre>
+<p>Just fruit with at least 5 pieces:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">filter</span>(fruit_data, amount <span class="op">&gt;=</span><span class="dv">5</span>)</a></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1 bananas yellow      5
+## 2 oranges orange     10
+## 3  apples    red      8</code></pre>
+</div>
+<div id="sort-arrange-top_n" class="section level3">
+<h3><span class="header-section-number">9.2.4</span> sort, arrange, top_n</h3>
+<p>Another useful set of functions, often you want to sort things. The function <code>arrange()</code> does this very nicely. You specify the data frame, and the variable you would like to sort by.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">arrange</span>(fruit_data, amount)</a></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples  green      2
+## 2 bananas yellow      5
+## 3  apples    red      8
+## 4 oranges orange     10</code></pre>
+<p>Sorting is ascending by default, but you can specify descending using <code>desc()</code>:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">arrange</span>(fruit_data, <span class="kw">desc</span>(amount))</a></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1 oranges orange     10
+## 2  apples    red      8
+## 3 bananas yellow      5
+## 4  apples  green      2</code></pre>
+<p>If you `sort<code>arrange()</code> by a list of characters, you’ll get alphabetical order:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">arrange</span>(fruit_data, fruit)</a></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples  green      2
+## 2  apples    red      8
+## 3 bananas yellow      5
+## 4 oranges orange     10</code></pre>
+<p>You can sort by multiple things:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">arrange</span>(fruit_data, fruit, <span class="kw">desc</span>(amount))</a></code></pre></div>
+<pre><code>##     fruit colour amount
+## 1  apples    red      8
+## 2  apples  green      2
+## 3 bananas yellow      5
+## 4 oranges orange     10</code></pre>
+<p>Notice that now red apples are first.</p>
+</div>
+<div id="piping" class="section level3">
+<h3><span class="header-section-number">9.2.5</span> Piping</h3>
+<p>Another great feature of the tidyverse is that you can ‘pipe’ commands through a bunch of functions. This means that you can do one operate, and pass the result to another operation. The previous dataframe is passed as the first argument of the next function by using the pipe <code>%&gt;%</code> command. It works like this:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">fruit_data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(colour <span class="op">!=</span><span class="st"> &#39;yellow&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(fruit) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="st">  </span><span class="kw">tally</span>(amount) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n))</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   fruit       n
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 apples     10
+## 2 oranges    10</code></pre>
+<p>That code block, written in prose: “take fruit data, remove any yellow colour fruit, count the fruits by type and amount, and arrange in descending order of the total”</p>
+</div>
+<div id="plotting" class="section level3">
+<h3><span class="header-section-number">9.2.6</span> Plotting</h3>
+<p>The tidyverse includes a pretty amazing plotting library called ggplot2. This is used by piping your dataframe to a function called <code>ggplot()</code>. It’s too much to go into now, but the basic idea is that you add your data, then you can add plot elements which are called geoms. Some common ones are <code>geom_line()</code>, <code>geom_bar</code> and <code>geom_point</code>. To the geom function you add aesthetics, which is basically telling the function which bits of your data should be responsible for which parts of the visualisation. These are added using <code>aes()</code>. I’ll explain a bit more about some in other parts of this book.</p>
+<p>As an example:</p>
+<p>Bar chart of different types of fruit (one each of bananas and oranges, two types of apple)</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">fruit_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> fruit))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" />
+Counting the total amount of fruit:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">fruit_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> fruit, <span class="dt">weight =</span> amount))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p>Charting amounts and fruit colours:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">fruit_data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> fruit, <span class="dt">weight =</span> amount, <span class="dt">fill =</span> colour)) </a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p>And just because it annoys me having random colours, we can map them to the actual colours:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">fruit_data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> fruit, <span class="dt">weight =</span> amount, <span class="dt">fill =</span> colour)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;orange&quot;</span> =<span class="st"> &quot;orange&quot;</span>, </a>
+<a class="sourceLine" id="cb57-5" data-line-number="5">                               <span class="st">&quot;green&quot;</span> =<span class="st"> &quot;#8db600&quot;</span>, </a>
+<a class="sourceLine" id="cb57-6" data-line-number="6">                               <span class="st">&quot;red&quot;</span> =<span class="st"> &quot;#ff0800&quot;</span>, </a>
+<a class="sourceLine" id="cb57-7" data-line-number="7">                               <span class="st">&quot;yellow&quot;</span> =<span class="st"> &quot;#ffe135&quot;</span>))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+</div>
+<div id="doing-this-with-newspaper-data" class="section level3">
+<h3><span class="header-section-number">9.2.7</span> Doing this with newspaper data</h3>
+<p>Who cares about fruit? Nobody, that’s who. We want newspaper data! Let’s load a dataset of metadata for all the titles held by the library, and do some counting and sorting.</p>
+<p>Download from here: <a href="https://doi.org/10.23636/1136">British Library Research Repository</a></p>
+<p>You would need to extract into your project folder first, if you’re following along at home:</p>
+<p><code>read_csv</code> reads the csv from file.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">title_list =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;data/BritishAndIrishNewspapersTitleList_20191118.csv&#39;</span>)</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_character(),
+##   title_id = col_double(),
+##   nid = col_double(),
+##   nlp = col_double(),
+##   first_date_held = col_double(),
+##   publication_date_one = col_double(),
+##   publication_date_two = col_double()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p>Select some particularly relevant columns:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, </a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">         first_date_held, </a>
+<a class="sourceLine" id="cb61-4" data-line-number="4">         last_date_held, </a>
+<a class="sourceLine" id="cb61-5" data-line-number="5">         country_of_publication)</a></code></pre></div>
+<pre><code>## # A tibble: 24,927 x 4
+##    publication_title            first_date_held last_date_held country_of_publi…
+##    &lt;chr&gt;                                  &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;            
+##  1 Corante, or, Newes from Ita…            1621 1621           The Netherlands  
+##  2 Corante, or, Newes from Ita…            1621 1621           The Netherlands  
+##  3 Corante, or, Newes from Ita…            1621 1621           The Netherlands  
+##  4 Corante, or, Newes from Ita…            1621 1621           England          
+##  5 Courant Newes out of Italy,…            1621 1621           The Netherlands  
+##  6 &quot;A Relation of the late Occ…            1622 1622           England          
+##  7 &quot;A Relation of the late Occ…            1622 1622           England          
+##  8 &quot;A Relation of the late Occ…            1622 1622           England          
+##  9 &quot;A Relation of the late Occ…            1622 1622           England          
+## 10 &quot;A Relation of the late Occ…            1622 1622           England          
+## # … with 24,917 more rows</code></pre>
+<p>Arrange in order of the latest date of publication, and then by the first date of publication:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, </a>
+<a class="sourceLine" id="cb63-3" data-line-number="3">         first_date_held, </a>
+<a class="sourceLine" id="cb63-4" data-line-number="4">         last_date_held, </a>
+<a class="sourceLine" id="cb63-5" data-line-number="5">         country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb63-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(last_date_held), first_date_held)</a></code></pre></div>
+<pre><code>## # A tibble: 24,927 x 4
+##    publication_title            first_date_held last_date_held country_of_publi…
+##    &lt;chr&gt;                                  &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;            
+##  1 Shrewsbury chronicle                    1773 Continuing     England          
+##  2 London times|The Times|Time…            1788 Continuing     England          
+##  3 Observer (London)|Observer …            1791 Continuing     England          
+##  4 Limerick chronicle                      1800 Continuing     Ireland          
+##  5 Hampshire chronicle|The Ham…            1816 Continuing     England          
+##  6 The Inverness Courier, and …            1817 Continuing     Scotland         
+##  7 Sunday times (London)|Sunda…            1822 Continuing     England          
+##  8 The Impartial Reporter, etc             1825 Continuing     Northern Ireland 
+##  9 Impartial reporter and farm…            1825 Continuing     Northern Ireland 
+## 10 Aberdeen observer                       1829 Continuing     Scotland         
+## # … with 24,917 more rows</code></pre>
+<p>Group and count by country of publication:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, </a>
+<a class="sourceLine" id="cb65-3" data-line-number="3">         first_date_held, </a>
+<a class="sourceLine" id="cb65-4" data-line-number="4">         last_date_held, </a>
+<a class="sourceLine" id="cb65-5" data-line-number="5">         country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(last_date_held)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-8" data-line-number="8"><span class="st">  </span><span class="kw">tally</span>()</a></code></pre></div>
+<pre><code>## # A tibble: 40 x 2
+##    country_of_publication               n
+##    &lt;chr&gt;                            &lt;int&gt;
+##  1 Bermuda Islands                     24
+##  2 Cayman Islands                       1
+##  3 England                          20465
+##  4 England|Hong Kong                    1
+##  5 England|India                        2
+##  6 England|Iran                         2
+##  7 England|Ireland                     10
+##  8 England|Ireland|Northern Ireland    10
+##  9 England|Jamaica                      7
+## 10 England|Malta                        2
+## # … with 30 more rows</code></pre>
+<p>Arrange again, this time in descending order of number of titles for each country:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, </a>
+<a class="sourceLine" id="cb67-3" data-line-number="3">         first_date_held, </a>
+<a class="sourceLine" id="cb67-4" data-line-number="4">         last_date_held, </a>
+<a class="sourceLine" id="cb67-5" data-line-number="5">         country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb67-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(last_date_held)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb67-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb67-8" data-line-number="8"><span class="st">  </span><span class="kw">tally</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb67-9" data-line-number="9"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n))</a></code></pre></div>
+<pre><code>## # A tibble: 40 x 2
+##    country_of_publication               n
+##    &lt;chr&gt;                            &lt;int&gt;
+##  1 England                          20465
+##  2 Scotland                          1778
+##  3 Ireland                           1050
+##  4 Wales                             1019
+##  5 Northern Ireland                   415
+##  6 England|Wales                       58
+##  7 Bermuda Islands                     24
+##  8 England|Scotland                    13
+##  9 England|Ireland                     10
+## 10 England|Ireland|Northern Ireland    10
+## # … with 30 more rows</code></pre>
+<p>Filter only those with more than 100 titles:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, </a>
+<a class="sourceLine" id="cb69-3" data-line-number="3">         first_date_held, </a>
+<a class="sourceLine" id="cb69-4" data-line-number="4">         last_date_held, </a>
+<a class="sourceLine" id="cb69-5" data-line-number="5">         country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb69-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(last_date_held)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb69-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb69-8" data-line-number="8"><span class="st">  </span><span class="kw">tally</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb69-9" data-line-number="9"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb69-10" data-line-number="10"><span class="st">  </span><span class="kw">filter</span>(n<span class="op">&gt;=</span><span class="dv">100</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 2
+##   country_of_publication     n
+##   &lt;chr&gt;                  &lt;int&gt;
+## 1 England                20465
+## 2 Scotland                1778
+## 3 Ireland                 1050
+## 4 Wales                   1019
+## 5 Northern Ireland         415</code></pre>
+<p>Make a simple bar chart:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(publication_title, </a>
+<a class="sourceLine" id="cb71-3" data-line-number="3">         first_date_held, </a>
+<a class="sourceLine" id="cb71-4" data-line-number="4">         last_date_held, </a>
+<a class="sourceLine" id="cb71-5" data-line-number="5">         country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb71-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(last_date_held)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb71-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb71-8" data-line-number="8"><span class="st">  </span><span class="kw">tally</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb71-9" data-line-number="9"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb71-10" data-line-number="10"><span class="st">  </span><span class="kw">filter</span>(n<span class="op">&gt;=</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb71-11" data-line-number="11"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb71-12" data-line-number="12"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">x =</span> country_of_publication, <span class="dt">weight =</span> n))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+</div>
+<div id="other-relevant-stuff-particularly-for-historians" class="section level3">
+<h3><span class="header-section-number">9.2.8</span> Other relevant stuff, particularly for historians</h3>
+<div id="dealing-with-dates" class="section level4">
+<h4><span class="header-section-number">9.2.8.1</span> Dealing with dates</h4>
+</div>
+<div id="mapscoordinates" class="section level4">
+<h4><span class="header-section-number">9.2.8.2</span> Maps/coordinates</h4>
+<p>This will be mostly pointing at other resources, aim mainly to point out that R can do mapping well.</p>
+</div>
+<div id="other-relevant-functions" class="section level4">
+<h4><span class="header-section-number">9.2.8.3</span> Other relevant functions</h4>
+<p>So that’s a very quick introduction to R. There’s loads of places to learn more.</p>
+<p><a href="https://www.rstudio.com/resources/cheatsheets/">R-studio cheat sheets</a></p>
+<p><a href="https://bookdown.org/ndphillips/YaRrr/">The Pirate’s Guide to R, a good beginners guide to base R</a></p>
+<p><a href="https://r4ds.had.co.nz">R for data science, which teaches the tidyverse in detail</a></p>
+<p><a href="https://bookdown.org/yihui/bookdown/introduction.html">Learn how to make a book like this using Bookdown</a></p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regular-expressions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

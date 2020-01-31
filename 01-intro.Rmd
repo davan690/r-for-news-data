@@ -4,6 +4,28 @@
 
 Write an example here. Start with metadata, find a bunch of newspapers you're interested in. From this make a corpus. Map, plot, text mine, make an interactive visualisation. Understand patterns of text reuse, or use relative frequencies of keywords to see when they were emphasised.
 
+The historian now has a lot of newspaper data at her disposal. She might 
+
+She goes online, is interested in the reception of news about the Crimean War in Manchester. But where to start? Well, first she narrows down the list of newspapers to consult using an interactive map. For this research, she'll look at everything published in Manchester between 1853 and 1857. But also, she's interested in a more fine-grained group of titles: this will specifically be a study of the established press: so those that lasted a long time, at least fifty years in total. And while she's at it, she'll specify that she's only interested in the Liberal press, using an enriched database of political leanings.
+
+List of titles in hand, she goes the BL Open Repository and finds the openly accessible ones, and downloads the relevant files, in .xml format. From here she extracts the text, article by article, into a single corpus. She makes a list of search terms which she thinks will help to narrow things down, and, using this, restricts her new corpus to articles about the Crimean war, as best as possible. 
+
+First she looks at the most frequent terms: the usual suspects are there, of course - but once she filters out the 'stop words' she sees some potentially patterns, and notes down some words to dig into later. Giving the top ten per month is also interesting, and shows a shift from words relating to the diplomacy of the conflict, to more potentially more 'emotive' language, describing individual battles. 
+
+Next she creates a 20 topic model to see if there is any difference between the types of articles in her corpus, which shows a few 'themes' under which the articles can be grouped together: one with words like _steamer_, _navy_, _Sebastopol_ as its most important words is an unusual grouping, and might be worth exploring. 
+
+Using sentiment analysis the historian of the Crimean war notices a shift towards reporting with more negative words, and a cluster of particularly negative articles in late 1854: when the reports of the failed military action during the Battle of Baklava started to trickle through: an event which was immortalised only weeks later in Tennyson's narrative poem _The Charge of the Light Brigade_. Not surprising, perhaps, but a reassuring confirmation.
+
+How were these titles sharing information? Using techniques to find overlapping shared text across multiple documents, she works out that the flow of information moved from the established dailies to the weekly titles. 
+
+This is not too far into the future: we're starting to make data openly available. The tools, which only a few years ago were restricted to experts, are now unimaginably easier to use. 
+
+Things have moved on from the first generation of 'how-to' guides for digital humanities students: it's now fairly reasonable to pick a language, probably R or Python, and do all analysis, writing, documentation and so forth without ever leaving the safety of its ecosystem. These modern languages have a huge number of packages for doing all sorts of interesting analysis of text, and even authoring entire books.
+
+On the other hand, the promise of scraping the web for open data, while still with its place, has in many ways been superseded. The historian looking to use newspaper data must wrestle with closed systems, proprietary formats and so forth. The sheer quantity of newspaper data, and its commercial roots (and perhaps new commercial future), mean that it has not been treated in the same way as many other historical datasets. Newspaper data has, up until recently, had several financial, legal, bureaucratic and technical hurdles. 
+
+The promise of newspaper data is great, but the practicalities are complex, and can be offputting for the non-specialist. This book hopes to simplify some of these techniques, demystify the formats, and provide a way in for those who would like to dip their toe in the waters of newspaper data. 
+
 ## What is newspaper data?
 
 Difference between content and data? It's arbitrary, all of the digitised content could be considered data. Perhaps it takes on that name when we do certain acts on it? For example the images become data 
@@ -121,7 +143,7 @@ The rest of this book is divided into three sections:
 * Methods, which talks through some of the techniques in a broad sense
 * Examples, which uses the techniques above to actually do some stuff - these are like mini research projects, intending to show how R can help with newspapers and also show something interesting. 
 
-The book doesn't need to be read in its entirety: if you're just interested in finding newspaper data, specifically that collected by the British Library, you could stick with the first part. You might be a much better programmer than me and just interested in the scope of the Library's datasets for some analysis - for instance, it might be useful to look at the chapters on the BNA and JISC digitisation projects, to get a handle on how representative the data you have is. You might have arrived at the Library to do some research and not know where to begin with our folder structure and so forth. As much of that information as possible has been included
+The book doesn't need to be read in its entirety: if you're just interested in finding newspaper data, specifically that collected by the British Library, you could stick with the first part. You might be a much better programmer than me and just interested in the scope of the Library's datasets for some analysis - for instance, it might be useful to look at the chapters on the BNA and JISC digitisation projects, to get a handle on how representative the data you have is. You might have arrived at the Library to do some research and not know where to begin with our folder structure and so forth. As much of that information as possible has been included.
 
 
 

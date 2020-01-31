@@ -21,7 +21,9 @@ What does this all mean? Well, it introduces bias, and probably in non-random wa
 
 ## What information do we have on OCR?
 
-Can you add anything on different between JISC and BNA 'confidence scores'? Do a comparison?
+Can you add anything on difference between JISC and BNA 'confidence scores'? Do a comparison?
+
+Make a sample, evenly spread across years?
 
 ### Error rate
 
