@@ -176,9 +176,9 @@ Next turn the dataframe into a slightly more useable format using ```as_tibble()
 Note that each cell in the title column is actually a dataframe of 1 row and two columns! Double rolleyes! We can sort that later.
 
 ```{r}
-b = b %>%
-  as_tibble() %>% 
-  select(heading, title, date, page, snippet, articleText)
+b = b[[1]] %>%
+  as_tibble(.name_repair = 'universal') %>% 
+  select(heading, title, date, page, snippet)
 ```
 
 This is all very well to get one query, but to make a large dataset you need more results, and the maximum in one query is 100.

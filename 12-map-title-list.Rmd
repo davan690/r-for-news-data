@@ -123,8 +123,9 @@ Well, we've cheated and made this one already, with lots of manual work.
 We'll load a dataset containing geocorrected points. 
 
 ```{r message=FALSE, warning=FALSE}
-geocorrected = read_csv('geocorrected_places_for_title_list.csv')
-
+library(snakecase)
+geocorrected = read_csv('data/geocorrected.csv')
+colnames(geocorrected) = to_snake_case(colnames(geocorrected))
 head(geocorrected, 10)
 ```
 
@@ -200,6 +201,7 @@ ggplot() + geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), 
 
 ## Choropleth map
 
+Link to the mapping with R book. Further reading about sf
 Another type of map is a choropleth. This is where the data is visualised by a certain polygon area rather than a point. Typically these represent areas like parishes, counties or countries. It's quite a bit more complicated than the map above. 
 
 ### Which libraries are needed
@@ -251,14 +253,14 @@ county_totals = title_list %>%
 Join this to the shapefile data, specifying that the 'id' field in the shape data should match the 'general_area_of_coverage' field in the county_totals data. 
 
 ```{r}
-shp_tidy = shp_tidy %>% left_join(county_totals, 
-                           by = c('id' = 'general_area_of_coverage'))
+england_shp = england_shp %>% left_join(county_totals, 
+                           by = c('NAME' = 'general_area_of_coverage'))
 ```
 
 Now shp_tidy contains a new column, n, which contains the count of titles, for that county. 
 
 ```{r}
-head(shp_tidy, 20)
+head(england_shp, 20)
 ```
 
 
@@ -266,7 +268,7 @@ Use ggplot and ```geom_polygon()``` to draw the dataframe of polygons.
 
 ```{r}
 ggplot() + 
-  geom_sf(data = england_shp %>% left_join(county_totals, by = c('NAME' = 'general_area_of_coverage')), color = 'black', aes(fill = n))
+  geom_sf(data = england_shp, color = 'black', aes(fill = n))
 ```
 
 It's black, so you need to fill the polygons with colour. This is done by passing the n column to the *fill* aesthetic, inside the aes() within the ```geom_polygon()```
@@ -278,33 +280,9 @@ ggplot() +
   coord_sf(1.3)
 ```
 
-Unfortunately, the list of counties in the title list doesn't _exactly_ match those in the shapefile. This is becuase county names in the UK are a complicated business and they have revised over time. There's no easy solution to this, because new counties don't always match the borders of the changed county, and mergers might not always just join two old counties together. 
+Unfortunately, the list of counties in the title list doesn't _exactly_ match those in the shapefile. This is because county names in the UK are a complicated business and they have revised over time. There's no easy solution to this, because new counties don't always match the borders of the changed county, and mergers might not always just join two old counties together. 
 
 This gets a list of all the counties in the title list _not_ present in the shapefile, arranged in descending order of number of titles. 
-
-```{r}
-anti_join(title_list %>% 
-            filter(country_of_publication == 'England') %>% 
-            group_by(general_area_of_coverage) %>% 
-            tally(),shp_tidy %>% 
-            group_by(id) %>% 
-            tally() %>% 
-            select(id), by = c('general_area_of_coverage' = 'id')) %>% 
-  arrange(desc(n))
-```
-
-And here's the counties in the shapefile not present in the title list:
-
-```{r}
-anti_join(shp_tidy %>% 
-            group_by(id) %>% 
-            tally() %>% 
-            select(id),title_list %>% 
-            filter(country_of_publication == 'England') %>% 
-            group_by(general_area_of_coverage) %>% 
-            tally(), by = c('id' = 'general_area_of_coverage')) 
-
-```
 
 ### Change some of the names to fit the shapefile
 
