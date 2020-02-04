@@ -1,8 +1,6 @@
 # Geocode and map newspaper titles
 R is also really good for creating maps, both for visualisations and for spatial analysis. 
 
-
-
 ## Points
 Another thing we can do is create a map of all the titles. For this we'll need three things
 
@@ -22,7 +20,6 @@ Next load *ggplot2* and the *maps* library
 library(ggplot2)
 library(maps)
 ```
-
 
 First we assign a name to the dataframe we'll create with a function called ```map_data()```. ```map_data()``` takes an argument with the name of the map you want to load, in inverted commas. Some of the choices are 'world', 'usa', 'france', 'italy'. We'll use the 'world' map. 
 
@@ -69,7 +66,8 @@ A couple more things, which I'll run through quickly.
 We can specify fill and line colors usings ```fill = ``` and ```color = ``` inside ```geom_polygon()``` but _outside_ ```aes()```. 
 
 ```{r}
-ggplot() + geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), fill = 'gray90', color = 'black') + 
+ggplot() + 
+  geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), fill = 'gray90', color = 'black') + 
   coord_fixed(ratio = 1.3, xlim = c(-10,3), ylim = c(50, 59))
 ```
 
@@ -77,7 +75,8 @@ We probably don't need the grids or panels in the background. We can get rid of 
 
 
 ```{r}
-ggplot() + geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), fill = 'gray90', color = 'black') + 
+ggplot() + 
+  geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), fill = 'gray90', color = 'black') + 
   coord_fixed(ratio = 1.3, xlim = c(-10,3), ylim = c(50, 59)) + 
   theme_void()
 ```
@@ -101,7 +100,6 @@ title_list = read_csv('BritishAndIrishNewspapersTitleList_20191118.csv')
 ```
 
 We can quite easily make a new data frame, which will just include each location and the total number of instances in the dataset.
-
 
 ```{r}
 location_counts = title_list %>% 
@@ -130,7 +128,7 @@ head(geocorrected, 10)
 
 This is a dataframe with a set of longitude and latitude points (they come from Wikipedia, which is why they are prefixed with _wiki_) for every combination of city/county/country in the list of titles. These can be joined to the full title list.  
 
-It needs a little bit of pre-processing. The longitude and latitude colums 
+It needs a little bit of pre-processing. The longitude and latitude columns need to be made numeric 
 ```{r}
 geocorrected = geocorrected %>%
   mutate(wikilat = as.numeric(wikilat)) %>% 
@@ -138,6 +136,7 @@ geocorrected = geocorrected %>%
 ```
 
 Last, change the NA values to the same format as the ones in the title list. 
+
 ```{r}
 geocorrected = geocorrected %>% 
   mutate(country_of_publication = replace(country_of_publication, country_of_publication == 'na', NA)) %>% mutate(general_area_of_coverage = replace(general_area_of_coverage, general_area_of_coverage == 'na', NA)) %>% 
@@ -202,110 +201,115 @@ ggplot() + geom_polygon(data = worldmap, aes(x = long, y = lat, group = group), 
 
 Another type of map is a choropleth. This is where the data is visualised by a certain polygon area rather than a point. Typically these represent areas like parishes, counties or countries. It's quite a bit more complicated than the map above. 
 
-### Which libraries are needed
 
-Load the following libraries. Install them first using ```install.packages()``` if necessary. These libraries allow one to manipulate spatial data using R.
+Download shapefiles for england and scotland from here
+Turn into sf object 
+Download list of points, turn into sf object
+Use st join to get county information
+Join to the title list and deselect everything except county and titles - maybe 19th century only..
+Join that to the sf object
+Plot using geom_sf()
 
-
-```{r message=FALSE, warning=FALSE}
+Load libraries
+```{r}
+library(tidyverse)
 library(sf)
-library(rgdal)
-library(broom)
-library(rgeos)
 ```
 
+Download title list
+```{r}
+title_df = read_csv('BritishAndIrishNewspapersTitleList_20191118.csv')
+```
 
-### Download a shapefile
+Make the points sf object
 
-Next you'll need the correct shapefile. 
-
-[From here](https://data.gov.uk/dataset/0fb911e4-ca3a-4553-9136-c4fb069546f9/ceremonial-county-boundaries-of-england)
-
-Extract it into your project folder.
-
-A shapefile is a special object with a couple of elements. It contains a dataset of polygons, like the map above, as well as some other things. First you need to turn the list of polygons into a dataframe, and then join it to a count of all the newspaper titles per county. 
-
-### Load the shapefile into R
-
-Using the function ```readOGR()``` from the rgdal package, we can load the shapefile into an object called ```england_shp```. ```readOGR()``` needs a dsn argument, which is the folder you've extracted into, and a layer, which is the name of the file in the folder, minus the extension. 
-
-So if your folder looks like this: 
-
-![](shapefile.png)
-
-The arguments are as follows:
+Download and load the shapefiles
 
 ```{r}
-england_shp = st_read("data/english_ceremonial_counties/English Ceremonial Counties.shp")
+eng_1851 = st_read("/Users/Yann/Documents/non-Github/sf_experiments/EW1851_regcounties/EW1851_regcounties.shp")
+
 ```
-
-
-Now make a simple count of the county field (general_area_of_coverage) using ```group_by()``` and ```tally()```. 
 
 ```{r}
-county_totals = title_list %>% 
-  group_by(general_area_of_coverage) %>% 
-  tally()
+scot_1851 = st_read("/Users/Yann/Documents/non-Github/sf_experiments/Spre1890_scocounties/Spre1890_scocounties.shp")
 ```
 
-Join this to the shapefile data, specifying that the 'id' field in the shape data should match the 'general_area_of_coverage' field in the county_totals data. 
+Turn into lat/lng coordinates
 
 ```{r}
-shp_tidy = shp_tidy %>% left_join(county_totals, 
-                           by = c('id' = 'general_area_of_coverage'))
+eng_1851 = st_transform(eng_1851, crs = 4326)
 ```
-
-Now shp_tidy contains a new column, n, which contains the count of titles, for that county. 
 
 ```{r}
-head(shp_tidy, 20)
+scot_1851  = st_transform(scot_1851, crs = 4326)
 ```
 
+Bind them both together to make one big shapefile for GB
+```{r}
+gb1851 = rbind(eng_1851, scot_1851 %>%
+                 select(-UL_AUTH))
+```
 
-Use ggplot and ```geom_polygon()``` to draw the dataframe of polygons.
+Download and pre-process the set of coordinates:
+```{r}
+geocorrected = read_csv('geocorrected.csv')
+```
 
 ```{r}
-ggplot() + 
-  geom_sf(data = england_shp %>% left_join(county_totals, by = c('NAME' = 'general_area_of_coverage')), color = 'black', aes(fill = n))
+library(snakecase)
+colnames(geocorrected) = to_snake_case(colnames(geocorrected))
+```
+```{r}
+colnames(geocorrected)[6:8] = c('wikititle', 'lat', 'lng')
+
+geocorrected = geocorrected %>% select(-1, -9,-10, -11, -12)
+
+geocorrected = geocorrected %>% 
+  mutate(country_of_publication = replace(country_of_publication, country_of_publication == 'na', NA)) %>% mutate(general_area_of_coverage = replace(general_area_of_coverage, general_area_of_coverage == 'na', NA)) %>% 
+  mutate(coverage_city = replace(coverage_city, coverage_city == 'na', NA))
+
+geocorrected = geocorrected %>%
+  mutate(lat = as.numeric(lat)) %>% 
+  mutate(lng = as.numeric(lng)) %>% filter(!is.na(lat)) %>% filter(!is.na(lng))
+```
+Join the points to the title list
+```{r}
+title_df = title_df %>% 
+  left_join(geocorrected) %>% 
+  filter(!is.na(lat)) %>% 
+  filter(!is.na(lng))
 ```
 
-It's black, so you need to fill the polygons with colour. This is done by passing the n column to the *fill* aesthetic, inside the aes() within the ```geom_polygon()```
+Turn the whole title list into an sf item
+```{r}
+st_title = st_as_sf(title_df, coords = c('lng', 'lat'))
+
+st_title = st_title  %>% st_set_crs(4326)
+```
+
+Join to the GB sf object
+```{r}
+st_counties = st_join(st_title, gb1851)
+```
 
 ```{r}
-ggplot() + 
-  geom_sf(data = england_shp,fill = 'gray90', color = 'black') + 
-  theme_void() + 
-  coord_sf(1.3)
+county_tally = st_counties %>% 
+  select(G_NAME) %>% 
+  group_by(G_NAME) %>% 
+  tally() %>%
+  st_drop_geometry()
 ```
 
-Unfortunately, the list of counties in the title list doesn't _exactly_ match those in the shapefile. This is becuase county names in the UK are a complicated business and they have revised over time. There's no easy solution to this, because new counties don't always match the borders of the changed county, and mergers might not always just join two old counties together. 
-
-This gets a list of all the counties in the title list _not_ present in the shapefile, arranged in descending order of number of titles. 
 
 ```{r}
-anti_join(title_list %>% 
-            filter(country_of_publication == 'England') %>% 
-            group_by(general_area_of_coverage) %>% 
-            tally(),shp_tidy %>% 
-            group_by(id) %>% 
-            tally() %>% 
-            select(id), by = c('general_area_of_coverage' = 'id')) %>% 
-  arrange(desc(n))
-```
+gb1851 %>% 
+  left_join(county_tally) %>% 
+  ggplot() + 
+  geom_sf(lwd = .2,color = 'black', aes(fill = n)) + 
+  theme_void() +
+  lims(fill = c(10,4000)) + scale_fill_viridis_c(option = 'plasma')
 
-And here's the counties in the shapefile not present in the title list:
-
-```{r}
-anti_join(shp_tidy %>% 
-            group_by(id) %>% 
-            tally() %>% 
-            select(id),title_list %>% 
-            filter(country_of_publication == 'England') %>% 
-            group_by(general_area_of_coverage) %>% 
-            tally(), by = c('id' = 'general_area_of_coverage')) 
 
 ```
 
-### Change some of the names to fit the shapefile
 
-### Count the general area of coverage field

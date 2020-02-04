@@ -1,21 +1,5 @@
 # UK Newspaper Data
 
-## What access do you need?
-
-### Want to find individual articles.
-Access through the BNA or Gale data, depending on access. BNA if you need the most coverage, and are interested particularly in local or regional titles. Gale has better search facilities but less content. 
-### Want to do some simple text mining, not so bothered about regional coverage
-Probably access HMD titles through the repository
-
-### Want to do text mining on a large corpus
-Request access to the Library's newspapers through BL labs or elsewhere. Get access to raw files. Do you own analysis or else follow steps here to extract the data. There's instructions for JISC and HMD titles. 
-
-### Want to do text mining on the entire digitised collection
-You'll need to speak to FMP, who run the British Newspaper Archive. They do take requests for access. There is a dataset of n-grams which has been used for text mining, sentiment analysis etc. and might be useful, though the collection has grown significantly since this point. 
-
-### Want to do something involving the images, such as computer vision techniques, 
-You'll probably need to request access to newspapers through the British Library, or through Gale. Gale will send a copy of the JISC 1 & 2 data (with OCR enhancements) on a hard drive to researchers, for a fee. Access through the Library will allow for image analysis but might be difficult to take away. The images up to 1878 are cleared for reuse.
-
 ## Intro to British Library Newspapers
 >Systematic collection of newspapers at the British Museum (the precursor of the British Library) did not really begin until 1822. At that time publishers were obliged to supply copies of their newspapers to the Stamp Office so that they could be taxed. In 1822 it was agreed that these copies would be passed to the British Museum after a period of three years. From 1869 onwards newspapers were included in the legal deposit legislation and were then deposited directly at the British Museum. This systematic application of legal deposit requirements means that many thousands of complete runs of newspapers have accumulated. The majority of newspapers collected are those published since 1800.[@ed-king-gale]
 
@@ -181,8 +165,6 @@ What's really clear, is that the selection was driven by assumed historical need
 
 The result was a heavily curated collection, albeit with decent academic rigour and good intentions and like all collections created in this way, it is subject, quite rightly, to a lot of scrutiny by historians. [@Fyfe_2016 for example]
 
-[list the titles]
-
 
 ```{r jisc-points, fig.cap="JISC 1 & 2 titles, by city. Irish titles not plotted", echo=FALSE, message=FALSE, warning=FALSE}
 ggplot() + 
@@ -232,18 +214,27 @@ title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %>%
 ```
 
 ```{r}
-leaflet_list = title_list %>% filter(!is.na(link_to_british_newspaper_archive)) %>% left_join(geocoded) %>% group_by(wikititle, wikilon, wikilat) %>% tally()
+leaflet_list = title_list %>% 
+  filter(!is.na(link_to_british_newspaper_archive)) %>% 
+  left_join(geocoded) %>% 
+  group_by(wikititle, wikilon, wikilat) %>% 
+  tally()
 ```
 ```{r}
 library(leaflet)
 ```
 ```{r}
-links = title_list %>% left_join(geocoded) %>% group_by(wikititle, wikilon, wikilat) %>%
+links = title_list %>% 
+  left_join(geocoded) %>% 
+  group_by(wikititle, wikilon, wikilat) %>%
             filter(!is.na(link_to_british_newspaper_archive)) %>%
             distinct(nid, .keep_all = TRUE) %>%
             summarise(link = paste("<p><a href=",
                                    link_to_british_newspaper_archive,">",
-                                   publication_title,"</a>", first_date_held, " - ", last_date_held, "</p>\n", collapse = "\n"))
+                                   publication_title,"</a>", 
+                                   first_date_held, " - ", 
+                                   last_date_held, "</p>\n", 
+                                   collapse = "\n"))
 
 
 ```
@@ -316,7 +307,9 @@ long_title_list %>%
   filter(country_of_publication %in% c('England', 'Ireland', 'Scotland', 'Wales', 'Northern Ireland')) %>%
   mutate(decade = year-year %%10) %>% 
   group_by(country_of_publication, decade) %>% tally() %>% 
-  ggplot() + geom_bar(aes(x = decade, y = n, fill = country_of_publication), alpha = .9, stat = 'identity') + theme_minimal() + theme(legend.position = 'bottom') + scale_fill_manual(values = libraryPalette)
+  ggplot() + 
+  geom_bar(aes(x = decade, y = n, fill = country_of_publication), alpha = .9, stat = 'identity') + 
+  theme_minimal() + theme(legend.position = 'bottom') + scale_fill_manual(values = libraryPalette)
 ```
 
 ```{r bna-titles-map, fig.cap = "Titles on the British Newspaper Archive.^[data from https://www.britishnewspaperarchive.co.uk/titles/]", echo=FALSE, message=FALSE, warning=FALSE}
@@ -340,7 +333,7 @@ long_title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %
 
 ## HMD data- on repository
 ### Project goals
-The Heritage Made Digital Project is a project within the British Library to digitise 19th century newspapers. It has a specific curatorial focus. It picked titles which are completely out of copyright, which means that they all _finished_ publication before 1879. It also aimed to preserve: because of this, it chose titles which were not on microfilm, and were also in poor or unfit condition. Newspaper volumes in unfit condition cannot be called up by readers: this meant that if a volume is not microfilmed and is in this state, it can't be read by _anyone_. 
+The Heritage Made Digital Project is a project within the British Library to digitise 19th century newspapers. It has a specific curatorial focus. It picked titles which are completely out of copyright, which means that they all _finished_ publication before 1879. It also aimed to preserve: because of this, it chose titles which were not on microfilm, and were also in poor or unfit condition. Newspaper volumes in unfit condition cannot be called up by readers: this meant that if a volume is not microfilmed and is in this state, it can't be read by _anyone_. quote Luke's blog here
 
 The other curatorial goal was to focus on 'national' titles. In practice this meant choosing titles printed in London but without a specific London focus. This might seem like a strange selection policy considering the general view that stuff outside London is neglected, but it sort of makes sense: JISC focused on regional titles, then local, and all the 'big' nationals like the Times or the Manchester Guardian have been digitised but sit behind paywalls within those organisations. This means that a bunch of historically important titles may have fallen through the cracks, and this projects is digitising some of those.^[The term national is debatable, but it's been used to try and distinguish from titles which clearly had a focus on one region. Even this is difficult: regionals would have often had a national focus, and were in any case reprinting many national stories. But their audience would have been primarily in a limited geographical area, unlike a bunch of London-based titles, which were printed and sent out across the country, first by train, then the stories themselves by telegraph.]
 
@@ -348,11 +341,20 @@ The important thing to note is that the is, like JISC, a selection made by histo
 
 The good news is that as these newspapers are deemed out of copyright, the data can be made freely downloadable. Currently the first batch of newspapers, in METS/ALTO format, are available on the British LIbrary's Open Repository. They have a CC-0 licence, which means they can be used for any purpose whatsoever. Much of the data examples in the following chapters will use this data. 
 
-[list HMD titles]
-[chart of type of runs, what's been digitised so far]
-### What's available
-### XML flavour
+## What access do you need?
 
-## Luxembourg data
+### Want to find individual articles.
+Access through the BNA or Gale data, depending on access. BNA if you need the most coverage, and are interested particularly in local or regional titles. Gale has better search facilities but less content. 
+### Want to do some simple text mining, not so bothered about regional coverage
+Probably access HMD titles through the repository
+
+### Want to do text mining on a large corpus
+Request access to the Library's newspapers through BL labs or elsewhere. Get access to raw files. Do you own analysis or else follow steps here to extract the data. There's instructions for JISC and HMD titles. 
+
+### Want to do text mining on the entire digitised collection
+You'll need to speak to FMP, who run the British Newspaper Archive. They do take requests for access. There is a dataset of n-grams which has been used for text mining, sentiment analysis etc. and might be useful, though the collection has grown significantly since this point. 
+
+### Want to do something involving the images, such as computer vision techniques, 
+You'll probably need to request access to newspapers through the British Library, or through Gale. Gale will send a copy of the JISC 1 & 2 data (with OCR enhancements) on a hard drive to researchers, for a fee. Access through the Library will allow for image analysis but might be difficult to take away. The images up to 1878 are cleared for reuse.
 
 

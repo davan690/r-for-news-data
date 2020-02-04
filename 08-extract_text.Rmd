@@ -1,10 +1,14 @@
 # Make a Text Corpus  {#extract-text}
 
 ## Where is this data?
-
-If you're internal at the BL, the data is stored on the BL Labs devnas2. This is a Network Addressed Storage which can be accessed by requesting permissions. It can also be accessed 
-
-Heritage Made Digtial data is being sent in batches and uploaded to interim storage. From here it can be 
+Go to repository
+Describe folder structure
+Naming convention
+Multiple titles for one newspaper
+How to then unzip and extract in bulk, using R
+Then how to extract text
+And iterate through all the folders
+save to a dataframe
 
 Inspired by the brilliant posts by https://www.brodrigues.co/blog/2019-01-13-newspapers_mets_alto/ I've written some code to extract the full text of articles from our newspapers, and then do some basic text mining and topic modelling. 
 

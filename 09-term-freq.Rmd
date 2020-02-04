@@ -1,0 +1,5 @@
+# Term Frequencies
+
+Use the dataframe to get lists of top words, separated by date/issue etc. 
+
+Why it's different to other data - has this interesting temporal dimension. Top words can tell about makeup/editorial policies etc. Difference over months/weeks. News has a rhythm, can be captured by term frequencies?

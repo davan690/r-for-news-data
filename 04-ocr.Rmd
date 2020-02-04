@@ -35,3 +35,82 @@ The error rate reported by the software is a confidence score. The overall confi
 It depends. Broad analysis still seems to work - keyword searches, for example, come up with broadly expected results. It might be more important in finer work, for example Natural Language Processing (NLP). NLP relies on 
 
 [Why You (A Humanist) Should Care About Optical Character Recognition](https://ocr.northeastern.edu/report/)
+
+Ryan Cordell's large report
+
+Can you do a tutorial to extract OCR accuracy from the newspaper data
+
+Do microfilm vs print, and time periods
+
+Character Count: 6547 
+Predicted Word Accuracy: 77.5% 
+Suspicious Character Count: 481 
+Word Count: 1098 
+Suspicious Word Count: 432
+
+First read the alto page, which should be an argument to the function. Here's one page to use as an example:
+```{r}
+library(tidyverse)
+```
+
+```{r}
+alto = "0002644/1809/0101/0002644_18090101_0001.xml"
+
+altofile = alto %>%  read_file()
+```
+
+Split the file on each new line:
+
+```{r}
+altofile = altofile %>%
+        str_split("\n", simplify = TRUE)
+
+altofile %>% glimpse()
+
+```
+```{r}
+altofile[18]
+```
+```{r}
+filelist = list.files("0002644/1809/", full.names = TRUE, recursive = TRUE, pattern = "[0-9]{4}\\.xml")[-1]
+```
+
+```{r}
+library(data.table)
+```
+
+```{r}
+
+  y = NULL
+
+tic = Sys.time()
+for(file in filelist){
+  
+  suschar = file  %>%  read_file() %>%
+        str_split("\n") 
+  
+  y = rbindlist(list(y, data.table(suschar[18], file)))
+  
+}
+
+toc = Sys.time()
+
+elapsed = toc-tic
+print(elapsed)
+```
+
+```{r}
+library(lubridate)
+```
+
+
+```{r}
+y %>% separate(suschar.18., into = c('text', 'percent'), sep = ':') %>% 
+  mutate(percent = as.numeric(str_remove(percent, '%'))) %>% 
+  mutate(file = str_remove(file, "0002644\\/[0-9]{4}\\//[0-9]{4}\\/")) %>%
+  separate(file, into = c('nlp','date', 'page')) %>% 
+  mutate(date = ymd(date)) %>% 
+  ggplot() + 
+  geom_point(aes(x = date, y = percent, color = percent, shape = page)) + theme(legend.position = 'bottom')
+```
+
