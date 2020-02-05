@@ -123,9 +123,9 @@ also be tokenize words
 
 *keep_tokens =* Whether or not you keep the actual tokens, or just the hashes. There's no real point keeping the tokens as we use the hashes to make the comparisons. 
 
-```{r}
-reusecorpus <- TextReuseCorpus(dir = "textfiles/", tokenizer = tokenize_ngrams, n = 4,
-                          minhash_func = minhash, keep_tokens = FALSE)
+```{r message=FALSE, warning=FALSE}
+reusecorpus <- TextReuseCorpus(dir = "textfiles/", tokenizer = tokenize_ngrams, n = 3,
+                          minhash_func = minhash, keep_tokens = FALSE, progress = FALSE)
 ```
 
 Now each document is represented by a series of hashes, which are substitutes for small sequences of text. For example, this is the first ten minhashes for the first article:
@@ -142,16 +142,14 @@ However, it would be very difficult, even for a computer, to use this to compare
 
 First create the buckets. You can try other values for the bands. 
 
-```{r}
-buckets <- lsh(reusecorpus, bands = 80, progress = TRUE)
+```{r message=FALSE, warning=FALSE}
+buckets <- lsh(reusecorpus, bands = 80, progress = FALSE)
 ```
 
 Next, use ```lsh_candidates()``` to compare each bucket, and generate a list of candidates. 
 
 ```{r}
 candidates <- lsh_candidates(buckets)
-
-candidates
 ```
 
 Next we go back to the full corpus, and calculate the similarity score for these pairs, using ```lsh_compare()```. The first argument is the candidates, the second is the full corpus, the third is the method (other similarity functions could be used). 

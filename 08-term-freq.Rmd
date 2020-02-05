@@ -1,0 +1,156 @@
+# Term Frequencies
+
+Use the dataframe to get lists of top words, separated by date/issue etc. 
+
+```{r}
+load('news_sample_dataframe')
+```
+
+```{r}
+library(tidyverse)
+library(tidytext)
+```
+
+The data frame has a row per article. This is a really easy format to do text mining with, using the techniques from here: https://www.tidytextmining.com/
+
+
+
+```{r}
+glimpse(news_sample_dataframe)
+```
+
+Most analysis involves tokenising the text. This divides the text into 'tokens' - representing one unit. A unit is often a word, but could be a bigram - a sequence of two consecutive words, or a trigram, a sequence of three consecutive words. With the library ```tidytext```, this is done using a function called ```unnest_tokens()```. This will split the column containing the text of the article into a long dataframe, with one word per row.
+
+The two most important arguments to ``unnest_tokens``` are ```output``` and ```input```. This is fairly self explanatory. Just pass it the name you would like to give the new column of words (or n-grams) and the column you'd like to split up: in this case the original column is called 'text', and we'd like our column of words to be called words.
+
+```{r}
+news_sample_dataframe %>% unnest_tokens(output = word, input = text)
+```
+
+I can also specify an argument for token, allowing me to split the text into sentences, characters, lines, or n-grams.If I split into n-grams, I used the argument ```n``` to specify how many consecutive words I'd like to use. 
+
+Like this:
+
+```{r}
+news_sample_dataframe %>% unnest_tokens(output = word, input = text, token = 'ngrams', n =3)
+```
+
+
+Before we do any counting, there's a couple more processing steps. I'm going to remove 'stop words'. Stop words are very frequently-used words which often crowd out more interesting results. This isn't always the case, and you shoudln't just automatically get rid of them, but rather think about what it is yo uare looking for. For this tutorial, though, the results will be more interesting if it's not just a bunch of 'the' and 'at' and so forth. 
+
+This is really easy. We load a dataframe of stopwords, which is included in the tidytext package. 
+
+```{r}
+data("stop_words")
+```
+
+Next use the function ```anti_join()```. This bascially removes any word in our word list which is also in the stop words list
+
+```{r}
+news_sample_dataframe %>% unnest_tokens(output = word, input = text) %>% anti_join(stop_words)
+```
+
+A couple of words from the .xml have managed to sneak through our text processing: 'style' and 'superscript'. I'm also going to remove these, plus a few more common OCR errors for the word 'the'.
+
+I'm also going to remove any word with two or less characters, and any numbers. Again, these are optional steps.
+
+I'll store the dataframe as a variable called 'tokenised_news_sample'. I'll also save it using ```save()```, which turns it into an .rdata file, which can be used later. 
+
+```{r}
+tokenised_news_sample = news_sample_dataframe %>% 
+  unnest_tokens(output = word, input = text) %>% 
+  anti_join(stop_words) %>% 
+  filter(!word %in% c('superscript', 'style', 'de', 'thle', 'tile', 'tie', 'tire', 'tiie', 'tue')) %>% 
+  filter(!str_detect(word, '[0-9]{1,}')) %>% 
+  filter(nchar(word) > 2)
+
+save(tokenised_news_sample, file = 'tokenised_news_sample')
+  
+```
+
+Now I can use all the tidyverse commands like filter, count, tally and so forth on the data, making it really easy to do basic analysis like word frequency counting. A couple of examples:
+
+The top words overall:
+
+```{r}
+tokenised_news_sample %>% 
+  group_by(word) %>% 
+  tally() %>% 
+  arrange(desc(n))
+```
+
+The top five words for each day in the dataset:
+
+```{r}
+tokenised_news_sample %>% 
+  group_by(full_date, word) %>% 
+  tally() %>% 
+  arrange(full_date, desc(n)) %>% 
+  group_by(full_date) %>% 
+  top_n(5)
+```
+
+If we had more than one title, we could look at the top words per title like this:
+
+```{r}
+tokenised_news_sample %>% 
+  group_by(title, full_date, word) %>% 
+  tally() %>% 
+  arrange(full_date, desc(n)) %>% 
+  group_by(full_date) %>% 
+  top_n(5)
+```
+
+We could also summarise by month, using ```cut()```. This rounds the date down to the nearest day, year or month. Once it's been rounded down, we can count by this new value. 
+
+
+```{r}
+tokenised_news_sample %>% 
+  mutate(month = cut(full_date, 'month')) %>% 
+  group_by(month, word) %>% 
+  tally() %>% 
+  arrange(month, desc(n)) %>% 
+  group_by(month) %>% 
+  top_n(5)
+
+```
+
+We can also pipe everything directly to a plot. Enemy is a common word: I wonder how many times it was used in each day? Here we use ```filter()``` to filter out everything except the word (or words) we're interested in.
+
+```{r}
+tokenised_news_sample %>%
+  filter(word == 'enemy') %>% 
+  group_by(full_date, word) %>% 
+  tally() %>% ggplot() + geom_col(aes(x = full_date, y = n))
+```
+
+
+Charting a couple of words might be more interesting:
+
+```{r}
+tokenised_news_sample %>%
+  filter(word %in% c('enemy', 'france', 'spain')) %>% 
+  group_by(full_date, word) %>% 
+  tally() %>% ggplot() + 
+  geom_line(aes(x = full_date, y = n, color = word))
+```
+
+
+```{r}
+
+
+issue_words = tokenised_news_sample %>%
+  count(full_date, word, sort = TRUE)
+
+total_words <- issue_words %>% 
+  group_by(full_date) %>% 
+  summarize(total = sum(n))
+
+issue_words <- left_join(issue_words, total_words)
+
+issue_words
+```
+
+```{r}
+issue_words %>% ggplot() + geom_histogram(aes(x = n/total, fill =  as.factor(full_date))) + facet_wrap(~full_date, scales = 'free')
+```

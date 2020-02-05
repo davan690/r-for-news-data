@@ -1,0 +1,56 @@
+# Tf_idf:
+
+Another common analysis of text uses a metric known as 'tf-idf'. This stands for term frequency-inverse document frequency. Take a corpus with a bunch of documents (here we're using _articles_ as individual documents). TF-idf scores the words in each document, normalised by how often they are found in the _other_ documents. It's a good measure of the 'importance' of a particular word for a given document, and it's particularly useful in getting good search results from keywords. It's also a way of understanding the way language is used in newspapers, and how it changed over time.
+
+The function in the tidytext library ```bind_tf_idf``` takes care of all this. First you need to get a frequency count for each issue in the dataframe. We'll make a unique issue code by pasting together the date and the nlp into one string, using the function ```paste0```.
+
+First load the necessary libraries and tokenised data we created in the last notebook:
+
+```{r}
+library(tidytext)
+library(tidyverse)
+library(rmarkdown)
+load('tokenised_news_sample')
+```
+
+```{r}
+issue_words = tokenised_news_sample %>% 
+  mutate(issue_code = paste0(title, full_date)) %>%
+  group_by(issue_code, word) %>%
+  tally() %>% 
+  arrange(desc(n))
+```
+
+Next use ```bind_tf_idf()``` to calculate the measurement for each word in the dataframe. 
+
+```{r}
+issue_words %>% bind_tf_idf(word, issue_code, n)
+```
+
+Now we can sort it in descending order of the issue code, to find the most 'unusual' words:
+
+```{r}
+issue_words %>% 
+  bind_tf_idf(word, issue_code, n) %>% 
+  arrange(desc(tf_idf))
+```
+
+What does this tell us? Take the top word as an example. For some reason, it's was very frequent in the issue for 22 January 1809, but not very frequent in any of the other issues. This _might_ point to particular topics, and it might point, in particular, point to topics which had a very short lifespan. If we had a bigger dataset, or one arranged in another way, these words might point to linguistic differences between regions. 
+
+Let's find the petticoats articles. We can use a function called ```str_detect()``` with ```filter()``` to filter to just articles containing a given word. So we'll go back to the untokenised dataframe.
+
+
+```{r}
+load('news_sample_dataframe')
+news_sample_dataframe %>% filter(str_detect(text, "petticoat"))
+```
+
+In this case, there's an article or two about women's fashion. 
+
+How about some other high-scoring terms?
+
+```{r}
+news_sample_dataframe %>% filter(str_detect(text, "prayer"))
+```
+
+

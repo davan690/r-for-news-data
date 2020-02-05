@@ -10,13 +10,13 @@ library(tidytext)
 library(topicmodels)
 ```
 
-We load the tokenised dataframe created in the word_frequency notebook. 
+Load the tokenised dataframe created in the term_frequency notebook. 
 
 ```{r}
 load('tokenised_news_sample')
 ```
 
-Like in the tf_idf notebook, we make a dataframe of the words in each document, with the count and the tf-idf score.
+Like in the tf_idf notebook, make a dataframe of the words in each document, with the count and the tf-idf score.
 
 ```{r}
 

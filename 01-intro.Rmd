@@ -2,11 +2,7 @@
 
 ## Unlocking the past with newspaper data
 
-Write an example here. Start with metadata, find a bunch of newspapers you're interested in. From this make a corpus. Map, plot, text mine, make an interactive visualisation. Understand patterns of text reuse, or use relative frequencies of keywords to see when they were emphasised.
-
-The historian now has a lot of newspaper data at her disposal. She might 
-
-She goes online, is interested in the reception of news about the Crimean War in Manchester. But where to start? Well, first she narrows down the list of newspapers to consult using an interactive map. For this research, she'll look at everything published in Manchester between 1853 and 1857. But also, she's interested in a more fine-grained group of titles: this will specifically be a study of the established press: so those that lasted a long time, at least fifty years in total. And while she's at it, she'll specify that she's only interested in the Liberal press, using an enriched database of political leanings.
+Imagine a historian, similar to that described in the Historian's Macroscope, sits down to do some research. She is interested in the reception of news about the Crimean War, in Manchester. But where to start? Well, first she narrows down the list of newspapers to consult using an interactive map. For this research, she'll look at everything published in Manchester between 1853 and 1857. But also, she's interested in a more fine-grained group of titles: this will specifically be a study of the established press: so those that lasted a long time, at least fifty years in total. And while she's at it, she'll specify that she's only interested in the Liberal press, using an enriched database of political leanings.
 
 List of titles in hand, she goes the BL Open Repository and finds the openly accessible ones, and downloads the relevant files, in .xml format. From here she extracts the text, article by article, into a single corpus. She makes a list of search terms which she thinks will help to narrow things down, and, using this, restricts her new corpus to articles about the Crimean war, as best as possible. 
 
@@ -23,14 +19,6 @@ This is not too far into the future: we're starting to make data openly availabl
 Things have moved on from the first generation of 'how-to' guides for digital humanities students: it's now fairly reasonable to pick a language, probably R or Python, and do all analysis, writing, documentation and so forth without ever leaving the safety of its ecosystem. These modern languages have a huge number of packages for doing all sorts of interesting analysis of text, and even authoring entire books.
 
 On the other hand, the promise of scraping the web for open data, while still with its place, has in many ways been superseded. The historian looking to use newspaper data must wrestle with closed systems, proprietary formats and so forth. The sheer quantity of newspaper data, and its commercial roots (and perhaps new commercial future), mean that it has not been treated in the same way as many other historical datasets. Newspaper data has, up until recently, had several financial, legal, bureaucratic and technical hurdles. 
-
-
-
-## What is newspaper data?
-
-Difference between content and data? It's arbitrary, all of the digitised content could be considered data. Perhaps it takes on that name when we do certain acts on it? For example the images become data 
-
-Get a nice image for here
 
 ## Why is it useful?
 There is a _lot_ of newspaper data available now for historical researchers. Across the globe, the keepers of cultural memory are digitising their collections. Most news digitisation projects do OCR and zoning, meaning that the digitised images are processed so that the text is machine readable, and then divided into articles. It's far from perfect - we'll show some examples in a later chapter - but it does generate a large amount of data: both the digitised images, and the underlying text and information about the structure.  Once you get hold of this data, the rewards can be huge: looking just at English-language users in the last few years, researchers have used it to understand Victorian jokes, trace the movement of information and ideas, understand the effects of industrialisation, track the meetings of radical groups, and of course understand more about the newspapers themselves and the print culture that surrounds them.
@@ -51,23 +39,14 @@ This short book hopes to help you:
 [@Hills:2019aa] 
 
 ## Why R?
-This is a book made _with_ R, and _using_ R, but it is not really _about_ R. I wanted to show some techniques. It should be readable by anyone, but it's possible bits will not be so easy to follow.
+This is a handbook made _with_ R, and _using_ R, but it is not really primarily _about_ R. I wanted to show some techniques. It should be readable by anyone, but it's possible bits will not be so easy to follow.
 Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists. 
 A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.
-
-CRAN, packages and environments much easier to use. I'll never be a full-time coder, so not worried in learning a 'proper' language. R works. 
 
 Have a look at the list http://dh-r.lincolnmullen.com here, and also Hadley Wickham's R for data science.
 
 [Why I use R](https://blog.shotwell.ca/posts/why_i_use_r/)
 
-### Who uses R?
-
-### The Tidyverse
-
-Historians using the language: Sharon Howard, work on criminal tattoos. Bruno Rodrigues
-
-Writing a book with such a specific goal is a bit of a weird proposition
 
 ## Who is the book for?
 Historians looking to understand news at scale. Undergraduates and postgrads looking to dip their feet into computational methods.
@@ -76,7 +55,7 @@ Imagine a PhD student, hasn't used newspaper data before. What is available? How
 
 ## Format of the book
 
-The book doesn't need to be read in its entirety: if you're just interested in finding newspaper data, specifically that collected by the British Library, you could stick with the first part. You might be a much better programmer than me and just interested in the scope of the Library's datasets for some analysis - for instance, it might be useful to look at the chapters on the BNA and JISC digitisation projects, to get a handle on how representative the data you have is. You might have arrived at the Library to do some research and not know where to begin with our folder structure and so forth. As much of that information as possible has been included.
+The book doesn't need to be read in its entirety: if you're just interested in finding newspaper data, specifically that collected by the British Library, you could stick with the first part. You might be a much better programmer than me and just interested in the scope of the Library's datasets for some analysis - for instance, it might be useful to look at the bits on the BNA and JISC digitisation projects, to get a handle on how representative the data you have is. You might have arrived at the Library to do some research and not know where to begin with our folder structure and so forth. As much of that information as possible has been included.
 
 
 

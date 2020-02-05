@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>13 Geocode and map newspaper titles | R for Newspaper Data</title>
-  <meta name="description" content="This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <title>6 Geocode and map newspaper titles | Demystifying Newspaper Data with R (and a tiny bit of Python)</title>
+  <meta name="description" content="This is a handbook to help new and existing users find, process and analyse historical newspaper data, using the programming language R, and its IDE R-Studio" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="13 Geocode and map newspaper titles | R for Newspaper Data" />
+  <meta property="og:title" content="6 Geocode and map newspaper titles | Demystifying Newspaper Data with R (and a tiny bit of Python)" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio." />
+  <meta property="og:description" content="This is a handbook to help new and existing users find, process and analyse historical newspaper data, using the programming language R, and its IDE R-Studio" />
   <meta name="github-repo" content="yannryanBL/r-for-news-data" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="13 Geocode and map newspaper titles | R for Newspaper Data" />
+  <meta name="twitter:title" content="6 Geocode and map newspaper titles | Demystifying Newspaper Data with R (and a tiny bit of Python)" />
   
-  <meta name="twitter:description" content="This is a book to help new and existing users find, process and analyse historical newspaper data, using the programming language R-Studio." />
+  <meta name="twitter:description" content="This is a handbook to help new and existing users find, process and analyse historical newspaper data, using the programming language R, and its IDE R-Studio" />
   
 
 <meta name="author" content="Yann Ryan" />
 
 
-<meta name="date" content="2020-01-20" />
+<meta name="date" content="2020-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="network-analysis-with-curated-seventeenth-century-dataset.html"/>
+<link rel="prev" href="quick-introduction-to-r-and-the-tidyverse.html"/>
 <link rel="next" href="text-mining.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -138,175 +138,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface &amp; Acknowledgements</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#unlocking-the-past-with-newspaper-data"><i class="fa fa-check"></i><b>2.1</b> Unlocking the past with newspaper data</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#what-is-newspaper-data"><i class="fa fa-check"></i><b>2.2</b> What is newspaper data?</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#why-is-it-useful"><i class="fa fa-check"></i><b>2.3</b> Why is it useful?</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#short-history-of-newspapers-newspaper-digitisation"><i class="fa fa-check"></i><b>2.4</b> Short history of newspapers, newspaper digitisation?</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="introduction.html"><a href="introduction.html#burney-and-eebo"><i class="fa fa-check"></i><b>2.4.1</b> Burney and EEBO?</a></li>
-<li class="chapter" data-level="2.4.2" data-path="introduction.html"><a href="introduction.html#jisc-1"><i class="fa fa-check"></i><b>2.4.2</b> JISC 1</a></li>
-<li class="chapter" data-level="2.4.3" data-path="introduction.html"><a href="introduction.html#jisc-2"><i class="fa fa-check"></i><b>2.4.3</b> JISC 2</a></li>
-<li class="chapter" data-level="2.4.4" data-path="introduction.html"><a href="introduction.html#bna"><i class="fa fa-check"></i><b>2.4.4</b> BNA</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#why-is-it-useful"><i class="fa fa-check"></i><b>2.2</b> Why is it useful?</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#goals"><i class="fa fa-check"></i><b>2.3</b> Goals</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#why-r"><i class="fa fa-check"></i><b>2.4</b> Why R?</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#who-is-the-book-for"><i class="fa fa-check"></i><b>2.5</b> Who is the book for?</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#format-of-the-book"><i class="fa fa-check"></i><b>2.6</b> Format of the book</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#goals"><i class="fa fa-check"></i><b>2.5</b> Goals</a></li>
-<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#format-of-the-book---bookdown-and-github"><i class="fa fa-check"></i><b>2.6</b> Format of the book - bookdown and github</a></li>
-<li class="chapter" data-level="2.7" data-path="introduction.html"><a href="introduction.html#why-r"><i class="fa fa-check"></i><b>2.7</b> Why R?</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="introduction.html"><a href="introduction.html#who-uses-r"><i class="fa fa-check"></i><b>2.7.1</b> Who uses R?</a></li>
-<li class="chapter" data-level="2.7.2" data-path="introduction.html"><a href="introduction.html#the-tidyverse"><i class="fa fa-check"></i><b>2.7.2</b> The Tidyverse</a></li>
-</ul></li>
-<li class="chapter" data-level="2.8" data-path="introduction.html"><a href="introduction.html#who-is-the-book-for"><i class="fa fa-check"></i><b>2.8</b> Who is the book for?</a></li>
-<li class="chapter" data-level="2.9" data-path="introduction.html"><a href="introduction.html#format-of-the-book"><i class="fa fa-check"></i><b>2.9</b> Format of the book</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html"><i class="fa fa-check"></i><b>3</b> How to use this book</a><ul>
-<li class="chapter" data-level="3.1" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#what-is-this"><i class="fa fa-check"></i><b>3.1</b> What is this?</a></li>
-<li class="chapter" data-level="3.2" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#make-changes-directly-to-the-markdown-files-on-github."><i class="fa fa-check"></i><b>3.2</b> Make changes directly to the markdown files on Github.</a></li>
-<li class="chapter" data-level="3.3" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#download-a-copy"><i class="fa fa-check"></i><b>3.3</b> Download a copy</a></li>
-<li class="chapter" data-level="3.4" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#download-r-and-r-studio"><i class="fa fa-check"></i><b>3.4</b> Download R and R-Studio</a></li>
-<li class="chapter" data-level="3.5" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#licence-terms"><i class="fa fa-check"></i><b>3.5</b> Licence terms</a></li>
-<li class="chapter" data-level="3.6" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#clone-a-copy-to-github"><i class="fa fa-check"></i><b>3.6</b> Clone a copy to GitHub</a></li>
-<li class="chapter" data-level="3.7" data-path="how-to-use-this-book.html"><a href="how-to-use-this-book.html#make-your-own-version"><i class="fa fa-check"></i><b>3.7</b> Make your own version</a></li>
-</ul></li>
-<li class="part"><span><b>I Part I: Sources and data</b></span></li>
-<li class="chapter" data-level="4" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html"><i class="fa fa-check"></i><b>4</b> Newspaper data - international</a><ul>
-<li class="chapter" data-level="4.1" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#uk"><i class="fa fa-check"></i><b>4.1</b> UK</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#british-newspaper-archive"><i class="fa fa-check"></i><b>4.1.1</b> British newspaper archive</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#outside-uk"><i class="fa fa-check"></i><b>4.2</b> Outside UK:</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#chronicling-america"><i class="fa fa-check"></i><b>4.2.1</b> Chronicling America</a></li>
-<li class="chapter" data-level="4.2.2" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#delpher"><i class="fa fa-check"></i><b>4.2.2</b> Delpher</a></li>
-<li class="chapter" data-level="4.2.3" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#eluxemburgensia"><i class="fa fa-check"></i><b>4.2.3</b> Eluxemburgensia</a></li>
-<li class="chapter" data-level="4.2.4" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#europeana"><i class="fa fa-check"></i><b>4.2.4</b> Europeana</a></li>
-<li class="chapter" data-level="4.2.5" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#finnish-newspaper-database"><i class="fa fa-check"></i><b>4.2.5</b> Finnish Newspaper Database</a></li>
-<li class="chapter" data-level="4.2.6" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#gallica"><i class="fa fa-check"></i><b>4.2.6</b> Gallica</a></li>
-<li class="chapter" data-level="4.2.7" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#trove"><i class="fa fa-check"></i><b>4.2.7</b> Trove</a></li>
-<li class="chapter" data-level="4.2.8" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#papers-past"><i class="fa fa-check"></i><b>4.2.8</b> Papers Past</a></li>
-<li class="chapter" data-level="4.2.9" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#hemeroteca-nacional-digital-de-mexico"><i class="fa fa-check"></i><b>4.2.9</b> Hemeroteca Nacional Digital de Mexico</a></li>
-<li class="chapter" data-level="4.2.10" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#belgica-press"><i class="fa fa-check"></i><b>4.2.10</b> Belgica Press</a></li>
-<li class="chapter" data-level="4.2.11" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#welsh-newspaper-archive"><i class="fa fa-check"></i><b>4.2.11</b> Welsh Newspaper Archive</a></li>
-<li class="chapter" data-level="4.2.12" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#national-library-of-scotland"><i class="fa fa-check"></i><b>4.2.12</b> National Library of Scotland</a></li>
-<li class="chapter" data-level="4.2.13" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#italian-newspapers"><i class="fa fa-check"></i><b>4.2.13</b> Italian newspapers</a></li>
-<li class="chapter" data-level="4.2.14" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#hemeroteca-digital-spain"><i class="fa fa-check"></i><b>4.2.14</b> Hemeroteca Digital (Spain)</a></li>
-<li class="chapter" data-level="4.2.15" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#anno---austrian-newspapers-online"><i class="fa fa-check"></i><b>4.2.15</b> ANNO - Austrian Newspapers Online</a></li>
-<li class="chapter" data-level="4.2.16" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#bc-historical-newspapers"><i class="fa fa-check"></i><b>4.2.16</b> BC Historical Newspapers</a></li>
-<li class="chapter" data-level="4.2.17" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#media-stream"><i class="fa fa-check"></i><b>4.2.17</b> Media Stream</a></li>
-<li class="chapter" data-level="4.2.18" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#stare-hrvatske-novine"><i class="fa fa-check"></i><b>4.2.18</b> Stare hrvatske novine</a></li>
-<li class="chapter" data-level="4.2.19" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#zefys"><i class="fa fa-check"></i><b>4.2.19</b> ZEFYS</a></li>
-<li class="chapter" data-level="4.2.20" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#timarit.is"><i class="fa fa-check"></i><b>4.2.20</b> Timarit.is</a></li>
-<li class="chapter" data-level="4.2.21" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#google-news-archive"><i class="fa fa-check"></i><b>4.2.21</b> Google news archive</a></li>
-<li class="chapter" data-level="4.2.22" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#baltic-digital-library"><i class="fa fa-check"></i><b>4.2.22</b> Baltic Digital Library</a></li>
-<li class="chapter" data-level="4.2.23" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#newspapersg"><i class="fa fa-check"></i><b>4.2.23</b> NewspaperSG</a></li>
-<li class="chapter" data-level="4.2.24" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#svenska-dagstidningar"><i class="fa fa-check"></i><b>4.2.24</b> Svenska dagstidningar</a></li>
-<li class="chapter" data-level="4.2.25" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#handwritten-newspapers-project"><i class="fa fa-check"></i><b>4.2.25</b> Handwritten Newspapers Project</a></li>
-<li class="chapter" data-level="4.2.26" data-path="newspaper-data-international.html"><a href="newspaper-data-international.html#the-medici-archive-project"><i class="fa fa-check"></i><b>4.2.26</b> The Medici Archive Project</a></li>
+<li class="chapter" data-level="3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html"><i class="fa fa-check"></i><b>3</b> UK Newspaper Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#intro-to-british-library-newspapers"><i class="fa fa-check"></i><b>3.1</b> Intro to British Library Newspapers</a></li>
+<li class="chapter" data-level="3.2" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#burney-collection"><i class="fa fa-check"></i><b>3.2</b> Burney Collection</a></li>
+<li class="chapter" data-level="3.3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#jisc-newspaper-digitisation-projects"><i class="fa fa-check"></i><b>3.3</b> JISC Newspaper digitisation projects</a></li>
+<li class="chapter" data-level="3.4" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#british-newspaper-archive"><i class="fa fa-check"></i><b>3.4</b> BRITISH NEWSPAPER ARCHIVE</a></li>
+<li class="chapter" data-level="3.5" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#hmd-data--on-repository"><i class="fa fa-check"></i><b>3.5</b> HMD data- on repository</a></li>
+<li class="chapter" data-level="3.6" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#what-access-do-you-need"><i class="fa fa-check"></i><b>3.6</b> What access do you need?</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-find-individual-articles."><i class="fa fa-check"></i><b>3.6.1</b> Want to find individual articles.</a></li>
+<li class="chapter" data-level="3.6.2" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-text-mining-on-a-large-corpus"><i class="fa fa-check"></i><b>3.6.2</b> Want to do text mining on a large corpus</a></li>
+<li class="chapter" data-level="3.6.3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-text-mining-on-the-entire-digitised-collection"><i class="fa fa-check"></i><b>3.6.3</b> Want to do text mining on the entire digitised collection</a></li>
+<li class="chapter" data-level="3.6.4" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-something-involving-the-images-such-as-computer-vision-techniques"><i class="fa fa-check"></i><b>3.6.4</b> Want to do something involving the images, such as computer vision techniques,</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html"><i class="fa fa-check"></i><b>5</b> UK Newspaper Data</a><ul>
-<li class="chapter" data-level="5.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#what-access-do-you-need"><i class="fa fa-check"></i><b>5.1</b> What access do you need?</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-find-individual-articles."><i class="fa fa-check"></i><b>5.1.1</b> Want to find individual articles.</a></li>
-<li class="chapter" data-level="5.1.2" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-text-mining-on-a-large-corpus"><i class="fa fa-check"></i><b>5.1.2</b> Want to do text mining on a large corpus</a></li>
-<li class="chapter" data-level="5.1.3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-text-mining-on-the-entire-digitised-collection"><i class="fa fa-check"></i><b>5.1.3</b> Want to do text mining on the entire digitised collection</a></li>
-<li class="chapter" data-level="5.1.4" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#want-to-do-something-involving-the-images-such-as-computer-vision-techniques"><i class="fa fa-check"></i><b>5.1.4</b> Want to do something involving the images, such as computer vision techniques,</a></li>
+<li class="chapter" data-level="4" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html"><i class="fa fa-check"></i><b>4</b> OCR and its problems</a><ul>
+<li class="chapter" data-level="4.1" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-is-ocr"><i class="fa fa-check"></i><b>4.1</b> What is OCR?</a></li>
+<li class="chapter" data-level="4.2" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-is-it-like-in-bl-newspapers"><i class="fa fa-check"></i><b>4.2</b> What is it like in BL newspapers?</a></li>
+<li class="chapter" data-level="4.3" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#introduction-1"><i class="fa fa-check"></i><b>4.3</b> Introduction</a></li>
+<li class="chapter" data-level="4.4" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#extract-predicted-word-scores-from-the-alto-pages"><i class="fa fa-check"></i><b>4.4</b> Extract predicted word scores from the ALTO pages</a></li>
+<li class="chapter" data-level="4.5" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#visualisations"><i class="fa fa-check"></i><b>4.5</b> Visualisations:</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#whats-in-the-data"><i class="fa fa-check"></i><b>4.5.1</b> What’s in the data?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#intro-to-british-library-newspapers"><i class="fa fa-check"></i><b>5.2</b> Intro to British Library Newspapers</a></li>
-<li class="chapter" data-level="5.3" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#eebotcp"><i class="fa fa-check"></i><b>5.3</b> EEBO/TCP</a></li>
-<li class="chapter" data-level="5.4" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#burney-collection"><i class="fa fa-check"></i><b>5.4</b> Burney Collection</a></li>
-<li class="chapter" data-level="5.5" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#jisc-newspaper-digitisation-projects"><i class="fa fa-check"></i><b>5.5</b> JISC Newspaper digitisation projects</a></li>
-<li class="chapter" data-level="5.6" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#british-newspaper-archive-1"><i class="fa fa-check"></i><b>5.6</b> BRITISH NEWSPAPER ARCHIVE</a></li>
-<li class="chapter" data-level="5.7" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#gale"><i class="fa fa-check"></i><b>5.7</b> GALE</a><ul>
-<li class="chapter" data-level="5.7.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#getting-access-to-gale-data---experience-of-others"><i class="fa fa-check"></i><b>5.7.1</b> Getting access to GALE data - experience of others</a></li>
+<li class="chapter" data-level="4.6" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#highest-and-lowest-results"><i class="fa fa-check"></i><b>4.6</b> Highest and lowest results:</a></li>
+<li class="chapter" data-level="4.7" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#page-by-page-ocr-visualisation"><i class="fa fa-check"></i><b>4.7</b> Page-by-page OCR visualisation</a></li>
+<li class="chapter" data-level="4.8" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#microfilm-vs-print"><i class="fa fa-check"></i><b>4.8</b> Microfilm vs print:</a></li>
+<li class="chapter" data-level="4.9" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#conclusions"><i class="fa fa-check"></i><b>4.9</b> Conclusions</a></li>
+<li class="chapter" data-level="4.10" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#impact-on-analysis"><i class="fa fa-check"></i><b>4.10</b> Impact on analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#hmd-data--on-repository"><i class="fa fa-check"></i><b>5.8</b> HMD data- on repository</a><ul>
-<li class="chapter" data-level="5.8.1" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#project-goals"><i class="fa fa-check"></i><b>5.8.1</b> Project goals</a></li>
+<li class="chapter" data-level="5" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>5</b> Quick introduction to R and the tidyverse</a><ul>
+<li class="chapter" data-level="5.1" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#what-and-why"><i class="fa fa-check"></i><b>5.1</b> What and why?</a></li>
+<li class="chapter" data-level="5.2" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#using-r"><i class="fa fa-check"></i><b>5.2</b> Using R</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#base-r-commands"><i class="fa fa-check"></i><b>5.2.1</b> Base R commands</a></li>
 </ul></li>
-<li class="chapter" data-level="5.9" data-path="uk-newspaper-data.html"><a href="uk-newspaper-data.html#luxembourg-data"><i class="fa fa-check"></i><b>5.9</b> Luxembourg data</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="data-formats.html"><a href="data-formats.html"><i class="fa fa-check"></i><b>6</b> Data formats</a><ul>
-<li class="chapter" data-level="6.1" data-path="data-formats.html"><a href="data-formats.html#xml---different-flavours"><i class="fa fa-check"></i><b>6.1</b> XML - different flavours</a></li>
-<li class="chapter" data-level="6.2" data-path="data-formats.html"><a href="data-formats.html#cqpweb-newspaper-corpora"><i class="fa fa-check"></i><b>6.2</b> CQPWeb newspaper corpora</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html"><i class="fa fa-check"></i><b>7</b> OCR and its problems</a><ul>
-<li class="chapter" data-level="7.1" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-is-ocr"><i class="fa fa-check"></i><b>7.1</b> What is OCR?</a></li>
-<li class="chapter" data-level="7.2" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-is-it-like-in-bl-newspapers"><i class="fa fa-check"></i><b>7.2</b> What is it like in BL newspapers?</a></li>
-<li class="chapter" data-level="7.3" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#what-information-do-we-have-on-ocr"><i class="fa fa-check"></i><b>7.3</b> What information do we have on OCR?</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#error-rate"><i class="fa fa-check"></i><b>7.3.1</b> Error rate</a></li>
-<li class="chapter" data-level="7.3.2" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#ground-truth---testing-against-transcription"><i class="fa fa-check"></i><b>7.3.2</b> Ground truth - testing against transcription</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="ocr-and-its-problems.html"><a href="ocr-and-its-problems.html#impact-on-analysis"><i class="fa fa-check"></i><b>7.4</b> Impact on analysis</a></li>
-</ul></li>
-<li class="part"><span><b>II Part I: Basic data methods</b></span></li>
-<li class="chapter" data-level="8" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>8</b> Methods</a><ul>
-<li class="chapter" data-level="8.1" data-path="methods.html"><a href="methods.html#mapping-seventeenth-century-newsbooks"><i class="fa fa-check"></i><b>8.1</b> Mapping seventeenth century newsbooks</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="methods.html"><a href="methods.html#mapping-with-r"><i class="fa fa-check"></i><b>8.1.1</b> Mapping with R</a></li>
-<li class="chapter" data-level="8.1.2" data-path="methods.html"><a href="methods.html#steps"><i class="fa fa-check"></i><b>8.1.2</b> Steps</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="methods.html"><a href="methods.html#network-analysis-of-seventeenth-century-newsbooks"><i class="fa fa-check"></i><b>8.2</b> Network analysis of seventeenth century newsbooks</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="methods.html"><a href="methods.html#background"><i class="fa fa-check"></i><b>8.2.1</b> Background</a></li>
-<li class="chapter" data-level="8.2.2" data-path="methods.html"><a href="methods.html#network-analysis"><i class="fa fa-check"></i><b>8.2.2</b> Network analysis</a></li>
-<li class="chapter" data-level="8.2.3" data-path="methods.html"><a href="methods.html#steps-1"><i class="fa fa-check"></i><b>8.2.3</b> Steps</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="methods.html"><a href="methods.html#network-analysis-using-nlp-and-lancaster-newsbooks"><i class="fa fa-check"></i><b>8.3</b> Network analysis using NLP and Lancaster newsbooks</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="methods.html"><a href="methods.html#background-1"><i class="fa fa-check"></i><b>8.3.1</b> Background</a></li>
-<li class="chapter" data-level="8.3.2" data-path="methods.html"><a href="methods.html#sources-used"><i class="fa fa-check"></i><b>8.3.2</b> Sources used</a></li>
-<li class="chapter" data-level="8.3.3" data-path="methods.html"><a href="methods.html#steps-2"><i class="fa fa-check"></i><b>8.3.3</b> Steps</a></li>
-<li class="chapter" data-level="8.3.4" data-path="methods.html"><a href="methods.html#choropleth-maps---nineteenth-century"><i class="fa fa-check"></i><b>8.3.4</b> Choropleth maps - nineteenth century</a></li>
+<li class="chapter" data-level="5.3" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i><b>5.3</b> Tidyverse</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i><b>5.3.1</b> select(), pull()</a></li>
+<li class="chapter" data-level="5.3.2" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i><b>5.3.2</b> group_by(), tally(), summarise()</a></li>
+<li class="chapter" data-level="5.3.3" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>5.3.3</b> filter()</a></li>
+<li class="chapter" data-level="5.3.4" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#sort-arrange-top_n"><i class="fa fa-check"></i><b>5.3.4</b> sort(), arrange(), top_n()</a></li>
+<li class="chapter" data-level="5.3.5" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#left_join-inner_join-anti_join"><i class="fa fa-check"></i><b>5.3.5</b> left_join(), inner_join(), anti_join()</a></li>
+<li class="chapter" data-level="5.3.6" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i><b>5.3.6</b> Piping</a></li>
+<li class="chapter" data-level="5.3.7" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#plotting-using-ggplot"><i class="fa fa-check"></i><b>5.3.7</b> Plotting using ggplot()</a></li>
+<li class="chapter" data-level="5.3.8" data-path="quick-introduction-to-r-and-the-tidyverse.html"><a href="quick-introduction-to-r-and-the-tidyverse.html#doing-this-with-newspaper-data"><i class="fa fa-check"></i><b>5.3.8</b> Doing this with newspaper data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html"><i class="fa fa-check"></i><b>9</b> R and the Tidyverse</a><ul>
-<li class="chapter" data-level="9.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#r"><i class="fa fa-check"></i><b>9.1</b> R</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#base-r-commands"><i class="fa fa-check"></i><b>9.1.1</b> Base R commands</a></li>
-<li class="chapter" data-level="9.1.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#r-studio"><i class="fa fa-check"></i><b>9.1.2</b> R studio</a></li>
+<li class="chapter" data-level="6" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html"><i class="fa fa-check"></i><b>6</b> Geocode and map newspaper titles</a><ul>
+<li class="chapter" data-level="6.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#a-map-of-british-newspapers-by-city"><i class="fa fa-check"></i><b>6.1</b> A map of British Newspapers by City</a></li>
+<li class="chapter" data-level="6.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#drawing-a-background-map."><i class="fa fa-check"></i><b>6.2</b> Drawing a background map. `</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#mapping-with-ggplot2-and-mapdata"><i class="fa fa-check"></i><b>6.2.1</b> Mapping with ggplot2 and mapdata</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#tidyverse"><i class="fa fa-check"></i><b>9.2</b> Tidyverse</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#select-pull"><i class="fa fa-check"></i><b>9.2.1</b> Select, pull</a></li>
-<li class="chapter" data-level="9.2.2" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#group_by-tally-summarise"><i class="fa fa-check"></i><b>9.2.2</b> group_by, tally, summarise</a></li>
-<li class="chapter" data-level="9.2.3" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#filter"><i class="fa fa-check"></i><b>9.2.3</b> filter</a></li>
-<li class="chapter" data-level="9.2.4" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#sort-arrange-top_n"><i class="fa fa-check"></i><b>9.2.4</b> sort, arrange, top_n</a></li>
-<li class="chapter" data-level="9.2.5" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#piping"><i class="fa fa-check"></i><b>9.2.5</b> Piping</a></li>
-<li class="chapter" data-level="9.2.6" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#plotting"><i class="fa fa-check"></i><b>9.2.6</b> Plotting</a></li>
-<li class="chapter" data-level="9.2.7" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#doing-this-with-newspaper-data"><i class="fa fa-check"></i><b>9.2.7</b> Doing this with newspaper data</a></li>
-<li class="chapter" data-level="9.2.8" data-path="r-and-the-tidyverse.html"><a href="r-and-the-tidyverse.html#other-relevant-stuff-particularly-for-historians"><i class="fa fa-check"></i><b>9.2.8</b> Other relevant stuff, particularly for historians</a></li>
+<li class="chapter" data-level="6.3" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#add-some-points"><i class="fa fa-check"></i><b>6.3</b> Add some points</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#get-a-count-of-the-total-titles-for-each-city"><i class="fa fa-check"></i><b>6.3.1</b> Get a count of the total titles for each city</a></li>
+<li class="chapter" data-level="6.3.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#get-a-list-of-points."><i class="fa fa-check"></i><b>6.3.2</b> Get a list of points.</a></li>
 </ul></li>
+<li class="chapter" data-level="6.4" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#choropleth-map"><i class="fa fa-check"></i><b>6.4</b> Choropleth map</a></li>
+<li class="chapter" data-level="6.5" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#make-the-points-object."><i class="fa fa-check"></i><b>6.5</b> Make the points object.</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="regular-expressions.html"><a href="regular-expressions.html"><i class="fa fa-check"></i><b>10</b> Regular expressions</a></li>
-<li class="chapter" data-level="11" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html"><i class="fa fa-check"></i><b>11</b> Charting over time with a curated dataset</a><ul>
-<li class="chapter" data-level="11.1" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html#where-to-download"><i class="fa fa-check"></i><b>11.1</b> Where to download</a></li>
-<li class="chapter" data-level="11.2" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html#time"><i class="fa fa-check"></i><b>11.2</b> Time</a></li>
-<li class="chapter" data-level="11.3" data-path="charting-over-time-with-a-curated-dataset.html"><a href="charting-over-time-with-a-curated-dataset.html#barplots"><i class="fa fa-check"></i><b>11.3</b> Barplots</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="network-analysis-with-curated-seventeenth-century-dataset.html"><a href="network-analysis-with-curated-seventeenth-century-dataset.html"><i class="fa fa-check"></i><b>12</b> Network analysis with curated seventeenth-century dataset</a></li>
-<li class="chapter" data-level="13" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html"><i class="fa fa-check"></i><b>13</b> Geocode and map newspaper titles</a><ul>
-<li class="chapter" data-level="13.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#points"><i class="fa fa-check"></i><b>13.1</b> Points</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#drawing-a-background-map."><i class="fa fa-check"></i><b>13.1.1</b> Drawing a background map. `</a></li>
-<li class="chapter" data-level="13.1.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#get-a-count-of-the-total-titles-for-each-city"><i class="fa fa-check"></i><b>13.1.2</b> Get a count of the total titles for each city</a></li>
-<li class="chapter" data-level="13.1.3" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#get-a-list-of-points."><i class="fa fa-check"></i><b>13.1.3</b> Get a list of points.</a></li>
-</ul></li>
-<li class="chapter" data-level="13.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#choropleth-map"><i class="fa fa-check"></i><b>13.2</b> Choropleth map</a><ul>
-<li class="chapter" data-level="13.2.1" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#which-libraries-are-needed"><i class="fa fa-check"></i><b>13.2.1</b> Which libraries are needed</a></li>
-<li class="chapter" data-level="13.2.2" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#download-a-shapefile"><i class="fa fa-check"></i><b>13.2.2</b> Download a shapefile</a></li>
-<li class="chapter" data-level="13.2.3" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#have-a-look-at-the-shapefile"><i class="fa fa-check"></i><b>13.2.3</b> Have a look at the shapefile</a></li>
-<li class="chapter" data-level="13.2.4" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#count-the-general-area-of-coverage-field"><i class="fa fa-check"></i><b>13.2.4</b> Count the general area of coverage field</a></li>
-<li class="chapter" data-level="13.2.5" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#change-some-of-the-names-to-fit-the-shapefile"><i class="fa fa-check"></i><b>13.2.5</b> Change some of the names to fit the shapefile</a></li>
-<li class="chapter" data-level="13.2.6" data-path="geocode-and-map-newspaper-titles.html"><a href="geocode-and-map-newspaper-titles.html#section"><i class="fa fa-check"></i><b>13.2.6</b> </a></li>
+<li class="part"><span><b>I Part III: Examples</b></span></li>
+<li class="chapter" data-level="7" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>7</b> Text mining</a><ul>
+<li class="chapter" data-level="7.1" data-path="text-mining.html"><a href="text-mining.html#what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century_"><i class="fa fa-check"></i><b>7.1</b> What were the most common words used in newspaper titles in the nineteenth century?_</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="text-mining.html"><a href="text-mining.html#titles-dont-just-help-you-identity-a-newspaper-but-they-might-tell-you-a-little-bit-about-the-time-in-which-they-were-established.-with-a-bibliographic-list-of-all-our-uk-and-irish-titles-we-can-count-the-most-frequent-words-and-track-them-over-time-and-place-using-text-mining-and-data-analysis."><i class="fa fa-check"></i><b>7.1.1</b> Titles don’t just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of <em>all</em> our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.</a></li>
+<li class="chapter" data-level="7.1.2" data-path="text-mining.html"><a href="text-mining.html#what-is-this-document"><i class="fa fa-check"></i><b>7.1.2</b> What is this document?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="text-mining.html"><a href="text-mining.html#how-about-differences-by-country"><i class="fa fa-check"></i><b>7.1.3</b> How about differences by country?</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>III Part III: Examples</b></span></li>
-<li class="chapter" data-level="14" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>14</b> Text mining</a><ul>
-<li class="chapter" data-level="14.1" data-path="text-mining.html"><a href="text-mining.html#what-were-the-most-common-words-used-in-newspaper-titles-in-the-nineteenth-century_"><i class="fa fa-check"></i><b>14.1</b> What were the most common words used in newspaper titles in the nineteenth century?_</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="text-mining.html"><a href="text-mining.html#titles-dont-just-help-you-identity-a-newspaper-but-they-might-tell-you-a-little-bit-about-the-time-in-which-they-were-established.-with-a-bibliographic-list-of-all-our-uk-and-irish-titles-we-can-count-the-most-frequent-words-and-track-them-over-time-and-place-using-text-mining-and-data-analysis."><i class="fa fa-check"></i><b>14.1.1</b> Titles don’t just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of <em>all</em> our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.</a></li>
-<li class="chapter" data-level="14.1.2" data-path="text-mining.html"><a href="text-mining.html#what-is-this-document"><i class="fa fa-check"></i><b>14.1.2</b> What is this document?</a></li>
-<li class="chapter" data-level="14.1.3" data-path="text-mining.html"><a href="text-mining.html#how-about-differences-by-country"><i class="fa fa-check"></i><b>14.1.3</b> How about differences by country?</a></li>
+<li class="chapter" data-level="8" data-path="extract-text.html"><a href="extract-text.html"><i class="fa fa-check"></i><b>8</b> Make a Text Corpus</a><ul>
+<li class="chapter" data-level="8.1" data-path="extract-text.html"><a href="extract-text.html#where-is-this-data"><i class="fa fa-check"></i><b>8.1</b> Where is this data?</a></li>
+<li class="chapter" data-level="8.2" data-path="extract-text.html"><a href="extract-text.html#folder-structure"><i class="fa fa-check"></i><b>8.2</b> Folder structure</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="term-frequencies.html"><a href="term-frequencies.html"><i class="fa fa-check"></i><b>9</b> Term Frequencies</a></li>
+<li class="chapter" data-level="10" data-path="tf-idf.html"><a href="tf-idf.html"><i class="fa fa-check"></i><b>10</b> Tf_idf:</a></li>
+<li class="chapter" data-level="11" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html"><i class="fa fa-check"></i><b>11</b> Sentiment analysis</a><ul>
+<li class="chapter" data-level="11.1" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#install-and-load-relevant-packages"><i class="fa fa-check"></i><b>11.1</b> Install and load relevant packages</a></li>
+<li class="chapter" data-level="11.2" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#fetch-sentiment-data"><i class="fa fa-check"></i><b>11.2</b> Fetch sentiment data</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#afinn-dataset"><i class="fa fa-check"></i><b>11.2.1</b> Afinn dataset</a></li>
+<li class="chapter" data-level="11.2.2" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#bing-dataset"><i class="fa fa-check"></i><b>11.2.2</b> Bing dataset</a></li>
+<li class="chapter" data-level="11.2.3" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#loughran-dataset"><i class="fa fa-check"></i><b>11.2.3</b> Loughran dataset</a></li>
+<li class="chapter" data-level="11.2.4" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#nrc-dataset"><i class="fa fa-check"></i><b>11.2.4</b> NRC dataset</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="term-frequencies.html"><a href="term-frequencies.html"><i class="fa fa-check"></i><b>15</b> Term Frequencies</a></li>
-<li class="chapter" data-level="16" data-path="text-reuse.html"><a href="text-reuse.html"><i class="fa fa-check"></i><b>16</b> Text reuse</a></li>
-<li class="chapter" data-level="17" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html"><i class="fa fa-check"></i><b>17</b> Sentiment analysis</a></li>
-<li class="chapter" data-level="18" data-path="existing-work.html"><a href="existing-work.html"><i class="fa fa-check"></i><b>18</b> Existing work</a></li>
-<li class="chapter" data-level="19" data-path="further-reading.html"><a href="further-reading.html"><i class="fa fa-check"></i><b>19</b> Further reading</a></li>
-<li class="chapter" data-level="20" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html"><i class="fa fa-check"></i><b>20</b> Accessing newspaper data through the British Library</a><ul>
-<li class="chapter" data-level="20.1" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#what-is-available"><i class="fa fa-check"></i><b>20.1</b> What is available?</a></li>
-<li class="chapter" data-level="20.2" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#applying-for-support-from-bl-labs"><i class="fa fa-check"></i><b>20.2</b> Applying for support from BL Labs</a></li>
-<li class="chapter" data-level="20.3" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#using-jupyterhub-in-the-reading-rooms"><i class="fa fa-check"></i><b>20.3</b> Using JupyterHub in the reading rooms</a></li>
-<li class="chapter" data-level="20.4" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#taking-the-data-away-with-you"><i class="fa fa-check"></i><b>20.4</b> Taking the data away with you</a></li>
-<li class="chapter" data-level="20.5" data-path="accessing-newspaper-data-through-the-british-library.html"><a href="accessing-newspaper-data-through-the-british-library.html#next-chapter-leads-on-to-ocr-formats."><i class="fa fa-check"></i><b>20.5</b> Next chapter leads on to OCR formats.</a></li>
+<li class="chapter" data-level="11.3" data-path="sentiment-analysis.html"><a href="sentiment-analysis.html#load-the-tokenised-news-sample"><i class="fa fa-check"></i><b>11.3</b> Load the tokenised news sample</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="topic-modelling.html"><a href="topic-modelling.html"><i class="fa fa-check"></i><b>12</b> Topic modelling</a></li>
+<li class="chapter" data-level="13" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html"><i class="fa fa-check"></i><b>13</b> Detecting text reuse in newspaper articles.</a><ul>
+<li class="chapter" data-level="13.1" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#turn-the-newspaper-sample-into-a-bunch-of-text-documents-one-per-article"><i class="fa fa-check"></i><b>13.1</b> Turn the newspaper sample into a bunch of text documents, one per article</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#load-the-dataframe-and-preprocess"><i class="fa fa-check"></i><b>13.1.1</b> Load the dataframe and preprocess</a></li>
+<li class="chapter" data-level="13.1.2" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#make-a-text-file-from-each-article"><i class="fa fa-check"></i><b>13.1.2</b> Make a text file from each article</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#load-the-files-as-a-textreusecorpus"><i class="fa fa-check"></i><b>13.2</b> Load the files as a TextReuseCorpus</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#generate-a-minhash"><i class="fa fa-check"></i><b>13.2.1</b> Generate a minhash</a></li>
+<li class="chapter" data-level="13.2.2" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#create-the-textreusecorpus"><i class="fa fa-check"></i><b>13.2.2</b> Create the TextReuseCorpus</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="detecting-text-reuse-in-newspaper-articles-.html"><a href="detecting-text-reuse-in-newspaper-articles-.html#further-reading"><i class="fa fa-check"></i><b>13.3</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="further-reading-1.html"><a href="further-reading-1.html"><i class="fa fa-check"></i><b>14</b> Further reading</a></li>
 </ul>
 
       </nav>
@@ -316,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for Newspaper Data</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demystifying Newspaper Data with R (and a tiny bit of Python)</a>
           </h1>
         </div>
 
@@ -325,27 +254,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="geocode-and-map-newspaper-titles" class="section level1">
-<h1><span class="header-section-number">13</span> Geocode and map newspaper titles</h1>
-<p>R is also really good for creating maps, both for visualisations and for spatial analysis.</p>
-<div id="points" class="section level2">
-<h2><span class="header-section-number">13.1</span> Points</h2>
-<p>Another thing we can do is create a map of all the titles. For this we’ll need three things</p>
+<h1><span class="header-section-number">6</span> Geocode and map newspaper titles</h1>
+<p>R is also really good for creating maps, both for visualisations and for spatial analysis. Using an openly available list of British Library titles, with some additional coordinate information, it’s possible to very quickly make high-quality, publishable maps.</p>
+<div id="a-map-of-british-newspapers-by-city" class="section level2">
+<h2><span class="header-section-number">6.1</span> A map of British Newspapers by City</h2>
+<p>To do this we’ll need three things</p>
 <ul>
 <li><p>A background map of the UK and Ireland</p></li>
 <li><p>A count of the total titles for each city</p></li>
-<li><p>A list of coordinates for all the cities. This last one is a little trickier than the other two, as I’ll explain. Without some manually editing we might end up with some slightly dodgy results. But let’s just see where we end up.</p></li>
+<li><p>A list of coordinates for all the cities. This last one is a little trickier than the other two, as I’ll explain.</p></li>
 </ul>
-<div id="drawing-a-background-map." class="section level3">
-<h3><span class="header-section-number">13.1.1</span> Drawing a background map. `</h3>
-<p>Maps is a library for R which, unsurprisingly, contains some map data, including some high resolution maps of the world. To draw the map, first we install the library.</p>
-<p><code>install.packages('maps')</code></p>
-<p>Next we load two libraries to use: maps and ggplot2. We’ll use a function from ggplot2 called <code>map_data</code> to turn some data from the maps package into a dataframe, and then we’ll use some more plotting functions from ggplot2 to draw the map.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="kw">library</span>(maps)</a></code></pre></div>
-<p>First we assign a name to the dataframe we’ll create with <code>map_data</code></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">worldmap =<span class="st"> </span><span class="kw">map_data</span>(<span class="st">&#39;world&#39;</span>)</a></code></pre></div>
+</div>
+<div id="drawing-a-background-map." class="section level2">
+<h2><span class="header-section-number">6.2</span> Drawing a background map. `</h2>
+<div id="mapping-with-ggplot2-and-mapdata" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Mapping with ggplot2 and mapdata</h3>
+<p>The plotting library <em>ggplot2</em>, which is part of the tidyverse package, contains a function called ``map_data()<code>which turns data from the *maps* library. This can then be used to draw a map. First you'll need to install the maps package using</code>install.packages()```.</p>
+<p>Next load <em>ggplot2</em> and the <em>maps</em> library</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="kw">library</span>(maps)</a></code></pre></div>
+<p>First create a dataframe called ‘worldmap’ with a function called <code>map_data()</code>. <code>map_data()</code> takes an argument with the name of the map you want to load, in inverted commas. Some of the choices are ‘world’, ‘usa’, ‘france’, ‘italy’. We’ll use the ‘world’ map.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">worldmap =<span class="st"> </span><span class="kw">map_data</span>(<span class="st">&#39;world&#39;</span>)</a></code></pre></div>
 <p>Take a look at the dataframe we’ve created:</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">head</span>(worldmap, <span class="dv">20</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">head</span>(worldmap, <span class="dv">20</span>)</a></code></pre></div>
 <pre><code>##         long      lat group order      region subregion
 ## 1  -69.89912 12.45200     1     1       Aruba      &lt;NA&gt;
 ## 2  -69.89571 12.42300     1     2       Aruba      &lt;NA&gt;
@@ -369,42 +300,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 21  74.49796 37.05722     2    21 Afghanistan      &lt;NA&gt;</code></pre>
 <p>It’s a big table with about 100,000 rows. Each row has a latitude and longitude, and a group. Each region and sub-region in the dataframe has its own group number. We’ll use a function <code>geom_polygon</code> which tells ggplot to draw a polygon (a bunch of connected lines) for each group, and display it.</p>
 <p>With the <code>aes()</code>, x tells ggplot2 the longitude of each point, y the latitude, and group makes sure the polygons are grouped together correctly.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
-<p>Right, it needs a <em>bit</em> of tweaking. First, we only want to plot points in the UK and Ireland. There’s obviously way too much map for this, so the first thing we should do is restrict it to a rectangle which includes those two countries.</p>
-<p>We can do that with <code>coord_fixed()</code>. <code>coord_fixed()</code> is used to fix the aspect ratio of a coordinate system, but can be used to specify a bounding box by using two of its arguments: <code>xlim=</code> and <code>ylim=</code>. These each take a vector (a series of numbers) with two numbers. A vector is created using <code>c()</code>. Each number specifies the limits for that axis. So <code>xlim = c(0,10)</code> means <em>restrict the x-axis to 0 and 10</em>. The axes correspond to the lines of longitude (x) and latitude (y). We’ll restrict the x-axis to c(-10, 4) and the y-axis to c(54, 60) which should just about cover the UK and Ireland.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
-<p>We can also change the ratio of the coordinates using <code>coord_fixed()</code>. The default is 1, but by specifying a different one with the argument <code>ratio =</code>, that can be changed. Using <code>ratio = 1.3</code> results in a less squashed-looking map.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p>Right, it needs a <em>bit</em> of tweaking. First, we only want to plot points in the UK. There’s obviously way too much map for this, so the first thing we should do is restrict it to a rectangle which includes those two countries.</p>
+<p>We can do that with <code>coord_fixed()</code>. <code>coord_fixed()</code> is used to fix the aspect ratio of a coordinate system, but can be used to specify a bounding box by using two of its arguments: <code>xlim=</code> and <code>ylim=</code>. These each take a vector (a series of numbers) with two items A vector is created using <code>c()</code>. Each item in the vector specifies the limits for that axis. So <code>xlim = c(0,10)</code> means <em>restrict the x-axis to 0 and 10</em>. The axes correspond to the lines of longitude (x) and latitude (y). We’ll restrict the x-axis to c(-10, 4) and the y-axis to c(50.3, 60) which should just about cover the UK and Ireland.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="fl">50.3</span>, <span class="dv">59</span>))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<p>You can also change the ratio of the coordinates using <code>coord_fixed()</code>. The default is 1, but by specifying a different one with the argument <code>ratio =</code>, that can be changed. Using <code>ratio = 1.3</code> results in a less squashed-looking map.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb60-3" data-line-number="3"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <p>A couple more things, which I’ll run through quickly.</p>
 <p>We can specify fill and line colors usings <code>fill =</code> and <code>color =</code> inside <code>geom_polygon()</code> but <em>outside</em> <code>aes()</code>.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
-<p>We probably don’t need the grids or panels in the background. We can get rid of these with <code>+ theme_void()</code>, but bear in mind we might need to add some theme elements back, manually.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb80-3" data-line-number="3"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>))</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p>We probably don’t need the grids or panels in the background. We can get rid of these with <code>+ theme_void()</code>.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
 </div>
+</div>
+<div id="add-some-points" class="section level2">
+<h2><span class="header-section-number">6.3</span> Add some points</h2>
 <div id="get-a-count-of-the-total-titles-for-each-city" class="section level3">
-<h3><span class="header-section-number">13.1.2</span> Get a count of the total titles for each city</h3>
+<h3><span class="header-section-number">6.3.1</span> Get a count of the total titles for each city</h3>
 <p>This next bit uses some of the functions demonstrated in the introduction to R and the tidyverse, namely <code>group_by()</code> and <code>tally()</code>.</p>
 <p>First load the rest of the tidyverse packages.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<p>Next, load the title list, which can be dowloaded here:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">title_list =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;data/BritishAndIrishNewspapersTitleList_20191118.csv&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<p>Next, load the title list, which can be dowloaded from the <a href="https://doi.org/10.23636/1136">British Library’s Open Repository</a></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">title_list =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;BritishAndIrishNewspapersTitleList_20191118.csv&#39;</span>)</a></code></pre></div>
 <p>We can quite easily make a new data frame, which will just include each location and the total number of instances in the dataset.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">location_counts =<span class="st"> </span>title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication, general_area_of_coverage, coverage_city) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb83-3" data-line-number="3"><span class="st">  </span><span class="kw">tally</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">location_counts =<span class="st"> </span>title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(country_of_publication, general_area_of_coverage, coverage_city) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="st">  </span><span class="kw">tally</span>()</a></code></pre></div>
 <p>Arranging these in descending order of their count shows how many of each we have:</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">location_counts <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n))</a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">location_counts <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n))</a></code></pre></div>
 <pre><code>## # A tibble: 2,189 x 4
 ## # Groups:   country_of_publication, general_area_of_coverage [531]
 ##    country_of_publication general_area_of_coverage  coverage_city     n
@@ -422,265 +359,241 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 2,179 more rows</code></pre>
 </div>
 <div id="get-a-list-of-points." class="section level3">
-<h3><span class="header-section-number">13.1.3</span> Get a list of points.</h3>
-<p>Well, we’ve cheated and made this one already, with lots of manual work.</p>
-<p>We’ll load a dataset containing geocorrected points</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1">geocorrected =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;data/geocorrected.csv&#39;</span>)</a></code></pre></div>
-<p>This needs a little bit of pre-processing. First use a library called <code>snakecase</code> and a function called <code>to_snakecase()</code> to standardise the column names.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">library</span>(snakecase)</a>
-<a class="sourceLine" id="cb87-2" data-line-number="2"><span class="kw">colnames</span>(geocorrected)  =<span class="st"> </span><span class="kw">to_snake_case</span>(<span class="kw">colnames</span>(geocorrected))</a></code></pre></div>
-<p>Then make the coordinate columns numeric using <code>mutate()</code></p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb88-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">wikilat =</span> <span class="kw">as.numeric</span>(wikilat)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb88-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">wikilon =</span> <span class="kw">as.numeric</span>(wikilon))</a></code></pre></div>
+<h3><span class="header-section-number">6.3.2</span> Get a list of points.</h3>
+<p>These coordinates have been produced in cooperation wiht another project with the Library, <em>Living with Machines</em>. We used smart annotations to quickly correct and train</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">geocorrected =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;data/geocorrected.csv&#39;</span>)</a></code></pre></div>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   X1 = col_double(),
+##   Coverage..City = col_character(),
+##   General.area.of.coverage = col_character(),
+##   Country.of.publication = col_character(),
+##   places = col_character(),
+##   wikititle = col_character(),
+##   wikilat = col_character(),
+##   wikilon = col_character(),
+##   confscore = col_double(),
+##   candidates = col_character(),
+##   regionCandidates = col_character(),
+##   status = col_character()
+## )</code></pre>
+<p>Change the column names:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="kw">library</span>(snakecase)</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">colnames</span>(geocorrected) =<span class="st"> </span><span class="kw">to_snake_case</span>(<span class="kw">colnames</span>(geocorrected))</a></code></pre></div>
+<p>Change some column names further, select just the relevant columns, change the NA values and get rid of any empty entries.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">colnames</span>(geocorrected)[<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>] =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;wikititle&#39;</span>, <span class="st">&#39;lat&#39;</span>, <span class="st">&#39;lng&#39;</span>)</a>
+<a class="sourceLine" id="cb72-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb72-3" data-line-number="3">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-9</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">-11</span>, <span class="dv">-12</span>)</a>
+<a class="sourceLine" id="cb72-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb72-5" data-line-number="5">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb72-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">country_of_publication =</span> <span class="kw">replace</span>(country_of_publication, country_of_publication <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">general_area_of_coverage =</span> <span class="kw">replace</span>(general_area_of_coverage, general_area_of_coverage <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb72-7" data-line-number="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">coverage_city =</span> <span class="kw">replace</span>(coverage_city, coverage_city <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>))</a>
+<a class="sourceLine" id="cb72-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb72-9" data-line-number="9">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb72-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lat =</span> <span class="kw">as.numeric</span>(lat)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb72-11" data-line-number="11"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lng =</span> <span class="kw">as.numeric</span>(lng)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(lat)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(lng))</a></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion
 
 ## Warning: NAs introduced by coercion</code></pre>
-<p>Last, change the NA values to the same format as the ones in the title list.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb90-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">country_of_publication =</span> <span class="kw">replace</span>(country_of_publication, country_of_publication <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">general_area_of_coverage =</span> <span class="kw">replace</span>(general_area_of_coverage, general_area_of_coverage <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb90-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">coverage_city =</span> <span class="kw">replace</span>(coverage_city, coverage_city <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>))</a></code></pre></div>
-<p>Using <code>left_join()</code> we will merge these dataframes, joining up each set of location information to its coordinates and standardised name.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">lc_with_geo =<span class="st"> </span>location_counts <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(geocorrected, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&#39;coverage_city&#39;</span> ,<span class="st">&#39;general_area_of_coverage&#39;</span>, <span class="st">&#39;country_of_publication&#39;</span>))</a></code></pre></div>
-<p>Right, now we’re going to use <code>group_by()</code> and <code>tally()</code> again, this time on the the wikititle, wikilat and wikilon columns. This is because the wikititle is a standardised title, which means it will group together cities properly, rather than giving a different row for slightly different combinations of the three geographic information columns.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">lc_with_geo_counts =<span class="st"> </span>lc_with_geo <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(wikititle, wikilat, wikilon) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tally</span>(n)</a></code></pre></div>
-<p>OK, lc_with_geo_counts is what we want to plot. This contains the city title, coordinates and counts for all the relevant places in our dataset. But first we again need the map we created earlier.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb93-3" data-line-number="3"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p>This is a dataframe with a set of longitude and latitude points (they come from Wikipedia, which is why they are prefixed with <em>wiki</em>) for every combination of city/county/country in the list of titles. These can be joined to the full title list.</p>
+<p>Using <code>left_join()</code> we will merge these dataframes, joining up each set of location information to its coordinates and standardised name. <code>left_join()</code> is a <em>very</em> common command in data analysis. It merges two sets of data by matching a value known as a key.</p>
+<p>Here the key is three values - city, county and country, and it matches up the two sets of data by ‘joining’ two rows together, if they share all three of these values. Store this is a new variable called <code>lc_with_geo</code>.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">lc_with_geo =<span class="st"> </span>location_counts <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="st">  </span><span class="kw">left_join</span>(geocorrected, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&#39;coverage_city&#39;</span> ,<span class="st">&#39;general_area_of_coverage&#39;</span>, <span class="st">&#39;country_of_publication&#39;</span>))</a></code></pre></div>
+<p>If you look at this new dataset, you’ll see that now the counts of locations have merged with the geocorrected data. Now we have an amount and coordinates for each place.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">head</span>(lc_with_geo, <span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 10 x 8
+## # Groups:   country_of_publication, general_area_of_coverage [9]
+##    country_of_publ… general_area_of… coverage_city     n places wikititle   lat
+##    &lt;chr&gt;            &lt;chr&gt;            &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;
+##  1 Bermuda Islands  &lt;NA&gt;             Hamilton         23 &lt;NA&gt;   &lt;NA&gt;         NA
+##  2 Bermuda Islands  &lt;NA&gt;             Saint George      1 &lt;NA&gt;   &lt;NA&gt;         NA
+##  3 Cayman Islands   &lt;NA&gt;             Georgetown        1 &lt;NA&gt;   &lt;NA&gt;         NA
+##  4 England          Aberdeenshire (… Peterhead         1 &lt;NA&gt;   &lt;NA&gt;         NA
+##  5 England          Acton (London, … Ealing (Lond…     1 &lt;NA&gt;   &lt;NA&gt;         NA
+##  6 England          Aintree  |Merse… Maghull           3 &lt;NA&gt;   &lt;NA&gt;         NA
+##  7 England          Alford (Lincoln… Mablethorpe       1 &lt;NA&gt;   &lt;NA&gt;         NA
+##  8 England          Alford (Lincoln… Skegness          1 &lt;NA&gt;   &lt;NA&gt;         NA
+##  9 England          Alfriston  |Eas… Newhaven          1 &lt;NA&gt;   &lt;NA&gt;         NA
+## 10 England          Altrincham  |Gr… Sale              2 &lt;NA&gt;   &lt;NA&gt;         NA
+## # … with 1 more variable: lng &lt;dbl&gt;</code></pre>
+<p>Right, now we’re going to use <code>group_by()</code> and <code>tally()</code> again, this time on the the <em>wikititle</em>, <em>wikilat</em> and <em>wikilon</em> columns. This is because the wikititle is a standardised title, which means it will group together cities properly, rather than giving a different row for slightly different combinations of the three geographic information columns.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">lc_with_geo_counts =<span class="st"> </span>lc_with_geo <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(wikititle, lat, lng) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb77-3" data-line-number="3"><span class="st">  </span><span class="kw">tally</span>(n)</a></code></pre></div>
+<p>Now we’ve got a dataframe with counts of total newspapers, for each standardised wikipedia title in the dataset.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">head</span>(lc_with_geo_counts,<span class="dv">20</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 20 x 4
+## # Groups:   wikititle, lat [20]
+##    wikititle                               lat    lng     n
+##    &lt;chr&gt;                                 &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
+##  1 Abbots_Langley                         51.7 -0.416     1
+##  2 Aberavon_(UK_Parliament_constituency)  51.6 -3.81      1
+##  3 Aberdare                               51.7 -3.44     20
+##  4 Aberdeen                               57.2 -2.11     82
+##  5 Abergavenny                            51.8 -3.02      9
+##  6 Abergele                               53.3 -3.58      8
+##  7 Abersychan                             51.7 -3.06      2
+##  8 Abertillery                            51.7 -3.13      2
+##  9 Aberystwyth                            52.4 -4.08     31
+## 10 Abingdon-on-Thames                     51.7 -1.28     23
+## 11 Accrington                             53.8 -2.36     33
+## 12 Acocks_Green                           52.4 -1.82      1
+## 13 Adlington,_Lancashire                  53.6 -2.60      1
+## 14 Aintree                                53.5 -2.94      1
+## 15 Airdrie,_North_Lanarkshire             55.9 -3.98     13
+## 16 Alcester                               52.2 -1.88      5
+## 17 Aldeburgh                              52.2  1.6       5
+## 18 Alderley_Edge                          53.3 -2.24      4
+## 19 Aldershot                              51.2 -0.758    20
+## 20 Aldridge                               52.6 -1.92      1</code></pre>
+<p>OK, lc_with_geo_counts is what we want to plot. This contains the city title, coordinates and counts for all the relevant places in our dataset. But first we need the map we created earlier.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb80-3" data-line-number="3"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb80-4" data-line-number="4"><span class="st">  </span><span class="kw">theme_void</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
 <p>Now we will plot the cities using <code>geom_point()</code> We’ll specify the <code>lc_with_geo_counts</code> as the argument to <code>data =</code> within <code>geom_point()</code>. The x axis position of each point is the longitude, and the y axis the latitude. We’ll also use the argument <code>size = n</code> within the <code>aes()</code>, to tell ggplot2 to size the points by the column n, which contains the counts for each of our locations, and the argument <code>alpha = .7</code> outside the <code>aes()</code>, to make the points more transparent and slightly easier to read overlapping ones.</p>
 <p>One last thing we’ll add is <code>+scale_size_area()</code>. This sizes the points using their radius rather than diameter, which is a more correct way of representing numbers using circles!</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb94-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb94-3" data-line-number="3"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">data =</span> lc_with_geo_counts, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.numeric</span>(wikilon), <span class="dt">y =</span> <span class="kw">as.numeric</span>(wikilat), <span class="dt">size =</span> n), <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_size_area</span>()</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> worldmap, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group), <span class="dt">fill =</span> <span class="st">&#39;gray90&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="fl">1.3</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">50</span>, <span class="dv">59</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb81-3" data-line-number="3"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> lc_with_geo_counts, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.numeric</span>(lng), <span class="dt">y =</span> <span class="kw">as.numeric</span>(lat), <span class="dt">size =</span> n), <span class="dt">alpha =</span> <span class="fl">.7</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb81-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_size_area</span>()</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
 </div>
 </div>
 <div id="choropleth-map" class="section level2">
-<h2><span class="header-section-number">13.2</span> Choropleth map</h2>
-<div id="which-libraries-are-needed" class="section level3">
-<h3><span class="header-section-number">13.2.1</span> Which libraries are needed</h3>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
-<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="kw">library</span>(rgdal)</a>
-<a class="sourceLine" id="cb95-3" data-line-number="3"><span class="kw">library</span>(broom)</a>
-<a class="sourceLine" id="cb95-4" data-line-number="4"><span class="kw">library</span>(rgeos)</a></code></pre></div>
+<h2><span class="header-section-number">6.4</span> Choropleth map</h2>
+<p>Another type of map is a choropleth. This is where the data is visualised by a certain polygon area rather than a point. Typically these represent areas like parishes, counties or countries. Using the library <code>sf</code>, which stands for Simple Features, a choropleth map can be made quite quickly. A choropleth map uses a shapefile, which is a list of polygons and a <em>projection</em>.</p>
+<p>The trick here is to use the coordinates to correctly situate each set of points within the correct county, as found in the shapefile. Then, count up the titles by this corrected county, and use this total to color or shade the map. The good thing about this method is that once the points are correct, they can be situated within any shapefile - a historic map, for example.</p>
+<p>This relies on data from (www.visionofbritain.ac.uk).</p>
+<p>Download shapefiles for england and scotland from here
+Turn into sf object
+Download list of points, turn into sf object
+Use st join to get county information
+Join to the title list and deselect everything except county and titles - maybe 19th century only..
+Join that to the sf object
+Plot using geom_sf()</p>
+<p>Load libraries</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="kw">library</span>(sf)</a></code></pre></div>
+<pre><code>## Linking to GEOS 3.7.2, GDAL 2.4.2, PROJ 5.2.0</code></pre>
+<p>Next, download (if you haven’t already) the title list from the British Library open repository.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">title_df =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;BritishAndIrishNewspapersTitleList_20191118.csv&#39;</span>)</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_character(),
+##   title_id = col_double(),
+##   nid = col_double(),
+##   nlp = col_double(),
+##   first_date_held = col_double(),
+##   publication_date_one = col_double(),
+##   publication_date_two = col_double()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
 </div>
-<div id="download-a-shapefile" class="section level3">
-<h3><span class="header-section-number">13.2.2</span> Download a shapefile</h3>
-<p><a href="https://data.gov.uk/dataset/0fb911e4-ca3a-4553-9136-c4fb069546f9/ceremonial-county-boundaries-of-england">From here</a></p>
-</div>
-<div id="have-a-look-at-the-shapefile" class="section level3">
-<h3><span class="header-section-number">13.2.3</span> Have a look at the shapefile</h3>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1">england_shp =<span class="st"> </span><span class="kw">readOGR</span>(<span class="dt">dsn =</span> <span class="st">&quot;data/english_ceremonial_counties&quot;</span>, <span class="dt">layer =</span> <span class="st">&quot;English Ceremonial Counties&quot;</span>)</a></code></pre></div>
-<pre><code>## OGR data source with driver: ESRI Shapefile 
-## Source: &quot;/Users/yannryan/Desktop/r-projects/r-for-news-data/data/english_ceremonial_counties&quot;, layer: &quot;English Ceremonial Counties&quot;
-## with 47 features
-## It has 2 fields</code></pre>
-<p>The next thing to do is use a library called broom and a function called <code>tidy()</code>. This turns the shapefile into a dataframe which can be read and plotted by ggplot2.</p>
-<p>First change the projection:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">pc &lt;-<span class="st"> </span><span class="kw">spTransform</span>( england_shp, <span class="kw">CRS</span>( <span class="st">&quot;+init=EPSG:4326&quot;</span> ) ) </a></code></pre></div>
-<p>Then use <code>gSimplify()</code> to simplify it very slightly:</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1">pc &lt;-<span class="st"> </span><span class="kw">gSimplify</span>(pc, <span class="dt">tol =</span> <span class="fl">0.00001</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">pc_tidy =<span class="st"> </span>broom<span class="op">::</span><span class="kw">tidy</span>(pc, <span class="dt">region =</span> <span class="st">&#39;NAME&#39;</span>)</a></code></pre></div>
-<p>Add back in the data, which gSimplify doesn’t keep:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">pc_df &lt;-<span class="st"> </span>england_shp<span class="op">@</span>data</a>
-<a class="sourceLine" id="cb101-2" data-line-number="2">pc &lt;-<span class="st"> </span>sp<span class="op">::</span><span class="kw">SpatialPolygonsDataFrame</span>(pc, pc_df)</a></code></pre></div>
-<p>Finally, do the tidy again. It should work this time.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1">pc_tidy =<span class="st"> </span>broom<span class="op">::</span><span class="kw">tidy</span>(pc, <span class="dt">region =</span> <span class="st">&#39;NAME&#39;</span>)</a></code></pre></div>
-<p><a href="https://gis.stackexchange.com/questions/243569/simplify-polygons-of-sf-object" class="uri">https://gis.stackexchange.com/questions/243569/simplify-polygons-of-sf-object</a></p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">county_totals =<span class="st"> </span>title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb103-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(general_area_of_coverage) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb103-3" data-line-number="3"><span class="st">  </span><span class="kw">tally</span>()</a></code></pre></div>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1">pc_tidy =<span class="st"> </span>broom<span class="op">::</span><span class="kw">tidy</span>(pc, <span class="dt">region =</span> <span class="st">&#39;NAME&#39;</span>)</a></code></pre></div>
-<p>Draw the map:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb105-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> pc_tidy, <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group))</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
-<p>Add in the counts using <code>left_join()</code></p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb106-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_polygon</span>(<span class="dt">data =</span> pc_tidy <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb106-3" data-line-number="3"><span class="st">                 </span><span class="kw">left_join</span>(county_totals, </a>
-<a class="sourceLine" id="cb106-4" data-line-number="4">                           <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&#39;id&#39;</span> =<span class="st"> &#39;general_area_of_coverage&#39;</span>)), </a>
-<a class="sourceLine" id="cb106-5" data-line-number="5">               <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, </a>
-<a class="sourceLine" id="cb106-6" data-line-number="6">                   <span class="dt">fill =</span> n, <span class="dt">group =</span> group)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb106-7" data-line-number="7"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb106-8" data-line-number="8"><span class="st">  </span><span class="kw">coord_fixed</span>(<span class="fl">1.3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_viridis_c</span>()</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="kw">anti_join</span>(title_list <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-2" data-line-number="2"><span class="st">            </span><span class="kw">filter</span>(country_of_publication <span class="op">==</span><span class="st"> &#39;England&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-3" data-line-number="3"><span class="st">            </span><span class="kw">group_by</span>(general_area_of_coverage) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-4" data-line-number="4"><span class="st">            </span><span class="kw">tally</span>(),pc_tidy <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-5" data-line-number="5"><span class="st">            </span><span class="kw">group_by</span>(id) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-6" data-line-number="6"><span class="st">            </span><span class="kw">tally</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-7" data-line-number="7"><span class="st">            </span><span class="kw">select</span>(id), <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&#39;general_area_of_coverage&#39;</span> =<span class="st"> &#39;id&#39;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-8" data-line-number="8"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n))</a></code></pre></div>
-<pre><code>## # A tibble: 274 x 2
-##    general_area_of_coverage     n
-##    &lt;chr&gt;                    &lt;int&gt;
-##  1 London                    5866
-##  2 &lt;NA&gt;                       379
-##  3 Humberside                 322
-##  4 Avon                       321
-##  5 Hereford &amp; Worcester       225
-##  6 Cleveland                  122
-##  7 Jersey                      33
-##  8 Isle of Man                 31
-##  9 Guernsey                    29
-## 10 Great Britain                7
-## # … with 264 more rows</code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">anti_join</span>(pc_tidy <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tally</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(id),title_list <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(country_of_publication <span class="op">==</span><span class="st"> &#39;England&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(general_area_of_coverage) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tally</span>(), <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&#39;id&#39;</span> =<span class="st"> &#39;general_area_of_coverage&#39;</span>)) </a></code></pre></div>
-<pre><code>## # A tibble: 4 x 1
-##   id               
-##   &lt;chr&gt;            
-## 1 County of Bristol
-## 2 Greater London   
-## 3 Herefordshire    
-## 4 Rutland</code></pre>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
-<a class="sourceLine" id="cb111-2" data-line-number="2">  <span class="kw">head</span>(mtcars[, <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], <span class="dv">10</span>), <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb111-3" data-line-number="3">  <span class="dt">caption =</span> <span class="st">&#39;A table of the first 10 rows of the mtcars data.&#39;</span></a>
-<a class="sourceLine" id="cb111-4" data-line-number="4">)</a></code></pre></div>
-<table>
-<caption><span id="tab:unnamed-chunk-86">Table 13.1: </span>A table of the first 10 rows of the mtcars data.</caption>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">mpg</th>
-<th align="right">cyl</th>
-<th align="right">disp</th>
-<th align="right">hp</th>
-<th align="right">drat</th>
-<th align="right">wt</th>
-<th align="right">qsec</th>
-<th align="right">vs</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mazda RX4</td>
-<td align="right">21.0</td>
-<td align="right">6</td>
-<td align="right">160.0</td>
-<td align="right">110</td>
-<td align="right">3.90</td>
-<td align="right">2.620</td>
-<td align="right">16.46</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td>Mazda RX4 Wag</td>
-<td align="right">21.0</td>
-<td align="right">6</td>
-<td align="right">160.0</td>
-<td align="right">110</td>
-<td align="right">3.90</td>
-<td align="right">2.875</td>
-<td align="right">17.02</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td>Datsun 710</td>
-<td align="right">22.8</td>
-<td align="right">4</td>
-<td align="right">108.0</td>
-<td align="right">93</td>
-<td align="right">3.85</td>
-<td align="right">2.320</td>
-<td align="right">18.61</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td>Hornet 4 Drive</td>
-<td align="right">21.4</td>
-<td align="right">6</td>
-<td align="right">258.0</td>
-<td align="right">110</td>
-<td align="right">3.08</td>
-<td align="right">3.215</td>
-<td align="right">19.44</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Hornet Sportabout</td>
-<td align="right">18.7</td>
-<td align="right">8</td>
-<td align="right">360.0</td>
-<td align="right">175</td>
-<td align="right">3.15</td>
-<td align="right">3.440</td>
-<td align="right">17.02</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td>Valiant</td>
-<td align="right">18.1</td>
-<td align="right">6</td>
-<td align="right">225.0</td>
-<td align="right">105</td>
-<td align="right">2.76</td>
-<td align="right">3.460</td>
-<td align="right">20.22</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Duster 360</td>
-<td align="right">14.3</td>
-<td align="right">8</td>
-<td align="right">360.0</td>
-<td align="right">245</td>
-<td align="right">3.21</td>
-<td align="right">3.570</td>
-<td align="right">15.84</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td>Merc 240D</td>
-<td align="right">24.4</td>
-<td align="right">4</td>
-<td align="right">146.7</td>
-<td align="right">62</td>
-<td align="right">3.69</td>
-<td align="right">3.190</td>
-<td align="right">20.00</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td>Merc 230</td>
-<td align="right">22.8</td>
-<td align="right">4</td>
-<td align="right">140.8</td>
-<td align="right">95</td>
-<td align="right">3.92</td>
-<td align="right">3.150</td>
-<td align="right">22.90</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td>Merc 280</td>
-<td align="right">19.2</td>
-<td align="right">6</td>
-<td align="right">167.6</td>
-<td align="right">123</td>
-<td align="right">3.92</td>
-<td align="right">3.440</td>
-<td align="right">18.30</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="count-the-general-area-of-coverage-field" class="section level3">
-<h3><span class="header-section-number">13.2.4</span> Count the general area of coverage field</h3>
-</div>
-<div id="change-some-of-the-names-to-fit-the-shapefile" class="section level3">
-<h3><span class="header-section-number">13.2.5</span> Change some of the names to fit the shapefile</h3>
-</div>
-<div id="section" class="section level3">
-<h3><span class="header-section-number">13.2.6</span> </h3>
+<div id="make-the-points-object." class="section level2">
+<h2><span class="header-section-number">6.5</span> Make the points object.</h2>
+<p>Make the points sf object</p>
+<p>First, download the relevant shapefiles. These don’t necessarily have to be historic ones. Use <code>st_read()</code> to read the file, specifying its path. Do this for England, Wales and Scotland (we don’t have points for Ireland).</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">eng_<span class="dv">1851</span> =<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;/Users/Yann/Documents/non-Github/sf_experiments/EW1851_regcounties/EW1851_regcounties.shp&quot;</span>)</a></code></pre></div>
+<pre><code>## Reading layer `EW1851_regcounties&#39; from data source `/Users/Yann/Documents/non-Github/sf_experiments/EW1851_regcounties/EW1851_regcounties.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 55 features and 6 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: 87019.07 ymin: 7067.26 xmax: 655838 ymax: 657543.5
+## epsg (SRID):    27700
+## proj4string:    +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">scot_<span class="dv">1851</span> =<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;/Users/Yann/Documents/non-Github/sf_experiments/Spre1890_scocounties/Spre1890_scocounties.shp&quot;</span>)</a></code></pre></div>
+<pre><code>## Reading layer `Spre1890_scocounties&#39; from data source `/Users/Yann/Documents/non-Github/sf_experiments/Spre1890_scocounties/Spre1890_scocounties.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 33 features and 7 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: 53033.88 ymin: 530297 xmax: 469817 ymax: 1219574
+## epsg (SRID):    27700
+## proj4string:    +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs</code></pre>
+<p>These shapefiles use points system known as UTM, which stands for <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">‘Universal Transverse Mercator’</a>. According to wikipedia,</p>
+<blockquote>
+<p>it differs from global latitude/longitude in that it divides earth into 60 zones and projects each to the plane as a basis for its coordinates.</p>
+</blockquote>
+<p>It needs to be transformed into lat/long coordinates, because the coordinates we have are in that format. This is easy with <code>st_transform()</code>. To transform correctly, the correct crs is needed. This is the code for which of the 60 zones this UTM comes from. Britain is 4326.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">eng_<span class="dv">1851</span> =<span class="st"> </span><span class="kw">st_transform</span>(eng_<span class="dv">1851</span>, <span class="dt">crs =</span> <span class="dv">4326</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">scot_<span class="dv">1851</span>  =<span class="st"> </span><span class="kw">st_transform</span>(scot_<span class="dv">1851</span>, <span class="dt">crs =</span> <span class="dv">4326</span>)</a></code></pre></div>
+<p>Bind them both together, using <code>rbind()</code> to make one big shapefile for Great Britain.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">gb1851 =<span class="st"> </span><span class="kw">rbind</span>(eng_<span class="dv">1851</span>, scot_<span class="dv">1851</span> <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="st">                 </span><span class="kw">select</span>(<span class="op">-</span>UL_AUTH))</a></code></pre></div>
+<p>Next, load and pre-process the set of coordinates:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">geocorrected =<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;data/geocorrected.csv&#39;</span>)</a></code></pre></div>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   X1 = col_double(),
+##   Coverage..City = col_character(),
+##   General.area.of.coverage = col_character(),
+##   Country.of.publication = col_character(),
+##   places = col_character(),
+##   wikititle = col_character(),
+##   wikilat = col_character(),
+##   wikilon = col_character(),
+##   confscore = col_double(),
+##   candidates = col_character(),
+##   regionCandidates = col_character(),
+##   status = col_character()
+## )</code></pre>
+<p>Change the column names:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="kw">library</span>(snakecase)</a>
+<a class="sourceLine" id="cb97-2" data-line-number="2"><span class="kw">colnames</span>(geocorrected) =<span class="st"> </span><span class="kw">to_snake_case</span>(<span class="kw">colnames</span>(geocorrected))</a></code></pre></div>
+<p>Change some column names further, select just the relevant columns, change the NA values and get rid of any empty entries.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="kw">colnames</span>(geocorrected)[<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>] =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;wikititle&#39;</span>, <span class="st">&#39;lat&#39;</span>, <span class="st">&#39;lng&#39;</span>)</a>
+<a class="sourceLine" id="cb98-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb98-3" data-line-number="3">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-9</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">-11</span>, <span class="dv">-12</span>)</a>
+<a class="sourceLine" id="cb98-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb98-5" data-line-number="5">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb98-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">country_of_publication =</span> <span class="kw">replace</span>(country_of_publication, country_of_publication <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">general_area_of_coverage =</span> <span class="kw">replace</span>(general_area_of_coverage, general_area_of_coverage <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb98-7" data-line-number="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">coverage_city =</span> <span class="kw">replace</span>(coverage_city, coverage_city <span class="op">==</span><span class="st"> &#39;na&#39;</span>, <span class="ot">NA</span>))</a>
+<a class="sourceLine" id="cb98-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb98-9" data-line-number="9">geocorrected =<span class="st"> </span>geocorrected <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb98-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lat =</span> <span class="kw">as.numeric</span>(lat)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb98-11" data-line-number="11"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lng =</span> <span class="kw">as.numeric</span>(lng)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(lat)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(lng))</a></code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion
 
-</div>
+## Warning: NAs introduced by coercion</code></pre>
+<p>Next, join these points to the title list, so that every title now has a set of lat/long coordinates.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">title_df =<span class="st"> </span>title_df <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-2" data-line-number="2"><span class="st">  </span><span class="kw">left_join</span>(geocorrected) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(lat)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(lng))</a></code></pre></div>
+<pre><code>## Joining, by = c(&quot;country_of_publication&quot;, &quot;general_area_of_coverage&quot;, &quot;coverage_city&quot;)</code></pre>
+<p>To join this to the shapefile, we need to turn it in to an simple features item. To do this we need to specify the coordinates and the CRS. The resulting file will contain a new column called ‘geometry’, containing the lat/long coordaintes in the correct simple features format.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1">st_title =<span class="st"> </span><span class="kw">st_as_sf</span>(title_df, <span class="dt">coords =</span> <span class="kw">c</span>(<span class="st">&#39;lng&#39;</span>, <span class="st">&#39;lat&#39;</span>))</a>
+<a class="sourceLine" id="cb102-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb102-3" data-line-number="3">st_title =<span class="st"> </span>st_title  <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_set_crs</span>(<span class="dv">4326</span>)</a></code></pre></div>
+<p>Now, we can use a special kind of join, which will join the points in the title list, if they are within a particular polygon. The resulting dataset now has the relevant county, as found in the shapefile.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">st_counties =<span class="st"> </span><span class="kw">st_join</span>(st_title, gb1851)</a></code></pre></div>
+<pre><code>## although coordinates are longitude/latitude, st_intersects assumes that they are planar
+## although coordinates are longitude/latitude, st_intersects assumes that they are planar</code></pre>
+<p>Make a new dataframe, containing just the counties and their counts.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">county_tally =<span class="st"> </span>st_counties <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb105-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(G_NAME) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb105-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(G_NAME) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb105-4" data-line-number="4"><span class="st">  </span><span class="kw">tally</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb105-5" data-line-number="5"><span class="st">  </span><span class="kw">st_drop_geometry</span>()</a></code></pre></div>
+<pre><code>## Warning: Factor `G_NAME` contains implicit NA, consider using
+## `forcats::fct_explicit_na`</code></pre>
+<p>Join this to the shapefile we made earlier, which gives a dataset with the relevant counts attached to each polygon. This can then be visualised using the <code>geom_sf()</code> function from ggplot2, and all of ggplot2’s other features can be used.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1">gb1851 <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb107-2" data-line-number="2"><span class="st">  </span><span class="kw">left_join</span>(county_tally) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb107-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb107-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">lwd =</span> <span class="fl">.2</span>,<span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="kw">aes</span>(<span class="dt">fill =</span> n)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb107-5" data-line-number="5"><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb107-6" data-line-number="6"><span class="st">  </span><span class="kw">lims</span>(<span class="dt">fill =</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">4000</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_viridis_c</span>(<span class="dt">option =</span> <span class="st">&#39;plasma&#39;</span>)</a></code></pre></div>
+<pre><code>## Joining, by = &quot;G_NAME&quot;</code></pre>
+<pre><code>## Scale for &#39;fill&#39; is already present. Adding another scale for &#39;fill&#39;, which
+## will replace the existing scale.</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+
 </div>
 </div>
 
@@ -691,7 +604,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="network-analysis-with-curated-seventeenth-century-dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quick-introduction-to-r-and-the-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="text-mining.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

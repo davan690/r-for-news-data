@@ -73,6 +73,10 @@ head(nrcsentiments,10)
 The NRC dataset is a bit different to the other ones. This time, there's a list of words, and an emotion associated with that word. A word can have multiple entries, with different emotions attached to them. 
 
 ## Load the tokenised news sample
+```{r}
+load('tokenised_news_sample')
+```
+
 
 This has two colums, 'word' and 'value'. ```inner_join()``` will allow you to merge this with the tokenised dataframe.
 
