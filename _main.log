@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.8)  3 JAN 2020 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.8)  7 FEB 2020 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -672,964 +672,1471 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3] [4])
+) [3])
 \tf@toc=\write5
 \openout5 = `_main.toc'.
 
-[5] [6
-
-]
+[4]
 Chapter 1.
-[7] [8]
-Chapter 2.
-[9
+[5
+
+] [6
 
 ]
-
-Package hyperref Warning: Suppressing link with empty target on input line 176.
-
-
-
-Package hyperref Warning: Suppressing link with empty target on input line 178.
-
-
-<"images/""online-circles".png, id=397, 385.44pt x 385.44pt>
-File: "images/""online-circles".png Graphic file (type png)
-<use "images/""online-circles".png>
-Package pdftex.def Info: "images/""online-circles".png  used on input line 181.
-
-(pdftex.def)             Requested size: 172.4995pt x 172.4995pt.
-<"images/""title_holdings".png, id=398, 385.44pt x 385.44pt>
-File: "images/""title_holdings".png Graphic file (type png)
-<use "images/""title_holdings".png>
-Package pdftex.def Info: "images/""title_holdings".png  used on input line 181.
-
-(pdftex.def)             Requested size: 172.4995pt x 172.4995pt.
-
-Overfull \hbox (2.2212pt too wide) in paragraph at lines 181--181
-[][] [] 
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-07.
+Chapter 2.
+[7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+92.
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [10 <./images/online-circles.png (PNG copy)> <./images/title_holdings.png (PN
-G copy)>]
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 203.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 203.
+[9]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-33.
+34.
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 234.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-244.
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-<"_main_files/figure-latex/""unnamed-chunk-4-1".pdf, id=415, 469.755pt x 325.21
-5pt>
-File: "_main_files/figure-latex/""unnamed-chunk-4-1".pdf Graphic file (type pdf
-)
-<use "_main_files/figure-latex/""unnamed-chunk-4-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-4-1".pdf  us
-ed on input line 261.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[11] [12 <./_main_files/figure-latex/unnamed-chunk-4-1.pdf>] [13] [14
+) [10] [11] [12
 
 ]
 Chapter 3.
-[15] [16] [17] [18
 
-] [19] [20]
-Chapter 4.
-[21
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+[][]$\T1/lmr/m/n/10 (-7) https : / / melissaterras . ^^\les . wordpress . com /
+ 2020 / 01 / selectioncriterianewspapers _
+ []
 
-] [22] [23] [24] [25] [26] [27] [28] [29] [30]
-Chapter 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 749.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 749.
-[31
-
-]
-<"_main_files/figure-latex/""jisc-bar-1".pdf, id=643, 469.755pt x 325.215pt>
+[13]
+<"_main_files/figure-latex/""jisc-bar-1".pdf, id=416, 469.755pt x 325.215pt>
 File: "_main_files/figure-latex/""jisc-bar-1".pdf Graphic file (type pdf)
 <use "_main_files/figure-latex/""jisc-bar-1".pdf>
 Package pdftex.def Info: "_main_files/figure-latex/""jisc-bar-1".pdf  used on i
-nput line 767.
+nput line 280.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[32 <./_main_files/figure-latex/jisc-bar-1.pdf>]
-<"_main_files/figure-latex/""jisc-points-1".pdf, id=672, 469.755pt x 325.215pt>
 
-File: "_main_files/figure-latex/""jisc-points-1".pdf Graphic file (type pdf)
-<use "_main_files/figure-latex/""jisc-points-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""jisc-points-1".pdf  used o
-n input line 814.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[33]
-<"_main_files/figure-latex/""jisc-map-1".pdf, id=685, 469.755pt x 325.215pt>
-File: "_main_files/figure-latex/""jisc-map-1".pdf Graphic file (type pdf)
-<use "_main_files/figure-latex/""jisc-map-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""jisc-map-1".pdf  used on i
-nput line 822.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[34 <./_main_files/figure-latex/jisc-points-1.pdf>] [35 <./_main_files/figure-l
-atex/jisc-map-1.pdf>]
-<"_main_files/figure-latex/""bna-chart-1".pdf, id=712, 469.755pt x 325.215pt>
+LaTeX Warning: Reference `fig:jisc-points' on page 14 undefined on input line 2
+86.
+
+
+LaTeX Warning: Reference `fig:jisc-map' on page 14 undefined on input line 286.
+
+
+[14] [15 <./_main_files/figure-latex/jisc-bar-1.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[16]
+<"_main_files/figure-latex/""bna-chart-1".pdf, id=464, 469.755pt x 325.215pt>
 File: "_main_files/figure-latex/""bna-chart-1".pdf Graphic file (type pdf)
 <use "_main_files/figure-latex/""bna-chart-1".pdf>
 Package pdftex.def Info: "_main_files/figure-latex/""bna-chart-1".pdf  used on 
-input line 841.
+input line 336.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<"_main_files/figure-latex/""bna-titles-map-1".pdf, id=713, 469.755pt x 325.215
+<"_main_files/figure-latex/""bna-titles-map-1".pdf, id=465, 469.755pt x 325.215
 pt>
 File: "_main_files/figure-latex/""bna-titles-map-1".pdf Graphic file (type pdf)
 
 <use "_main_files/figure-latex/""bna-titles-map-1".pdf>
 Package pdftex.def Info: "_main_files/figure-latex/""bna-titles-map-1".pdf  use
-d on input line 847.
+d on input line 342.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[36 <./_main_files/figure-latex/bna-chart-1.pdf>] [37 <./_main_files/figure-lat
-ex/bna-titles-map-1.pdf>] [38]
-Chapter 6.
+[17] [18 <./_main_files/figure-latex/bna-chart-1.pdf> <./_main_files/figure-lat
+ex/bna-titles-map-1.pdf>] [19] [20]
+Chapter 4.
+[21
 
-Package hyperref Warning: Suppressing link with empty target on input line 892.
+] [22]
+<"_main_files/figure-latex/""unnamed-chunk-24-1".png, id=532, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-24-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-24-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-24-1".png  u
+sed on input line 445.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 456.
+
+Underfull \vbox (badness 4819) has occurred while \output is active []
 
 
-[39
+Overfull \hbox (0.52312pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 4.4.  EXTRACT PREDICTED WORD SCORES FROM THE ALTO PAGES \T1/lmr
+/m/n/10 23
+ []
 
-] [40
-
-]
-Chapter 7.
-[41] [42] [43
-
-] [44]
-Chapter 8.
+[23] [24 <./_main_files/figure-latex/unnamed-chunk-24-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-27-1".png, id=550, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-27-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-27-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-27-1".png  u
+sed on input line 523.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+<"_main_files/figure-latex/""unnamed-chunk-28-1".png, id=551, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-28-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-28-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-28-1".png  u
+sed on input line 536.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[25] [26 <./_main_files/figure-latex/unnamed-chunk-27-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-29-1".png, id=566, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-29-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-29-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-29-1".png  u
+sed on input line 544.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[45
+[27 <./_main_files/figure-latex/unnamed-chunk-28-1.png>] [28 <./_main_files/fig
+ure-latex/unnamed-chunk-29-1.png>]
+Chapter 5.
+[29
 
-]
-Overfull \vbox (51.5815pt too high) has occurred while \output is active []
-
-[46]
-Chapter 9.
-
-Underfull \vbox (badness 3471) has occurred while \output is active []
-
-[47
-
-] [48] [49] [50] [51] [52]
-<"_main_files/figure-latex/""unnamed-chunk-33-1".pdf, id=882, 469.755pt x 325.2
+] [30] [31] [32]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+763.
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [33] [34]
+<"_main_files/figure-latex/""unnamed-chunk-47-1".png, id=629, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-33-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-33-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-33-1".pdf  u
-sed on input line 1334.
+File: "_main_files/figure-latex/""unnamed-chunk-47-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-47-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-47-1".png  u
+sed on input line 901.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1334--1336
+Underfull \hbox (badness 10000) in paragraph at lines 901--903
 [][]
  []
 
-<"_main_files/figure-latex/""unnamed-chunk-34-1".pdf, id=883, 469.755pt x 325.2
+<"_main_files/figure-latex/""unnamed-chunk-48-1".png, id=630, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-34-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-34-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-34-1".pdf  u
-sed on input line 1343.
+File: "_main_files/figure-latex/""unnamed-chunk-48-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-48-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-48-1".png  u
+sed on input line 910.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[53 <./_main_files/figure-latex/unnamed-chunk-33-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-35-1".pdf, id=894, 469.755pt x 325.2
+[35 <./_main_files/figure-latex/unnamed-chunk-47-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-49-1".png, id=636, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-35-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-35-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-35-1".pdf  u
-sed on input line 1353.
+File: "_main_files/figure-latex/""unnamed-chunk-49-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-49-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-49-1".png  u
+sed on input line 920.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[54 <./_main_files/figure-latex/unnamed-chunk-34-1.pdf> <./_main_files/figure-l
-atex/unnamed-chunk-35-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-36-1".pdf, id=909, 469.755pt x 325.2
+[36 <./_main_files/figure-latex/unnamed-chunk-48-1.png> <./_main_files/figure-l
+atex/unnamed-chunk-49-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-50-1".png, id=643, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-36-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-36-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-36-1".pdf  u
-sed on input line 1369.
+File: "_main_files/figure-latex/""unnamed-chunk-50-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-50-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-50-1".png  u
+sed on input line 936.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[55 <./_main_files/figure-latex/unnamed-chunk-36-1.pdf>]
-Overfull \hbox (90.74873pt too wide) in paragraph at lines 1432--1432
+[37 <./_main_files/figure-latex/unnamed-chunk-50-1.png>]
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##    publication_title            first_date_held last_date_
 held country_of_publi~[] 
  []
 
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##    <chr>                                  <dbl> <chr>     
      <chr>[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  1 Corante, or, Newes from Ita~            1621 1621      
      The Netherlands[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  2 Corante, or, Newes from Ita~            1621 1621      
      The Netherlands[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  3 Corante, or, Newes from Ita~            1621 1621      
      The Netherlands[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  4 Corante, or, Newes from Ita~            1621 1621      
      England[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  5 Courant Newes out of Italy,~            1621 1621      
      The Netherlands[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  6 "A Relation of the late Occ~            1622 1622      
      England[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  7 "A Relation of the late Occ~            1622 1622      
      England[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  8 "A Relation of the late Occ~            1622 1622      
      England[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ##  9 "A Relation of the late Occ~            1622 1622      
      England[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1432--1432
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 999--999
 []\T1/lmtt/m/n/10 ## 10 "A Relation of the late Occ~            1622 1622      
      England[] 
  []
 
 
-Overfull \hbox (90.74873pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##    publication_title            first_date_held last_date_
 held country_of_publi~[] 
  []
 
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##    <chr>                                  <dbl> <chr>     
      <chr>[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  1 Shrewsbury chronicle                    1773 Continuing
      England[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  2 London times|The Times|Time~            1788 Continuing
      England[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  3 Observer (London)|Observer ~            1791 Continuing
      England[] 
  []
 
-[56]
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1462--1462
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  4 Limerick chronicle                      1800 Continuing
      Ireland[] 
  []
 
-
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1462--1462
+[38]
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  5 Hampshire chronicle|The Ham~            1816 Continuing
      England[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  6 The Inverness Courier, and ~            1817 Continuing
      Scotland[] 
  []
 
 
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  7 Sunday times (London)|Sunda~            1822 Continuing
      England[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  8 The Impartial Reporter, etc             1825 Continuing
      Northern Ireland[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ##  9 Impartial reporter and farm~            1825 Continuing
      Northern Ireland[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1462--1462
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1029--1029
 []\T1/lmtt/m/n/10 ## 10 Aberdeen observer                       1829 Continuing
      Scotland[] 
  []
 
-[57] [58]
-<"_main_files/figure-latex/""unnamed-chunk-43-1".pdf, id=935, 469.755pt x 325.2
+[39] [40]
+<"_main_files/figure-latex/""unnamed-chunk-57-1".png, id=665, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-43-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-43-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-43-1".pdf  u
-sed on input line 1576.
+File: "_main_files/figure-latex/""unnamed-chunk-57-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-57-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-57-1".png  u
+sed on input line 1143.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[59 <./_main_files/figure-latex/unnamed-chunk-43-1.pdf>] [60
+[41 <./_main_files/figure-latex/unnamed-chunk-57-1.png>] [42
 
 ]
-Chapter 10.
-[61] [62
+Chapter 6.
 
-]
-Chapter 11.
-[63] [64
+Package hyperref Warning: Suppressing empty link on input line 1160.
 
-]
-Chapter 12.
-[65]
-Overfull \hbox (109.75974pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 66 \T1/lmr/m/sl/10 CHAPTER 12.  NETWORK ANALYSIS WITH CURATED SE
-VENTEENTH-CENTURY DATASET
- []
 
-[66
+Package hyperref Warning: Suppressing empty link on input line 1160.
 
-]
-Chapter 13.
-[67]
-<"_main_files/figure-latex/""unnamed-chunk-47-1".pdf, id=993, 469.755pt x 325.2
+[43] [44]
+<"_main_files/figure-latex/""unnamed-chunk-61-1".png, id=694, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-47-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-47-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-47-1".pdf  u
-sed on input line 1693.
+File: "_main_files/figure-latex/""unnamed-chunk-61-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-61-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-61-1".png  u
+sed on input line 1249.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[68]
-<"_main_files/figure-latex/""unnamed-chunk-48-1".pdf, id=998, 469.755pt x 325.2
+<"_main_files/figure-latex/""unnamed-chunk-62-1".png, id=695, 469.755pt x 325.2
 15pt>
-File: "_main_files/figure-latex/""unnamed-chunk-48-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-48-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-48-1".pdf  u
-sed on input line 1706.
+File: "_main_files/figure-latex/""unnamed-chunk-62-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-62-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-62-1".png  u
+sed on input line 1266.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[69 <./_main_files/figure-latex/unnamed-chunk-47-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-49-1".pdf, id=1008, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-49-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-49-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-49-1".pdf  u
-sed on input line 1717.
+[45 <./_main_files/figure-latex/unnamed-chunk-61-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-63-1".png, id=701, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-63-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-63-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-63-1".png  u
+sed on input line 1283.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[70 <./_main_files/figure-latex/unnamed-chunk-48-1.pdf>]
-Underfull \hbox (badness 1215) in paragraph at lines 1721--1722
-[]\T1/lmr/m/n/10 (+20) We can spec-ify fill and line col-ors us-ings \T1/lmtt/m
-/n/10 fill = \T1/lmr/m/n/10 (+20) and \T1/lmtt/m/n/10 color = \T1/lmr/m/n/10 (+
-20) in-side
- []
-
-<"_main_files/figure-latex/""unnamed-chunk-50-1".pdf, id=1019, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-50-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-50-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-50-1".pdf  u
-sed on input line 1730.
+[46 <./_main_files/figure-latex/unnamed-chunk-62-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-64-1".png, id=707, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-64-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-64-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-64-1".png  u
+sed on input line 1303.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[71 <./_main_files/figure-latex/unnamed-chunk-49-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-51-1".pdf, id=1029, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-51-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-51-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-51-1".pdf  u
-sed on input line 1742.
+[47 <./_main_files/figure-latex/unnamed-chunk-63-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-65-1".png, id=713, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-65-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-65-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-65-1".png  u
+sed on input line 1322.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[72 <./_main_files/figure-latex/unnamed-chunk-50-1.pdf>]
-Overfull \hbox (17.24895pt too wide) in paragraph at lines 1800--1800
+[48 <./_main_files/figure-latex/unnamed-chunk-64-1.png>] [49 <./_main_files/fig
+ure-latex/unnamed-chunk-65-1.png>]
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ## # Groups:   country_of_publication, general_area_of_covera
 ge [531][] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##    country_of_publication general_area_of_coverage  covera
 ge_city     n[] 
  []
 
-[73 <./_main_files/figure-latex/unnamed-chunk-51-1.pdf>]
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##    <chr>                  <chr>                     <chr> 
         <int>[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  1 England                London                    London
          5781[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  2 Ireland                Dublin (Ireland : County) Dublin
           415[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  3 Scotland               Strathclyde               Glasgo
 w         309[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  4 England                Greater Manchester        Manche
 ster      265[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  5 England                West Midlands             Birmin
 gham      260[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  6 England                Merseyside                Liverp
 ool       220[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  7 England                Avon                      Bristo
 l         175[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  8 Scotland               Lothian                   Edinbu
 rgh       162[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ##  9 England                South Yorkshire           Sheffi
 eld       133[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 1800--1800
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1385--1385
 []\T1/lmtt/m/n/10 ## 10 England                Nottinghamshire           Nottin
 gham      127[] 
  []
 
-[74]
-<"_main_files/figure-latex/""unnamed-chunk-62-1".pdf, id=1055, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-62-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-62-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-62-1".pdf  u
-sed on input line 1876.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \hbox (badness 3838) in paragraph at lines 1878--1879
-[]\T1/lmr/m/n/10 (+20) Now we will plot the cities us-ing \T1/lmtt/m/n/10 geom_
-point() \T1/lmr/m/n/10 (+20) We'll spec-ify the
+[50] [51]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ## # Groups:   country_of_publication, general_area_of_covera
+ge [9][] 
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 1878--1879
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##    country_of_publ~ general_area_of~ coverage_city     n p
+laces wikititle   lat[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##    <chr>            <chr>            <chr>         <int> <
+chr>  <chr>     <dbl>[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  1 Bermuda Islands  <NA>             Hamilton         23 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  2 Bermuda Islands  <NA>             Saint George      1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  3 Cayman Islands   <NA>             Georgetown        1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  4 England          Aberdeenshire (~ Peterhead         1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  5 England          Acton (London, ~ Ealing (Lond~     1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  6 England          Aintree  |Merse~ Maghull           3 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  7 England          Alford (Lincoln~ Mablethorpe       1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  8 England          Alford (Lincoln~ Skegness          1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ##  9 England          Alfriston  |Eas~ Newhaven          1 <
+NA>   <NA>         NA[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1500--1500
+[]\T1/lmtt/m/n/10 ## 10 England          Altrincham  |Gr~ Sale              2 <
+NA>   <NA>         NA[] 
+ []
+
+[52]
+<"_main_files/figure-latex/""unnamed-chunk-77-1".png, id=744, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-77-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-77-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-77-1".png  u
+sed on input line 1564.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[53]
+Underfull \hbox (badness 3838) in paragraph at lines 1569--1570
+\T1/lmr/m/n/10 (+20) Now we will plot the cities us-ing \T1/lmtt/m/n/10 geom_po
+int() \T1/lmr/m/n/10 (+20) We'll spec-ify the
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 1569--1570
 \T1/lmtt/m/n/10 lc_with_geo_counts \T1/lmr/m/n/10 (+20) as the ar-gu-ment to \T
 1/lmtt/m/n/10 data = \T1/lmr/m/n/10 (+20) within \T1/lmtt/m/n/10 geom_point()\T
 1/lmr/m/n/10 (+20) .
  []
 
-[75 <./_main_files/figure-latex/unnamed-chunk-62-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-63-1".pdf, id=1063, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-63-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-63-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-63-1".pdf  u
+
+Overfull \hbox (36.94656pt too wide) in paragraph at lines 1573--1574
+[]\T1/lmr/m/n/10 (-20) Using \T1/lmtt/m/n/10 labs()\T1/lmr/m/n/10 (-20) , add a
+ ti-tle, and with \T1/lmtt/m/n/10 scale_size_area() \T1/lmr/m/n/10 (-20) and \T
+1/lmtt/m/n/10 scale_color_viridis_c()\T1/lmr/m/n/10 (-20) ,
+ []
+
+[54 <./_main_files/figure-latex/unnamed-chunk-77-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-78-1".png, id=755, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-78-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-78-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-78-1".png  u
+sed on input line 1594.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Overfull \hbox (113.9212pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.5.  DRAWING A NEWSPAPER TITLES `CHOROPLETH' MAP WITH R AND TH
+E SF PACKAGE \T1/lmr/m/n/10 55
+ []
+
+[55 <./_main_files/figure-latex/unnamed-chunk-78-1.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[56]
+Overfull \hbox (594.74727pt too wide) in paragraph at lines 1684--1684
+[]\T1/lmtt/m/n/10 ## Reading layer \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 EW1891_reg
+counties\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 from data source \TS1/lmtt/m/n/10 `\
+T1/lmtt/m/n/10 /Users/yannryan/Desktop/r-projects/r-for-news-data/EW1891_regcou
+nties/EW1891_regcounties.shp\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 using driver \TS
+1/lmtt/m/n/10 `\T1/lmtt/m/n/10 ESRI Shapefile\TS1/lmtt/m/n/10 '[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 1684--1684
+[]\T1/lmtt/m/n/10 ## bbox:           xmin: 87019.07 ymin: 7067.26 xmax: 655838 
+ymax: 657543.5[] 
+ []
+
+
+Overfull \hbox (594.74727pt too wide) in paragraph at lines 1684--1684
+[]\T1/lmtt/m/n/10 ## proj4string:    +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.99960
+12717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.1
+5,0.247,0.842,-20.489 +units=m +no_defs[] 
+ []
+
+
+Overfull \hbox (626.24718pt too wide) in paragraph at lines 1700--1700
+[]\T1/lmtt/m/n/10 ## Reading layer \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 Spre1890_s
+cocounties\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 from data source \TS1/lmtt/m/n/10 
+`\T1/lmtt/m/n/10 /Users/yannryan/Desktop/r-projects/r-for-news-data/Spre1890_sc
+ocounties/Spre1890_scocounties.shp\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 using driv
+er \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 ESRI Shapefile\TS1/lmtt/m/n/10 '[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1700--1700
+[]\T1/lmtt/m/n/10 ## bbox:           xmin: 53033.88 ymin: 530297 xmax: 469817 y
+max: 1219574[] 
+ []
+
+
+Overfull \hbox (594.74727pt too wide) in paragraph at lines 1700--1700
+[]\T1/lmtt/m/n/10 ## proj4string:    +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.99960
+12717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.1
+5,0.247,0.842,-20.489 +units=m +no_defs[] 
+ []
+
+[57] [58]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1819--1819
+[]\T1/lmtt/m/n/10 ## Joining, by = c("country_of_publication", "general_area_of
+_coverage",[] 
+ []
+
+
+Overfull \hbox (127.49863pt too wide) in paragraph at lines 1845--1845
+[]\T1/lmtt/m/n/10 ## although coordinates are longitude/latitude, st_intersects
+ assumes that they are planar[] 
+ []
+
+
+Overfull \hbox (127.49863pt too wide) in paragraph at lines 1845--1845
+[]\T1/lmtt/m/n/10 ## although coordinates are longitude/latitude, st_intersects
+ assumes that they are planar[] 
+ []
+
+
+Overfull \hbox (23.5752pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 6.10.  USING ST_JOIN TO CONNECT THE TITLE LIST TO THE SHAPEFILE
+ \T1/lmr/m/n/10 59
+ []
+
+[59]
+Overfull \hbox (179.99847pt too wide) in paragraph at lines 1889--1889
+[]\T1/lmtt/m/n/10 ## Joining, by = "G_NAME"Scale for \TS1/lmtt/m/n/10 '\T1/lmtt
+/m/n/10 fill\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 is already present. Adding anoth
+er scale for \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 fill\TS1/lmtt/m/n/10 '\T1/lmtt/m
+/n/10 , which[] 
+ []
+
+<"_main_files/figure-latex/""unnamed-chunk-93-1".png, id=790, 469.755pt x 325.2
+15pt>
+File: "_main_files/figure-latex/""unnamed-chunk-93-1".png Graphic file (type pn
+g)
+<use "_main_files/figure-latex/""unnamed-chunk-93-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-93-1".png  u
 sed on input line 1891.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Overfull \hbox (358.49796pt too wide) in paragraph at lines 1927--1927
-[]\T1/lmtt/m/n/10 ## Source: "/Users/yannryan/Desktop/r-projects/r-for-news-dat
-a/data/english_ceremonial_counties", layer: "English Ceremonial Counties"[] 
- []
-
-[76 <./_main_files/figure-latex/unnamed-chunk-63-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1970--1971
-[][]$\T1/lmr/m/n/10 (+20) https : / / gis . stackexchange . com / questions / 2
-43569 / simplify -[] polygons -[] of -[] sf -[]
- []
-
-<"_main_files/figure-latex/""unnamed-chunk-73-1".pdf, id=1085, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-73-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-73-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-73-1".pdf  u
-sed on input line 1995.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[77]
-<"_main_files/figure-latex/""unnamed-chunk-74-1".pdf, id=1091, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-74-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-74-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-74-1".pdf  u
-sed on input line 2012.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[60] [61 <./_main_files/figure-latex/unnamed-chunk-93-1.png>] [62
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[78 <./_main_files/figure-latex/unnamed-chunk-73-1.pdf>]
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
-[79 <./_main_files/figure-latex/unnamed-chunk-74-1.pdf>] [80] [81
-
-] [82]
-Chapter 14.
-<"""titles".png, id=1132, 902.6222pt x 487.8225pt>
+]
+Chapter 7.
+<"""titles".png, id=807, 902.6222pt x 487.8225pt>
 File: """titles".png Graphic file (type png)
 <use """titles".png>
-Package pdftex.def Info: """titles".png  used on input line 2112.
+Package pdftex.def Info: """titles".png  used on input line 1904.
 (pdftex.def)             Requested size: 344.99707pt x 186.45378pt.
+[63 <./titles.png>] [64]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 1992--1992
+[]\T1/lmtt/m/n/10 ##   title_id   nid   nlp publication_tit~ edition preceding_
+titles[] 
+ []
+
+
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 1992--1992
+[]\T1/lmtt/m/n/10 ## 1 13774146    NA    NA London gazette   <NA>    Continues:
+ Oxfo~[] 
+ []
+
+
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 1992--1992
+[]\T1/lmtt/m/n/10 ## #   subsequent_geographical_subject_headings <chr>, first_
+date_held <dbl>,[] 
+ []
+
+
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1992--1992
+[]\T1/lmtt/m/n/10 ## #   publication_date_two <dbl>, current_publication_freque
+ncy <chr>,[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 1992--1992
+[]\T1/lmtt/m/n/10 ## #   online_status <chr>, link_to_british_newspaper_archive
+ <chr>,[] 
+ []
+
+
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2011--2011
+[]\T1/lmtt/m/n/10 ## Warning: Trying to compute distinct() for variables not fo
+und in the data:[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2011--2011
+[]\T1/lmtt/m/n/10 ## This is an error, but only a warning is raised for compati
+bility reasons.[] 
+ []
+
+[65]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 2030--2030
+[]\T1/lmtt/m/n/10 ##   title_id   nid   nlp publication_tit~ edition preceding_
+titles[] 
+ []
+
+
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 2030--2030
+[]\T1/lmtt/m/n/10 ## 1 13774146    NA    NA London gazette   <NA>    Continues:
+ Oxfo~[] 
+ []
+
+
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2030--2030
+[]\T1/lmtt/m/n/10 ## #   subsequent_geographical_subject_headings <chr>, first_
+date_held <dbl>,[] 
+ []
+
+
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 2030--2030
+[]\T1/lmtt/m/n/10 ## #   publication_date_two <dbl>, current_publication_freque
+ncy <chr>,[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2030--2030
+[]\T1/lmtt/m/n/10 ## #   online_status <chr>, link_to_british_newspaper_archive
+ <chr>,[] 
+ []
+
+
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 ## Warning: Trying to compute distinct() for variables not fo
+und in the data:[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 ## This is an error, but only a warning is raised for compati
+bility reasons.[] 
+ []
+
+[66] [67]
+<"_main_files/figure-latex/""unnamed-chunk-104-1".png, id=835, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-104-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-104-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-104-1".png  
+used on input line 2143.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[68 <./_main_files/figure-latex/unnamed-chunk-104-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-106-1".png, id=841, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-106-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-106-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-106-1".png  
+used on input line 2178.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+<"_main_files/figure-latex/""unnamed-chunk-107-1".png, id=842, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-107-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-107-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-107-1".png  
+used on input line 2198.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[69 <./_main_files/figure-latex/unnamed-chunk-106-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-108-1".png, id=848, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-108-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-108-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-108-1".png  
+used on input line 2218.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[70 <./_main_files/figure-latex/unnamed-chunk-107-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-109-1".png, id=854, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-109-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-109-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-109-1".png  
+used on input line 2238.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[71 <./_main_files/figure-latex/unnamed-chunk-108-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-110-1".png, id=860, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-110-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-110-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-110-1".png  
+used on input line 2258.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[72 <./_main_files/figure-latex/unnamed-chunk-109-1.png>] [73 <./_main_files/fi
+gure-latex/unnamed-chunk-110-1.png>] [74]
+<"_main_files/figure-latex/""unnamed-chunk-115-1".png, id=876, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-115-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-115-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-115-1".png  
+used on input line 2367.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[75 <./_main_files/figure-latex/unnamed-chunk-115-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-117-1".png, id=884, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-117-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-117-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-117-1".png  
+used on input line 2413.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[76 <./_main_files/figure-latex/unnamed-chunk-117-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-118-1".png, id=890, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-118-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-118-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-118-1".png  
+used on input line 2434.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+<"_main_files/figure-latex/""unnamed-chunk-119-1".png, id=891, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-119-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-119-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-119-1".png  
+used on input line 2454.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[77 <./_main_files/figure-latex/unnamed-chunk-118-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-120-1".png, id=897, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-120-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-120-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-120-1".png  
+used on input line 2474.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[78 <./_main_files/figure-latex/unnamed-chunk-119-1.png>] [79 <./_main_files/fi
+gure-latex/unnamed-chunk-120-1.png>]
+<"_main_files/figure-latex/""unnamed-chunk-123-1".png, id=909, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-123-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-123-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-123-1".png  
+used on input line 2524.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[80 <./_main_files/figure-latex/unnamed-chunk-123-1.png>]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 2575--2575
+[]\T1/lmtt/m/n/10 ## Warning: Factor \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 list_of_
+places\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 contains implicit NA, consider using[]
+ 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 2575--2575
+[]\T1/lmtt/m/n/10 ## Warning: Factor \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 list_of_
+places\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 contains implicit NA, consider using[]
+ 
+ []
+
+<"_main_files/figure-latex/""unnamed-chunk-125-1".png, id=915, 469.755pt x 325.
+215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-125-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-125-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-125-1".png  
+used on input line 2608.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[81] [82 <./_main_files/figure-latex/unnamed-chunk-125-1.png>]
+Chapter 8.
+
+Underfull \hbox (badness 6461) in paragraph at lines 2627--2628
+[]\T1/lmr/m/n/10 (+20) Inspired by the posts by []$https : / / www . brodrigues
+ . co / blog / 2019 -[] 01 -[] 13 -[]
+ []
 
 [83
 
- <./titles.png>] [84]
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2208--2208
-[]\T1/lmtt/m/n/10 ##   title_id   nid   nlp publication_tit~ edition preceding_
-titles[] 
+] [84]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 2719--2719
+[]\T1/lmtt/m/n/10 ##  chr [1, 1:2650] "<?xml version=\"1.0\" encoding=\"UTF-8\"
+?>\r" ...[] 
  []
 
 
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2208--2208
-[]\T1/lmtt/m/n/10 ## 1 13774146    NA    NA London gazette   <NA>    Continues:
- Oxfo~[] 
+Overfull \hbox (416.24779pt too wide) in paragraph at lines 2733--2733
+[]\T1/lmtt/m/n/10 ##  chr [1:1173] "\t\t\t\t<TextBlock ID=\"pa0001001\" HPOS=\"
+304\" VPOS=\"58\" WIDTH=\"2152\" HEIGHT=\"154\" STYLEREFS=\"TXT_0 PAR_LEFT\">\r
+" ...[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2208--2208
-[]\T1/lmtt/m/n/10 ## #   subsequent_geographical_subject_headings <chr>, first_
-date_held <dbl>,[] 
+Overfull \hbox (500.24754pt too wide) in paragraph at lines 2748--2748
+[]\T1/lmtt/m/n/10 ## Warning: Calling \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 as_tibb
+le()\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 on a vector is discouraged, because the 
+behavior is likely to change in the future. Use \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/
+10 tibble::enframe(name = NULL)\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 instead.[] 
+ []
+
+[85] [86] [87] [88] [89] [90] [91] [92] [93] [94
+
+]
+Chapter 9.
+
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ article_code <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+, 13, 14, 15, 16,...[] 
  []
 
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 2208--2208
-[]\T1/lmtt/m/n/10 ## #   publication_date_two <dbl>, current_publication_freque
-ncy <chr>,[] 
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ art          <chr> "0001", "0002", "0003", "0005", "0007
+", "0008", "0009"...[] 
  []
 
 
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 85
- []
-
-[85]
-Overfull \hbox (11.99896pt too wide) in paragraph at lines 2208--2208
-[]\T1/lmtt/m/n/10 ## #   online_status <chr>, link_to_british_newspaper_archive
- <chr>,[] 
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ text         <chr> ":THE  NATIONAL  REGIS  ..  _.  \TS1/
+lmtt/m/n/10 ˆ\T1/lmtt/m/n/10 f.4r)i  ,&#34;\TS1/lmtt/m/n/10 ˆ\T1/lmtt/m/n/10 )\
+TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 ;  1...[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2227--2227
-[]\T1/lmtt/m/n/10 ## Warning: Trying to compute distinct() for variables not fo
-und in the data:[] 
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ title        <chr> "0002644", "0002644", "0002644", "000
+2644", "0002644",...[] 
  []
 
 
-Overfull \hbox (53.99884pt too wide) in paragraph at lines 2227--2227
-[]\T1/lmtt/m/n/10 ## This is an error, but only a warning is raised for compati
-bility reasons.[] 
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ year         <chr> "1809", "1809", "1809", "1809", "1809
+", "1809", "1809"...[] 
  []
 
 
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2246--2246
-[]\T1/lmtt/m/n/10 ##   title_id   nid   nlp publication_tit~ edition preceding_
-titles[] 
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ date         <chr> "0101", "0101", "0101", "0101", "0101
+", "0101", "0101"...[] 
  []
 
 
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 2246--2246
-[]\T1/lmtt/m/n/10 ## 1 13774146    NA    NA London gazette   <NA>    Continues:
- Oxfo~[] 
- []
-
-
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2246--2246
-[]\T1/lmtt/m/n/10 ## #   subsequent_geographical_subject_headings <chr>, first_
-date_held <dbl>,[] 
- []
-
-
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 2246--2246
-[]\T1/lmtt/m/n/10 ## #   publication_date_two <dbl>, current_publication_freque
-ncy <chr>,[] 
- []
-
-
-Overfull \hbox (11.99896pt too wide) in paragraph at lines 2246--2246
-[]\T1/lmtt/m/n/10 ## #   online_status <chr>, link_to_british_newspaper_archive
- <chr>,[] 
- []
-
-
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2265--2265
-[]\T1/lmtt/m/n/10 ## Warning: Trying to compute distinct() for variables not fo
-und in the data:[] 
- []
-
-[86]
-Overfull \hbox (53.99884pt too wide) in paragraph at lines 2265--2265
-[]\T1/lmtt/m/n/10 ## This is an error, but only a warning is raised for compati
-bility reasons.[] 
- []
-
-
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 87
- []
-
-[87]
-<"_main_files/figure-latex/""unnamed-chunk-88-1".pdf, id=1171, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-88-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-88-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-88-1".pdf  u
-sed on input line 2352.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[88 <./_main_files/figure-latex/unnamed-chunk-88-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-90-1".pdf, id=1184, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-90-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-90-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-90-1".pdf  u
-sed on input line 2387.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 89
- []
-
-[89 <./_main_files/figure-latex/unnamed-chunk-90-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-91-1".pdf, id=1197, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-91-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-91-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-91-1".pdf  u
-sed on input line 2407.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<"_main_files/figure-latex/""unnamed-chunk-92-1".pdf, id=1198, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-92-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-92-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-92-1".pdf  u
-sed on input line 2427.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[90 <./_main_files/figure-latex/unnamed-chunk-91-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-93-1".pdf, id=1211, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-93-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-93-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-93-1".pdf  u
-sed on input line 2447.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 91
- []
-
-[91 <./_main_files/figure-latex/unnamed-chunk-92-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-94-1".pdf, id=1225, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-94-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-94-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-94-1".pdf  u
-sed on input line 2467.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<"""output_37_0".png, id=1226, 505.89pt x 505.89pt>
-File: """output_37_0".png Graphic file (type png)
-<use """output_37_0".png>
-Package pdftex.def Info: """output_37_0".png  used on input line 2471.
-(pdftex.def)             Requested size: 345.00414pt x 345.00414pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[92 <./_main_files/figure-latex/unnamed-chunk-93-1.pdf>]
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 93
- []
-
-[93 <./_main_files/figure-latex/unnamed-chunk-94-1.pdf>] [94 <./output_37_0.png
->]
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 95
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 3201--3201
+[]\T1/lmtt/m/n/10 ## $ full_date    <date> 1809-01-01, 1809-01-01, 1809-01-01, 
+1809-01-01, 1809-...[] 
  []
 
 [95]
-<"_main_files/figure-latex/""unnamed-chunk-99-1".pdf, id=1261, 469.755pt x 325.
-215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-99-1".pdf Graphic file (type pd
-f)
-<use "_main_files/figure-latex/""unnamed-chunk-99-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-99-1".pdf  u
-sed on input line 2581.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[96 <./_main_files/figure-latex/unnamed-chunk-99-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-101-1".pdf, id=1275, 469.755pt x 325
-.215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-101-1".pdf Graphic file (type p
-df)
-<use "_main_files/figure-latex/""unnamed-chunk-101-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-101-1".pdf  
-used on input line 2627.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 97
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 3229--3229
+[]\T1/lmtt/m/n/10 ## 10            1 0001  0002644 1809  0101  1809-01-01 super
+script[] 
  []
 
-[97 <./_main_files/figure-latex/unnamed-chunk-101-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-102-1".pdf, id=1290, 469.755pt x 325
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ##  1            1 0001  0002644 1809  0101  1809-01-01 the n
+ational regis[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ##  2            1 0001  0002644 1809  0101  1809-01-01 natio
+nal regis f[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ##  3            1 0001  0002644 1809  0101  1809-01-01 regis
+ f 4r[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ##  7            1 0001  0002644 1809  0101  1809-01-01 34 1 
+style[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ##  8            1 0001  0002644 1809  0101  1809-01-01 1 sty
+le superscript[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ##  9            1 0001  0002644 1809  0101  1809-01-01 style
+ superscript l[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3260--3260
+[]\T1/lmtt/m/n/10 ## 10            1 0001  0002644 1809  0101  1809-01-01 super
+script l style[] 
+ []
+
+[96]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 3301--3301
+[]\T1/lmtt/m/n/10 ##  7            1 0001  0002644 1809  0101  1809-01-01 super
+script[] 
+ []
+
+
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 3301--3301
+[]\T1/lmtt/m/n/10 ##  9            1 0001  0002644 1809  0101  1809-01-01 super
+script[] 
+ []
+
+[97] [98] [99]
+<"_main_files/figure-latex/""unnamed-chunk-164-1".png, id=1004, 469.755pt x 325
 .215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-102-1".pdf Graphic file (type p
-df)
-<use "_main_files/figure-latex/""unnamed-chunk-102-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-102-1".pdf  
-used on input line 2648.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<"_main_files/figure-latex/""unnamed-chunk-103-1".pdf, id=1291, 469.755pt x 325
-.215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-103-1".pdf Graphic file (type p
-df)
-<use "_main_files/figure-latex/""unnamed-chunk-103-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-103-1".pdf  
-used on input line 2668.
+File: "_main_files/figure-latex/""unnamed-chunk-164-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-164-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-164-1".png  
+used on input line 3494.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[98 <./_main_files/figure-latex/unnamed-chunk-102-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-104-1".pdf, id=1304, 469.755pt x 325
+[100]
+<"_main_files/figure-latex/""unnamed-chunk-165-1".png, id=1009, 469.755pt x 325
 .215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-104-1".pdf Graphic file (type p
-df)
-<use "_main_files/figure-latex/""unnamed-chunk-104-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-104-1".pdf  
-used on input line 2688.
+File: "_main_files/figure-latex/""unnamed-chunk-165-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-165-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-165-1".png  
+used on input line 3508.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (225.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 99
+[101 <./_main_files/figure-latex/unnamed-chunk-164-1.png>] [102 <./_main_files/
+figure-latex/unnamed-chunk-165-1.png>]
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 3562--3562
+[]\T1/lmtt/m/n/10 ## \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 stat_bin()\TS1/lmtt/m/n/
+10 ` \T1/lmtt/m/n/10 using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 bins = 30\TS1/lmtt
+/m/n/10 `\T1/lmtt/m/n/10 . Pick better value with \TS1/lmtt/m/n/10 `\T1/lmtt/m/
+n/10 binwidth\TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 .[] 
  []
 
-[99 <./_main_files/figure-latex/unnamed-chunk-103-1.pdf>] [100 <./_main_files/f
-igure-latex/unnamed-chunk-104-1.pdf>]
-<"_main_files/figure-latex/""unnamed-chunk-107-1".pdf, id=1329, 469.755pt x 325
+<"_main_files/figure-latex/""unnamed-chunk-167-1".png, id=1020, 469.755pt x 325
 .215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-107-1".pdf Graphic file (type p
-df)
-<use "_main_files/figure-latex/""unnamed-chunk-107-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-107-1".pdf  
-used on input line 2734.
+File: "_main_files/figure-latex/""unnamed-chunk-167-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-167-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-167-1".png  
+used on input line 3564.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Overfull \hbox (230.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 101
- []
-
-[101 <./_main_files/figure-latex/unnamed-chunk-107-1.pdf>]
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2785--2785
-[]\T1/lmtt/m/n/10 ## Warning: Factor \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 list_of_
-places\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 contains implicit NA, consider using[]
- 
- []
-
-
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2785--2785
-[]\T1/lmtt/m/n/10 ## Warning: Factor \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 list_of_
-places\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/10 contains implicit NA, consider using[]
- 
- []
-
-<"_main_files/figure-latex/""unnamed-chunk-109-1".pdf, id=1339, 469.755pt x 325
-.215pt>
-File: "_main_files/figure-latex/""unnamed-chunk-109-1".pdf Graphic file (type p
-df)
-<use "_main_files/figure-latex/""unnamed-chunk-109-1".pdf>
-Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-109-1".pdf  
-used on input line 2818.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[102]
-Overfull \hbox (230.30772pt too wide) has occurred while \output is active
-\T1/lmr/m/sl/10 14.1.  WHAT WERE THE MOST COMMON WORDS USED IN NEWSPAPER TITLES
- IN THE NINETEENTH CENTURY?_ \T1/lmr/m/n/10 103
- []
-
-[103 <./_main_files/figure-latex/unnamed-chunk-109-1.pdf>] [104
+[103 <./_main_files/figure-latex/unnamed-chunk-167-1.png>] [104
 
 ]
-Chapter 15.
-[105] [106
+Chapter 10.
+[105] [106]
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 3682--3682
+[]\T1/lmtt/m/n/10 ##   article_code art   text                           title 
+year  date  full_date[] 
+ []
 
-]
-Chapter 16.
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 3682--3682
+[]\T1/lmtt/m/n/10 ##          <int> <chr> <chr>                          <chr> 
+<chr> <chr> <date>[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3682--3682
+[]\T1/lmtt/m/n/10 ## 1          126 0030  LADIES\TS1/lmtt/m/n/10 '  \T1/lmtt/m/
+n/10 DRESSES.  HER.  MAJE~ 0002~ 1809  0122  1809-01-22[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3682--3682
+[]\T1/lmtt/m/n/10 ## 2          127 0031  PRINCESS  AUGUSTA.  Spanish  ~ 0002~ 
+1809  0122  1809-01-22[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3682--3682
+[]\T1/lmtt/m/n/10 ## 3          140 <NA>  THE  NATIONAL  REGISTER.  JAN~ 0002~ 
+1809  0122  1809-01-22[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ##   article_code art   text                           title 
+year  date  full_date[] 
+ []
+
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ##          <int> <chr> <chr>                          <chr> 
+<chr> <chr> <date>[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 1           25 0027  "THE  NATIONAL  REGISTER.  \TS1/lmtt/
+m/n/10 '\T1/lmtt/m/n/10 l~ 0002~ 1809  0101  1809-01-01[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 2           27 0030  THE  NATIONAL  REGISTER.  13 ~ 0002~ 
+1809  0101  1809-01-01[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 3          128 0034  6V  Itispersonal  appearance,~ 0002~ 
+1809  0122  1809-01-22[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 4          168 0035  THE  NATIONAL,  REGISTER.  ge~ 0002~ 
+1809  0129  1809-01-29[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 5          317 0019  THE  NATIONAL  REGISTER.  138~ 0002~ 
+1809  0226  1809-02-26[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 6          504 0035  ACCIDENT\TS1/lmtt/m/n/10 '\T1/lmtt/m/
+n/10 S,  OFFENCES,  Ec.  ~ 0002~ 1809  0402  1809-04-02[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 7          529 0025  ebe  pulpit.  The  Pulpit.  t~ 0002~ 
+1809  0409  1809-04-09[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 8          530 0026  THE  NATIONAL  REGISTER,  Co ~ 0002~ 
+1809  0409  1809-04-09[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 3707--3707
+[]\T1/lmtt/m/n/10 ## 9          581 <NA>  "THE  NATIONAL  REGISTER.  Is~ 0002~ 
+1809  0416  1809-04-16[] 
+ []
+
 [107] [108
 
 ]
-Chapter 17.
-[109] [110
+Chapter 11.
+[109] [110] [111]
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##    article_code art   title   year  date  full_date  word 
+         value[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##           <int> <chr> <chr>   <chr> <chr> <date>     <chr>
+         <dbl>[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  1            1 0001  0002644 1809  0101  1809-01-01 grate
+ful          3[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  2            1 0001  0002644 1809  0101  1809-01-01 encou
+ragement     2[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  3            1 0001  0002644 1809  0101  1809-01-01 encou
+ragement     2[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  4            1 0001  0002644 1809  0101  1809-01-01 promi
+sed          1[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  5            1 0001  0002644 1809  0101  1809-01-01 incre
+ase          1[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  6            1 0001  0002644 1809  0101  1809-01-01 negat
+ive         -2[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  7            1 0001  0002644 1809  0101  1809-01-01 worth
+             2[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  8            1 0001  0002644 1809  0101  1809-01-01 gift 
+             2[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ##  9            1 0001  0002644 1809  0101  1809-01-01 incon
+venience    -2[] 
+ []
+
+[112]
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 3898--3898
+[]\T1/lmtt/m/n/10 ## 10            1 0001  0002644 1809  0101  1809-01-01 deter
+mined        2[] 
+ []
+
+[113]
+<"_main_files/figure-latex/""unnamed-chunk-182-1".png, id=1085, 469.755pt x 325
+.215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-182-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-182-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-182-1".png  
+used on input line 3959.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[114 <./_main_files/figure-latex/unnamed-chunk-182-1.png>]
+Chapter 12.
+[115
 
 ]
-Chapter 18.
-[111] [112
+<"_main_files/figure-latex/""unnamed-chunk-190-1".png, id=1097, 469.755pt x 325
+.215pt>
+File: "_main_files/figure-latex/""unnamed-chunk-190-1".png Graphic file (type p
+ng)
+<use "_main_files/figure-latex/""unnamed-chunk-190-1".png>
+Package pdftex.def Info: "_main_files/figure-latex/""unnamed-chunk-190-1".png  
+used on input line 4040.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[116 <./_main_files/figure-latex/unnamed-chunk-190-1.png>]
+Chapter 13.
+[117
 
 ]
-Chapter 19.
-[113] [114
+
+LaTeX Warning: Reference `label' on page 118 undefined on input line 4106.
+
+
+Overfull \hbox (6.6343pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 118 \T1/lmr/m/sl/10 CHAPTER 13.  DETECTING TEXT REUSE IN NEWSPAP
+ER ARTICLES.
+ []
+
+[118]
+Overfull \hbox (4.63905pt too wide) in paragraph at lines 4137--4138
+\T1/lmr/m/n/10 (-20) This is a very sim-ple func-tion - it says, for each row i
+n the news_sample_dataframe,
+ []
+
+[119]
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 4222--4222
+[]\T1/lmtt/m/n/10 ##  [1] -2147136494 -2138512326 -2147425767 -2143106471 -2135
+745958 -2141828729[] 
+ []
+
+
+Overfull \hbox (6.6343pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 120 \T1/lmr/m/sl/10 CHAPTER 13.  DETECTING TEXT REUSE IN NEWSPAP
+ER ARTICLES.
+ []
+
+[120] [121]
+Overfull \hbox (1.499pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##    a           b           score text.x                  t
+ext.y[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  1 article_017 article_342     1 TIIE  NATIONAL  REGIST~ T
+IIE  NATIONAL  REGIST~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  2 article_019 article_043     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  3 article_019 article_068     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  4 article_019 article_395     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  5 article_019 article_400     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  6 article_019 article_461     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  7 article_019 article_463     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  8 article_019 article_513     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ##  9 article_019 article_603     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4309--4309
+[]\T1/lmtt/m/n/10 ## 10 article_043 article_068     1 THE  NATIONAL  REGISTE~ T
+HE  NATIONAL  REGISTE~[] 
+ []
+
+
+Overfull \hbox (6.6343pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 122 \T1/lmr/m/sl/10 CHAPTER 13.  DETECTING TEXT REUSE IN NEWSPAP
+ER ARTICLES.
+ []
+
+[122] [123]
+Overfull \hbox (6.6343pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 124 \T1/lmr/m/sl/10 CHAPTER 13.  DETECTING TEXT REUSE IN NEWSPAP
+ER ARTICLES.
+ []
+
+[124
 
 ]
-Chapter 20.
-[115]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2894.
-[116]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2894.
+Chapter 14.
+[125]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4417.
+[126]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4417.
 (./_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2894.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2894.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4417.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4417.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 6EF8A7B9B1E4A25209989B0F0E72C842;11646.
+(rerunfilecheck)             Checksum: 208A5CBCCB5EFBBD07DBEC3F0D215220;12021.
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 13997 strings out of 493610
- 212871 string characters out of 6159293
- 302752 words of memory out of 5000000
- 17354 multiletter control sequences out of 15000+600000
- 93013 words of font info for 141 fonts, out of 8000000 for 9000
+ 13874 strings out of 493610
+ 210967 string characters out of 6159293
+ 302364 words of memory out of 5000000
+ 17303 multiletter control sequences out of 15000+600000
+ 93030 words of font info for 152 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 39i,8n,42p,1675b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/
-local/texlive/2019basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/tex
+ 39i,8n,42p,1634b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/l
+ocal/texlive/2019basic/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/tex
 live/2019basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/
 2019basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019b
-asic/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2019basic
-/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019basic/texmf
--dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2019basic/texmf-dist/
-fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/t
-ype1/public/lm/lmr7.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/pu
-blic/lm/lmr8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm
-/lmri10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmri
-12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmri8.pfb
-></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmro10.pfb></us
-r/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loc
-al/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/te
-xlive/2019basic/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on _main.pdf (116 pages, 4787300 bytes).
+asic/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2019basic/t
+exmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019basic/texmf-d
+ist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2019basic/texmf-dist/fo
+nts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/typ
+e1/public/lm/lmr7.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/publ
+ic/lm/lmr8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/l
+mri10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmri12
+.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmri8.pfb><
+/usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/
+local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local
+/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texl
+ive/2019basic/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on _main.pdf (126 pages, 3012916 bytes).
 PDF statistics:
- 1596 PDF objects out of 1728 (max. 8388607)
- 1376 compressed objects within 14 object streams
- 440 named destinations out of 1000 (max. 500000)
- 19162 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 1345 PDF objects out of 1440 (max. 8388607)
+ 1112 compressed objects within 12 object streams
+ 346 named destinations out of 1000 (max. 500000)
+ 19116 words of extra memory for PDF output out of 20736 (max. 10000000)
 

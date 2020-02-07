@@ -1,25 +1,14 @@
-# (PART) Part III: Examples {-}
+# Text Mining Newspaper Titles
 
-# Text mining
-
-## What were the most common words used in newspaper titles in the nineteenth century?_
+What were the most common words used in newspaper titles in the nineteenth century?
 
 ![title](titles.png)
 
-### Titles don't just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of _all_ our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.
+## Introduction
 
-### What is this document?
+Titles don't just help you identity a newspaper, but they might tell you a little bit about the time in which they were established. With a bibliographic list of _all_ our UK and Irish titles, we can count the most frequent words and track them over time and place, using text mining and data analysis.
 
-This is a markdown file, made from a [Jupyter notebook](https://jupyter.org/). A jupyter notebook is usually an interactive document which can contain code, images and text, and a markdown file is a static version of that. Each bit of code runs in a cell, and the output is displayed directly below.
-
-The code I've used is R, which is a language particularly good for data analysis, but another language, Python, is probably used in Jupyter more frequently. If you're going to work in R, I would recommend downloading [R-Studio](https://rstudio.com) to do all your work, which could then be copied-and-pasted over the Jupyter notebook if needed, like I've done here.
-
-There are tonnes of places to get started working with R, Python, Jupyter notebooks and so forth, and we would recommend looking here in the first instance: 
-
-https://programminghistorian.org/
-
-https://software-carpentry.org/
-
+## Read in the relevant libraries and load the dataset
 
 First we need to load some libraries which we'll use. A library is just a bunch of functions* grouped together, usually with a particular overall purpose or theme. 
 
@@ -45,14 +34,13 @@ library(readxl)
 
 The first thing we do is load the whole title list as a variable called 'working_list', specifying the sheet of the excel file we'd like to use. We'll dive a little deeper into the structure and how we might filter in another notebook.
 
-
 ```{r}
 working_list <- read_csv(
 "BritishAndIrishNewspapersTitleList_20191118.csv", 
 local = locale(encoding = "latin1"))
 ```
 
-Let's just look at the nineteenth century - we'll use the filter() function from dplyr, which is one of the libraries in the tidyverse. We then use %>% to pipe the filtered data to a function called head(), which displays a set number of rows of your data frama - useful for taking a peek at the structure.
+Let's just look at the nineteenth century - use the filter() function from dplyr, which is one of the libraries in the tidyverse. Then use %>% to pipe the filtered data to a function called head(), which displays a set number of rows of your data frama - useful for taking a peek at the structure.
 
 
 ```{R}
@@ -63,7 +51,7 @@ head(2)
 ```
 
 
-We have some duplicated newspaper titles in this dataframe. We can get rid of these for this analysis, though there are reasons we left them in which I won't go into now.  We can delete any duplicated titles using a function called distinct() on NID id field.
+There are some duplicated newspaper titles in this dataframe. We can get rid of these for this analysis, though there are reasons we left them in which I won't go into now.  We can delete any duplicated titles using a function called distinct() on NID id field.
 
 
 ```{r}
@@ -75,7 +63,7 @@ head(2)
 ```
 
 
-Select only the information we need. Let's create a new dataframe, run the filter and distinct functions, and select some date information along with the titles, Afterwards we might want to choose geographic information instead, so we'll keep our original data frame:
+Select only the information needed. Create a new dataframe, run the filter and distinct functions, and select some date information along with the titles, Afterwards we might want to choose geographic information instead, so we'll keep our original data frame:
 
 
 ```{r}
@@ -109,7 +97,9 @@ data(stop_words) # this loads a dataset of stopwords
 
 ```{r}
 tokenised_titles_dates = tokenised_titles_dates %>% 
-  anti_join(stop_words) # this does an 'anti-join' which removes any word in one list which also appears in another.
+  anti_join(stop_words) 
+# this does an 'anti-join' which removes 
+# any word in one list which also appears in another.
 ```
 
 Let's do some simple analysis first. We can count the most common words overall:
@@ -233,8 +223,6 @@ tokenised_titles_dates %>%
 ```
 
 
-![png](output_37_0.png)
-
 
 There might be better ways of counting. How about a line chart which tracks a certain number of keywords over time?
 
@@ -289,7 +277,8 @@ title_words %>%
   ggplot(aes(x = decade, y = n/total, color = word)) + 
   geom_line(size = 1, alpha = .7,stat = 'identity') + 
   theme_minimal() + 
-  ylab(label = "Percentage of total words") + theme(legend.position = 'bottom')
+  ylab(label = "Percentage of total words") + 
+  theme(legend.position = 'bottom')
 ```
 
 Well, that's quite interesting. Advertiser declines in the second half of the century, and is overtaken by 'news' right at the end.
@@ -387,7 +376,11 @@ First we'll select just the key countries:
 
 
 ```{r}
-countryList = c('England', 'Ireland', 'Wales', 'Scotland', 'Northern Ireland')
+countryList = c('England', 
+                'Ireland', 
+                'Wales', 
+                'Scotland', 
+                'Northern Ireland')
 ```
 
 Next we'll use a function which gives the 'tf-idf' score for each word. This measures the frequency of the word in comparison to its frequency in all other countries, giving us words that are more unique to titles from that country. 
@@ -463,8 +456,3 @@ total_by_country %>%
 ```
 
 There are still lots of geographic terms, but there are some other words 'unique' to each country. Ireland and Northern Ireland high-scoring words are particularly interesting (of course we're looking at 19th century titles so the division is meaningless, but it still represents some kind of regionality). Only Irish titles tend to have ideological terms like 'nationalist', 'democrat', 'loyalty', 'impartial' and so forth. Newspapers with 'illustrated' or 'Sunday' in the title are unique to England, and, intriguingly, 'visitors'.
-
-
-```{r}
-
-```

@@ -1,0 +1,89 @@
+\contentsline {chapter}{\numberline {1}Preface \& Acknowledgements}{5}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Introduction}{7}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Unlocking the past with newspaper data}{7}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Why is it useful?}{8}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Goals}{9}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Why R?}{9}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Getting started}{10}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Download R and R-Studio}{10}{subsection.2.5.1}% 
+\contentsline {section}{\numberline {2.6}Who is the guide for?}{10}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Format of the book}{11}{section.2.7}% 
+\contentsline {chapter}{\numberline {3}UK Newspaper Data}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Intro to British Library Newspapers}{13}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Burney Collection}{14}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}JISC Newspaper digitisation projects}{14}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}BRITISH NEWSPAPER ARCHIVE}{17}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}British Library Openly available newspaper data}{17}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}What access do you need?}{19}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}You want to find individual articles?}{19}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}You want to do text mining on a large corpus}{19}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.3}You want to do text mining on the entire digitised collection}{19}{subsection.3.6.3}% 
+\contentsline {subsection}{\numberline {3.6.4}You want to do something involving the images, such as computer vision techniques,}{19}{subsection.3.6.4}% 
+\contentsline {chapter}{\numberline {4}OCR and its problems}{21}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}What is OCR?}{21}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}What is it like in BL newspapers?}{21}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Introduction}{22}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Extract predicted word scores from the ALTO pages}{23}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Visualisations:}{23}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}What's in the data?}{23}{subsection.4.5.1}% 
+\contentsline {section}{\numberline {4.6}Highest and lowest results:}{23}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Page-by-page OCR visualisation}{25}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Microfilm vs print:}{25}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}Conclusions}{27}{section.4.9}% 
+\contentsline {section}{\numberline {4.10}Impact on analysis}{28}{section.4.10}% 
+\contentsline {chapter}{\numberline {5}Quick introduction to R and the tidyverse}{29}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}What and why?}{29}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Using R}{30}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Base R commands}{30}{subsection.5.2.1}% 
+\contentsline {section}{\numberline {5.3}Tidyverse}{31}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}select(), pull()}{31}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}group\_by(), tally(), summarise()}{32}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}filter()}{33}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}sort(), arrange(), top\_n()}{33}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}left\_join(), inner\_join(), anti\_join()}{34}{subsection.5.3.5}% 
+\contentsline {subsection}{\numberline {5.3.6}Piping}{34}{subsection.5.3.6}% 
+\contentsline {subsection}{\numberline {5.3.7}Plotting using ggplot()}{34}{subsection.5.3.7}% 
+\contentsline {subsection}{\numberline {5.3.8}Doing this with newspaper data}{37}{subsection.5.3.8}% 
+\contentsline {chapter}{\numberline {6}Geocode and map newspaper titles}{43}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Mapping with ggplot2 and mapdata}{43}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}A map of British Newspapers by City}{43}{subsection.6.1.1}% 
+\contentsline {section}{\numberline {6.2}Drawing a background map. `}{43}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Add Sized Points By Coordinates}{49}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Get a count of the total titles for each city}{49}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}Get hold of a list of geocoordinates}{50}{subsection.6.3.2}% 
+\contentsline {section}{\numberline {6.4}Bringing it all together}{54}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Drawing a newspaper titles `Choropleth' map with R and the sf package}{55}{section.6.5}% 
+\contentsline {section}{\numberline {6.6}Get county information from the title list}{56}{section.6.6}% 
+\contentsline {section}{\numberline {6.7}Make the points object using geom\_sf()}{57}{section.6.7}% 
+\contentsline {subsection}{\numberline {6.7.1}Download shapefiles}{57}{subsection.6.7.1}% 
+\contentsline {section}{\numberline {6.8}Transform from UTM to lat/long using st\_transform()}{57}{section.6.8}% 
+\contentsline {section}{\numberline {6.9}Download and merge the title list with a set of coordinates.}{58}{section.6.9}% 
+\contentsline {section}{\numberline {6.10}Using st\_join to connect the title list to the shapefile}{59}{section.6.10}% 
+\contentsline {section}{\numberline {6.11}Draw using ggplot2 and geom\_sf()}{60}{section.6.11}% 
+\contentsline {chapter}{\numberline {7}Text Mining Newspaper Titles}{63}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Introduction}{63}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Read in the relevant libraries and load the dataset}{64}{section.7.2}% 
+\contentsline {subsection}{\numberline {7.2.1}How about differences by country?}{75}{subsection.7.2.1}% 
+\contentsline {chapter}{\numberline {8}Make a Text Corpus}{83}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}Where is this data?}{83}{section.8.1}% 
+\contentsline {section}{\numberline {8.2}Folder structure}{83}{section.8.2}% 
+\contentsline {chapter}{\numberline {9}Term Frequencies}{95}{chapter.9}% 
+\contentsline {chapter}{\numberline {10}Tf\_idf:}{105}{chapter.10}% 
+\contentsline {chapter}{\numberline {11}Sentiment analysis}{109}{chapter.11}% 
+\contentsline {section}{\numberline {11.1}Install and load relevant packages}{110}{section.11.1}% 
+\contentsline {section}{\numberline {11.2}Fetch sentiment data}{110}{section.11.2}% 
+\contentsline {subsection}{\numberline {11.2.1}Afinn dataset}{110}{subsection.11.2.1}% 
+\contentsline {subsection}{\numberline {11.2.2}Bing dataset}{110}{subsection.11.2.2}% 
+\contentsline {subsection}{\numberline {11.2.3}Loughran dataset}{111}{subsection.11.2.3}% 
+\contentsline {subsection}{\numberline {11.2.4}NRC dataset}{111}{subsection.11.2.4}% 
+\contentsline {section}{\numberline {11.3}Load the tokenised news sample}{112}{section.11.3}% 
+\contentsline {chapter}{\numberline {12}Topic modelling}{115}{chapter.12}% 
+\contentsline {chapter}{\numberline {13}Detecting text reuse in newspaper articles.}{117}{chapter.13}% 
+\contentsline {section}{\numberline {13.1}Turn the newspaper sample into a bunch of text documents, one per article}{118}{section.13.1}% 
+\contentsline {subsection}{\numberline {13.1.1}Load the dataframe and preprocess}{119}{subsection.13.1.1}% 
+\contentsline {subsection}{\numberline {13.1.2}Make a text file from each article}{119}{subsection.13.1.2}% 
+\contentsline {section}{\numberline {13.2}Load the files as a TextReuseCorpus}{119}{section.13.2}% 
+\contentsline {subsection}{\numberline {13.2.1}Generate a minhash}{119}{subsection.13.2.1}% 
+\contentsline {subsection}{\numberline {13.2.2}Create the TextReuseCorpus}{120}{subsection.13.2.2}% 
+\contentsline {section}{\numberline {13.3}Further reading}{123}{section.13.3}% 
+\contentsline {chapter}{\numberline {14}Further reading}{125}{chapter.14}% 

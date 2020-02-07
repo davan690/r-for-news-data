@@ -100,18 +100,6 @@ tokenised_news_sample %>%
   arrange(desc(n))
 ```
 
-Let's take a look at the most 'positive' article. 
-```{r}
-news_sample_dataframe %>% filter(article_code == 262) %>% pull(text)
-```
-
-```{r}
-news_sample_dataframe %>% filter(article_code == 482) %>% pull(text)
-```
-
-The most negative is perhaps more relevant: it includes a casualty list, and so repeats words like 'shot' and 'wounded' and so forth. 
-
-
 Sentiment analysis should be uesd with caution, but it's potentially a useful tool, particularly to look at changes over time, or differences between newspapers or authors. We can plot the average of all the average article scores. If we had them, this could be segmented by title.
 
 ```{r}

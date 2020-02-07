@@ -6,12 +6,6 @@ The British Library holds about 60 million issues, or 450 million pages of newsp
 
 >Systematic collection of newspapers at the British Museum (the precursor of the British Library) did not really begin until 1822. At that time publishers were obliged to supply copies of their newspapers to the Stamp Office so that they could be taxed. In 1822 it was agreed that these copies would be passed to the British Museum after a period of three years. From 1869 onwards newspapers were included in the legal deposit legislation and were then deposited directly at the British Museum. This systematic application of legal deposit requirements means that many thousands of complete runs of newspapers have accumulated. The majority of newspapers collected are those published since 1800.[@ed-king-gale]
 
-
-```{r fig.cap = "An interactive map of the British Library's physical newspaper collection. Links are to the catelogue entry."}
-knitr::include_app("https://yannryan.shinyapps.io/newspapers_by_title/")
-```
-
-
 https://melissaterras.files.wordpress.com/2020/01/selectioncriterianewspapers_hauswedell_nyhan_beals_terras_bell-3.pdf
 
 What does this all mean for the data? First of all, it means that only a fraction of what was published has been preserved or collected, and only a fraction of that which has been collected has been digitised. Some very rough numbers: The 'newspaper-year' is a good standard unit. This is all the issues for one title, for one year. Its not perfect, because a newspaper-year of a weekly is worth the same as a newspaper-year for a daily. But it's an easy unit to count. There's currently about 40,000 newspaper-years on the British Newspaper Archive. The entire collection of British and Irish Newspapers is probably, at a guess, about 350,000 newspaper-years. 
@@ -147,81 +141,9 @@ What's really clear, is that the selection was driven by assumed historical need
 The result was a heavily curated collection, albeit with decent academic rigour and good intentions and like all collections created in this way, it is subject, quite rightly, to a lot of scrutiny by historians. [@Fyfe_2016 for example]
 
 
-This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth.[@smits_making_2016; @mussell-elemental both include some discussion and critique of the British Library Newspaper Collection] But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency, in that it used microfilm (sometimes new microfilm). But overall, one might say that the collection has specific historical relevant, and was in ways representative. It does, though, only represent a tiny fraction of the newspaper collection, and by being relevant and restricted to 'important' titles, it does of course miss other voices. For example, much of the Library's collection consists of short runs, and much of it has not been microfilmed, which means it won't have been selected for digitisation. This means that 2019 digitisation selection policies are indirectly _greatly_ influenced by microfilm selection policies of the 70s, 80s, and 90s. Subsequent digitisation projects are trying to rectify these motivations, but again, it's good to keep in mind the 
+This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth.[@smits_making_2016; @mussell-elemental both include some discussion and critique of the British Library Newspaper Collection] But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency, in that it used microfilm (sometimes new microfilm). But overall, one might say that the collection has specific historical relevant, and was in ways representative. It does, though, only represent a tiny fraction of the newspaper collection, and by being relevant and restricted to 'important' titles, it does of course miss other voices. For example, much of the Library's collection consists of short runs, and much of it has not been microfilmed, which means it won't have been selected for digitisation. This means that 2019 digitisation selection policies are indirectly _greatly_ influenced by microfilm selection policies of the 70s, 80s, and 90s. Subsequent digitisation projects are trying to rectify these motivations.
 
 
-```{r include=FALSE}
-leaflet_list = title_list %>% 
-  filter(!is.na(link_to_british_newspaper_archive)) %>% 
-  left_join(geocoded) %>% 
-  group_by(wikititle, wikilon, wikilat) %>% 
-  tally()
-```
-```{r include=FALSE}
-library(leaflet)
-```
-```{r include=FALSE}
-links = title_list %>% 
-  left_join(geocoded) %>% 
-  group_by(wikititle, wikilon, wikilat) %>%
-            filter(!is.na(link_to_british_newspaper_archive)) %>%
-            distinct(nid, .keep_all = TRUE) %>%
-            summarise(link = paste("<p><a href=",
-                                   link_to_british_newspaper_archive,">",
-                                   publication_title,"</a>", 
-                                   first_date_held, " - ", 
-                                   last_date_held, "</p>\n", 
-                                   collapse = "\n"))
-
-
-```
-
-```{r include=FALSE}
-leaflet_list = leaflet_list %>% left_join(links) %>% filter(!is.na(link))
-```
-```{r}
-lat <- 53.442788
-lng <- -2.244708
-zoom <- 5
-pal1871 <- colorBin("viridis", domain=leaflet_list$n, bins = c(0,5,10,15,20,25,30,35,Inf))
-```
-
-```{r include=FALSE}
-popup_sb <- paste0(leaflet_list$wikititle, "\n", "Total unique titles: ", leaflet_list$n)
-leaflet_list  = leaflet_list %>% ungroup() %>% mutate(wikilon = as.numeric(wikilon)) %>% mutate(wikilat = as.numeric(wikilat))
-
-popup_sblab <- leaflet_list$link
-
-```
-
-```{r echo=FALSE}
-leaflet() %>%  
-            addTiles(
-            ) %>% 
-            setView(lat = lat, lng = lng, zoom = zoom)%>% 
-            clearShapes() %>% 
-            clearControls() %>%
-  addCircleMarkers(data = leaflet_list %>% mutate(n = replace(n, wikititle == 'London', 40)),lng = ~wikilon, lat = ~wikilat, weight = 1, #cheat and change London to a smaller number, so it doesn't overlap other points
-    radius = ~n*.25 %>% sqrt(), ,
-                        fillColor = ~pal1871(n),fillOpacity = 0.7,
-                        color = "gray95",popup = ~popup_sblab,
-                        popupOptions = popupOptions(maxHeight = 100), label=popup_sb,
-                        labelOptions = labelOptions(
-                            style = list("font-weight" = "normal", padding = "3px 8px"),
-                            textsize = "15px",
-                            direction = "auto")
-  ) %>%
-            addLegend(pal = pal1871, 
-                      values = n,
-                      opacity = 0.7,
-                      position = 'bottomright',
-                      title = 'Unique titles:')
-```
-
-
-Currently researchers access this either through Gale, or through the British Library as an external researcher. Many researchers have requested access to the collection through Gale, which they will apparently do in exchange for a fee for the costs of the hard drives and presumably some labour time. The specifics of the XML used, and some code for extracting the data, are available in the following chapter.
-
-Some researchers have also got access to the collection through 
 
 ## BRITISH NEWSPAPER ARCHIVE
 Most of the British Library's digitised newspaper collection is available on the [British Newspaper Archive](www.britishnewspaperarchive.co.uk) (BNA). The BNA is a commercial product run by a family history company called FindMyPast. FindMyPast is responsible for digitising large amounts of the Library's newspapers, mostly through microfilm. As such, they have a very different focus to the JISC digitisation projects. The BNA is constantly growing, and it already dwarfs the JISC projects by number of pages: the BNA currently hosts about 33 million pages, against the 3 million or so of the two JISC projects \@ref(fig:bna-chart) 
@@ -263,33 +185,26 @@ long_title_list %>% mutate(title_id = str_pad(title_id, width = 9, pad = '0')) %
 ```
 
 
-## HMD data- on repository
+## British Library Openly available newspaper data
+Currently, the Library makes data from the Heritage Made Digital digitisation project available. This is a project within the British Library to digitise up to 1.3 million pages of 19th century newspapers. It has a specific curatorial focus: it picked titles which are completely out of copyright, which means that they all _finished_ publication before 1879. It also had preservation aims: because of this, it chose titles which were not on microfilm, and were also in poor or unfit condition. Newspaper volumes in unfit condition cannot be called up by readers: this meant that if a volume is not microfilmed and is in this state, it can't be read by _anyone_. There's some more about the project available here: https://blogs.bl.uk/thenewsroom/2019/01/heritage-made-digital-the-newspapers.html
 
-https://blogs.bl.uk/thenewsroom/2019/01/heritage-made-digital-the-newspapers.html
+The other curatorial goal was to focus on 'national' titles. In practice this meant choosing titles printed in London, but without a specific London focus. The JISC digitisation projects focused on regional titles, then local, and all the 'big' nationals like the _Times_ or the _Manchester Guardian_ have been digitised by their current owners. This means that a bunch of historically important titles may have fallen through the cracks, and this projects is digitising some of those.^[The term national is debatable, but it's been used to try and distinguish from titles which clearly had a focus on one region. Even this is difficult: regionals would have often had a national focus, and were in any case reprinting many national stories. But their audience would have been primarily in a limited geographical area, unlike a bunch of London-based titles, which were printed and sent out across the country, first by train, then the stories themselves by telegraph.]
 
-
-The Heritage Made Digital Project is a project within the British Library to digitise 19th century newspapers. It has a specific curatorial focus. It picked titles which are completely out of copyright, which means that they all _finished_ publication before 1879. It also aimed to preserve: because of this, it chose titles which were not on microfilm, and were also in poor or unfit condition. Newspaper volumes in unfit condition cannot be called up by readers: this meant that if a volume is not microfilmed and is in this state, it can't be read by _anyone_. quote Luke's blog here
-
-The other curatorial goal was to focus on 'national' titles. In practice this meant choosing titles printed in London but without a specific London focus. This might seem like a strange selection policy considering the general view that stuff outside London is neglected, but it sort of makes sense: JISC focused on regional titles, then local, and all the 'big' nationals like the Times or the Manchester Guardian have been digitised but sit behind paywalls within those organisations. This means that a bunch of historically important titles may have fallen through the cracks, and this projects is digitising some of those.^[The term national is debatable, but it's been used to try and distinguish from titles which clearly had a focus on one region. Even this is difficult: regionals would have often had a national focus, and were in any case reprinting many national stories. But their audience would have been primarily in a limited geographical area, unlike a bunch of London-based titles, which were printed and sent out across the country, first by train, then the stories themselves by telegraph.]
-
-The important thing to note is that the is, like JISC, a selection made by historians for preservation and curatorial purposes. Again, it's worth thinking about how this affects the bias. 
-
-The good news is that as these newspapers are deemed out of copyright, the data can be made freely downloadable. Currently the first batch of newspapers, in METS/ALTO format, are available on the British LIbrary's Open Repository. They have a CC-0 licence, which means they can be used for any purpose whatsoever. Much of the data examples in the following chapters will use this data. 
+The good news is that as these newspapers are deemed out of copyright, the data can be made freely downloadable. Currently the first batch of newspapers, in METS/ALTO format, are available on the British Library's Open Repository. They have a CC-0 licence, which means they can be used for any purpose whatsoever. The code examples in the following chapters will use this data. 
 
 ## What access do you need?
 
-### Want to find individual articles.
+### You want to find individual articles?
 Access through the BNA or Gale data, depending on access. BNA if you need the most coverage, and are interested particularly in local or regional titles. Gale has better search facilities but less content. 
-### Want to do some simple text mining, not so bothered about regional coverage
+### You want to do some simple text mining, not so bothered about regional coverage
 Probably access HMD titles through the repository
 
-### Want to do text mining on a large corpus
+### You want to do text mining on a large corpus
 Request access to the Library's newspapers through BL labs or elsewhere. Get access to raw files. Do you own analysis or else follow steps here to extract the data. There's instructions for JISC and HMD titles. 
 
-### Want to do text mining on the entire digitised collection
-You'll need to speak to FMP, who run the British Newspaper Archive. They do take requests for access. There is a dataset of n-grams which has been used for text mining, sentiment analysis etc. and might be useful, though the collection has grown significantly since this point. 
+### You want to do text mining on the entire digitised collection
+You'll need to speak to FMP, who run the British Newspaper Archive. They do take requests for access. There is a dataset of n-grams which has been used for text mining, sentiment analysis etc. and might be useful, though the collection has grown significantly since this point. It's available as a free download from here: https://doi.org/10.5523/bris.dobuvuu00mh51q773bo8ybkdz
 
-### Want to do something involving the images, such as computer vision techniques, 
+### You want to do something involving the images, such as computer vision techniques, 
 You'll probably need to request access to newspapers through the British Library, or through Gale. Gale will send a copy of the JISC 1 & 2 data (with OCR enhancements) on a hard drive to researchers, for a fee. Access through the Library will allow for image analysis but might be difficult to take away. The images up to 1878 are cleared for reuse.
-
 

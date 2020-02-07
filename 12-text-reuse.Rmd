@@ -55,13 +55,16 @@ Make a more useful code to use as an article ID.
 First use ```str_pad()``` to add leading zeros up to a maximum of three digits.
 
 ```{r}
-news_sample_dataframe$article_code = str_pad(news_sample_dataframe$article_code, width = 3, pad = '0')
+news_sample_dataframe$article_code = str_pad(news_sample_dataframe$article_code, 
+                                             width = 3, 
+                                             pad = '0')
 ```
 
 Use ```paste0()``` to add the prefix 'article' to this number.
 
 ```{r}
-news_sample_dataframe$article_code = paste0('article_',news_sample_dataframe$article_code)
+news_sample_dataframe$article_code = paste0('article_',
+                                            news_sample_dataframe$article_code)
 ```
 
 ### Make a text file from each article
@@ -124,8 +127,12 @@ also be tokenize words
 *keep_tokens =* Whether or not you keep the actual tokens, or just the hashes. There's no real point keeping the tokens as we use the hashes to make the comparisons. 
 
 ```{r message=FALSE, warning=FALSE}
-reusecorpus <- TextReuseCorpus(dir = "textfiles/", tokenizer = tokenize_ngrams, n = 3,
-                          minhash_func = minhash, keep_tokens = FALSE, progress = FALSE)
+reusecorpus <- TextReuseCorpus(dir = "textfiles/", 
+                               tokenizer = tokenize_ngrams, 
+                               n = 3,
+                          minhash_func = minhash, 
+                          keep_tokens = FALSE, 
+                          progress = FALSE)
 ```
 
 Now each document is represented by a series of hashes, which are substitutes for small sequences of text. For example, this is the first ten minhashes for the first article:
@@ -171,7 +178,8 @@ The last thing is to join up the article codes to the full text dataset, and act
 ```{r}
 matchedtexts = jacsimilarity_both %>% 
   left_join(news_sample_dataframe, by = c('a' = 'article_code')) %>% 
-  left_join(news_sample_dataframe, by = c('b' = 'article_code'))%>% select(a,b,score, text.x, text.y)
+  left_join(news_sample_dataframe, by = c('b' = 'article_code'))%>% 
+  select(a,b,score, text.x, text.y)
 
 matchedtexts
 ```

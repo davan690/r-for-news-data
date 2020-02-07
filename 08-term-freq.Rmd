@@ -24,7 +24,8 @@ Most analysis involves tokenising the text. This divides the text into 'tokens' 
 The two most important arguments to ``unnest_tokens``` are ```output``` and ```input```. This is fairly self explanatory. Just pass it the name you would like to give the new column of words (or n-grams) and the column you'd like to split up: in this case the original column is called 'text', and we'd like our column of words to be called words.
 
 ```{r}
-news_sample_dataframe %>% unnest_tokens(output = word, input = text)
+news_sample_dataframe %>% 
+  unnest_tokens(output = word, input = text)
 ```
 
 I can also specify an argument for token, allowing me to split the text into sentences, characters, lines, or n-grams.If I split into n-grams, I used the argument ```n``` to specify how many consecutive words I'd like to use. 
@@ -32,7 +33,11 @@ I can also specify an argument for token, allowing me to split the text into sen
 Like this:
 
 ```{r}
-news_sample_dataframe %>% unnest_tokens(output = word, input = text, token = 'ngrams', n =3)
+news_sample_dataframe %>% 
+  unnest_tokens(output = word, 
+                input = text, 
+                token = 'ngrams', 
+                n =3)
 ```
 
 
@@ -47,7 +52,9 @@ data("stop_words")
 Next use the function ```anti_join()```. This bascially removes any word in our word list which is also in the stop words list
 
 ```{r}
-news_sample_dataframe %>% unnest_tokens(output = word, input = text) %>% anti_join(stop_words)
+news_sample_dataframe %>% 
+  unnest_tokens(output = word, input = text) %>% 
+  anti_join(stop_words)
 ```
 
 A couple of words from the .xml have managed to sneak through our text processing: 'style' and 'superscript'. I'm also going to remove these, plus a few more common OCR errors for the word 'the'.
@@ -60,7 +67,15 @@ I'll store the dataframe as a variable called 'tokenised_news_sample'. I'll also
 tokenised_news_sample = news_sample_dataframe %>% 
   unnest_tokens(output = word, input = text) %>% 
   anti_join(stop_words) %>% 
-  filter(!word %in% c('superscript', 'style', 'de', 'thle', 'tile', 'tie', 'tire', 'tiie', 'tue')) %>% 
+  filter(!word %in% c('superscript', 
+                      'style', 
+                      'de', 
+                      'thle', 
+                      'tile', 
+                      'tie', 
+                      'tire', 
+                      'tiie', 
+                      'tue')) %>% 
   filter(!str_detect(word, '[0-9]{1,}')) %>% 
   filter(nchar(word) > 2)
 
@@ -152,5 +167,9 @@ issue_words
 ```
 
 ```{r}
-issue_words %>% ggplot() + geom_histogram(aes(x = n/total, fill =  as.factor(full_date))) + facet_wrap(~full_date, scales = 'free')
+issue_words %>% 
+  ggplot() + 
+  geom_histogram(aes(x = n/total, 
+                     fill =  as.factor(full_date))) + 
+  facet_wrap(~full_date, scales = 'free')
 ```

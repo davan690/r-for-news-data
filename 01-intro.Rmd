@@ -39,16 +39,31 @@ This short book hopes to help you:
 [@Hills:2019aa] 
 
 ## Why R?
-This is a handbook made _with_ R, and _using_ R, but it is not really primarily _about_ R. I wanted to show some techniques. It should be readable by anyone, but it's possible bits will not be so easy to follow.
-Used to be idiosyncratic, is becoming very widely used by data scientist, digital humanities, social scientists. 
-A lot of this is because of developers like Hadley Wickham and R studio - the tidyverse, but also data.table.
+R is a programming language, much like Python. In the last few years it has become widely used by data scientists, those using digital humanities techniques, and social sciences. It has some advantages for a novice to programming: thanks to a very widely-used platform (called an Integrated Programming Environment or IDE) for the language called R-Studio, it is particularly easy to get up and running, writing code and drawing graphs, than many other languages. A lot of this is because of developers who have extended the functionality of the 'base' language greatly, particularly a suite of extra functions known collectively as the 'tidyverse'. More on that in a bit. 
 
-Have a look at the list http://dh-r.lincolnmullen.com here, and also Hadley Wickham's R for data science.
+This is a handbook made _with_ R, and _using_ R, but it is not really primarily _about_ R. It _should_ be readable by anyone, but it's possible bits will not be so easy to follow. I apologise in advance for any confusion or difficulties. 
 
-[Why I use R](https://blog.shotwell.ca/posts/why_i_use_r/)
+If you'd like to get started with R and the tidyverse in earnest, I recommend some of these tutorials and books:
 
+http://dh-r.lincolnmullen.com 
 
-## Who is the book for?
+https://blog.shotwell.ca/posts/why_i_use_r/
+
+https://r4ds.had.co.nz
+
+## Getting started
+The only requirements to get through these tutorials are to install R and R-Studio, as well as some data which needs to be downloaded separately. 
+
+### Download R and R-Studio
+R and R-Studio are two separate things. R will work without R-studio, but not the other way around, and so it should be downloaded first. It _should_ be a simple process: Go to the download page here: https://www.r-project.org, select a download mirror, and download the correct version for your operating system. Follow the installation instructions here: https://cran.r-project.org/manuals.html if you get stuck, but it should be fairly painless. 
+
+Next, download R-Studio here: https://rstudio.com/products/rstudio/. You'll want the desktop version and again, download the correct version and follow the instructions. When both of these are installed, you just need to open R-Studio, and it should run the underlying software R automatically. 
+
+At this point, I would highly recommend reading a beginners guide to R and R-studio, such as this one: https://moderndive.netlify.com/1-getting-started.html to familiarise yourself with the layout and some of the basic functionality of R-Studio. Once you understand where to type and save code, where your files and dataframes live, and how to import data from spreadsheets, you should be good to start experimenting with newspaper data. 
+
+R relies on lots of additional packages for full functionality, and you'll need to install these by using the function ```install.packages()```, folled by the package name, in inverted commas. I recommend doing this to install the tidyverse suite of packages which you will end up using all the time. 
+
+## Who is the guide for?
 Historians looking to understand news at scale. Undergraduates and postgrads looking to dip their feet into computational methods.
 
 Imagine a PhD student, hasn't used newspaper data before. What is available? How can she access it? Does she need to visit the library, or will she be happy with what's available online? 

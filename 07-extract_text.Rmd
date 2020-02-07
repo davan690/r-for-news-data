@@ -10,15 +10,13 @@ Then how to extract text
 And iterate through all the folders
 save to a dataframe
 
-Inspired by the brilliant posts by https://www.brodrigues.co/blog/2019-01-13-newspapers_mets_alto/ I've written some code to extract the full text of articles from our newspapers, and then do some basic text mining and topic modelling. 
+Inspired by the  posts by https://www.brodrigues.co/blog/2019-01-13-newspapers_mets_alto/ I've written some code to extract the full text of articles from our newspapers, and then do some basic text mining and topic modelling. I've taken the basic principle of the the tutorial above and tailored it heavily to the British Library's METS/ALTO.
 
-Unfortunately for me, the METS/ALTO flavour produced by the British Library is very different to the BnL. I've taken the basic principle of the the tutorial above and tailored it heavily to the British Library's METS/ALTO.
-
-In the BL, the METS file contains information on textblocks. Each textblock has a code, which can be found in one of the ALTO files - of which there are one per page. The ALTO files list each individual word in each textblock. The METS file also contains information on which textblocks make up each article. the output will be a csv for each issue - these can be combined into a single dataframe afterwards, but it's nice to have the .csv files themselves first of all. 
+In the British Library, the METS file contains information on textblocks. Each textblock has a code, which can be found in one of the ALTO files - of which there are one per page. The ALTO files list each individual word in each textblock. The METS file also contains information on which textblocks make up each article, which means that the newspaper can be recreated, article by article. The output will be a csv for each issue - these can be combined into a single dataframe afterwards, but it's nice to have the .csv files themselves first of all. 
 
 ## Folder structure
 
-We'll do this on a small sample of newspapers prepared for this notebook. You can find them here, and you should put them in the same folder as this notebook. 
+Download and extract the newspapers you're interested in, and put them in the same folder as the project you're working on in R. So you should have 
 
 The folder structure of the newspapers is  [nlp]->year->issue month and day-> xml files. The nlp is a unique code given to each digitised newspaper. This makes it easy to find an individual issue of a newspaper. 
 
@@ -46,11 +44,18 @@ get_page = function(alto){
                        str_extract(value, "pa[0-9]{7}"), NA)) %>% 
     fill(pa) %>%
     filter(str_detect(pa, "pa[0-9]{7}")) %>% 
-    filter(!str_detect(value, "pa[0-9]{7}")) %>% 
-    filter(!str_detect(value, "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>% mutate(value = 
-   str_remove_all(value, "STYLE=\"subscript\" ")) %>% mutate(value = str_remove_all(value, "\"")) %>%
-   mutate(value = str_remove_all(value, "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>%
-   mutate(value = str_remove_all(value, "SUBS_TYPE=HypPart2 SUBS_CONTENT="))
+    filter(!str_detect(value, 
+                       "pa[0-9]{7}")) %>% 
+    filter(!str_detect(value, 
+                       "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>% 
+   mutate(value = str_remove_all(value, 
+                                 "STYLE=\"subscript\" ")) %>% 
+   mutate(value = str_remove_all(value,
+                                 "\"")) %>%
+   mutate(value = str_remove_all(value, 
+                                 "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>%
+   mutate(value = str_remove_all(value,
+                                 "SUBS_TYPE=HypPart2 SUBS_CONTENT="))
 }
 ```
 
@@ -85,15 +90,18 @@ altofile %>% glimpse()
 This was the bit I never would have figured out: it extracts the words and the textblock ID for each line. 
 
 ```{r}
-altofile = altofile %>% str_extract("(?<=CONTENT=\")(.*?)(?=WC)|(?<=<TextBlock ID=)(.*?)(?= HPOS=)")%>% 
+altofile = altofile %>% 
+  str_extract("(?<=CONTENT=\")(.*?)(?=WC)|(?<=<TextBlock ID=)(.*?)(?= HPOS=)") %>% 
         discard(is.na) %>% as_tibble()
 ```
 
 Now I have a dataframe with a single column, which is every textblock, textline and word in the ALTO file. Now we need to extract the textblock IDs, put them in a separate column, and then fill() each textblock ID down until it reaches the next one. 
 
 ```{r}
-altofile = altofile %>% mutate(pa = ifelse(str_detect(value, "pa[0-9]{7}"), 
-                       str_extract(value, "pa[0-9]{7}"), NA)) %>% 
+altofile = altofile %>% 
+  mutate(pa = ifelse(str_detect(value,
+                                "pa[0-9]{7}"),
+                     str_extract(value, "pa[0-9]{7}"), NA)) %>% 
     fill(pa)
 ```
 
@@ -104,8 +112,9 @@ Now we get rid of the textblock lines in the column which should contain words, 
 altofile = altofile %>%
     filter(str_detect(pa, "pa[0-9]{7}")) %>% 
     filter(!str_detect(value, "pa[0-9]{7}")) %>% 
-    filter(!str_detect(value, "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>% mutate(value = 
-   str_remove_all(value, "STYLE=\"subscript\" ")) %>% mutate(value = str_remove_all(value, "\"")) %>%
+    filter(!str_detect(value, "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>% 
+  mutate(value = str_remove_all(value, "STYLE=\"subscript\" ")) %>% 
+  mutate(value = str_remove_all(value, "\"")) %>%
    mutate(value = str_remove_all(value, "SUBS_TYPE=HypPart1 SUBS_CONTENT=")) %>%
    mutate(value = str_remove_all(value, "SUBS_TYPE=HypPart2 SUBS_CONTENT="))
 
@@ -123,29 +132,44 @@ This is the second function:
 ```{r}
 make_articles <- function(foldername){
     
-   metsfilename =  str_match(list.files(path = foldername, all.files = TRUE, recursive = TRUE, full.names = TRUE), ".*mets.xml") %>%
-    discard(is.na)
+   metsfilename =  str_match(list.files(path = foldername, 
+                                        all.files = TRUE, 
+                                        recursive = TRUE, 
+                                        full.names = TRUE),
+                             ".*mets.xml") %>%
+     discard(is.na)
     
     csvfoldername = metsfilename %>% str_remove("_mets.xml")
     
     metsfile = read_file(metsfilename)
     
-    page_list =  str_match(list.files(path = foldername, all.files = TRUE, recursive = TRUE, full.names = TRUE), ".*[0-9]{4}.xml") %>%
+    page_list =  str_match(list.files(path = foldername, 
+                                      all.files = TRUE, 
+                                      recursive = TRUE, 
+                                      full.names = TRUE), 
+                           ".*[0-9]{4}.xml") %>%
     discard(is.na)
     
     
     
-        metspagegroups = metsfile %>% str_split("<mets:smLinkGrp>")%>%
+        metspagegroups = metsfile %>% 
+          str_split("<mets:smLinkGrp>")%>%
     flatten_chr() %>%
-    as_tibble() %>% filter(str_detect(value, '#art[0-9]{4}')) %>% mutate(articleid = str_extract(value,"[0-9]{4}")) 
+    as_tibble() %>% 
+          filter(str_detect(value, '#art[0-9]{4}')) %>% 
+          mutate(articleid = str_extract(value,"[0-9]{4}")) 
 
     
      future_map(page_list, get_page) %>%
        bind_rows()  %>%
        left_join(extract_page_groups(metspagegroups$value) %>% 
                                     unnest() %>% 
-        mutate(art = ifelse(str_detect(id, "art"), str_extract(id, "[0-9]{4}"), NA)) %>% 
-        fill(art) %>% filter(!str_detect(id, "art[0-9]{4}")), by = c('pa' = 'id')) %>% 
+        mutate(art = ifelse(str_detect(id, "art"), 
+                            str_extract(id, "[0-9]{4}"), NA)) %>% 
+        fill(art) %>% 
+          filter(!str_detect(id, 
+                             "art[0-9]{4}")),
+        by = c('pa' = 'id')) %>% 
       group_by(art) %>% 
       summarise(text = paste0(value, collapse = ' ')) %>% 
        mutate(issue_name = metsfilename ) %>%
@@ -194,9 +218,12 @@ Next we need the file which lists all the pagegroups and corresponding articles.
 
 ```{r}
 
-metspagegroups = metsfile %>% str_split("<mets:smLinkGrp>") %>%
+metspagegroups = metsfile %>% 
+  str_split("<mets:smLinkGrp>") %>%
     flatten_chr() %>%
-    as_tibble() %>% filter(str_detect(value, '#art[0-9]{4}')) %>% mutate(articleid = str_extract(value,"[0-9]{4}"))
+    as_tibble() %>% 
+  filter(str_detect(value, '#art[0-9]{4}')) %>% 
+  mutate(articleid = str_extract(value,"[0-9]{4}"))
 
 ```
 
@@ -231,7 +258,8 @@ extract_page_groups <- function(article){
 
 
     id <- article %>%
-        extractor("(?<=<mets:smLocatorLink xlink:href=\"#)(.*?)(?=\" xlink:label=\")", all = TRUE)
+        extractor("(?<=<mets:smLocatorLink xlink:href=\"#)(.*?)(?=\" xlink:label=\")", 
+                  all = TRUE)
 
     type = 
     tibble::tribble(~id,
@@ -255,7 +283,12 @@ This extracts the page groups from the mets dataframe we made, and turns it into
 t = t %>%
   left_join(extract_page_groups(metspagegroups$value) %>% 
                                     unnest() %>% 
-        mutate(art = ifelse(str_detect(id, "art"), str_extract(id, "[0-9]{4}"), NA))%>% fill(art), by = c('pa' = 'id')) %>% fill(art)
+        mutate(art = ifelse(str_detect(id, "art"), 
+                            str_extract(id, 
+                                        "[0-9]{4}"), NA))%>% 
+          fill(art), 
+        by = c('pa' = 'id')) %>% 
+  fill(art)
         
 head(t, 50)
 ```
@@ -283,11 +316,13 @@ t %>%
 To run it on a bunch of folders, you'll need to make a list of paths to all the issue folders you want to process. You can do this using ```list_dirs```. You _only_ want these final-level issue folders, otherwise it will try to work on an empty folder and give an error. This means that if you want to work on multiple years or issues, you'll need to figure out how to pass a list of just the isuse level folder paths.
 
 ```{r eval=FALSE}
-folderlist = list.dirs("0002644/1809/", full.names = TRUE, recursive = TRUE)[-1]
+folderlist = list.dirs("0002644/1809/", 
+                       full.names = TRUE, 
+                       recursive = TRUE)[-1]
 ```
 
 
-Finally, this applies the function make_articles() to everything in the folderslist vector. It will write a new .csv file into each of the folders, containing the article text and codes.
+Finally, this applies the function make_articles() to everything in the folderslist vector. It will write a new .csv file into each of the folders, containing the article text and codes. You can add whatever folders you like to a vector called folderlist, and it will generate a csv of articles for each one. 
 
 ```{r eval=FALSE}
 future_map(folderlist, make_articles)
@@ -295,14 +330,21 @@ future_map(folderlist, make_articles)
 
 It's not very fast, but you should now have a .csv file in each of the issue folders, with a row per line. 
 
-We'll also make a dataframe containing all the .csv files, which is easier to work with, add a unique code for each article, and extract date and title information from the file path. I'll save this to R's data format using ```save()```
+We'll also make a dataframe containing all the .csv files, which is easier to work with, add a unique code for each article, and extract date and title information from the file path (I've put more information on this in comments in the code below). Save this to R's data format using ```save()```, for use later.
 
 ```{r}
-news_sample_dataframe = list.files("0002644/1809/", pattern = "csv", recursive = TRUE, full.names = TRUE)  %>% 
-    map_df(~read_csv(.)) %>% 
-  separate(issue_name, into = c("a","b","c","d","e"), sep = "/") %>% 
-  select(art, text, a, b, d) %>%
-  select(art, text, title = a,  year = b, date = d) %>% mutate(full_date = as.Date(paste0(year,date), '%Y%m%d')) %>% mutate(article_code = 1:n()) %>% select(article_code, everything())
+news_sample_dataframe = list.files("0002644/1809/", 
+                                   pattern = "csv", 
+                                   recursive = TRUE, 
+                                   full.names = TRUE)  %>% 
+    map_df(~read_csv(.)) %>% # These two lines take all the newly created csv files and read them into one dataframe
+  separate(issue_name, 
+           into = c("a","b","c","d","e"), sep = "/") %>% # separate the filename into some arbitrarily named colums
+  select(art, text, a, b, d) %>% # select the ones which contain information on the title and date
+  select(art, text, title = a,  year = b, date = d) %>% # change their names
+  mutate(full_date = as.Date(paste0(year,date), '%Y%m%d')) %>% # make a date column, and turn it into date format
+  mutate(article_code = 1:n()) %>% # give every article a unique code
+  select(article_code, everything()) # select all columns
 ```
 
 ```{r}
