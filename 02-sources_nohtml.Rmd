@@ -104,8 +104,6 @@ long_title_list %>%
   theme_minimal() + scale_fill_manual(values = libraryPalette) + theme(legend.title = element_text(family = 'serif'), legend.text = element_text(family = 'serif'), axis.text = element_text(family = 'serif'), axis.title = element_text(family = 'serif'))
 ```
 
-
-
 The JISC newspaper digitisation program began in 2004, when The British Library received two million pounds from the Joint Information Systems Committee (JISC) to complete a newspaper digitisation project. A plan was made to digitise up to two million pages, across 49 titles.[@ed-king-gale] A second phase of the project digitised a further 22 titles.[@shaw-newspapers; @shaw-billion for a good brief overview to the selection process for JISC 1]
 
 The titles cover England, Scotland, Wales and Ireland, and it should be noted that the latter is underrepresented although it was obviously an integral part of the United Kingdom at the time of the publication of these newspapers - something that's often overlooked in projects using the JISC data. They cover about 40 cities \@ref(fig:jisc-points), and are spread across 24 counties within Great Britain \@ref(fig:jisc-map), plus Dublin and Belfast.
@@ -143,19 +141,25 @@ The result was a heavily curated collection, albeit with decent academic rigour 
 
 This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth.[@smits_making_2016; @mussell-elemental both include some discussion and critique of the British Library Newspaper Collection] But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency, in that it used microfilm (sometimes new microfilm). But overall, one might say that the collection has specific historical relevant, and was in ways representative. It does, though, only represent a tiny fraction of the newspaper collection, and by being relevant and restricted to 'important' titles, it does of course miss other voices. For example, much of the Library's collection consists of short runs, and much of it has not been microfilmed, which means it won't have been selected for digitisation. This means that 2019 digitisation selection policies are indirectly _greatly_ influenced by microfilm selection policies of the 70s, 80s, and 90s. Subsequent digitisation projects are trying to rectify these motivations.
 
+## British Newspaper Archive
 
-
-## BRITISH NEWSPAPER ARCHIVE
-Most of the British Library's digitised newspaper collection is available on the [British Newspaper Archive](www.britishnewspaperarchive.co.uk) (BNA). The BNA is a commercial product run by a family history company called FindMyPast. FindMyPast is responsible for digitising large amounts of the Library's newspapers, mostly through microfilm. As such, they have a very different focus to the JISC digitisation projects. The BNA is constantly growing, and it already dwarfs the JISC projects by number of pages: the BNA currently hosts about 33 million pages, against the 3 million or so of the two JISC projects \@ref(fig:bna-chart) 
-
-There are several important implications for this. First, most data-driven historical work carried out on newspapers has used the JISC data, rather than the BNA collection, because of relative ease-of-access. It's an important point, as there may be an assumption that this kind of work is generally In addition, as it is a contantly evolving dataset, reproducibility is difficult. There are some exceptions: the Bristol N-Gram and named entity datasets used the FMP data, processing the top phrases and words from about 16 million pages. The collection has doubled in size since then: it's likely that were it to be run again the results would be different. 
-
-This is not only because of volume but also because of the change in focus and digitisation policy. Newspapers are selected for various reasons, but an underlying principle of coverage seems to be important: newspapers are obviously not selected at random, which necessarily results in a changing, evolving idea of bias. 
 
 ```{r include=FALSE}
 nlp_years = read_csv('https://tiles-api.britishnewspaperarchive.co.uk/readingroom.csv')
 nlp_years = nlp_years %>% mutate(year = yyyy)
 ```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+nlp_var = nlp_years %>% tally() %>% pull(n)
+```
+
+
+Most of the British Library's digitised newspaper collection is available on the [British Newspaper Archive](www.britishnewspaperarchive.co.uk) (BNA). The BNA is a commercial product run by a family history company called FindMyPast. FindMyPast is responsible for digitising large amounts of the Library's newspapers, mostly through microfilm. As such, they have a very different focus to the JISC digitisation projects. The BNA is constantly growing, and it already dwarfs the JISC projects by number of pages: the BNA currently hosts about 33 million pages, against the 3 million or so of the two JISC projects \@ref(fig:bna-chart). As of `r Sys.Date()`, there were `r nlp_var` newspaper-years on the British Newspaper Archive.
+
+There are several important implications for this. First, most data-driven historical work carried out on newspapers has used the JISC data, rather than the BNA collection, because of relative ease-of-access. It's an important point, as there may be an assumption that this kind of work is generally In addition, as it is a contantly evolving dataset, reproducibility is difficult. There are some exceptions: the Bristol N-Gram and named entity datasets used the FMP data, processing the top phrases and words from about 16 million pages. The collection has doubled in size since then: it's likely that were it to be run again the results would be different. 
+
+This is not only because of volume but also because of the change in focus and digitisation policy. Newspapers are selected for various reasons, but an underlying principle of coverage seems to be important: newspapers are obviously not selected at random, which necessarily results in a changing, evolving idea of bias. 
+
 
 ```{r bna-chart, fig.cap="Newspaper-years on the British Newspaper Archive. Includes JISC content above.", echo=FALSE, message=FALSE, warning=FALSE}
 long_title_list %>% 

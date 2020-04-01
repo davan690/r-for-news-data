@@ -283,7 +283,7 @@ The steps to create this type of map:
 * Download shapefiles for england and scotland from here
 * Turn into sf object 
 Download list of points, turn into sf object
-Use st join to get county information
+Use st_join to get county information
 Join to the title list and deselect everything except county and titles - maybe 19th century only..
 Join that to the sf object
 Plot using geom_sf()
@@ -293,6 +293,7 @@ Load libraries
 library(tidyverse)
 library(sf)
 ```
+
 ## Get county information from the title list
 
 Next, download (if you haven't already) the title list from the British Library open repository.
@@ -308,12 +309,12 @@ title_df = read_csv('BritishAndIrishNewspapersTitleList_20191118.csv')
 First, download the relevant shapefiles. These don't necessarily have to be historic ones. Use ```st_read()``` to read the file, specifying its path. Do this for England, Wales and Scotland (we don't have points for Ireland). 
 
 ```{r}
-eng_1851 = st_read("EW1891_regcounties/EW1891_regcounties.shp")
+eng_1891 = st_read("EW1891_regcounties/EW1891_regcounties.shp")
 
 ```
 
 ```{r}
-scot_1851 = st_read("Spre1890_scocounties/Spre1890_scocounties.shp")
+scot_1890 = st_read("Spre1890_scocounties/Spre1890_scocounties.shp")
 ```
 
 ## Transform from UTM to lat/long using st_transform()
@@ -322,28 +323,29 @@ These shapefiles use points system known as UTM, which stands for ['Universal Tr
 
 >it differs from global latitude/longitude in that it divides earth into 60 zones and projects each to the plane as a basis for its coordinates.
 
-It needs to be transformed into lat/long coordinates, because the coordinates we have are in that format. This is easy with ```st_transform()```. To transform correctly, the correct crs is needed. This is the code for which of the 60 zones this UTM comes from. Britain is 4326. 
+It needs to be transformed into lat/long coordinates, because the coordinates we have are in that format. This is easy with ```st_transform()```. You need to specify a lat/long 'Coordinate Reference System' or CRS. 4326 is a standard one. 
 
 
 ```{r}
-eng_1851 = st_transform(eng_1851, crs = 4326)
+eng_1891 = st_transform(eng_1891, crs = 4326)
 ```
 
 ```{r}
-scot_1851  = st_transform(scot_1851, crs = 4326)
+scot_1890  = st_transform(scot_1890, crs = 4326)
 ```
 
 
 Bind them both together, using ```rbind()``` to make one big shapefile for Great Britain. 
 
 ```{r}
-gb1851 = rbind(eng_1851, scot_1851 %>%
+gb1891 = rbind(eng_1891, scot_1890 %>%
                  select(-UL_AUTH))
 ```
 
 ## Download and merge the title list with a set of coordinates.
 
-Next, load and pre-process the set of coordinates:
+Next, load and pre-process the provided set of coordinates:
+
 ```{r}
 geocorrected = read_csv('data/geocorrected.csv')
 ```
@@ -355,7 +357,7 @@ library(snakecase)
 colnames(geocorrected) = to_snake_case(colnames(geocorrected))
 ```
 
-Change some column names further, select just the relevant columns, change the NA values and get rid of any empty entries.
+Change some more column names, select just the relevant columns, change the NA values and get rid of any empty entries.
 
 ```{r}
 colnames(geocorrected)[6:8] = c('wikititle', 'lat', 'lng')

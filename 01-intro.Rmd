@@ -27,6 +27,12 @@ While there has been a lot digitised, their is much, much more still to be done.
 
 We're just at the beginning: in the last few years projects have been using neural networks methods to improve the kinds of things we can do: the Living with machines project, for example, or several projects at the Royal Library in the Netherlands. The methods I describe here are simplistic, but they can still add to our understanding. 
 
+## An ongoing project, using Git and Bookdown.
+
+This is not meant as a finished book, but rather an ongoing project, to which we'll add chapters and hopefully convince others to edit or add chapters too. If you have comments, feel free to add them as an issue, or even fork a copy and make changes yourself. It's released under a [Creative Commons Attribution 4.0 licence](https://creativecommons.org/licenses/by/4.0/), which means you can do whatever you like with it as long as you credit the original project team. Some chapters are more finished-looking than others: check back and hopefully these will improve over time, or you can always pitch in and make changes yourself.
+
+The book itself has been created using [Bookdown](https://bookdown.org), a package for R-Studio which helps you to create book-length publications from a group of R-Markdown files. It's also available on Github.
+
 ## Goals
 This short book hopes to help you:
 
@@ -54,6 +60,7 @@ https://r4ds.had.co.nz
 ## Getting started
 The only requirements to get through these tutorials are to install R and R-Studio, as well as some data which needs to be downloaded separately. 
 
+
 ### Download R and R-Studio
 R and R-Studio are two separate things. R will work without R-studio, but not the other way around, and so it should be downloaded first. It _should_ be a simple process: Go to the download page here: https://www.r-project.org, select a download mirror, and download the correct version for your operating system. Follow the installation instructions here: https://cran.r-project.org/manuals.html if you get stuck, but it should be fairly painless. 
 
@@ -65,8 +72,6 @@ R relies on lots of additional packages for full functionality, and you'll need 
 
 ## Who is the guide for?
 Historians looking to understand news at scale. Undergraduates and postgrads looking to dip their feet into computational methods.
-
-Imagine a PhD student, hasn't used newspaper data before. What is available? How can she access it? Does she need to visit the library, or will she be happy with what's available online? 
 
 ## Format of the book
 
