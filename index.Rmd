@@ -3,7 +3,7 @@ title: "A short guide to using British Library Newspaper Data, using R"
 author: "Yann Ryan"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::pdf_book
+output: bookdown::gitbook
 documentclass: book
 bibliography: [r_for_news.bib]
 csl: mhra.csl
