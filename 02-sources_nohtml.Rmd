@@ -6,8 +6,6 @@ The British Library holds about 60 million issues, or 450 million pages of newsp
 
 >Systematic collection of newspapers at the British Museum (the precursor of the British Library) did not really begin until 1822. At that time publishers were obliged to supply copies of their newspapers to the Stamp Office so that they could be taxed. In 1822 it was agreed that these copies would be passed to the British Museum after a period of three years. From 1869 onwards newspapers were included in the legal deposit legislation and were then deposited directly at the British Museum. This systematic application of legal deposit requirements means that many thousands of complete runs of newspapers have accumulated. The majority of newspapers collected are those published since 1800.[@ed-king-gale]
 
-https://melissaterras.files.wordpress.com/2020/01/selectioncriterianewspapers_hauswedell_nyhan_beals_terras_bell-3.pdf
-
 What does this all mean for the data? First of all, it means that only a fraction of what was published has been preserved or collected, and only a fraction of that which has been collected has been digitised. Some very rough numbers: The 'newspaper-year' is a good standard unit. This is all the issues for one title, for one year. Its not perfect, because a newspaper-year of a weekly is worth the same as a newspaper-year for a daily. But it's an easy unit to count. There's currently about 40,000 newspaper-years on the British Newspaper Archive. The entire collection of British and Irish Newspapers is probably, at a guess, about 350,000 newspaper-years. 
 
 It's all very well being able to access the _content_, but for the purposes of the kind of things we'd like to do, access to the _data_ is needed. The following are the main British Library digitised newspaper sources.
@@ -16,7 +14,7 @@ It's all very well being able to access the _content_, but for the purposes of t
 
 The Burney Collection contains about one million pages, from the very earliest newspapers in the seventeenth century to the beginning of the 19th, collected by Rev. Charles Burney in the 18th century, and purchased by the Library in 1818.[@travelling-chron] It's actually a mixture of both Burney's own collction and stuff inserted since. It was microfilmed in its entirety in the 1970s. As Andrew Prescott has written, 'our use of the digital resource is still profoundly shaped by the technology and limitations of the microfilm set'[@travelling-chron] The collection was imaged in the 90s but because of technological restrictions it wasn't until 2007 when, with Gale, the British Library released the Burney Collection as a digital resource. 
 
-The accuracy of the OCR has been measured, and one report found that the ocr for the Burney newspapers offered character accuracy of 75.6% and word accuracy of 65%.[@travelling-chron]. 
+The accuracy of the OCR has been measured: one report found that the ocr for the Burney newspapers offered character accuracy of 75.6% and word accuracy of 65%.[@travelling-chron]. 
 
 ## JISC Newspaper digitisation projects
 
@@ -145,7 +143,7 @@ This is all covered in lots of detail elsewhere, including some really interesti
 
 
 
-## BRITISH NEWSPAPER ARCHIVE
+## British Newspaper Archive
 Most of the British Library's digitised newspaper collection is available on the [British Newspaper Archive](www.britishnewspaperarchive.co.uk) (BNA). The BNA is a commercial product run by a family history company called FindMyPast. FindMyPast is responsible for digitising large amounts of the Library's newspapers, mostly through microfilm. As such, they have a very different focus to the JISC digitisation projects. The BNA is constantly growing, and it already dwarfs the JISC projects by number of pages: the BNA currently hosts about 33 million pages, against the 3 million or so of the two JISC projects \@ref(fig:bna-chart) 
 
 There are several important implications for this. First, most data-driven historical work carried out on newspapers has used the JISC data, rather than the BNA collection, because of relative ease-of-access. It's an important point, as there may be an assumption that this kind of work is generally In addition, as it is a contantly evolving dataset, reproducibility is difficult. There are some exceptions: the Bristol N-Gram and named entity datasets used the FMP data, processing the top phrases and words from about 16 million pages. The collection has doubled in size since then: it's likely that were it to be run again the results would be different. 

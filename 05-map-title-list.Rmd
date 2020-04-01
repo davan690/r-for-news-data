@@ -1,8 +1,17 @@
-# Geocode and map newspaper titles
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Mapping with R: Geocode and Map the British Library's Newspaper Collection
 
 Another strong advantage of R is the ease at which you can make maps, for visualisation and also more advanced analysis. Using an openly available list of British Library titles, with some additional coordinate information, it's possible to very quickly make high-quality, publishable maps. 
 
-[](title_list_map.png) [](choropleth.png)
+```{r echo=FALSE, fig.height=6, fig.width=6, fig.cap = "British Library newspaper titles, mapped by city. Maps like this are easy to produce using R."}
+knitr::include_graphics('title_list_map.png')
+```
+
+
 
 ## Mapping with ggplot2 and mapdata
 
@@ -41,7 +50,7 @@ worldmap = map_data('world')
 Take a look at the dataframe we've created:
 
 ```{r}
-head(worldmap, 20)
+knitr::kable(head(worldmap, 20))
 ```
 
 It's a big table with about 100,000 rows. Each row has a latitude and longitude, and a group. Each region and sub-region in the dataframe has its own group number. We'll use a function ```geom_polygon``` which tells ggplot to draw a polygon (a bunch of connected lines) for each group, and display it.
@@ -59,7 +68,7 @@ Right, it needs a _bit_ of tweaking. First, we only want to plot points in the U
 We can do that with ```coord_fixed()```. ```coord_fixed()``` is used to fix the aspect ratio of a coordinate system, but can be used to specify a bounding box by using two of its arguments: ```xlim=``` and ```ylim=```. These each take a vector (a series of numbers) with two items A vector is created using ```c()```. Each item in the vector specifies the limits for that axis. So ```xlim = c(0,10)``` means _restrict the x-axis to 0 and 10_. The axes correspond to the lines of longitude (x) and latitude (y). We'll restrict the x-axis to c(-10, 4) and the y-axis to c(50.3, 60) which should just about cover the UK and Ireland. 
 
 
-```{r}
+```{r fig.cap = "Empty Map"}
 ggplot() + geom_polygon(data = worldmap, 
                         aes(x = long, 
                             y = lat, 
@@ -72,7 +81,7 @@ ggplot() + geom_polygon(data = worldmap,
 You can also change the aspect ratio of the coordinates using another ggplot function, ```coord_fixed()```. The default is 1, but by specifying a different one with the argument ```ratio =```, that can be changed. Using ```ratio = 1.3``` results in a less squashed-looking map. 
 
 
-```{r}
+```{r fig.cap="Aspect Ratio Adjustment"}
 ggplot() + 
   geom_polygon(data = worldmap, 
                aes(x = long, 
@@ -87,7 +96,7 @@ A couple more things, which I'll run through quickly.
 
 You can specify fill and line colors usings ```fill = ``` and ```color = ``` inside ```geom_polygon()``` but _outside_ ```aes()```. 
 
-```{r}
+```{r fig.cap = "Colours and Fill"}
 ggplot() + 
   geom_polygon(data = worldmap, 
                aes(x = long, y = lat, 
@@ -146,15 +155,15 @@ location_counts = title_list %>%
 Arranging these in descending order of their count shows how many of each we have:
 
 ```{r}
-location_counts %>% 
-  arrange(desc(n))
+knitr::kable(location_counts %>% 
+  arrange(desc(n)) %>% head(10))
 ```
 
 ### Get hold of a list of geocoordinates
 
 These coordinates have been produced in cooperation with another project with the Library, _Living with Machines_. We used smart annotations to quickly correct and train a georeferencer, to generate coordinates with much higher accuracy than, say, geonames or a google georeferencer. These can be joined to the title list downloaded from the repository, and then easily mapped. 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 geocorrected = read_csv('data/geocorrected.csv')
 ```
 
@@ -167,7 +176,7 @@ colnames(geocorrected) = to_snake_case(colnames(geocorrected))
 
 Do a bit of pre-processing to this. Change some column names further, select just the relevant columns, change the NA values and get rid of any empty entries.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 colnames(geocorrected)[6:8] = c('wikititle', 
                                 'lat', 
                                 'lng')
@@ -221,13 +230,13 @@ lc_with_geo_counts = lc_with_geo %>%
 Now we've got a dataframe with counts of total newspapers, for each standardised wikipedia title in the dataset.
 
 ```{r}
-head(lc_with_geo_counts,20)
+knitr::kable(head(lc_with_geo_counts,10))
 ```
 
 
 OK, lc_with_geo_counts is what we want to plot. This contains the city title, coordinates and counts for all the relevant places in our dataset. But first we need the map we created earlier. 
 
-```{r}
+```{r fig.cap="Blank Map of UK and Ireland"}
 ggplot() + 
   geom_polygon(data = worldmap, aes(x = long, 
                                     y = lat, 
@@ -248,9 +257,7 @@ One last thing we'll add is ```+scale_size_area()```. This sizes the points usin
 
 Using ```labs()```, add a title, and with ```scale_size_area()``` and ```scale_color_viridis_c()```, make some changes to the size and colours, respectively.
 
-```{r warning=FALSE}
-
-
+```{r warning=FALSE, fig.cap="Finished Map"}
 ggplot() + 
   geom_polygon(data = worldmap, 
                aes(x = long, y = lat, group = group), 
@@ -260,17 +267,18 @@ ggplot() +
   geom_point(data = lc_with_geo_counts, 
              aes(x = as.numeric(lng), 
                  y = as.numeric(lat), size = n, color = log(n)), alpha = .7) + 
-  scale_size_area(max_size = 15) + 
+  scale_size_area(max_size = 8) + 
   scale_color_viridis_c() + 
   theme(legend.position = 'none') + 
-  labs(title = "Newspapers Held by the British\nLibrary, Great Britain") + 
-  theme(title = element_text(size = 16))
+  theme(title = element_text(size = 12))
 
 ```
 
 
 ## Drawing a newspaper titles 'Choropleth' map with R and the sf package
 
+![](choropleth.png)
+ 
 Another type of map is known as a 'choropleth'. This is where the data is visualised by a certain polygon area rather than a point. Typically these represent areas like parishes, counties or countries. Using the library ```sf```, which stands for Simple Features, a choropleth map can be made quite quickly. A choropleth map uses a shapefile, which is a list of polygons and a _projection_. 
 
 The trick here is to use the coordinates to correctly situate each set of points within the correct county, as found in the shapefile. Then, count up the titles by this corrected county, and use this total to color or shade the map. The good thing about this method is that once you have a set of coordinates, they can be situated within any shapefile - a historic map, for example. This is particularly useful for anything to do with English counties, which tend to be changed pretty regularly. 
@@ -289,7 +297,7 @@ Join that to the sf object
 Plot using geom_sf()
 
 Load libraries
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(sf)
 ```
@@ -297,7 +305,7 @@ library(sf)
 
 Next, download (if you haven't already) the title list from the British Library open repository.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 title_df = read_csv('BritishAndIrishNewspapersTitleList_20191118.csv')
 ```
 
@@ -307,12 +315,12 @@ title_df = read_csv('BritishAndIrishNewspapersTitleList_20191118.csv')
 
 First, download the relevant shapefiles. These don't necessarily have to be historic ones. Use ```st_read()``` to read the file, specifying its path. Do this for England, Wales and Scotland (we don't have points for Ireland). 
 
-```{r}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 eng_1851 = st_read("EW1891_regcounties/EW1891_regcounties.shp")
 
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 scot_1851 = st_read("Spre1890_scocounties/Spre1890_scocounties.shp")
 ```
 
@@ -325,11 +333,11 @@ These shapefiles use points system known as UTM, which stands for ['Universal Tr
 It needs to be transformed into lat/long coordinates, because the coordinates we have are in that format. This is easy with ```st_transform()```. To transform correctly, the correct crs is needed. This is the code for which of the 60 zones this UTM comes from. Britain is 4326. 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 eng_1851 = st_transform(eng_1851, crs = 4326)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 scot_1851  = st_transform(scot_1851, crs = 4326)
 ```
 
@@ -344,7 +352,7 @@ gb1851 = rbind(eng_1851, scot_1851 %>%
 ## Download and merge the title list with a set of coordinates.
 
 Next, load and pre-process the set of coordinates:
-```{r}
+```{r message=FALSE, warning=FALSE}
 geocorrected = read_csv('data/geocorrected.csv')
 ```
 
@@ -357,7 +365,7 @@ colnames(geocorrected) = to_snake_case(colnames(geocorrected))
 
 Change some column names further, select just the relevant columns, change the NA values and get rid of any empty entries.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 colnames(geocorrected)[6:8] = c('wikititle', 'lat', 'lng')
 
 geocorrected = geocorrected %>% select(-1, -9,-10, -11, -12)
@@ -379,7 +387,7 @@ geocorrected = geocorrected %>%
 Next, join these points to the title list, so that every title now has a set of lat/long coordinates. 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 title_df = title_df %>% 
   left_join(geocorrected) %>% 
   filter(!is.na(lat)) %>% 
@@ -398,13 +406,13 @@ st_title = st_title  %>% st_set_crs(4326)
 
 Now, we can use a special kind of join, which will join the points in the title list, if they are within a particular polygon. The resulting dataset now has the relevant county, as found in the shapefile.
 
-```{r}
+```{r message=FALSE, warning=FALSE, paged.print=TRUE}
 st_counties = st_join(st_title, gb1851)
 ```
 
 Make a new dataframe, containing just the counties and their counts.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 county_tally = st_counties %>% 
   select(G_NAME) %>% 
   group_by(G_NAME) %>% 
@@ -416,7 +424,7 @@ county_tally = st_counties %>%
 
 Join this to the shapefile we made earlier, which gives a dataset with the relevant counts attached to each polygon. This can then be visualised using the ```geom_sf()``` function from ggplot2, and all of ggplot2's other features can be used.  
 
-```{r}
+```{r message=FALSE, warning=FALSE, fig.cap="Choropleth Made with geom_sf()"}
 
 gb1851 %>% 
   left_join(county_tally) %>% 
@@ -428,8 +436,10 @@ gb1851 %>%
   labs(title = "British Library Newspaper\nTitles, by County", 
        fill = 'No. of Titles:') + 
   theme(legend.position = 'left') +
-  theme(title = element_text(size = 16), 
-        legend.title = element_text(size = 10))
+  theme(title = element_text(size = 12), 
+        legend.title = element_text(size = 8))
+
+
 
 
 ```
@@ -437,4 +447,4 @@ gb1851 %>%
 
 Further reading:
 
-Geocomputation in R link
+The book 'Geocomputation with R' is a fantastic resource for learning about mapping: https://geocompr.robinlovelace.net. It's surprisinly easy to read even though it goes through some pretty advanced topics. 

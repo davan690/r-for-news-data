@@ -1,5 +1,10 @@
 # Introduction
 
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.width=8, fig.height=6)
+```
+
+
 ## Unlocking the past with newspaper data
 
 Imagine a historian, similar to that described in the Historian's Macroscope, sits down to do some research. She is interested in the reception of news about the Crimean War, in Manchester. But where to start? Well, first she narrows down the list of newspapers to consult using an interactive map. For this research, she'll look at everything published in Manchester between 1853 and 1857. But also, she's interested in a more fine-grained group of titles: this will specifically be a study of the established press: so those that lasted a long time, at least fifty years in total. And while she's at it, she'll specify that she's only interested in the Liberal press, using an enriched database of political leanings.
@@ -20,7 +25,7 @@ Things have moved on from the first generation of 'how-to' guides for digital hu
 
 On the other hand, the promise of scraping the web for open data, while still with its place, has in many ways been superseded. The historian looking to use newspaper data must wrestle with closed systems, proprietary formats and so forth. The sheer quantity of newspaper data, and its commercial roots (and perhaps new commercial future), mean that it has not been treated in the same way as many other historical datasets. Newspaper data has, up until recently, had several financial, legal, bureaucratic and technical hurdles. 
 
-## Why is it useful?
+## What can you do with newspaper data?
 There is a _lot_ of newspaper data available now for historical researchers. Across the globe, the keepers of cultural memory are digitising their collections. Most news digitisation projects do OCR and zoning, meaning that the digitised images are processed so that the text is machine readable, and then divided into articles. It's far from perfect - we'll show some examples in a later chapter - but it does generate a large amount of data: both the digitised images, and the underlying text and information about the structure.  Once you get hold of this data, the rewards can be huge: looking just at English-language users in the last few years, researchers have used it to understand Victorian jokes, trace the movement of information and ideas, understand the effects of industrialisation, track the meetings of radical groups, and of course understand more about the newspapers themselves and the print culture that surrounds them.
 
 While there has been a lot digitised, their is much, much more still to be done. The collection, in any country, is far from representative. But we must work with what we've got. The new histories of the press will be written by looking at text at scale, drawing broad conclusions, understanding genre, authorship and so forth through data analysis. 
@@ -61,7 +66,7 @@ Next, download R-Studio here: https://rstudio.com/products/rstudio/. You'll want
 
 At this point, I would highly recommend reading a beginners guide to R and R-studio, such as this one: https://moderndive.netlify.com/1-getting-started.html to familiarise yourself with the layout and some of the basic functionality of R-Studio. Once you understand where to type and save code, where your files and dataframes live, and how to import data from spreadsheets, you should be good to start experimenting with newspaper data. 
 
-R relies on lots of additional packages for full functionality, and you'll need to install these by using the function ```install.packages()```, folled by the package name, in inverted commas. I recommend doing this to install the tidyverse suite of packages which you will end up using all the time. 
+R relies on lots of additional packages for full functionality, and you'll need to install these by using the function ```install.packages()```, folled by the package name, in inverted commas. I recommend doing this to install the tidyverse suite of packages by running ```install.packages('tidyverse')``` in the Console window (the bottom-left of the screen in R-Studio) as you'll end up using this all the time. 
 
 ## Who is the guide for?
 Historians looking to understand news at scale. Undergraduates and postgrads looking to dip their feet into computational methods.

@@ -1,6 +1,7 @@
 # OCR and its problems
 
-## What is OCR?
+## Introduction
+OCR, or 'Optical Character Recognition', is a series of methods for turning the text in digitised images into machine-readable code.
 
 ## What is it like in BL newspapers?
 
@@ -20,14 +21,9 @@ This is a difficult question to answer, because it varies so much between projec
 
 * What does this all mean? Well, it introduces bias, and probably in non-random ways, but in ways that have implications for our work. If things are digitised from a mix of print and microfilm, for example, we might get very different results for the print portion, which might easily be mis-attributed to a historical finding. Perhaps there were twice as many mentions of cheese in the 1850s than in the 1890s? It's probably best to rule out that this is not just because later newspapers had a difficult font, or they were digitised from microfilm instead of print. [@hill-ocr, @Cordell_2017, @Piotrowski_2012, @cordell-ocr, @evershed-ocr]
 
+## OCR report on the first two batches of content on the BL Open Repository
 
-```{r include=FALSE}
-knitr::opts_chunk$set(dev = 'png')
-```
-
-## Introduction
-
-The first two batches of digitised content received from Find My Past as part of the Heritage Made Digital Project consist of about 290,000 pages (see separate report). This short report evaluates the OCR quality (using one metric), comparing across time and formats. Conclusions are as expected: Processing from print results in significantly higher reported accuracy scores (though this may not reflect real-world OCR tests). The reported accuracy increases dramatically across time, particularly for print titles. 
+The first two batches of digitised content available on the repository consist of about 290,000 pages (see separate report). This short report evaluates the OCR quality (using one metric), comparing across time and formats. Conclusions are as expected: Processing from print results in significantly higher reported accuracy scores (though this may not reflect real-world OCR tests). The reported accuracy increases dramatically across time, particularly for print titles. 
 
 The files returned from FMP contain a 'predicted word accuracy score' percentage for each page. These can be extracted and visualised, with some interesting conclusions. However it's important to note these are not calculated by comparing actual results to the OCR, but rather use an internal algorithm. Some links worth reading to understand more about OCR and confidence scores:
 
@@ -148,7 +144,7 @@ batch1_2 = tibble(title,nlp, type)
 
 The data includes 290,000 separate ALTO files, each representing one page. From the files, the 'predicted word accuracy' score has been extracted, and turned into a dataframe. The data contains about 117,000 files digitised from microfilm, and 173,000 digitised from print. This makes an interesting dataset to compare OCR quality scores across two different formats, by the same company at the same time. 
 
-```{r message=FALSE, warning=FALSE, include=FALSE, fig.cap="Number of pages over time"}
+```{r message=FALSE, warning=FALSE, include=FALSE, fig.cap="Number of pages over time", dev='png'}
 all_ocr %>%
   left_join(batch1_2) %>% 
   mutate(year = cut(date, 'year')) %>% 
@@ -176,7 +172,7 @@ Front pages have consistently lower scores than other pages. This is mostly beca
 
 This visualisation also shows the existence of multiple editions: dark lines on pages 9, 17 etc. are front pages of _subsequent_ editions which have also been scanned under the same date. Points have been randomly spaced out for readability.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="OCR accuracy visualised by page, across the dataset. Lighter colours represent higher accuracy. Clear difference between the front and subsequent pages can be seen."}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="OCR accuracy visualised by page, across the dataset. Lighter colours represent higher accuracy. Clear difference between the front and subsequent pages can be seen.", dev='png'}
 all_ocr  %>%  
   ggplot() + 
   geom_jitter(aes(x = date, y = page, color = accuracy), 
@@ -189,7 +185,7 @@ all_ocr  %>%
 ## Highest and lowest results:
 
 The lowest results are all from the Lady's Newspaper - this was an illustrated title and so the score is probably meaningless. 
-```{r}
+```{r echo=FALSE}
 knitr::kable(all_ocr %>% arrange(accuracy) %>% head(10))
 ```
 
@@ -205,7 +201,7 @@ Another way of looking at pages. Page one is consistently lowest predicted accur
 
 In general the predicted accuracy scores move upwards over time, and variation decreases. This is particularly clear in titles processed from print as the ntext  
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Visualising OCR accuracy scores. Each dot represents a single page, positioned by date and reported accuracy. Pages are coloured by page position. Only the first four page positions are shown, for readability"}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Visualising OCR accuracy scores. Each dot represents a single page, positioned by date and reported accuracy. Pages are coloured by page position. Only the first four page positions are shown, for readability", dev='png'}
 all_ocr  %>% filter(page %in% c('0001', '0002', '0003', '0004')) %>%
   ggplot() + 
   geom_point(aes(x = date, 
@@ -224,7 +220,7 @@ Approximately half of the data is from titles which were processed from microfil
 
 Particularly apparent is the difference in improvement over time: There's no obvious increase in the scores of microfilm titles over time, but there is a significant change in print titles: from 1825 the predicted accuracy scores for print increase significantly, and the variation reduces noticeably. 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Microfilm vs Print: difference in the distribution and evolution of accuracy scores for titles digitised from both formats."}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Microfilm vs Print: difference in the distribution and evolution of accuracy scores for titles digitised from both formats.", dev='png'}
 all_ocr  %>% filter(page %in% c('0001', '0002', '0003', '0004')) %>%
   left_join(batch1_2) %>%
   filter(nlp!="0002254") %>% 
@@ -245,7 +241,7 @@ all_ocr  %>% filter(page %in% c('0001', '0002', '0003', '0004')) %>%
 
 Charting the average score (averaged over an entire year, so take with a pinch of salt) shows the different between microfilm and print more starkly:
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="A broad view of improvement. Print titles show much more improvement in the assessed accuracy of the OCR over time"}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.cap="A broad view of improvement. Print titles show much more improvement in the assessed accuracy of the OCR over time", dev='png'}
 all_ocr  %>% 
   left_join(batch1_2) %>%
   filter(nlp!="0002254") %>% 
