@@ -10,11 +10,17 @@ What does this all mean for the data? First of all, it means that only a fractio
 
 It's all very well being able to access the _content_, but for the purposes of the kind of things we'd like to do, access to the _data_ is needed. The following are the main British Library digitised newspaper sources.
 
+
+```{r echo=FALSE, fig.cap = "An interactive map of the British Library's physical newspaper collection. Links are to the catalogue entry."}
+knitr::include_app("https://yannryan.shinyapps.io/newspapers_by_title/")
+```
+
+
 ## Burney Collection
 
 The Burney Collection contains about one million pages, from the very earliest newspapers in the seventeenth century to the beginning of the 19th, collected by Rev. Charles Burney in the 18th century, and purchased by the Library in 1818.[@travelling-chron] It's actually a mixture of both Burney's own collction and stuff inserted since. It was microfilmed in its entirety in the 1970s. As Andrew Prescott has written, 'our use of the digital resource is still profoundly shaped by the technology and limitations of the microfilm set'[@travelling-chron] The collection was imaged in the 90s but because of technological restrictions it wasn't until 2007 when, with Gale, the British Library released the Burney Collection as a digital resource. 
 
-The accuracy of the OCR has been measured: one report found that the ocr for the Burney newspapers offered character accuracy of 75.6% and word accuracy of 65%.[@travelling-chron]. 
+The accuracy of the OCR has been measured, and one report found that the ocr for the Burney newspapers offered character accuracy of 75.6% and word accuracy of 65%.[@travelling-chron]. 
 
 ## JISC Newspaper digitisation projects
 
@@ -139,9 +145,81 @@ What's really clear, is that the selection was driven by assumed historical need
 The result was a heavily curated collection, albeit with decent academic rigour and good intentions and like all collections created in this way, it is subject, quite rightly, to a lot of scrutiny by historians. [@Fyfe_2016 for example]
 
 
-This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth.[@smits_making_2016; @mussell-elemental both include some discussion and critique of the British Library Newspaper Collection] But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency, in that it used microfilm (sometimes new microfilm). But overall, one might say that the collection has specific historical relevant, and was in ways representative. It does, though, only represent a tiny fraction of the newspaper collection, and by being relevant and restricted to 'important' titles, it does of course miss other voices. For example, much of the Library's collection consists of short runs, and much of it has not been microfilmed, which means it won't have been selected for digitisation. This means that 2019 digitisation selection policies are indirectly _greatly_ influenced by microfilm selection policies of the 70s, 80s, and 90s. Subsequent digitisation projects are trying to rectify these motivations.
+This is all covered in lots of detail elsewhere, including some really interesting critiques of the access and so forth.[@smits_making_2016; @mussell-elemental both include some discussion and critique of the British Library Newspaper Collection] But the overall makeup of it is clear, and this was a very specifically curated collection, though it was also influenced by contingency, in that it used microfilm (sometimes new microfilm). But overall, one might say that the collection has specific historical relevant, and was in ways representative. It does, though, only represent a tiny fraction of the newspaper collection, and by being relevant and restricted to 'important' titles, it does of course miss other voices. For example, much of the Library's collection consists of short runs, and much of it has not been microfilmed, which means it won't have been selected for digitisation. This means that 2019 digitisation selection policies are indirectly _greatly_ influenced by microfilm selection policies of the 70s, 80s, and 90s. Subsequent digitisation projects are trying to rectify these motivations, but again, it's good to keep in mind the 
 
 
+```{r include=FALSE}
+leaflet_list = title_list %>% 
+  filter(!is.na(link_to_british_newspaper_archive)) %>% 
+  left_join(geocoded) %>% 
+  group_by(wikititle, wikilon, wikilat) %>% 
+  tally()
+```
+```{r include=FALSE}
+library(leaflet)
+```
+```{r include=FALSE}
+links = title_list %>% 
+  left_join(geocoded) %>% 
+  group_by(wikititle, wikilon, wikilat) %>%
+            filter(!is.na(link_to_british_newspaper_archive)) %>%
+            distinct(nid, .keep_all = TRUE) %>%
+            summarise(link = paste("<p><a href=",
+                                   link_to_british_newspaper_archive,">",
+                                   publication_title,"</a>", 
+                                   first_date_held, " - ", 
+                                   last_date_held, "</p>\n", 
+                                   collapse = "\n"))
+
+
+```
+
+```{r include=FALSE}
+leaflet_list = leaflet_list %>% left_join(links) %>% filter(!is.na(link))
+```
+```{r include=FALSE}
+lat <- 53.442788
+lng <- -2.244708
+zoom <- 5
+pal1871 <- colorBin("viridis", domain=leaflet_list$n, bins = c(0,5,10,15,20,25,30,35,Inf))
+```
+
+```{r include=FALSE}
+popup_sb <- paste0(leaflet_list$wikititle, "\n", "Total unique titles: ", leaflet_list$n)
+leaflet_list  = leaflet_list %>% ungroup() %>% mutate(wikilon = as.numeric(wikilon)) %>% mutate(wikilat = as.numeric(wikilat))
+
+popup_sblab <- leaflet_list$link
+
+```
+
+```{r echo=FALSE, fig.cap = "Interactive map of the JISC Newspapers"}
+leaflet() %>%  
+            addTiles(
+            ) %>% 
+            setView(lat = lat, lng = lng, zoom = zoom)%>% 
+            clearShapes() %>% 
+            clearControls() %>%
+  addCircleMarkers(data = leaflet_list %>% mutate(n = replace(n, wikititle == 'London', 40)),lng = ~wikilon, lat = ~wikilat, weight = 1, #cheat and change London to a smaller number, so it doesn't overlap other points
+    radius = ~n*.25 %>% sqrt(), ,
+                        fillColor = ~pal1871(n),fillOpacity = 0.7,
+                        color = "gray95",popup = ~popup_sblab,
+                        popupOptions = popupOptions(maxHeight = 100), label=popup_sb,
+                        labelOptions = labelOptions(
+                            style = list("font-weight" = "normal", padding = "3px 8px"),
+                            textsize = "15px",
+                            direction = "auto")
+  ) %>%
+            addLegend(pal = pal1871, 
+                      values = n,
+                      opacity = 0.7,
+                      position = 'bottomright',
+                      title = 'Unique titles:')
+```
+
+
+Currently researchers access this either through Gale, or through the British Library as an external researcher. Many researchers have requested access to the collection through Gale, which they will apparently do in exchange for a fee for the costs of the hard drives and presumably some labour time. The specifics of the XML used, and some code for extracting the data, are available in the following chapter.
+
+Some researchers have also got access to the collection through 
 
 ## British Newspaper Archive
 Most of the British Library's digitised newspaper collection is available on the [British Newspaper Archive](www.britishnewspaperarchive.co.uk) (BNA). The BNA is a commercial product run by a family history company called FindMyPast. FindMyPast is responsible for digitising large amounts of the Library's newspapers, mostly through microfilm. As such, they have a very different focus to the JISC digitisation projects. The BNA is constantly growing, and it already dwarfs the JISC projects by number of pages: the BNA currently hosts about 33 million pages, against the 3 million or so of the two JISC projects \@ref(fig:bna-chart) 
@@ -155,7 +233,7 @@ nlp_years = read_csv('https://tiles-api.britishnewspaperarchive.co.uk/readingroo
 nlp_years = nlp_years %>% mutate(year = yyyy)
 ```
 
-```{r bna-chart, fig.cap="Newspaper-years on the British Newspaper Archive. Includes JISC content above.", echo=FALSE, message=FALSE, warning=FALSE}
+```{r bna-chart, fig.cap="Newspaper-years on the British Newspaper Archive. Note that this includes JISC content above.", echo=FALSE, message=FALSE, warning=FALSE}
 long_title_list %>% 
   left_join(nlp_years) %>% 
   filter(!is.na(yyyy)) %>% 
