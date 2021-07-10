@@ -1,6 +1,7 @@
 # Constructing a corpus from Trove's API
 
 ## Intro
+
 Believe it or not, there are other collections and newspapers datasets in addition to the British Library. 
 
 Trove, the National Library of Australia's content platform, is one such collection. 

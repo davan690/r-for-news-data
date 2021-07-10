@@ -59,9 +59,10 @@ The promise of newspaper data is great, but the practicalities are complex, and 
 
 Difference between content and data? It's arbitrary, all of the digitised content could be considered data. Perhaps it takes on that name when we do certain acts on it? For example the images become data 
 
-Get a nice image for here
+Get a nice image for here <could use southern right whale image?>
 
 ## Why is it useful?
+
 There is a _lot_ of newspaper data available now for historical researchers. Across the globe, Heritage Organisations are digitising their collections. Most news digitisation projects do OCR and zoning, meaning that the digitised images are processed so that the text is machine readable, and then divided into articles. It's far from perfect - we'll show some examples in a later chapter - but it does generate a large amount of data: both the digitised images, and the underlying text and information about the structure.  Once you get hold of this data, the rewards can be huge: looking just at English-language users in the last few years, researchers have used it to understand Victorian jokes, trace the movement of information and ideas, understand the effects of industrialisation, track the meetings of radical groups, and of course understand more about the newspapers themselves and the print culture that surrounds them.
 
 While there has been a lot digitised, their is much, much more still to be done. The collection, in any country, is far from representative. But we must work with what we've got. The new histories of the press will be written by looking at text at scale, drawing broad conclusions, understanding genre, authorship and so forth through data analysis. 
