@@ -3,6 +3,7 @@
 ## What is OCR?
 
 ## What is it like in BL newspapers?
+
 In a word, terrible. Well, it varies a lot, and the truth is, nobody _really_ knows what it's like, because that would involve having large sets of very accurate, manually transcribed newspapers, to compare to the OCR text. Subjectively, we can probably make a few generalisations. 
 
 It gets better as the software gets better, but not particularly quickly, because much of the quality is dependant on things to do with the physical form. 

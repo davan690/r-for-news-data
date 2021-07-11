@@ -3,6 +3,7 @@
 The motivation behind this book was to provide a way to access and analyse newspaper data using a programming language that I am familiar with. The reason is simple: you write what you know, and I know R best. With its interface, R-Studio, I think it has the easiest transition from someone used to spreadsheet programs, and you'll realise that most of what you do is filter, sort, count and select columns in a data format called a dataframe. 
 
 ## What and why?
+
 I think R and R-Studio have the easiest transition from someone used to Excel, and you'll realise that most of what you do is filter, sort, count and select columns in a data format called a dataframe. 
 
 A dataframe is basically a spreadsheet - it contains rows with observations, and columns with variables. Each row is generally a _thing_, for want of a better word. A thing that wants to be counted, either by summarising it as a more general thing, or turning it into something else and then counting it, or removing some of the things first and then counting the leftovers. For me, thing might be a record of a newspaper title, or a newspaper article (and its text), or it might be a single word.
@@ -12,6 +13,7 @@ You can do a lot more interesting tasks with a thing in a dataframe. A thing mig
 ## Using R
 
 ### Base R commands
+
 I don't use them very much, but R does have a bunch of very well-developed commands for doing the sorting, filtering and counting mentioned above. If you want to learn base R, I recommend the following:
 
 It is worth understanding the main types of data that you'll come across, in your environment window. First, you'll have dataframes. These are the spreadsheet-like objects which you'll use in most analyses. They have rows and columns. 

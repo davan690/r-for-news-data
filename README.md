@@ -1,6 +1,9 @@
 # R for News Data
 
-I'm writing a book using R-studio, bookdown and Git/Github.
+I'm writing a book using R-studio, bookdown and Git/Github.This is a great idea for a range of reasons including:
+
+- easy access and web publication
+- 
 
 It'll be a short history of digital newspapers, an overview of where to find newspaper data, and some tutorials mostly using R.
 

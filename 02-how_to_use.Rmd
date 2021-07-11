@@ -1,6 +1,7 @@
 # How to use this book
 
 ## What is this?
+
 This might look like a static book but in fact it's a living, breathing document. It's actually written using a programming language. The language is called R. It's an open source language that was originally used for very specifically statistics-heavy work, but it's become much more general in the last few years. Part of this is in thanks to R-Studio, which is an IDE for R. This book is written in R-studio using a language called R markdown. This is a way of writing and formatting text like a word processor, except you use code to specify what you want and the program decides how it should look and renders it, rather than moving around the elements you see on front of you. All the plots you see are not images, but rather real bits of code, which run every time the book is rendered, and produce the relevant plots or tables. It means that all the code you type _has_ to work, otherwise the book can't render. That's a pretty sweet way of making sure everything is correct!
 
 You can just read this book as is, but you can also play around with it, change the code and make your own copy, simply by downloading R-Studio and a bunch of packages to go along with it. You'll also see that with a little bit more work, you can clone a copy and make changes, which can then be _suggested_ as changes for this version, or just kept in your copy. 
@@ -10,13 +11,13 @@ You can just read this book as is, but you can also play around with it, change 
 You don't actually need to download and use R-Studio to make changes to the book, but it does of course limit you to simply changing the text. You can simply register an account on [Github](Github.com) go to the [Github page](https://github.com/yannryanBL/r-for-news-data). You'll see a list of files. The '.Rmd' files contain the markdown which builds the book. Here you can click edit, and change whatever you want. It will create a copy for, known as a 'branch', and you can keep working away on it, or you can submit a pull request. If this is approved, it will then get added to the master branch, and be added to the 'live' version of the book. It probably works best for small changes like typographical errors, but I guess you could write code as long as it all worked.
 
 ## Download a copy
+
 This book lives on a public repository on GitHub. That means that it can be downloaded and potentially changed by anyone. You can download a copy of all the files that make up this book, which includes code, figures, pictures, a bibliography file and some other bits. 
 
 It's pretty easy to download, you don't even need a github account. Navigate to [Github page](https://github.com/yannryanBL/r-for-news-data). On the top right-hand corner there's a big green button which says 'clone or download' Clicking on this gives a URL, which can be used with git on your computer to properly download the repository. You can also download the whole things as a zip, unzip it and start a new project in R-studio. 
 
 ## Download R and R-Studio
 The first thing you'll need is R and R-studio. They are separate things, which might seem confusing or really obvious, depending on your exposure to programming languages. R is the main software. You could actually just download this and run it with a command prompt and a text editor, if you wanted to. R-Studio is an interface to the language, which makes it much easier to use, and adds lots of extra features. 
-
 This bit is pretty simple. You download the latest version of R, install it, and then download R-studio and install that. 
 
 R-Studio has four main windows, each with a number of tabs. The top left is where you write code, and view the dataframes you've created or imported. The top right contains your environment, which is a list of all your dataframes, variables and functions and other bits (and also some extra tabs once we've installed some more packages). The bottom right is a list of files in your project's directory. 

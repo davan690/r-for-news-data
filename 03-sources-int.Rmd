@@ -183,33 +183,39 @@ Free and open for early material
 OCR; search; browse by date; browse by region; 
 
 ### Trove
+
+< This is the section I will work on first. :)
+
 National Library of Australia
 Australia
 
-Newspapers; Govt. Gazettes; Journals & datasets; books; pictures & photos; sound, music & video; diaries & letters; websites; people
+`Newspapers; Govt. Gazettes; Journals & datasets; books; pictures & photos; sound, music & video; diaries & letters; websites; people`
 
 Trove is an online database of resources relating to Australia, including newspapers and other material. It is a centralised repository for material from a large number of suppliers, including 221,289,583 newspaper articles. Trove has a very effective and useful API and is used by lots of external researchers as well as for commerical use. The metadata about resources is processed for searching via the website and API, but Trove actually hosts the newspaper content themselves. They also have user tools such as making corrections, tagging etc with a substantial volunteer community making changes. More information here: https://oceanicexchanges.org/2018-05-29-data-reports-trove/
 
-400,000 pages in the past financial year.
+`400,000 pages in the past financial year.`
 
 https://trove.nla.gov.au/newspaper/
 
 http://help.nla.gov.au/trove/building-with-trove/api
 
-24 million pages
+`24 million pages`
 
-3,800 titles pre-1955. 1,500 of these have been digitised. 
+`3,800 titles pre-1955`. 1,500 of these have been digitised.
 
 Funded by National Library but also State and local libraries sometimes pay to have their material digitised/uploaded
 PDF download
 
-Free, open API. Material is mostly pre-1955 and therefore can be digitised without copyright agreement. Some post-1955 material with agreement from the publishers.
+`Free, open API. Material is mostly pre-1955 and therefore can be digitised without copyright agreement. Some post-1955 material with agreement from the publishers.`
 
-OCR; segmentation; search;browse by date; API; metadata
+`OCR`; segmentation
+`search`;browse by date
+`API`; metadata
 
 Drifter; Culture collage; Eyes on the Past; The Front Page; Trove Zone Explorer
 
 ### Papers Past
+
 National Library of New Zealand
 New Zealand
 
@@ -308,11 +314,12 @@ Collection of digital objects, including newspapers. Some interesting features i
 Singapore's national newspaper collection. Newspapers from 1831 onwards, plus a catelogue of the National Library's microfilm holdings. Interesting 'search terms visualiser', essentially an N-Gram timeline, with up to five words at a time. Gives actual numbers rather than relative frequency, which isn't very helpful if the material is not evenly spread out over the time. Also 'this week in history' and 'most viewed articles' sections. Search brings up OCR text first, rather than images. Cannot download full files 
 
 ### Svenska dagstidningar
+
 Partial Swedish Newspaper archive, containing over 500 titles, from 1645 to the present day. Material up until 1903 is freely available, anything after that only in the reading rooms of various Swedish libraries. 
 
 https://tidningar.kb.se/
 
-500 titles
+`500` titles
 
 ### Handwritten Newspapers Project
 Archive of handwritten news from around the world. First issue is from 1700. Browsable by date. Some images but mostly links or catelogue records
