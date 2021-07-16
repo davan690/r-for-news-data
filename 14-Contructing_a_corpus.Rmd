@@ -1,5 +1,7 @@
 # Constructing a corpus
 
+> Definition: A corpus can be looked at as a 
+
 Think about what you need: does it need to be representative? Are you interested in news as historical source, or are you interested in it from a generic or stylistic point of view? Are you using the news data to say something quantitative and statistical or is it more analytical?
 
 Find out what you can access, first of all. You'll need to work from practicalities rather than ideals. Do you have the time, support and money to request a large dataset of newspapers from Gale, and if you get it, will you have the expertise to use it?
