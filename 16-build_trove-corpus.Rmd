@@ -1,20 +1,28 @@
 # Constructing a corpus from Trove's API
 
+Working with text data in R can be a bit challenging but some things are quite straight forward if then data is in a tidy format (cite).
 ## Intro
 
 Believe it or not, there are other collections and newspapers datasets in addition to the British Library. 
 
 Trove, the National Library of Australia's content platform, is one such collection. 
 
-You can access it through here, but it also has an API. An API stands for Application Programming Interface. It's basically a set of instructions and commands which, when shared, allow programs to interface with a service or set of data. 
+You can access it through here, but it also has an API. 
 
-You use the Trove API by building URL queries. If you use the accepted format and vocabulary of the API, these URLs will retrieve information you've asked for. The URL can be sent to the server to retrieve the information in lots of different ways.
+```{r}
 
-You can build a URL query and put it in your browser URL bar, and instead of retrieving a website, your browser will retrieve the results of the query. For example, you can ask Trove for all the newspaper articles with a certain search term, and it will return a file, in your browser, of all the relevant results. 
+
+```
+
+
+
+An API stands for Application Programming Interface. It's basically a set of instructions and commands which, when shared, allow programs to interface with a service or set of data. You use the Trove API by building `URL` queries. If you use the accepted format and vocabulary of the API, these URLs will retrieve information you've asked for. The URL can be sent to the server to retrieve the information in lots of different ways.
+
+You can build a `URL` query and put it in your browser `URL` bar, and instead of retrieving a website, your browser will retrieve the results of the query. For example, you can ask Trove for all the newspaper articles with a certain search term, and it will return a file, in your browser, of all the relevant results. 
 
 Another way to use the API is to use a programming language to contruct, retrieve and store the results of the queries. R will do this pretty well, but others have used other languages to do this, in more sophisticated ways. This is particularly useful because you can do clever programming things like loops to retrieve lots of relevant information. For the purposes of this text, this is useful because we can retrieve large datasets of newspaper articles, but it can (and is) also used by web applications in a more interactive way. 
 
-This guide will show you how to contruct a dataset of articles with the same format as the sample articles dataframe we made with Heritage Made Digital newspapers.(reference the relevant chapter). You can then use this to do the same kind of analysis done on that dataset. 
+This guide will show you how to contruct a dataset of articles with the same format as the sample articles dataframe we made with Heritage Made Digital newspapers (reference the relevant chapter). You can then use this to do the same kind of analysis done on that dataset (I have extended it for the Trove data in 16.1 etc etc)
 
 The first thing you'll need is an API key - a personal key which you need to send along with each query to assure Trove you're not doing anything dodgy with the data you're retrieving.
 
@@ -26,7 +34,11 @@ http://timsherratt.org/digital-heritage-handbook/docs/trove-newspaper-harvester/
 
 All the information about the API is here: https://help.nla.gov.au/trove/building-with-trove/api-version-2-technical-guide
 
-You interact with the API by contructing a URL query and then send it to the server in some way. An API URL query looks like this: https://api.trove.nla.gov.au/v2/result?key=<INSERT KEY>&zone=<ZONE NAME>&q=<YOUR SEARCH TERMS> 
+You interact with the API by contructing a `URL` query and then send it to the server in some way. An API `URL` query looks like this: 
+
+```
+https://api.trove.nla.gov.au/v2/result?key=<INSERT KEY>&zone=<ZONE NAME>&q=<YOUR SEARCH TERMS> 
+```
 
 To break it down:
 
@@ -40,7 +52,7 @@ To break it down:
 
 ```&``` another one of these connectors
 
-```q=<YOUR SEARCH TERMS>``` after ```q=``` you put whatever you're searching for. Note that these queries need special characters in place of space, otherwise you'll get an error. You replace whitespace with ```%20```. So ```limerick city``` as a search term needs to become ```limerick%20city```. If you do it without the spaces in your browser, it usually fills them in automatically, but R won't do that for you.
+```q=<YOUR SEARCH TERMS>``` after ```q=``` you put whatever you're searching for. Note that these queries need special characters in place of space, otherwise you'll get an error. You replace whitespace with ```%20```. So ```sydney city``` as a search term needs to become ```sydney%20city```. If you do it without the spaces in your browser, it usually fills them in automatically, but R won't do that for you.
 
 Ultimately, you get the same results as you would if you contructed a query through Trove's website, but here you can save them as objects, and get lots of results all at once. 
 
@@ -87,7 +99,7 @@ So by using a programming language, you can quite easily build and change API qu
 Here's what we'll use:
 
 ```{r}
-key = 'rtolalkm39qmnj8l' #get your own key and put it here
+key = '' #get your own key and put it here
 zone = 'newspaper' # The zone to search
 query = "limerick+city" # the query we'll search for
 encoding = 'json' # the format of the results
@@ -191,7 +203,7 @@ That's what the following function does. Explaining how a function is created is
 This function is called ```get_trove_articles()```
 
 ```{r}
-get_trove_articles = function(key = 'rtolalkm39qmnj8l', zone = 'newspaper',query = 'war',encoding = 'json', totalresults = 1000, decade = '184'){
+get_trove_articles = function(key = '', zone = 'newspaper',query = 'war',encoding = 'json', totalresults = 1000, decade = '184'){
   
   startKey = '*'
   listofdfs <- list()

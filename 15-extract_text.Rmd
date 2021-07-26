@@ -1,5 +1,6 @@
 # Make a Text Corpus  {#extract-text}
 
+Storage and the documentation of data is an important task of any researcher. For this project
 ## Where is this data?
 
 If you're internal at the BL, the data is stored on the BL Labs devnas2. This is a Network Addressed Storage which can be accessed by requesting permissions. It can also be accessed 
@@ -74,7 +75,6 @@ Just keep lines which contain either a CONTENT or TextBlock tag:
 
 ```{r}
 altofile = altofile %>% keep(str_detect(., "CONTENT|<TextBlock ID="))
-
 altofile %>% glimpse()
 ```
 

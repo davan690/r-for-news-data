@@ -1,14 +1,50 @@
 # Constructing a corpus
 
-> Definition: A corpus can be looked at as a 
+> **Definition:** A corpus can be looked at as a dataframe of information extracted from a document or collection of documents. It is important to think about the information you want to gain from the resources you are using to extract your corpus from.
 
-Think about what you need: does it need to be representative? Are you interested in news as historical source, or are you interested in it from a generic or stylistic point of view? Are you using the news data to say something quantitative and statistical or is it more analytical?
+## Think about what you need
 
-Find out what you can access, first of all. You'll need to work from practicalities rather than ideals. Do you have the time, support and money to request a large dataset of newspapers from Gale, and if you get it, will you have the expertise to use it?
+> Does it need to be representative? How will you measure this representation?
+
+What was going on with Koala abundance in the news papers early?
+
+To collect a set of data that is representative of this overall corpus of information I have thought about the following aspects:
+
+- records will be a minimum of the extremes
+- what does this mean for the data distributions
+- Keywords: "Koala"
+- search within titles for
+- other grouping options?
+- area/newspapers only?
+- what did newspapers look like at the time in nsw?
+- first nations engagement
+- where is this lost/gained?
+- Type: "advert", "opinion", "observation", "prediction", "other"
+- Year: from beginning of records to now
+- raw text of "opinion, observation, or prediction"
+- Length: Number of words of each article
+
+
+
+
+
+> Are you interested in news as historical source, or are you interested in it from a generic or stylistic point of view? Are you using the news data to say something quantitative and statistical or is it more qualatative?
+
+## Hints and tips
+
+### Access
+
+Find out what you can access, first of all. You'll need to work from practicalities rather than ideals but it is important to have an understanding of how much information you can realistically collect. Figure out what's available, and what you can sensibly use.
+
+Do you have the time, support and money to request a large dataset of newspapers from Gale, and if you get it, will you have the expertise to use it?
 
 Find a group of titles you're interested in. There's no such thing as 'everything'. Targeted work might work best. 
 
 Do some work with a sample first of all
+
+Don't forget the author - remember these were written by people, should be queried and interrogated like any source. Think about why something was written, for whom.
+
+### Statistical models
 
 Probably the most important - make sure, if it's relevant for your project, that you've thought about how statistically representative the corpus is, at the very least. For example, if you've 
 
@@ -18,9 +54,10 @@ Do you want everything in a short time? Or a sample over a long period?
 
 Can you narraw down your searches beforehand.
 
-Figure out what's available, and what you can sensibly use.
+To deal with this I will filter on summaries:
 
-R goes a bit crazy with anything over a couple of GB, even with lots of RAM (the computer's working memory). Some techniques here are unfeasible without lots of resources
+Like soooo:
 
-Don't forget the author - remember these were written by people, should be queried and interrogated like any source. Think about why something was written, for whom.
+ADD DIAGRAMMEE workflow here.
 
+> R goes a bit crazy with anything over a couple of GB, even with lots of RAM (the computer's working memory). Some techniques here are unfeasible without lots of resources. 
